@@ -34,19 +34,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Movable:position")
+tracks/2/path = NodePath("Movable/VBoxContainer/Logo:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [ExtResource("1_ii42m")]
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:x")
+tracks/3/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -57,7 +57,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:y")
+tracks/4/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -68,14 +68,14 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Movable/VBoxContainer/Logo:texture")
+tracks/5/path = NodePath("Movable:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_ii42m")]
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -122,48 +122,48 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Movable:position")
+tracks/2/path = NodePath("Movable/VBoxContainer/Logo:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 1.2),
-"transitions": PackedFloat32Array(1, 0.4, 2),
+"times": PackedFloat32Array(5.5766664),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 384), Vector2(0, -64), Vector2(0, 0)]
+"values": [ExtResource("4_lolip")]
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:x")
+tracks/3/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(320, -0.25, 0, 0.8169656, 7, -3, -0.3830347, 14, 0, 0, 0, -0.25, 0, 0.28363228, -5, 320, -0.6497011, 2, 0, 0, 320, -0.25, 0, 0.56155014, 0, 0, -0.17178345, -19, 0.25, 0),
-"times": PackedFloat32Array(4.7, 5.65, 5.7, 6.5666666, 10.4, 11)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(320, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(5.026666)
 }
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(320, -0.25, 0, 0.8169656, 7, -3, -0.3830347, 14, 0, 0, 0, -0.25, 0, 0.28363228, -5, 320, -0.6497011, 2, 0, 0, 320, -0.25, 0, 0.56155014, 0, 0, -0.17178345, -19, 0.25, 0),
+"times": PackedFloat32Array(4.7, 5.65, 5.7, 6.5666666, 10.4, 11)
+}
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Movable/VBoxContainer/Logo:texture")
+tracks/5/path = NodePath("Movable:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(5.5766664),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_lolip")]
+"times": PackedFloat32Array(0, 1, 1.2),
+"transitions": PackedFloat32Array(1, 0.4, 2),
+"update": 0,
+"values": [Vector2(0, 384), Vector2(0, -64), Vector2(0, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
