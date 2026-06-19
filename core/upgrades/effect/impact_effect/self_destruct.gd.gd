@@ -1,5 +1,6 @@
 class_name SelfDestruct
 extends ImpactEffect
 
-func apply(_target: Node2D) -> void:
+
+func apply(bullet: BulletEntity, _collider: Node2D) -> void:
 	bullet.queue_free()
