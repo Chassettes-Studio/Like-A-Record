@@ -1,0 +1,259 @@
+[gd_scene format=3 uid="uid://qdp5365sk0g5"]
+
+[ext_resource type="Texture2D" uid="uid://dte68fsjwd52k" path="res://assets/logo/chassettes.png" id="1_ii42m"]
+[ext_resource type="Script" uid="uid://uvbdwevd0lpa" path="res://core/splash/Splash.gd" id="1_nsaww"]
+[ext_resource type="FontFile" uid="uid://cl0tiub2y76h1" path="res://assets/fonts/DigitalDisco.ttf" id="2_mcr81"]
+[ext_resource type="Texture2D" uid="uid://ndtekr7g2585" path="res://assets/logo/godotLogo.png" id="4_lolip"]
+
+[sub_resource type="Animation" id="Animation_nsaww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Movable/VBoxContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Movable/VBoxContainer/Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Movable:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(320, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(320, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Movable/VBoxContainer/Logo:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ii42m")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Movable/VBoxContainer/Label:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[wave amp=20.0 freq=5.0 connected=1][font_size={80
+}][center]Chassettes Studios[/center][/font_size][/wave]"]
+}
+
+[sub_resource type="Animation" id="Animation_mcr81"]
+resource_name = "Start"
+length = 11.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Movable/VBoxContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 2, 4.133333, 4.833333, 6.2999997, 7.233333, 9.633333, 10.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Movable/VBoxContainer/Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(4.75, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Movable:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.2),
+"transitions": PackedFloat32Array(1, 0.4, 2),
+"update": 0,
+"values": [Vector2(0, 384), Vector2(0, -64), Vector2(0, 0)]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(320, -0.25, 0, 0.8169656, 7, -3, -0.3830347, 14, 0, 0, 0, -0.25, 0, 0.28363228, -5, 320, -0.6497011, 2, 0, 0, 320, -0.25, 0, 0.56155014, 0, 0, -0.17178345, -19, 0.25, 0),
+"times": PackedFloat32Array(4.7, 5.65, 5.7, 6.5666666, 10.4, 11)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Movable/VBoxContainer/Logo:custom_minimum_size:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(320, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(5.026666)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Movable/VBoxContainer/Logo:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5.5766664),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_lolip")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Movable/VBoxContainer/Label:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(5.5666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[wave amp=20.0 freq=5.0 connected=1][font_size={80
+}][center]Made with Godot[/center][/font_size][/wave]"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lolip"]
+_data = {
+&"RESET": SubResource("Animation_nsaww"),
+&"Start": SubResource("Animation_mcr81")
+}
+
+[node name="Splash" type="Control" unique_id=1866124640]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_nsaww")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=213404980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Movable" type="Control" parent="." unique_id=1697533071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.00024414063
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Movable" unique_id=520505649]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -162.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Logo" type="TextureRect" parent="Movable/VBoxContainer" unique_id=1517276979]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_ii42m")
+expand_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="Movable/VBoxContainer" unique_id=1783057997]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_mcr81")
+theme_override_fonts/bold_font = ExtResource("2_mcr81")
+theme_override_fonts/bold_italics_font = ExtResource("2_mcr81")
+theme_override_fonts/italics_font = ExtResource("2_mcr81")
+theme_override_fonts/mono_font = ExtResource("2_mcr81")
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=5.0 connected=1][font_size={80
+}][center]Chassettes Studios[/center][/font_size][/wave]"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1532892797]
+libraries/ = SubResource("AnimationLibrary_lolip")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
