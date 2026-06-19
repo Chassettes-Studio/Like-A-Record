@@ -13,6 +13,8 @@ var current_state: State = MovingState.new(self)
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
+	if Input.is_action_just_pressed("ui_accept"):
+		gun.shoot(Vector2.RIGHT.rotated(gun.rotation))
 
 
 func update_current_state(state: State) -> void:

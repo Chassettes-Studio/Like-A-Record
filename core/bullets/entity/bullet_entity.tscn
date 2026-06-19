@@ -8,6 +8,8 @@
 radius = 14.0
 
 [node name="BulletEntity" type="CharacterBody2D" unique_id=42265716]
+collision_layer = 4
+collision_mask = 8
 script = ExtResource("1_lsk3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900623463]

@@ -16,4 +16,7 @@ func _physics_process(delta: float) -> void:
 
 
 func shoot(normal: Vector2) -> void:
-	pass
+	var entity: BulletEntity = Bullet.create(preload("res://resources/bullets/default_bullet.tres"))
+	entity.global_position = main_offset.global_position
+	get_tree().current_scene.add_child(entity)
+	entity.bullet_controller.direction = normal
