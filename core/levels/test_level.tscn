@@ -1,3 +1,46 @@
 [gd_scene format=3 uid="uid://cevhrtrxqc8ca"]
 
+[ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/Player.tscn" id="1_vpc4w"]
+[ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="2_8188n"]
+[ext_resource type="Resource" uid="uid://dnd0lioo26sm4" path="res://resources/enemies/feur.tres" id="3_r2pyx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_34cbc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpc4w"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qq6f8"]
+normal = Vector2(-1, 0)
+
 [node name="TestLevel" type="Node2D" unique_id=205418669]
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=481633547]
+
+[node name="Up" type="CollisionShape2D" parent="Walls" unique_id=975420689]
+shape = SubResource("WorldBoundaryShape2D_vpdy7")
+
+[node name="Down" type="CollisionShape2D" parent="Walls" unique_id=1278406850]
+position = Vector2(0, 1080)
+shape = SubResource("WorldBoundaryShape2D_34cbc")
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=1189280782]
+shape = SubResource("WorldBoundaryShape2D_vpc4w")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=413641735]
+position = Vector2(1920, 0)
+shape = SubResource("WorldBoundaryShape2D_qq6f8")
+
+[node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_vpc4w")]
+position = Vector2(715, 353)
+
+[node name="EnemyEntity" parent="." unique_id=255422468 node_paths=PackedStringArray("target") instance=ExtResource("2_8188n")]
+position = Vector2(182, 151)
+enemy_data = ExtResource("3_r2pyx")
+target = NodePath("../Player")
+
+[node name="EnemyEntity2" parent="." unique_id=397126991 node_paths=PackedStringArray("target") instance=ExtResource("2_8188n")]
+enemy_data = ExtResource("3_r2pyx")
+target = NodePath("../Player")

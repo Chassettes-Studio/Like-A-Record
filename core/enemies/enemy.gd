@@ -6,10 +6,3 @@ extends Resource
 
 @export var attack: EnemyAttack
 @export var brain: EnemyBrain
-
-
-func setup(entity: EnemyEntity, target: Node2D, movement_controller: SCMovementController) -> void:
-	brain.entity = entity
-	brain.attack = attack
-	brain.target = target
-	brain.movement_controller = movement_controller

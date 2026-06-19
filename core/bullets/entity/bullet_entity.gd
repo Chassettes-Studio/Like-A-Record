@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @export var bullet_data: Bullet
 
+@onready var bullet_controller: BulletController = $BulletController
+
 @onready var sprite: Sprite2D = $Sprite
 
 

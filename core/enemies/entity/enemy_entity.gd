@@ -9,13 +9,15 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite
 @onready var name_label: Label = $NameLabel
 
+var attack : EnemyAttack
+var brain : EnemyBrain
+
 
 func _ready() -> void:
 	sprite.texture = enemy_data.texture
 	name_label.text = enemy_data.name
-
-	enemy_data.setup(self, target, movement_controller)
-
+	attack = enemy_data.attack.duplicate()
+	brain = enemy_data.brain.duplicate()
 
 func _physics_process(delta: float) -> void:
-	enemy_data.brain.process(delta)
+	brain.process(self, delta)

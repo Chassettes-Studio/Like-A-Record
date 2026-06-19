@@ -1,7 +1,7 @@
 class_name BasicBrain
 extends EnemyBrain
 
-enum State {
+enum BrainState {
 	CHASE,
 	SHOOT,
 }
@@ -9,26 +9,26 @@ enum State {
 @export var chase_stop_distance: float
 @export var chase_start_distance: float
 
-var state: State = State.CHASE
+var state: BrainState = BrainState.CHASE
 
 
-func change_state() -> void:
+func change_state(entity : EnemyEntity) -> void:
 	match state:
-		State.CHASE:
-			if entity.global_position.distance_to(target.global_position) < chase_stop_distance:
-				state = State.SHOOT
-		State.SHOOT:
-			if entity.global_position.distance_to(target.global_position) > chase_start_distance:
-				state = State.CHASE
+		BrainState.CHASE:
+			if entity.global_position.distance_to(entity.target.global_position) < chase_stop_distance:
+				state = BrainState.SHOOT
+		BrainState.SHOOT:
+			if entity.global_position.distance_to(entity.target.global_position) > chase_start_distance:
+				state = BrainState.CHASE
 
 
-func process(delta: float) -> void:
+func process(entity: EnemyEntity, delta: float) -> void:
 
-	change_state()
+	change_state(entity)
 
 	match state:
-		State.CHASE:
-			movement_controller.direction = entity.global_position.direction_to(target.global_position)
-		State.SHOOT:
-			movement_controller.direction = Vector2.ZERO
-			attack.attack(delta)
+		BrainState.CHASE:
+			entity.movement_controller.direction = entity.global_position.direction_to(entity.target.global_position)
+		BrainState.SHOOT:
+			entity.movement_controller.direction = Vector2.ZERO
+			entity.attack.attack(delta)
