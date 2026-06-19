@@ -8,6 +8,7 @@ var current_state: State = MovingState.new(self)
 
 @onready var sc_physics_controller: SCPhysicsController = $SCPhysicsController
 @onready var dash_cooldown: Timer = $DashCooldown
+@onready var gun: Gun = $Gun
 
 
 func _physics_process(delta: float) -> void:
