@@ -11,6 +11,7 @@ static func create(bullet: Bullet) -> BulletEntity:
 	return entity
 
 @export var texture : Texture2D
+@export var shape: Shape2D
 
 @export var impact_effects: Array[ImpactEffect]
 @export var bullet_effects: Array[BulletEffect]

@@ -4,16 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="2_3dhsx"]
 [ext_resource type="Script" uid="uid://ce7pqpa0bn5st" path="res://core/bullets/bullet_controller.gd" id="3_l4kfh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rl216"]
-radius = 14.0
-
 [node name="BulletEntity" type="CharacterBody2D" unique_id=42265716]
 collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_lsk3w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900623463]
-shape = SubResource("CircleShape2D_rl216")
+[node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=900623463]
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1233409041]
 scale = Vector2(0.2, 0.2)
@@ -23,5 +19,9 @@ texture = ExtResource("2_3dhsx")
 script = ExtResource("3_l4kfh")
 target = NodePath("..")
 metadata/_custom_type_script = "uid://ce7pqpa0bn5st"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1604781203]
+
+[node name="AreaCollision" type="CollisionShape2D" parent="Area2D" unique_id=1458771757]
 
 [connection signal="collided" from="BulletController" to="." method="_on_bullet_controller_collided"]
