@@ -26,4 +26,4 @@ func physics_process(delta: float) -> void:
 
 
 func _on_duration_end() -> void:
-	target.update_current_state(MovingState.new(target))
+	target.update_current_state(MovingState.new(target, dash_direction))
