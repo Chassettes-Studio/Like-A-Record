@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dpqugsygggxr8"]
+
+[ext_resource type="Script" uid="uid://cffvw0wq51i30" path="res://core/enemies/entity/enemy_entity.gd" id="1_8jowh"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="2_f1rkw"]
+[ext_resource type="Script" uid="uid://10yphvuogl8w" path="res://chassettes_library/components/movement_controller/physics_controller/physics_controller.gd" id="3_bc6kx"]
+
+[node name="EnemyEntity" type="CharacterBody2D" unique_id=255422468]
+script = ExtResource("1_8jowh")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1241666923]
+texture = ExtResource("2_f1rkw")
+
+[node name="NameLabel" type="Label" parent="." unique_id=1379093507]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.0
+offset_top = 60.0
+offset_right = 51.0
+offset_bottom = 83.0
+grow_horizontal = 2
+text = "This is empty"
+
+[node name="SCPhysicsController" type="Node" parent="." unique_id=1066901364 node_paths=PackedStringArray("target")]
+script = ExtResource("3_bc6kx")
+max_speed = 200.0
+acceleration = 500.0
+target = NodePath("..")
+metadata/_custom_type_script = "uid://10yphvuogl8w"
