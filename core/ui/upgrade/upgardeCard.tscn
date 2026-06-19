@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://crh55ejweuisx"]
+
+[ext_resource type="Script" uid="uid://c5apwgrwx4ie0" path="res://core/ui/upgrade/upgarde_card.gd" id="1_5aqyn"]
+[ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="1_3756a"]
+[ext_resource type="Texture2D" uid="uid://ccimiiwghjys3" path="res://assets/musicStuff/pochette.png" id="3_tcarj"]
+[ext_resource type="Texture2D" uid="uid://ndtekr7g2585" path="res://assets/logo/godotLogo.png" id="4_bpvp7"]
+[ext_resource type="Texture2D" uid="uid://03f6wwqe44tp" path="res://assets/ui/popup.png" id="5_bpvp7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vifkf"]
+font_size = 64
+font_color = Color(0.12156863, 0.2509804, 0.30980393, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jvv46"]
+font_size = 32
+font_color = Color(0.12156863, 0.2509804, 0.30980393, 1)
+
+[node name="UpgardeCard" type="Control" unique_id=315482807]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 692.0
+offset_top = 484.0
+offset_right = 692.0
+offset_bottom = 484.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5aqyn")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2094644582]
+layout_mode = 1
+offset_right = 530.0
+offset_bottom = 530.0
+scale = Vector2(0.75, 0.75)
+offset_transform_enabled = true
+
+[node name="CD" type="TextureRect" parent="MarginContainer" unique_id=1202260884]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_3756a")
+
+[node name="Case" type="TextureRect" parent="MarginContainer" unique_id=1273948546]
+layout_mode = 2
+texture = ExtResource("3_tcarj")
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Case" unique_id=616386284]
+custom_minimum_size = Vector2(380, 380)
+custom_maximum_size = Vector2(380, 380)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 75.0
+offset_right = 455.0
+offset_bottom = 455.0
+texture = ExtResource("4_bpvp7")
+
+[node name="Popup" type="Control" parent="MarginContainer" unique_id=2145599374]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_transform_scale = Vector2(0, 0)
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Popup" unique_id=1580979687]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 100.0
+offset_right = 550.0
+offset_bottom = 670.0
+offset_transform_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Popup/MarginContainer" unique_id=1919435591]
+custom_minimum_size = Vector2(570, 570)
+custom_maximum_size = Vector2(570, 570)
+layout_mode = 2
+texture = ExtResource("5_bpvp7")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Popup/MarginContainer" unique_id=518715545]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Popup/MarginContainer/MarginContainer" unique_id=843095345]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MarginContainer/Popup/MarginContainer/MarginContainer/VBoxContainer" unique_id=321450910]
+layout_mode = 2
+text = "GODOT CHAUSSETTE"
+label_settings = SubResource("LabelSettings_vifkf")
+autowrap_mode = 3
+
+[node name="Description" type="Label" parent="MarginContainer/Popup/MarginContainer/MarginContainer/VBoxContainer" unique_id=885290468]
+layout_mode = 2
+text = "C4EST GODOT SAUF QU4IL EST DANS UNE CHAUSSETTE C4EST FOU !!!"
+label_settings = SubResource("LabelSettings_jvv46")
+autowrap_mode = 3
+
+[connection signal="gui_input" from="MarginContainer" to="." method="_on_margin_container_gui_input"]
+[connection signal="mouse_entered" from="MarginContainer" to="." method="_on_margin_container_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer" to="." method="_on_margin_container_mouse_exited"]
