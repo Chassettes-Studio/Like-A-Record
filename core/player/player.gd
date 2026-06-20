@@ -7,6 +7,8 @@ signal damaged
 @export var DASH_SPEED: float = 5_000
 @export var DASH_ACCELERATION: float = 50_000
 
+@export var upgrades: Array[Upgrade] = []
+
 var current_state: State = MovingState.new(self, Vector2.RIGHT)
 
 @onready var hitbox: Hitbox = $Hitbox
@@ -17,6 +19,7 @@ var current_state: State = MovingState.new(self, Vector2.RIGHT)
 @onready var sc_physics_controller: SCPhysicsController = $SCPhysicsController
 @onready var dash_cooldown: Timer = $DashCooldown
 @onready var gun: Gun = $Gun
+@onready var ui: PlayerUi = $PlayerUi
 
 
 func _physics_process(delta: float) -> void:
@@ -31,12 +34,20 @@ func update_current_state(state: State) -> void:
 	self.current_state.on_enter()
 
 
+func apply_upgrade(upgrade: Upgrade) -> void:
+	upgrades.push_back(upgrade)
+	for p_effect in upgrade.player_effects:
+		pass
+	for g_effect in upgrade.gun_effects:
+		g_effect.apply(self.gun)
+
+
 func _on_hitbox_hurt(_value: float) -> void:
-	
 	health_controller.take_damage(1)
 	damaged.emit()
 	hitbox.set_hittable(false)
 	invulnerability_timer.start()
+	ui.take_damage(health_controller.base_health, health_controller.get_health())
 	modulate = Color(7,4,4)
 	await get_tree().create_timer(.1).timeout
 	modulate = Color.WHITE

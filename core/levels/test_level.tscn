@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://ca2mbasvwfa5h" path="res://core/levels/test_level.gd" id="1_8188n"]
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_vpc4w"]
 [ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="3_74yie"]
 [ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
+[ext_resource type="Resource" uid="uid://c64jceadto3ft" path="res://resources/upgrades/double_barrel.tres" id="4_v7f4j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
 normal = Vector2(0, 1)
@@ -39,6 +41,7 @@ shape = SubResource("WorldBoundaryShape2D_qq6f8")
 
 [node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_vpc4w")]
 position = Vector2(715, 353)
+upgrades = Array[ExtResource("3_74yie")]([ExtResource("4_v7f4j")])
 
 [node name="Spawner" type="Node2D" parent="." unique_id=104538081 node_paths=PackedStringArray("target")]
 script = ExtResource("2_qq6f8")
