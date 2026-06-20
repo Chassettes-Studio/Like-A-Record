@@ -41,4 +41,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	var hb := area as Hitbox
 	if hb:
 		hb.damage(1)
+		queue_free()
 	

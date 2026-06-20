@@ -35,9 +35,14 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 
 
 func _on_hitbox_hurt(_value: float) -> void:
+	
 	health_controller.take_damage(1)
+	damaged.emit()
 	hitbox.set_hittable(false)
 	invulnerability_timer.start()
+	modulate = Color(7,4,4)
+	await get_tree().create_timer(.1).timeout
+	modulate = Color.WHITE
 
 
 func _on_invulnerability_timer_timeout() -> void:
@@ -49,5 +54,4 @@ func _on_sc_health_controller_died() -> void:
 	queue_free()
 
 
-func _on_sc_health_controller_damaged() -> void:
-	damaged.emit()
+	
