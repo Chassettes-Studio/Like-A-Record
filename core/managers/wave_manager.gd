@@ -1,3 +1,4 @@
+class_name WaveManager
 extends Node
 
 signal trigger_new_wave
@@ -13,7 +14,8 @@ var current_wave: int = 1
 func _ready() -> void:
 	var resources: PackedStringArray = ResourceLoader.list_directory("res://resources/enemies/")
 	for resource in resources:
-		enemies.append(load(resource))
+		print(resource)
+		enemies.append(load("res://resources/enemies/" + resource))
 	create_enemy_pool()
 
 
