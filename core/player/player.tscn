@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ciwo1lhqejhs6"]
 
 [ext_resource type="Script" uid="uid://coy6w3o4dhacc" path="res://core/player/player.gd" id="1_qjudb"]
+[ext_resource type="PackedScene" uid="uid://cvwnb8nu4eaml" path="res://core/ui/player/PlayerUI.tscn" id="2_krwir"]
 [ext_resource type="Texture2D" uid="uid://dte68fsjwd52k" path="res://assets/logo/chassettes.png" id="2_xttum"]
 [ext_resource type="Script" uid="uid://10yphvuogl8w" path="res://chassettes_library/components/movement_controller/physics_controller/physics_controller.gd" id="3_e7l0y"]
 [ext_resource type="PackedScene" uid="uid://dhbvlawoug1nm" path="res://core/player/gun/gun.tscn" id="4_krwir"]
@@ -15,6 +16,8 @@ radius = 35.057095
 [node name="Player" type="CharacterBody2D" unique_id=1476355945]
 collision_mask = 8
 script = ExtResource("1_qjudb")
+
+[node name="PlayerUi" parent="." unique_id=227467206 instance=ExtResource("2_krwir")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392401189]
 shape = SubResource("RectangleShape2D_icdtu")

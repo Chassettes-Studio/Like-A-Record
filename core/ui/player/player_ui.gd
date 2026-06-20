@@ -1,7 +1,7 @@
+class_name PlayerUi
 extends CanvasLayer
 
-@onready var health_bar: HealthBar = $MarginContainer/HBoxContainer/HealthBar
+@onready var health_bar: HealthBar = $MarginContainer/HBoxContainer/Control/HealthBar
 
-
-func _on_button_pressed() -> void:
-	health_bar.take_hit(100, 1)
+func take_damage(max_health: int, current_health: int) -> void:
+	health_bar.take_hit(max_health, current_health)

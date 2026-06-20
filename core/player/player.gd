@@ -19,6 +19,7 @@ var current_state: State = MovingState.new(self, Vector2.RIGHT)
 @onready var sc_physics_controller: SCPhysicsController = $SCPhysicsController
 @onready var dash_cooldown: Timer = $DashCooldown
 @onready var gun: Gun = $Gun
+@onready var ui: PlayerUi = $PlayerUi
 
 
 func _physics_process(delta: float) -> void:
@@ -42,11 +43,11 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 
 
 func _on_hitbox_hurt(_value: float) -> void:
-	
 	health_controller.take_damage(1)
 	damaged.emit()
 	hitbox.set_hittable(false)
 	invulnerability_timer.start()
+	ui.take_damage(health_controller.base_health, health_controller.get_health())
 	modulate = Color(7,4,4)
 	await get_tree().create_timer(.1).timeout
 	modulate = Color.WHITE

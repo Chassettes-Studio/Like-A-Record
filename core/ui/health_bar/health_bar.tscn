@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://btn3nwlodlhy3" path="res://core/ui/health_bar/health_bar.gd" id="1_3lhka"]
 
 [node name="HealthBar" type="MarginContainer" unique_id=950605255]
-offset_right = 500.0
-offset_bottom = 20.0
+anchors_preset = -1
+offset_right = 40.0
+offset_bottom = 40.0
 size_flags_horizontal = 0
 script = ExtResource("1_3lhka")
 
@@ -17,6 +18,7 @@ size_flags_vertical = 0
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
+offset_bottom = 40.0
 grow_vertical = 2
 size_flags_horizontal = 4
 color = Color(1, 0.7176471, 0, 1)
@@ -25,6 +27,7 @@ color = Color(1, 0.7176471, 0, 1)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
+offset_bottom = 40.0
 grow_vertical = 2
 size_flags_horizontal = 4
 color = Color(1, 0, 0, 1)
