@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ca2mbasvwfa5h" path="res://core/levels/test_level.gd" id="1_8188n"]
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_vpc4w"]
 [ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
+[ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
 normal = Vector2(0, 1)
@@ -49,4 +50,9 @@ metadata/_custom_type_script = "uid://c0h1n5gqceb64"
 [node name="Timer" type="Timer" parent="." unique_id=1709639521]
 autostart = true
 
+[node name="WaveManager" type="Node" parent="." unique_id=1932516513]
+script = ExtResource("4_r2pyx")
+metadata/_custom_type_script = "uid://cqodewu2t3855"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="trigger_new_wave" from="WaveManager" to="." method="_on_wave_manager_trigger_new_wave"]
