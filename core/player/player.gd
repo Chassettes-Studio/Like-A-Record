@@ -35,11 +35,14 @@ func update_current_state(state: State) -> void:
 
 
 func apply_upgrade(upgrade: Upgrade) -> void:
-	upgrades.push_back(upgrade)
+	upgrades.append(upgrade)
 	for p_effect in upgrade.player_effects:
 		pass
 	for g_effect in upgrade.gun_effects:
 		g_effect.apply(self.gun)
+	gun.bullet.bullet_effects.append_array(upgrade.bullet_effects)
+	gun.bullet.collision_effects.append_array(upgrade.collision_effects)
+	gun.bullet.hit_effects.append_array(upgrade.hit_effects)
 
 
 func _on_hitbox_hurt(_value: float) -> void:

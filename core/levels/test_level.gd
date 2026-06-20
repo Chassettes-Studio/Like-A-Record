@@ -19,11 +19,11 @@ func _on_wave_manager_trigger_new_wave() -> void:
 	enemy_spawned_count = 0
 	var upgrade_selection : UpgradeSelector = upgrade_scene.instantiate()
 	var upgrades := UpgradeManager.pick_upgrades()
-	upgrade_selection.init(upgrades[0],upgrades[1],upgrades[2])
 	add_child(upgrade_selection)
+	upgrade_selection.init(upgrades[0],upgrades[1],upgrades[2])
 	
 	var new_upgrade : Upgrade = await upgrade_selection.upgrade_chosen
-	player.app
+	player.apply_upgrade(new_upgrade)
 	wave_manager.next_wave()
 
 

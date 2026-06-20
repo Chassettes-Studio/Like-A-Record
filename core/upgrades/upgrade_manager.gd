@@ -3,8 +3,9 @@ class_name UpgradeManager
 static var upgrade_pool: Array[Upgrade]
 
 static func _static_init() -> void:
-	for path: String in ResourceLoader.list_directory("res://resources/upgrades/"):
-		upgrade_pool.append(load(path))
+	const path : String = "res://resources/upgrades/"
+	for upgrade: String in ResourceLoader.list_directory(path):
+		upgrade_pool.append(load(path+upgrade))
 
 static func pick_upgrades(amount : int = 3) -> Array[Upgrade]:
 	var temp_pool : Array[Upgrade] = upgrade_pool.duplicate()

@@ -55,6 +55,7 @@ autostart = true
 
 [node name="WaveManager" type="Node" parent="." unique_id=1932516513]
 script = ExtResource("4_r2pyx")
+total_enemy_count = 3
 metadata/_custom_type_script = "uid://cqodewu2t3855"
 
 [connection signal="new_enemy_spawned" from="Spawner" to="." method="_on_spawner_new_enemy_spawned"]
