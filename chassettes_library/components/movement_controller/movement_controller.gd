@@ -42,8 +42,7 @@ func _physics_process(delta: float) -> void:
 			_apply_gravity(delta)
 		_update_velocity(delta)
 	if target.move_and_slide():
-		for i in target.get_slide_collision_count():
-			collided.emit(target.get_slide_collision(i))
+		collided.emit(target.get_last_slide_collision())
 	
 
 

@@ -23,7 +23,9 @@ func _on_bullet_controller_collided(collision: KinematicCollision2D) -> void:
 	if bounces <= 0:
 		queue_free()
 	else:
+		bounces -= 1
 		velocity = velocity.bounce(collision.get_normal())
+		bullet_controller.direction = bullet_controller.direction.bounce(collision.get_normal())
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
