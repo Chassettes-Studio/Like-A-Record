@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://dapkrmcx71ns0"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_uc0im"]
+[ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="2_sgwlb"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="2_y781h"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="3_sgwlb"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="4_5yi86"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="5_143gy"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="6_y781h"]
+
+[sub_resource type="Resource" id="Resource_r2pyx"]
+script = ExtResource("2_sgwlb")
+metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
+
+[resource]
+script = ExtResource("5_143gy")
+name = "Faster"
+description = "Makes the bullet faster"
+sprite = ExtResource("6_y781h")
+bullet_effects = Array[ExtResource("1_uc0im")]([SubResource("Resource_r2pyx")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"
