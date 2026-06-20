@@ -1,4 +1,4 @@
-class_name ProjectileCountEffect
+class_name AddedProjectileCountEffect
 extends GunEffect
 
 @export var added_projectile_count: int = 0

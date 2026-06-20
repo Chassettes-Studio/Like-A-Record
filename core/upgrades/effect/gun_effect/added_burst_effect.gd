@@ -1,4 +1,4 @@
-class_name BurstEffect
+class_name AddedBurstEffect
 extends GunEffect
 
 @export var added_burst: float = 0

@@ -1,4 +1,4 @@
-class_name OrbitRadiusEffect
+class_name AddedOrbitRadiusEffect
 extends GunEffect
 
 @export var added_orbit_radius: float = 0

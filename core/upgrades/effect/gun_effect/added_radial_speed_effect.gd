@@ -1,4 +1,4 @@
-class_name RadialSpeedEffect
+class_name AddedRadialSpeedEffect
 extends GunEffect
 
 @export var added_radial_speed: float = 0

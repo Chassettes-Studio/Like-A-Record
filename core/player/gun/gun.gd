@@ -5,7 +5,7 @@ extends Node2D
 @export var radial_speed: float = 2
 @export var projectile_count: int = 1
 @export var burst: float = 0
-@export var spread_angle: float = 0
+@export_range(0, 360, 0.1, "radians_as_degrees") var spread_angle: float = 0
 @export var bullet: Bullet = preload("res://resources/bullets/default_bullet.tres")
 
 @onready var main_offset: Marker2D = $MainOffset
