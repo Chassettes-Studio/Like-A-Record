@@ -6,9 +6,9 @@ const entity_scene : PackedScene = preload("res://core/bullets/entity/bullet_ent
 static func create(parent: Node, bullet: Bullet, is_enemy_bullet : bool = false) -> BulletEntity:
 	var entity : BulletEntity = entity_scene.instantiate() as BulletEntity
 	entity.bullet_data = bullet
+	parent.add_child(entity)
 	for effect : BulletEffect in bullet.bullet_effects:
 		effect.apply(entity)
-	parent.add_child(entity)
 	if is_enemy_bullet:
 		entity.area_2d.collision_mask = 1
 	else:
