@@ -5,14 +5,6 @@ extends Node2D
 
 var enemy_spawned_count: int = 0
 
-func _ready() -> void:
-	pass
-
-
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_timer_timeout() -> void:
 	if enemy_spawned_count < wave_manager.total_enemy_count:
 		print("spawn")

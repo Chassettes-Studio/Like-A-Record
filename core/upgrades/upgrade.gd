@@ -7,5 +7,5 @@ extends Resource
 
 @export var bullet_effect: BulletEffect
 @export var gun_effect: GunEffect
-@export var impact_effect: ImpactEffect
+@export var collision_effect: CollisionEffect
 @export var player_effect: PlayerEffect

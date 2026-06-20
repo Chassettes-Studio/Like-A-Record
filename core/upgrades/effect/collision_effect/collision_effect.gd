@@ -1,5 +1,5 @@
 @abstract
-class_name ImpactEffect
+class_name CollisionEffect
 extends Resource
 
 

@@ -12,14 +12,6 @@ const enemy_scene: PackedScene = preload("res://core/enemies/entity/enemy_entity
 var spawn_try_count: int = 0
 
 
-func _ready() -> void:
-	pass
-
-
-func _process(delta: float) -> void:
-	pass
-
-
 func spawn_enemy(resource: Enemy) -> void:
 	
 	if not is_instance_valid(target) : return

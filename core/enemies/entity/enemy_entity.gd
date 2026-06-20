@@ -1,11 +1,14 @@
 class_name EnemyEntity
 extends CharacterBody2D
 
+signal died
+
 @export var enemy_data: Enemy
 
 @export var target: Node2D
 
 @onready var damage_shape: CollisionShape2D = $DamageArea/CollisionShape2D
+@onready var body_shape: CollisionShape2D = $CollisionShape2D
 
 @onready var movement_controller: SCPhysicsController = $SCPhysicsController
 @onready var sprite: Sprite2D = $Sprite
@@ -14,14 +17,23 @@ extends CharacterBody2D
 var attack : EnemyAttack
 var brain : EnemyBrain
 
+var health : int
 
 func _ready() -> void:
 	sprite.texture = enemy_data.texture
 	name_label.text = enemy_data.name
 	damage_shape.shape = enemy_data.shape
+	body_shape.shape = enemy_data.shape
+	health = enemy_data.max_health
 	attack = enemy_data.attack.duplicate()
 	brain = enemy_data.brain.duplicate()
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(target) : return
 	brain.process(self, delta)
+
+func take_damage(value: int) -> void:
+	health -= value
+	if health <= 0:
+		died.emit()
+		queue_free()

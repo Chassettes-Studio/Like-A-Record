@@ -7,5 +7,6 @@ extends Resource
 @export var weight: float = 1
 
 @export var shape : Shape2D = CircleShape2D.new()
+@export var max_health : int = 1
 @export var attack: EnemyAttack
 @export var brain: EnemyBrain

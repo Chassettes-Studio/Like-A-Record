@@ -1,14 +1,20 @@
 [gd_resource type="Resource" script_class="Bullet" format=3 uid="uid://cj4r0diekpmgi"]
 
 [ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_lewx2"]
-[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/impact_effect/impact_effect.gd" id="2_s38ak"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="2_8jkf3"]
 [ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="3_8jkf3"]
-[ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/impact_effect/self_destruct.gd.gd" id="3_a74ow"]
+[ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="3_a74ow"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_a74ow"]
 [ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="5_8jkf3"]
+[ext_resource type="Script" uid="uid://b6vusje6nrle3" path="res://core/upgrades/effect/hit_effect/deal_damage.gd" id="5_kiknh"]
 
-[sub_resource type="Resource" id="Resource_8jkf3"]
+[sub_resource type="Resource" id="Resource_8188n"]
 script = ExtResource("3_a74ow")
 metadata/_custom_type_script = "uid://8q128ehc7nxs"
+
+[sub_resource type="Resource" id="Resource_r64xa"]
+script = ExtResource("5_kiknh")
+metadata/_custom_type_script = "uid://b6vusje6nrle3"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lsk3w"]
 radius = 20.0
@@ -17,5 +23,6 @@ radius = 20.0
 script = ExtResource("3_8jkf3")
 texture = ExtResource("5_8jkf3")
 shape = SubResource("CircleShape2D_lsk3w")
-impact_effects = Array[ExtResource("2_s38ak")]([SubResource("Resource_8jkf3")])
+collision_effects = Array[ExtResource("2_8jkf3")]([SubResource("Resource_8188n")])
+hit_effects = Array[ExtResource("4_a74ow")]([SubResource("Resource_r64xa")])
 metadata/_custom_type_script = "uid://bkh04gcfmrktg"
