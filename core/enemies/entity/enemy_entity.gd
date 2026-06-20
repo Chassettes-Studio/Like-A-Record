@@ -22,8 +22,11 @@ var health : int
 func _ready() -> void:
 	sprite.texture = enemy_data.texture
 	name_label.text = enemy_data.name
-	damage_shape.shape = enemy_data.shape
-	body_shape.shape = enemy_data.shape
+	sprite.scale = Vector2.ONE * 2 * (enemy_data.size/enemy_data.texture.get_width())
+	var shape := CircleShape2D.new()
+	shape.radius = enemy_data.size
+	damage_shape.shape = shape
+	body_shape.shape = shape
 	health = enemy_data.max_health
 	attack = enemy_data.attack.duplicate()
 	brain = enemy_data.brain.duplicate()
