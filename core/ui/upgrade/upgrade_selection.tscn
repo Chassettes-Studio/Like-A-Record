@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://crbimnff1st5b"]
+
+[ext_resource type="Script" uid="uid://b6dhfgtmf03hy" path="res://core/ui/upgrade/upgrade_selection.gd" id="1_pylfn"]
+[ext_resource type="PackedScene" uid="uid://crh55ejweuisx" path="res://core/ui/upgrade/upgardeCard.tscn" id="1_s0gyl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
+font_size = 128
+
+[node name="UpgradeSelection" type="CanvasLayer" unique_id=1452786776]
+script = ExtResource("1_pylfn")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=976078529]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1777897663]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=99552913]
+layout_mode = 2
+text = "Upgrade Time"
+label_settings = SubResource("LabelSettings_gtu5s")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1942058004]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=448303164]
+layout_mode = 2
+theme_override_constants/separation = 530
+alignment = 1
+
+[node name="UpgardeCard" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=315482807 instance=ExtResource("1_s0gyl")]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 30)
+offset_transform_rotation = -0.10471976
+
+[node name="UpgardeCard2" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1867022390 instance=ExtResource("1_s0gyl")]
+layout_mode = 2
+
+[node name="UpgardeCard3" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=440740688 instance=ExtResource("1_s0gyl")]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 30)
+offset_transform_rotation = 0.10471976
+
+[connection signal="free" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard" to="." method="_on_upgarde_card_free"]
+[connection signal="upgrade_chosen" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard" to="." method="_on_upgarde_card_upgrade_chosen"]
+[connection signal="free" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard2" to="." method="_on_upgarde_card_free"]
+[connection signal="upgrade_chosen" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard2" to="." method="_on_upgarde_card_upgrade_chosen"]
+[connection signal="free" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard3" to="." method="_on_upgarde_card_free"]
+[connection signal="upgrade_chosen" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard3" to="." method="_on_upgarde_card_upgrade_chosen"]

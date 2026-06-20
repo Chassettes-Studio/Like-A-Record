@@ -26,9 +26,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2094644582]
 layout_mode = 1
-offset_right = 530.0
+offset_left = -265.0
+offset_right = 265.0
 offset_bottom = 530.0
-scale = Vector2(0.75, 0.75)
 offset_transform_enabled = true
 
 [node name="CD" type="TextureRect" parent="MarginContainer" unique_id=1202260884]
