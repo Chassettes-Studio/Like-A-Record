@@ -15,10 +15,14 @@ chase_stop_distance = 300.0
 chase_start_distance = 500.0
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2pyx"]
+radius = 50.0
+
 [resource]
 script = ExtResource("1_m0vnv")
 name = "Feur"
 texture = ExtResource("4_nesrm")
+shape = SubResource("CircleShape2D_r2pyx")
 max_health = 3
 attack = SubResource("Resource_w6s54")
 brain = SubResource("Resource_tvu6o")
