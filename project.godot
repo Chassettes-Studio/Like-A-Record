@@ -19,10 +19,6 @@ run/main_scene="uid://qdp5365sk0g5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/placeholder/icon.svg"
 
-[autoload]
-
-GameManager="*uid://btavt555sfirg"
-
 [debug]
 
 gdscript/warnings/untyped_declaration=2
