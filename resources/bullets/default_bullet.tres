@@ -17,13 +17,10 @@ metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
 script = ExtResource("5_kiknh")
 metadata/_custom_type_script = "uid://b6vusje6nrle3"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lsk3w"]
-radius = 20.0
-
 [resource]
 script = ExtResource("3_8jkf3")
 texture = ExtResource("5_8jkf3")
-shape = SubResource("CircleShape2D_lsk3w")
+size = 50.0
 bullet_effects = Array[ExtResource("1_lewx2")]([SubResource("Resource_74yie")])
 hit_effects = Array[ExtResource("4_a74ow")]([SubResource("Resource_r64xa")])
 metadata/_custom_type_script = "uid://bkh04gcfmrktg"

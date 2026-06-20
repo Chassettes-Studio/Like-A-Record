@@ -14,8 +14,11 @@ var bounces := 0
 
 func _ready() -> void:
 	sprite.texture = bullet_data.texture
-	area_collision.shape = bullet_data.shape
-	body_collision.shape = bullet_data.shape
+	sprite.scale = Vector2.ONE * 2 * (bullet_data.size/bullet_data.texture.get_width())
+	var shape := CircleShape2D.new()
+	shape.radius = bullet_data.size
+	area_collision.shape = shape
+	body_collision.shape = shape
 
 
 func _on_bullet_controller_collided(collision: KinematicCollision2D) -> void:

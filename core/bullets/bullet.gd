@@ -16,7 +16,7 @@ static func create(parent: Node, bullet: Bullet, is_enemy_bullet : bool = false)
 	return entity
 
 @export var texture : Texture2D
-@export var shape: Shape2D
+@export var size: float = 100
 
 @export var collision_effects: Array[CollisionEffect]
 @export var bullet_effects: Array[BulletEffect]
