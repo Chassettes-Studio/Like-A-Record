@@ -7,6 +7,8 @@ signal damaged
 @export var DASH_SPEED: float = 5_000
 @export var DASH_ACCELERATION: float = 50_000
 
+@export var upgrades: Array[Upgrade] = []
+
 var current_state: State = MovingState.new(self, Vector2.RIGHT)
 
 @onready var hitbox: Hitbox = $Hitbox
@@ -29,6 +31,14 @@ func update_current_state(state: State) -> void:
 	self.current_state.on_exit()
 	self.current_state = state
 	self.current_state.on_enter()
+
+
+func apply_upgrade(upgrade: Upgrade) -> void:
+	upgrades.push_back(upgrade)
+	for p_effect in upgrade.player_effects:
+		pass
+	for g_effect in upgrade.gun_effects:
+		g_effect.apply(self.gun)
 
 
 func _on_hitbox_hurt(_value: float) -> void:
