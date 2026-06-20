@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dvke7witwpeqm"]
+
+[ext_resource type="Script" uid="uid://btn3nwlodlhy3" path="res://core/ui/health_bar/health_bar.gd" id="1_3lhka"]
+
+[node name="HealthBar" type="MarginContainer" unique_id=950605255]
+offset_right = 500.0
+offset_bottom = 20.0
+size_flags_horizontal = 0
+script = ExtResource("1_3lhka")
+
+[node name="Control" type="Control" parent="." unique_id=656955597]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Shadow" type="ColorRect" parent="Control" unique_id=1230578913]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0.7176471, 0, 1)
+
+[node name="Health" type="ColorRect" parent="Control" unique_id=23344807]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0, 0, 1)

@@ -1,8 +1,9 @@
 extends Node2D
 
+var upgrade_selector: PackedScene = preload("res://core/ui/upgrade/upgrade_selection.tscn")
+
 @onready var player: Player = $Player
 
-var upgrade_selector: PackedScene = preload("res://core/ui/upgrade/upgrade_selection.tscn")
 
 func _on_enemy_entity_died() -> void:
 	var instance: UpgradeSelector = upgrade_selector.instantiate()

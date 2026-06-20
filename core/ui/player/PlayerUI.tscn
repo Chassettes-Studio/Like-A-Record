@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cvwnb8nu4eaml"]
+
+[ext_resource type="Script" uid="uid://clyhv077b3mhn" path="res://core/ui/player/player_ui.gd" id="1_pn5ve"]
+[ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="1_tv5wv"]
+[ext_resource type="PackedScene" uid="uid://dvke7witwpeqm" path="res://core/ui/health_bar/health_bar.tscn" id="3_pn5ve"]
+
+[node name="PlayerUi" type="CanvasLayer" unique_id=227467206]
+script = ExtResource("1_pn5ve")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=813239391]
+custom_minimum_size = Vector2(0, 148)
+custom_maximum_size = Vector2(-1, 148)
+offset_right = 652.0
+offset_bottom = 148.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=779326652]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=705970456]
+layout_mode = 2
+texture = ExtResource("1_tv5wv")
+expand_mode = 2
+
+[node name="HealthBar" parent="MarginContainer/HBoxContainer" unique_id=950605255 instance=ExtResource("3_pn5ve")]
+custom_minimum_size = Vector2(500, 20)
+custom_maximum_size = Vector2(500, 20)
+clip_contents = true
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="Button" type="Button" parent="." unique_id=1670821051]
+offset_left = 347.0
+offset_top = 703.0
+offset_right = 639.0
+offset_bottom = 895.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -40,9 +40,7 @@ func _on_upgarde_card_free() -> void:
 	tween.tween_property(card2, "offset_transform_position", Vector2(0.0, 1000.0), 0.4)
 	tween.tween_property(card3, "offset_transform_position", Vector2(0.0, 1000.0), 0.4)
 	tween.tween_property(bg.material, "shader_parameter/spread", 0.01, 1)
-
 	await get_tree().create_timer(1).timeout
-
 	get_tree().paused = false
 	queue_free()
 
