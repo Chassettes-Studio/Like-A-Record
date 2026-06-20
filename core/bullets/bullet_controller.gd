@@ -3,8 +3,6 @@ extends SCMovementController
 
 @export var max_speed: float = 200
 
-
-
 func _physics_process(delta: float) -> void:
 	if not _knockback_vector.is_zero_approx():
 		_handle_knockback(delta)

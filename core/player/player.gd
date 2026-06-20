@@ -29,6 +29,9 @@ func update_current_state(state: State) -> void:
 	self.current_state.on_exit()
 	self.current_state = state
 	self.current_state.on_enter()
+	
+func apply_upgrade(upgrade: Upgrade) -> void:
+	return
 
 
 func _on_hitbox_hurt(_value: float) -> void:
