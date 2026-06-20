@@ -6,7 +6,7 @@ signal died
 @export var DASH_SPEED: float = 5_000
 @export var DASH_ACCELERATION: float = 50_000
 
-var current_state: State = MovingState.new(self)
+var current_state: State = MovingState.new(self, Vector2.RIGHT)
 
 @onready var hitbox: Hitbox = $Hitbox
 

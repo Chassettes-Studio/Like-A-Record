@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cevhrtrxqc8ca"]
 
+[ext_resource type="Script" uid="uid://ca2mbasvwfa5h" path="res://core/levels/test_level.gd" id="1_8188n"]
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_vpc4w"]
-[ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="2_8188n"]
-[ext_resource type="Resource" uid="uid://dnd0lioo26sm4" path="res://resources/enemies/feur.tres" id="3_r2pyx"]
+[ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
 normal = Vector2(0, 1)
@@ -16,6 +16,7 @@ normal = Vector2(1, 0)
 normal = Vector2(-1, 0)
 
 [node name="TestLevel" type="Node2D" unique_id=205418669]
+script = ExtResource("1_8188n")
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=481633547]
 collision_layer = 8
@@ -38,11 +39,14 @@ shape = SubResource("WorldBoundaryShape2D_qq6f8")
 [node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_vpc4w")]
 position = Vector2(715, 353)
 
-[node name="EnemyEntity" parent="." unique_id=255422468 node_paths=PackedStringArray("target") instance=ExtResource("2_8188n")]
-position = Vector2(182, 151)
-enemy_data = ExtResource("3_r2pyx")
+[node name="Spawner" type="Node2D" parent="." unique_id=104538081 node_paths=PackedStringArray("target")]
+script = ExtResource("2_qq6f8")
 target = NodePath("../Player")
+bottom_down_corner = Vector2(1920, 1080)
+player_view_radius = 300.0
+metadata/_custom_type_script = "uid://c0h1n5gqceb64"
 
-[node name="EnemyEntity2" parent="." unique_id=397126991 node_paths=PackedStringArray("target") instance=ExtResource("2_8188n")]
-enemy_data = ExtResource("3_r2pyx")
-target = NodePath("../Player")
+[node name="Timer" type="Timer" parent="." unique_id=1709639521]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
