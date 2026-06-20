@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://bxrjrepwrtuoc"]
+
+[ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="1_1r5q3"]
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_713ca"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="2_ho8ib"]
+[ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="3_wx1g8"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_uwafi"]
+[ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="5_k6gel"]
+[ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="6_inyy8"]
+[ext_resource type="Script" uid="uid://0n41shqk2454" path="res://core/enemies/enemy_attack/shoot_attack.gd" id="7_3kfen"]
+[ext_resource type="Script" uid="uid://5epl0x7uacmk" path="res://core/enemies/enemy_brain/basic_brain.gd" id="8_4tboo"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="10_713ca"]
+
+[sub_resource type="Resource" id="Resource_klyic"]
+script = ExtResource("3_wx1g8")
+metadata/_custom_type_script = "uid://8q128ehc7nxs"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ctl6d"]
+radius = 20.0
+
+[sub_resource type="Resource" id="Resource_perr0"]
+script = ExtResource("5_k6gel")
+texture = ExtResource("6_inyy8")
+shape = SubResource("CircleShape2D_ctl6d")
+collision_effects = Array[ExtResource("2_ho8ib")]([SubResource("Resource_klyic")])
+metadata/_custom_type_script = "uid://bkh04gcfmrktg"
+
+[sub_resource type="Resource" id="Resource_0r1fm"]
+script = ExtResource("7_3kfen")
+bullet = SubResource("Resource_perr0")
+metadata/_custom_type_script = "uid://0n41shqk2454"
+
+[sub_resource type="Resource" id="Resource_mclac"]
+script = ExtResource("8_4tboo")
+chase_stop_distance = 300.0
+chase_start_distance = 400.0
+metadata/_custom_type_script = "uid://5epl0x7uacmk"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_perr0"]
+radius = 100.0
+
+[resource]
+script = ExtResource("1_1r5q3")
+name = "Mohg"
+texture = ExtResource("10_713ca")
+shape = SubResource("CircleShape2D_perr0")
+max_health = 3
+attack = SubResource("Resource_0r1fm")
+brain = SubResource("Resource_mclac")
+metadata/_custom_type_script = "uid://koby8pounmkx"

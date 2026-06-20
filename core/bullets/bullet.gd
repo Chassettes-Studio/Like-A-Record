@@ -3,11 +3,16 @@ extends Resource
 
 const entity_scene : PackedScene = preload("res://core/bullets/entity/bullet_entity.tscn")
 
-static func create(bullet: Bullet) -> BulletEntity:
+static func create(parent: Node, bullet: Bullet, is_enemy_bullet : bool = false) -> BulletEntity:
 	var entity : BulletEntity = entity_scene.instantiate() as BulletEntity
 	entity.bullet_data = bullet
 	for effect : BulletEffect in bullet.bullet_effects:
 		effect.apply(entity)
+	parent.add_child(entity)
+	if is_enemy_bullet:
+		entity.area_2d.collision_mask = 1
+	else:
+		entity.area_2d.collision_mask = 2
 	return entity
 
 @export var texture : Texture2D

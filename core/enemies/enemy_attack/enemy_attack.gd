@@ -3,4 +3,4 @@ class_name EnemyAttack
 extends Resource
 
 
-@abstract func attack(delta: float) -> void
+@abstract func attack(delta: float, enemy: EnemyEntity) -> void
