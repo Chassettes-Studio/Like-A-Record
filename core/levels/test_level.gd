@@ -13,5 +13,11 @@ func _on_timer_timeout() -> void:
 
 
 func _on_wave_manager_trigger_new_wave() -> void:
+	print("NEW WAVE")
 	enemy_spawned_count = 0
 	wave_manager.next_wave()
+
+
+func _on_spawner_new_enemy_spawned(enemy: EnemyEntity) -> void:
+	wave_manager.increase_enemy_count()
+	enemy.died.connect(wave_manager.decrease_enemy_count)

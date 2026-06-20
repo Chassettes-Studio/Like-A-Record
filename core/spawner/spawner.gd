@@ -1,6 +1,8 @@
 class_name Spawner
 extends Node2D
 
+signal new_enemy_spawned(enemy: Enemy)
+
 const SPAWN_MAX_TRY_COUNT: int = 100
 const enemy_scene: PackedScene = preload("res://core/enemies/entity/enemy_entity.tscn")
 
@@ -13,9 +15,9 @@ var spawn_try_count: int = 0
 
 
 func spawn_enemy(resource: Enemy) -> void:
-	
-	if not is_instance_valid(target) : return
-	
+
+	if not is_instance_valid(target): return
+
 	var spawn_position: Vector2 = Vector2(0, 0)
 	while spawn_try_count < SPAWN_MAX_TRY_COUNT:
 		spawn_position.x = randf_range(top_left_corner.x, bottom_down_corner.x)
@@ -31,9 +33,8 @@ func spawn_enemy(resource: Enemy) -> void:
 			break
 		spawn_try_count += 1
 	var enemy_entity: EnemyEntity = enemy_scene.instantiate()
+	new_enemy_spawned.emit(enemy_entity)
 	enemy_entity.enemy_data = resource
 	enemy_entity.target = target
 	get_tree().current_scene.add_child(enemy_entity)
 	enemy_entity.global_position = spawn_position
-	GameManager.increase_enemy_count()
-	
