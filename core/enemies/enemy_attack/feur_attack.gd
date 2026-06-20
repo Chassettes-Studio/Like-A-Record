@@ -6,7 +6,7 @@ extends EnemyAttack
 var time_since_last_attack: float = 0
 
 
-func attack(delta: float) -> void:
+func attack(delta: float, _enemy: EnemyEntity) -> void:
 	time_since_last_attack += delta
 	if time_since_last_attack >= cooldown:
 		time_since_last_attack -= cooldown

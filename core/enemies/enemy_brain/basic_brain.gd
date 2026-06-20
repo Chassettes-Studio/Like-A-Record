@@ -31,4 +31,4 @@ func process(entity: EnemyEntity, delta: float) -> void:
 			entity.movement_controller.direction = entity.global_position.direction_to(entity.target.global_position)
 		BrainState.SHOOT:
 			entity.movement_controller.direction = Vector2.ZERO
-			entity.attack.attack(delta)
+			entity.attack.attack(delta, entity)

@@ -27,4 +27,5 @@ collision_mask = 2
 [node name="AreaCollision" type="CollisionShape2D" parent="Area2D" unique_id=1458771757]
 
 [connection signal="collided" from="BulletController" to="." method="_on_bullet_controller_collided"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -30,7 +30,6 @@ func shoot(normal: Vector2) -> void:
 
 
 func create_bullet(normal: Vector2) -> void:
-	var entity: BulletEntity = Bullet.create(bullet)
+	var entity: BulletEntity = Bullet.create(get_tree().current_scene, bullet)
 	entity.global_position = main_offset.global_position
-	get_tree().current_scene.add_child(entity)
 	entity.bullet_controller.direction = normal
