@@ -20,4 +20,5 @@ func _ready() -> void:
 	brain = enemy_data.brain.duplicate()
 
 func _physics_process(delta: float) -> void:
+	if not is_instance_valid(target) : return
 	brain.process(self, delta)

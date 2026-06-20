@@ -4,8 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dte68fsjwd52k" path="res://assets/logo/chassettes.png" id="2_xttum"]
 [ext_resource type="Script" uid="uid://10yphvuogl8w" path="res://chassettes_library/components/movement_controller/physics_controller/physics_controller.gd" id="3_e7l0y"]
 [ext_resource type="PackedScene" uid="uid://dhbvlawoug1nm" path="res://core/player/gun/gun.tscn" id="4_krwir"]
+[ext_resource type="Script" uid="uid://cncwl3usn7wkx" path="res://chassettes_library/components/health_controller/health_controller.gd" id="5_xttum"]
+[ext_resource type="Script" uid="uid://bhkby2npav4qr" path="res://core/components/hitbox.gd" id="6_e7l0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icdtu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpdy7"]
+radius = 35.057095
 
 [node name="Player" type="CharacterBody2D" unique_id=1476355945]
 collision_mask = 8
@@ -29,3 +34,22 @@ metadata/_custom_type_script = "uid://10yphvuogl8w"
 one_shot = true
 
 [node name="Gun" parent="." unique_id=1766471961 instance=ExtResource("4_krwir")]
+
+[node name="SCHealthController" type="Node" parent="." unique_id=316281508]
+script = ExtResource("5_xttum")
+base_health = 3
+metadata/_custom_type_script = "uid://cncwl3usn7wkx"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=517573572]
+script = ExtResource("6_e7l0y")
+metadata/_custom_type_script = "uid://bhkby2npav4qr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1615746516]
+shape = SubResource("CircleShape2D_vpdy7")
+
+[node name="InvulnerabilityTimer" type="Timer" parent="." unique_id=1724715491]
+one_shot = true
+
+[connection signal="died" from="SCHealthController" to="." method="_on_sc_health_controller_died"]
+[connection signal="hurt" from="Hitbox" to="." method="_on_hitbox_hurt"]
+[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_invulnerability_timer_timeout"]
