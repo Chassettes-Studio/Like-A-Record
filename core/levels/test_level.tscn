@@ -1,3 +1,52 @@
 [gd_scene format=3 uid="uid://cevhrtrxqc8ca"]
 
+[ext_resource type="Script" uid="uid://ca2mbasvwfa5h" path="res://core/levels/test_level.gd" id="1_8188n"]
+[ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_vpc4w"]
+[ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_34cbc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpc4w"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qq6f8"]
+normal = Vector2(-1, 0)
+
 [node name="TestLevel" type="Node2D" unique_id=205418669]
+script = ExtResource("1_8188n")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=481633547]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Up" type="CollisionShape2D" parent="Walls" unique_id=975420689]
+shape = SubResource("WorldBoundaryShape2D_vpdy7")
+
+[node name="Down" type="CollisionShape2D" parent="Walls" unique_id=1278406850]
+position = Vector2(0, 1080)
+shape = SubResource("WorldBoundaryShape2D_34cbc")
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=1189280782]
+shape = SubResource("WorldBoundaryShape2D_vpc4w")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=413641735]
+position = Vector2(1920, 0)
+shape = SubResource("WorldBoundaryShape2D_qq6f8")
+
+[node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_vpc4w")]
+position = Vector2(715, 353)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=104538081 node_paths=PackedStringArray("target")]
+script = ExtResource("2_qq6f8")
+target = NodePath("../Player")
+bottom_down_corner = Vector2(1920, 1080)
+player_view_radius = 300.0
+metadata/_custom_type_script = "uid://c0h1n5gqceb64"
+
+[node name="Timer" type="Timer" parent="." unique_id=1709639521]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

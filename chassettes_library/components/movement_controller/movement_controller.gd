@@ -3,6 +3,8 @@
 class_name SCMovementController
 extends Node
 
+signal collided(collision: KinematicCollision2D)
+
 ## The [CharacterBody2D] that will be moved by the controller.
 @export var target: CharacterBody2D
 ## The [enum CharacterBody2D.MotionMode] used for [member target].
@@ -39,7 +41,10 @@ func _physics_process(delta: float) -> void:
 		if motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
 			_apply_gravity(delta)
 		_update_velocity(delta)
-	target.move_and_slide()
+	if target.move_and_slide():
+		for i in target.get_slide_collision_count():
+			collided.emit(target.get_slide_collision(i))
+	
 
 
 ## Abstract function that will be called before every [method CharacterBody2D.move_and_slide].
