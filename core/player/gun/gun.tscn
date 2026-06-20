@@ -14,4 +14,7 @@ texture = ExtResource("1_iuath")
 
 [node name="BulletInterval" type="Timer" parent="." unique_id=1526913275]
 
+[node name="ShootingCooldownTimer" type="Timer" parent="." unique_id=731203922]
+
 [connection signal="timeout" from="BulletInterval" to="." method="_on_bullet_interval_timeout"]
+[connection signal="timeout" from="ShootingCooldownTimer" to="." method="_on_shooting_cooldown_timer_timeout"]
