@@ -21,7 +21,10 @@ target = NodePath("..")
 metadata/_custom_type_script = "uid://ce7pqpa0bn5st"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1604781203]
+collision_layer = 0
+collision_mask = 2
 
 [node name="AreaCollision" type="CollisionShape2D" parent="Area2D" unique_id=1458771757]
 
 [connection signal="collided" from="BulletController" to="." method="_on_bullet_controller_collided"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://bkhxf1lnuow3y" path="res://core/components/damage_area.gd" id="4_r64xa"]
 
 [node name="EnemyEntity" type="CharacterBody2D" unique_id=255422468]
+collision_layer = 2
+collision_mask = 10
 script = ExtResource("1_8jowh")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1241666923]
@@ -35,3 +37,5 @@ script = ExtResource("4_r64xa")
 metadata/_custom_type_script = "uid://bkhxf1lnuow3y"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=524853481]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=920109018]
