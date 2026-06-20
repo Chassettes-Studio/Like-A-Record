@@ -27,7 +27,7 @@ func init(upgrade: Upgrade) -> void:
 func upgrade_selected() -> void:
 	var tween: Tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-	tween.set_parallel(true)
+	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(cd_sprite, "offset_transform_position_ratio", Vector2(0.0, -3.0), 0.4)
 	await get_tree().create_timer(1).timeout
 	free.emit()
@@ -38,7 +38,7 @@ func _on_margin_container_mouse_entered() -> void:
 	z_index = 1
 	var tween: Tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-	tween.set_parallel(true)
+	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(container, "offset_transform_scale", Vector2(1.2, 1.2), 0.4)
 	tween.tween_property(cd_sprite, "offset_transform_position_ratio", Vector2(0.0, -0.5), 0.4)
 	tween.tween_property(cd_sprite, "offset_transform_rotation", 0.6, 0.4)
@@ -51,7 +51,7 @@ func _on_margin_container_mouse_exited() -> void:
 	z_index = 0
 	var tween: Tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-	tween.set_parallel(true)
+	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(container, "offset_transform_scale", Vector2(1.0, 1.0), 0.4)
 	tween.tween_property(cd_sprite, "offset_transform_position_ratio", Vector2(0.0, 0.0), 0.4)
 	tween.tween_property(cd_sprite, "offset_transform_rotation", 0.0, 0.4)

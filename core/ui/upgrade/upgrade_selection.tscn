@@ -2,12 +2,43 @@
 
 [ext_resource type="Script" uid="uid://b6dhfgtmf03hy" path="res://core/ui/upgrade/upgrade_selection.gd" id="1_pylfn"]
 [ext_resource type="PackedScene" uid="uid://crh55ejweuisx" path="res://core/ui/upgrade/upgardeCard.tscn" id="1_s0gyl"]
+[ext_resource type="Shader" uid="uid://k6fxvvwwppbr" path="res://shaders/aura.gdshader" id="3_jkc4t"]
+
+[sub_resource type="Gradient" id="Gradient_jkc4t"]
+offsets = PackedFloat32Array(0.015151516, 0.1590909, 0.36363637, 0.46969697, 0.7121212, 1)
+colors = PackedColorArray(1, 0.84313726, 0.41568628, 1, 1, 0, 0.30588236, 1, 1, 0.14505614, 0.2784314, 1, 1, 0.74600303, 0.1647059, 1, 0.23137255, 0.47843137, 1, 1, 1, 0.71671987, 0.43785682, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jkc4t"]
+gradient = SubResource("Gradient_jkc4t")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gtu5s"]
+shader = ExtResource("3_jkc4t")
+shader_parameter/pixelation = Vector2(512, 512)
+shader_parameter/gradient = SubResource("GradientTexture1D_jkc4t")
+shader_parameter/spread = 0.00999999977648
+shader_parameter/size = 0.5000000712500001
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 16.0
+shader_parameter/ray2_density = 9.10000043225
+shader_parameter/ray2_intensity = 0.2150001052124999
+shader_parameter/core_intensity = 0.8000000855
+shader_parameter/hdr = false
+shader_parameter/seed = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
 font_size = 128
 
 [node name="UpgradeSelection" type="CanvasLayer" unique_id=1452786776]
+process_mode = 3
 script = ExtResource("1_pylfn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1527879192]
+material = SubResource("ShaderMaterial_gtu5s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=976078529]
 anchors_preset = 15
@@ -25,6 +56,7 @@ layout_mode = 2
 theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=99552913]
+z_index = 2
 layout_mode = 2
 text = "Upgrade Time"
 label_settings = SubResource("LabelSettings_gtu5s")
@@ -45,16 +77,18 @@ alignment = 1
 [node name="UpgardeCard" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=315482807 instance=ExtResource("1_s0gyl")]
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, 30)
+offset_transform_position = Vector2(0, 1000)
 offset_transform_rotation = -0.10471976
 
 [node name="UpgardeCard2" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1867022390 instance=ExtResource("1_s0gyl")]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 1000)
 
 [node name="UpgardeCard3" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=440740688 instance=ExtResource("1_s0gyl")]
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, 30)
+offset_transform_position = Vector2(0, 1000)
 offset_transform_rotation = 0.10471976
 
 [connection signal="free" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard" to="." method="_on_upgarde_card_free"]

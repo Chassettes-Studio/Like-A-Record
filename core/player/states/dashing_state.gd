@@ -13,12 +13,12 @@ func _init(new_target: Player, direction: Vector2) -> void:
 
 func on_enter() -> void:
 	target.sc_physics_controller.set_physics_process(false)
-
+	target.hitbox.set_hittable(false)
 
 func on_exit() -> void:
 	target.sc_physics_controller.set_physics_process(true)
 	target.velocity = dash_direction * target.sc_physics_controller.max_speed
-
+	target.hitbox.set_hittable(true)
 
 func physics_process(delta: float) -> void:
 	target.velocity = target.velocity.move_toward(target.DASH_SPEED * dash_direction, delta * target.DASH_ACCELERATION)

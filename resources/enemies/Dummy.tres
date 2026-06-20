@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://cb7blx8quhmft"]
+
+[ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="1_uhh66"]
+[ext_resource type="Script" uid="uid://bmnm6pyhhry5o" path="res://core/enemies/enemy_attack/no_attack.gd" id="1_urcwc"]
+[ext_resource type="Script" uid="uid://dw2cv271cg2nd" path="res://core/enemies/enemy_brain/idle_brain.gd" id="2_brwim"]
+[ext_resource type="Texture2D" uid="uid://ndtekr7g2585" path="res://assets/logo/godotLogo.png" id="4_kni41"]
+
+[sub_resource type="Resource" id="Resource_vk458"]
+script = ExtResource("1_urcwc")
+metadata/_custom_type_script = "uid://bmnm6pyhhry5o"
+
+[sub_resource type="Resource" id="Resource_5k7ar"]
+script = ExtResource("2_brwim")
+metadata/_custom_type_script = "uid://dw2cv271cg2nd"
+
+[resource]
+script = ExtResource("1_uhh66")
+name = "Dummy"
+texture = ExtResource("4_kni41")
+min_wave = 100
+weight = 999.0
+attack = SubResource("Resource_vk458")
+brain = SubResource("Resource_5k7ar")
+metadata/_custom_type_script = "uid://koby8pounmkx"
