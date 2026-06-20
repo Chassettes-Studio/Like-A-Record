@@ -1,9 +1,10 @@
 extends Node2D
 
+var enemy_spawned_count: int = 0
+
 @onready var spawner: Spawner = $Spawner
 @onready var wave_manager: WaveManager = $WaveManager
 
-var enemy_spawned_count: int = 0
 
 func _on_timer_timeout() -> void:
 	if enemy_spawned_count < wave_manager.total_enemy_count:
