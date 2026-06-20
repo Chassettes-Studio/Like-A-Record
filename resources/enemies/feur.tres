@@ -19,6 +19,7 @@ metadata/_custom_type_script = "uid://5epl0x7uacmk"
 script = ExtResource("1_m0vnv")
 name = "Feur"
 texture = ExtResource("4_nesrm")
+max_health = 3
 attack = SubResource("Resource_w6s54")
 brain = SubResource("Resource_tvu6o")
 metadata/_custom_type_script = "uid://koby8pounmkx"
