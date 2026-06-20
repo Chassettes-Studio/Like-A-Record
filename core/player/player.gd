@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal died
+signal damaged
 
 @export var DASH_SPEED: float = 5_000
 @export var DASH_ACCELERATION: float = 50_000
@@ -43,3 +44,7 @@ func _on_invulnerability_timer_timeout() -> void:
 func _on_sc_health_controller_died() -> void:
 	died.emit()
 	queue_free()
+
+
+func _on_sc_health_controller_damaged() -> void:
+	damaged.emit()
