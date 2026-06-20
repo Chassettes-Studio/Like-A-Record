@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 @export var target: Node2D
 
+@onready var damage_shape: CollisionShape2D = $DamageArea/CollisionShape2D
+
 @onready var movement_controller: SCPhysicsController = $SCPhysicsController
 @onready var sprite: Sprite2D = $Sprite
 @onready var name_label: Label = $NameLabel
@@ -16,6 +18,7 @@ var brain : EnemyBrain
 func _ready() -> void:
 	sprite.texture = enemy_data.texture
 	name_label.text = enemy_data.name
+	damage_shape.shape = enemy_data.shape
 	attack = enemy_data.attack.duplicate()
 	brain = enemy_data.brain.duplicate()
 

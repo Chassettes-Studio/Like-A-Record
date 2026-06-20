@@ -41,6 +41,7 @@ base_health = 3
 metadata/_custom_type_script = "uid://cncwl3usn7wkx"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=517573572]
+collision_mask = 0
 script = ExtResource("6_e7l0y")
 metadata/_custom_type_script = "uid://bhkby2npav4qr"
 
