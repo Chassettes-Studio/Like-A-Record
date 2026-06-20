@@ -21,6 +21,9 @@ func _process(delta: float) -> void:
 
 
 func spawn_enemy(resource: Enemy) -> void:
+	
+	if not is_instance_valid(target) : return
+	
 	var spawn_position: Vector2 = Vector2(0, 0)
 	while spawn_try_count < SPAWN_MAX_TRY_COUNT:
 		spawn_position.x = randf_range(top_left_corner.x, bottom_down_corner.x)

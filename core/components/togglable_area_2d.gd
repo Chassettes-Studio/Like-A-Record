@@ -5,4 +5,4 @@ func set_hittable(hittable: float) -> void:
 	for child: Node in get_children():
 		var colshape := child as CollisionShape2D
 		if colshape:
-			colshape.disabled = not hittable
+			colshape.set_deferred("disabled", not hittable)
