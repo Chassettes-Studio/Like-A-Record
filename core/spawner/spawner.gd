@@ -37,6 +37,7 @@ func spawn_enemy(resource: Enemy) -> void:
 		spawn_try_count += 1
 	var enemy_entity: EnemyEntity = enemy_scene.instantiate()
 	enemy_entity.enemy_data = resource
+	enemy_entity.target = target
 	get_tree().current_scene.add_child(enemy_entity)
 	enemy_entity.global_position = spawn_position
 	GameManager.increase_enemy_count()
