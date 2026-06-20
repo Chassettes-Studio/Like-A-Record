@@ -11,6 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_s5bj2"]
 script = ExtResource("4_jkpwt")
+multiplied_projectile_count = 2
 metadata/_custom_type_script = "uid://bh1y6r2pakjh"
 
 [sub_resource type="Resource" id="Resource_qwhjy"]

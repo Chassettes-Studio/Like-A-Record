@@ -39,7 +39,6 @@ func shoot(normal: Vector2) -> void:
 			var angle: float = randf_range(-spread_angle / 2, spread_angle / 2)
 			create_bullet(normal.rotated(angle))
 
-
 func create_bullet(normal: Vector2) -> void:
 	var entity: BulletEntity = Bullet.create(bullet)
 	entity.global_position = main_offset.global_position
