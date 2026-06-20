@@ -54,5 +54,6 @@ autostart = true
 script = ExtResource("4_r2pyx")
 metadata/_custom_type_script = "uid://cqodewu2t3855"
 
+[connection signal="new_enemy_spawned" from="Spawner" to="." method="_on_spawner_new_enemy_spawned"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="trigger_new_wave" from="WaveManager" to="." method="_on_wave_manager_trigger_new_wave"]
