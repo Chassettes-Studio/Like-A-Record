@@ -1,5 +1,5 @@
 class_name IdleBrain
 extends EnemyBrain
 
-func process(entity: EnemyEntity, delta: float) -> void:
+func process(_entity: EnemyEntity, _delta: float) -> void:
 	return
