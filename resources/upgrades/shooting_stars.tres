@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_1yvl4"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_3621c"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="7_y5imh"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="8_2oqya"]
+[ext_resource type="Texture2D" uid="uid://b8q7nm4ruefeo" path="res://assets/shouting_star.png" id="8_yrtag"]
 
 [sub_resource type="Resource" id="Resource_r2pyx"]
 script = ExtResource("2_i5lxg")
@@ -17,6 +17,6 @@ metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
 script = ExtResource("7_y5imh")
 name = "Shooting Star"
 description = "Makes the bullet faster"
-sprite = ExtResource("8_2oqya")
+sprite = ExtResource("8_yrtag")
 bullet_effects = Array[ExtResource("1_yrtag")]([SubResource("Resource_r2pyx")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

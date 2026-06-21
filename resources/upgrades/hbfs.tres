@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_m35qc"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_ld76p"]
 [ext_resource type="Script" uid="uid://c5cb44d164041" path="res://core/upgrades/effect/player_effect/faster_movement.gd" id="6_nbbiq"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="7_0ays3"]
+[ext_resource type="Texture2D" uid="uid://dhgqciffp5itg" path="res://assets/faster.png" id="8_nbbiq"]
 
 [sub_resource type="Resource" id="Resource_74yie"]
 script = ExtResource("6_nbbiq")
@@ -18,6 +18,6 @@ metadata/_custom_type_script = "uid://c5cb44d164041"
 script = ExtResource("6_ld76p")
 name = "Harder Better Faster Stronger"
 description = "You move faster"
-sprite = ExtResource("7_0ays3")
+sprite = ExtResource("8_nbbiq")
 player_effects = Array[ExtResource("5_m35qc")]([SubResource("Resource_74yie")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"
