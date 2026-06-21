@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_o7ked"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_x4ti7"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="7_icui2"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="8_joelc"]
+[ext_resource type="Texture2D" uid="uid://beyupm5bkmyeb" path="res://assets/encore.png" id="8_s2bcw"]
 
 [sub_resource type="Resource" id="Resource_r2pyx"]
 script = ExtResource("2_elihn")
@@ -18,6 +18,6 @@ metadata/_custom_type_script = "uid://cp4ij1nln6rty"
 script = ExtResource("7_icui2")
 name = "Encore"
 description = "Adds a bounce to bullets"
-sprite = ExtResource("8_joelc")
+sprite = ExtResource("8_s2bcw")
 bullet_effects = Array[ExtResource("1_s2bcw")]([SubResource("Resource_r2pyx")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

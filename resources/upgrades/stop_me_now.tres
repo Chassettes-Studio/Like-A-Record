@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://m7qs5k4ayjbi" path="res://core/upgrades/effect/hit_effect/freeze.gd" id="5_bmo1k"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_kuwck"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_0yfr4"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="8_70cj2"]
+[ext_resource type="Texture2D" uid="uid://7iappr4fimb8" path="res://assets/pause.png" id="8_70cj2"]
 
 [sub_resource type="Resource" id="Resource_t84gh"]
 script = ExtResource("5_bmo1k")
