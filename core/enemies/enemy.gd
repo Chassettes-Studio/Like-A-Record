@@ -9,6 +9,5 @@ extends Resource
 
 @export var size: float = 100
 @export var max_health : int = 1
-@export var attack: EnemyAttack
 @export var brain: EnemyBrain
 @export var death_effects: Array[EnemyDeath]

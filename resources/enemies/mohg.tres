@@ -15,32 +15,35 @@
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="11_inyy8"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="12_3kfen"]
 
-[sub_resource type="Resource" id="Resource_r64xa"]
+[sub_resource type="Resource" id="Resource_713ca"]
 script = ExtResource("2_wx1g8")
 speed = 200.0
 metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
 
-[sub_resource type="Resource" id="Resource_klyic"]
+[sub_resource type="Resource" id="Resource_61xrs"]
 script = ExtResource("3_wx1g8")
 metadata/_custom_type_script = "uid://8q128ehc7nxs"
 
-[sub_resource type="Resource" id="Resource_perr0"]
+[sub_resource type="Resource" id="Resource_mgiig"]
 script = ExtResource("5_k6gel")
 texture = ExtResource("7_ho8ib")
-color = Color(0.8, 0.12941177, 0.2, 1)
-collision_effects = Array[ExtResource("2_ho8ib")]([SubResource("Resource_klyic")])
-bullet_effects = Array[ExtResource("1_713ca")]([SubResource("Resource_r64xa")])
+size = 50.0
+color = Color(1, 0, 0, 1)
+collision_effects = Array[ExtResource("2_ho8ib")]([SubResource("Resource_61xrs")])
+bullet_effects = Array[ExtResource("1_713ca")]([SubResource("Resource_713ca")])
 metadata/_custom_type_script = "uid://bkh04gcfmrktg"
 
-[sub_resource type="Resource" id="Resource_0r1fm"]
+[sub_resource type="Resource" id="Resource_mclac"]
+resource_local_to_scene = true
 script = ExtResource("7_3kfen")
-bullet = SubResource("Resource_perr0")
+bullet = SubResource("Resource_mgiig")
 metadata/_custom_type_script = "uid://0n41shqk2454"
 
-[sub_resource type="Resource" id="Resource_mclac"]
+[sub_resource type="Resource" id="Resource_k6gel"]
 script = ExtResource("8_4tboo")
 chase_stop_distance = 400.0
 chase_start_distance = 600.0
+attack = SubResource("Resource_mclac")
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
 [sub_resource type="Resource" id="Resource_rp8se"]
@@ -54,7 +57,6 @@ name = "Mohg"
 texture = ExtResource("11_ho8ib")
 size = 150.0
 max_health = 3
-attack = SubResource("Resource_0r1fm")
-brain = SubResource("Resource_mclac")
+brain = SubResource("Resource_k6gel")
 death_effects = Array[ExtResource("10_k6gel")]([SubResource("Resource_rp8se")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

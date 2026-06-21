@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="2_oq6wo"]
 [ext_resource type="Resource" uid="uid://dsncrpu7hwjt7" path="res://resources/upgrades/sustain.tres" id="3_e703i"]
 [ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="3_ebf7h"]
+[ext_resource type="Resource" uid="uid://c8siir1sy8tn4" path="res://resources/enemies/laser_disc.tres" id="6_e703i"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gs88k"]
@@ -45,7 +46,7 @@ position = Vector2(765, 373)
 
 [node name="EnemyEntity" parent="." unique_id=255422468 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
 position = Vector2(1617, 787)
-enemy_data = ExtResource("6_oq6wo")
+enemy_data = ExtResource("6_e703i")
 target = NodePath("../Player")
 
 [node name="EnemyEntity2" parent="." unique_id=1490940008 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
@@ -77,3 +78,5 @@ target = NodePath("../Player")
 position = Vector2(1318, 690)
 enemy_data = ExtResource("6_oq6wo")
 target = NodePath("../Player")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1774771549]
