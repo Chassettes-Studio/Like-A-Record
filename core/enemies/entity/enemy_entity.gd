@@ -39,6 +39,7 @@ func take_damage(value: int) -> void:
 	modulate = Color(4,4,4)
 	health -= value
 	if health <= 0:
+		Score.add_score(enemy_data.score)
 		died.emit()
 		queue_free()
 	await get_tree().create_timer(.1).timeout
