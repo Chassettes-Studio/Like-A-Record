@@ -61,16 +61,16 @@ metadata/_custom_type_script = "uid://c0h1n5gqceb64"
 [node name="Timer" type="Timer" parent="." unique_id=1709639521]
 autostart = true
 
-[node name="WaveManager" type="Node" parent="." unique_id=1932516513]
+[node name="WaveManager" type="Node" parent="." unique_id=1932516513 node_paths=PackedStringArray("spawner")]
 script = ExtResource("4_r2pyx")
+spawner = NodePath("../Spawner")
 total_enemy_count = 3
 metadata/_custom_type_script = "uid://cqodewu2t3855"
 
-[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("audio_player", "player", "spawner", "wave_manager")]
+[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("audio_player", "player", "wave_manager")]
 script = ExtResource("4_7e2dr")
 audio_player = NodePath("AudioStreamPlayer")
 player = NodePath("../Player")
-spawner = NodePath("../Spawner")
 wave_manager = NodePath("../WaveManager")
 metadata/_custom_type_script = "uid://0a4b642jtkl5"
 

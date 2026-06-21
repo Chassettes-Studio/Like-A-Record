@@ -7,7 +7,7 @@ extends Node2D
 @export var burst: float = 0
 @export var shooting_cooldown: float = 0.5
 @export_range(0, 360, 0.1, "radians_as_degrees") var spread_angle: float = 0
-@export var bullet: Bullet = preload("res://resources/bullets/default_bullet.tres")
+@export var bullet: Bullet = preload("res://resources/bullets/default_bullet.tres").duplicate()
 
 @export var hit_effects: Array[HitEffect] = []
 @export var bullet_effects: Array[BulletEffect] = []

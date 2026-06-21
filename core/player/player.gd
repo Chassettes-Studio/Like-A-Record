@@ -9,10 +9,14 @@ signal damaged
 
 @export var upgrades: Array[Upgrade] = []
 
+@export var character: Character
+
 var current_state: State = MovingState.new(self, Vector2.RIGHT)
+var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
+
+var dash_unlocked := false
 
 @onready var blink_timer: Timer = $BlinkTimer
-var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
 
 @onready var hitbox: Hitbox = $Hitbox
 
@@ -23,8 +27,6 @@ var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
 @onready var dash_cooldown: Timer = $DashCooldown
 @onready var gun: Gun = $Gun
 @onready var ui: PlayerUi = $PlayerUi
-
-@export var character : Character
 
 
 func _physics_process(delta: float) -> void:

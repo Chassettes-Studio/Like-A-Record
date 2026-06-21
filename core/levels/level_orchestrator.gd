@@ -5,7 +5,6 @@ extends Node
 
 @export var audio_player: AudioStreamPlayer
 @export var player: Player
-@export var spawner: Spawner
 @export var wave_manager: WaveManager
 
 var spawn_timer: Timer
@@ -26,7 +25,6 @@ func _start_music_loop() -> void:
 func _connect_signals() -> void:
 	player.died.connect(_on_player_death)
 	wave_manager.trigger_new_wave.connect(_on_wave_manager_trigger_new_wave)
-	spawner.new_enemy_spawned.connect(_on_spawner_new_enemy_spawned)
 	
 func _create_timer() -> void:
 	spawn_timer = Timer.new()
@@ -37,10 +35,7 @@ func _create_timer() -> void:
 	spawn_timer.start(spawn_interval)
 
 func _on_timer_timeout() -> void:
-	if wave_manager.left_to_spawn > 0:
-		spawner.spawn_enemy(wave_manager.get_random_enemy())
-		wave_manager.left_to_spawn -= 1
-
+	wave_manager.try_spawn()
 
 func _on_wave_manager_trigger_new_wave() -> void:
 	var upgrade_selection : UpgradeSelector = upgrade_scene.instantiate()
@@ -49,11 +44,9 @@ func _on_wave_manager_trigger_new_wave() -> void:
 	upgrade_selection.init(upgrades[0],upgrades[1],upgrades[2])
 	var new_upgrade : Upgrade = await upgrade_selection.upgrade_chosen
 	player.apply_upgrade(new_upgrade)
+	player.health_controller.heal(1)
 	UpgradeManager.upgrade_chosen(new_upgrade)
 	wave_manager.next_wave()
 
 func _on_player_death() -> void:
 	audio_player.stop()
-
-func _on_spawner_new_enemy_spawned(enemy: EnemyEntity) -> void:
-	enemy.died.connect(wave_manager.enemy_killed)
