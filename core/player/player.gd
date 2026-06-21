@@ -43,6 +43,7 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 	gun.bullet.bullet_effects.append_array(upgrade.bullet_effects)
 	gun.bullet.collision_effects.append_array(upgrade.collision_effects)
 	gun.bullet.hit_effects.append_array(upgrade.hit_effects)
+	ui.update_upgrade(upgrades)
 
 
 func _on_hitbox_hurt(_value: float) -> void:
