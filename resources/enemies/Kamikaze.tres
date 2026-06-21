@@ -4,9 +4,7 @@
 [ext_resource type="Script" uid="uid://ryycmljdgqkv" path="res://core/enemies/enemy_attack/kamikaze_attack.gd" id="1_tcryr"]
 [ext_resource type="Script" uid="uid://c6m6m6ojjvoa6" path="res://core/enemies/enemy_brain/kamikaze_brain.gd" id="2_q1v2b"]
 [ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="2_rw5xl"]
-[ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="4_0o4p3"]
-[ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="5_dfmbd"]
-[ext_resource type="Texture2D" uid="uid://cdck38dj3bksu" path="res://assets/musicStuff/vinyle.png" id="7_m2b1g"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="5_1k40r"]
 
 [sub_resource type="Resource" id="Resource_s57tb"]
 script = ExtResource("1_tcryr")
@@ -18,17 +16,12 @@ script = ExtResource("2_q1v2b")
 attack = SubResource("Resource_s57tb")
 metadata/_custom_type_script = "uid://c6m6m6ojjvoa6"
 
-[sub_resource type="Resource" id="Resource_dx4nd"]
-script = ExtResource("5_dfmbd")
-scene = ExtResource("4_0o4p3")
-metadata/_custom_type_script = "uid://cfihy37c1wi2w"
-
 [resource]
 script = ExtResource("2_rw5xl")
 name = "Kamikaze"
-texture = ExtResource("7_m2b1g")
+texture = ExtResource("5_1k40r")
+min_wave = 10
 size = 50.0
-max_health = 10
+max_health = 6
 brain = SubResource("Resource_1k40r")
-death_effects = Array[ExtResource("1_s2bfu")]([SubResource("Resource_dx4nd")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

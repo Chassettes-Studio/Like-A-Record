@@ -53,10 +53,12 @@ metadata/_custom_type_script = "uid://cfihy37c1wi2w"
 
 [resource]
 script = ExtResource("1_1r5q3")
-name = "Mohg"
+name = "Vinyl"
 texture = ExtResource("11_ho8ib")
-size = 150.0
-max_health = 3
+min_wave = 3
+weight = 3.0
+size = 120.0
+max_health = 4
 brain = SubResource("Resource_k6gel")
 death_effects = Array[ExtResource("10_k6gel")]([SubResource("Resource_rp8se")])
 metadata/_custom_type_script = "uid://koby8pounmkx"
