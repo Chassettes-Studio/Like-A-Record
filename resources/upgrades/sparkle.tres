@@ -18,7 +18,8 @@ metadata/_custom_type_script = "uid://bnrvnvfa7l240"
 [resource]
 script = ExtResource("6_wxl0k")
 name = "Sparkle"
-description = "The bullets emits particles."
+description = "The bullets emits particles.
+Useless but pretty"
 sprite = ExtResource("9_s2q5f")
 stackable = false
 bullet_effects = Array[ExtResource("1_ytvll")]([SubResource("Resource_us5t1")])

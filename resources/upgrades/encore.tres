@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://cp4ij1nln6rty"
 [resource]
 script = ExtResource("7_icui2")
 name = "Encore"
-description = "Adds a bounce to bullets"
+description = "Bullets bounce off walls"
 sprite = ExtResource("8_s2bcw")
 bullet_effects = Array[ExtResource("1_s2bcw")]([SubResource("Resource_r2pyx")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"
