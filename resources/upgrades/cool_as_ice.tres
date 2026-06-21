@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://rrwnc3d2v4hm"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_xkb3p"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="2_wiv7r"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="3_swusg"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_f0u3w"]
+[ext_resource type="Script" uid="uid://btd1anu84386t" path="res://core/upgrades/effect/gun_effect/reduce_cooldown.gd" id="4_wiv7r"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_0e3lp"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_7fqrk"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="7_7by3y"]
+
+[sub_resource type="Resource" id="Resource_74yie"]
+script = ExtResource("4_wiv7r")
+reduction = 0.2
+metadata/_custom_type_script = "uid://btd1anu84386t"
+
+[resource]
+script = ExtResource("6_7fqrk")
+name = "Cool as Ice"
+description = "Decreases the shooting cooldown"
+sprite = ExtResource("7_7by3y")
+gun_effects = Array[ExtResource("3_swusg")]([SubResource("Resource_74yie")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"

@@ -37,7 +37,7 @@ func update_current_state(state: State) -> void:
 func apply_upgrade(upgrade: Upgrade) -> void:
 	upgrades.append(upgrade)
 	for p_effect in upgrade.player_effects:
-		pass
+		p_effect.apply(self)
 	for g_effect in upgrade.gun_effects:
 		g_effect.apply(self.gun)
 	gun.bullet.bullet_effects.append_array(upgrade.bullet_effects)

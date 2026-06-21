@@ -33,8 +33,8 @@ func create_enemy_pool() -> void:
 func next_wave() -> void:
 	current_wave += 1
 	create_enemy_pool()
+	killcount -= total_enemy_count
 	total_enemy_count += current_wave
-	killcount = 0
 	left_to_spawn = total_enemy_count
 
 

@@ -8,10 +8,11 @@
 [ext_resource type="Script" uid="uid://bh1y6r2pakjh" path="res://core/upgrades/effect/gun_effect/multiplied_projectile_count.gd" id="4_jkpwt"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_qme1d"]
 [ext_resource type="Script" uid="uid://d2lfp08q4m4fm" path="res://core/upgrades/effect/gun_effect/added_spread_angle_effect.gd" id="5_qwhjy"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="9_jda1l"]
 
 [sub_resource type="Resource" id="Resource_s5bj2"]
 script = ExtResource("4_jkpwt")
-multiplied_projectile_count = 2
+multiplied_projectile_count = 3
 metadata/_custom_type_script = "uid://bh1y6r2pakjh"
 
 [sub_resource type="Resource" id="Resource_qwhjy"]
@@ -21,6 +22,8 @@ metadata/_custom_type_script = "uid://d2lfp08q4m4fm"
 
 [resource]
 script = ExtResource("1_omsmg")
-name = "Double Barrel"
+name = "Arpeggio"
+description = "Shoots in a burst pattern"
+sprite = ExtResource("9_jda1l")
 gun_effects = Array[ExtResource("3_qwhjy")]([SubResource("Resource_s5bj2"), SubResource("Resource_qwhjy")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

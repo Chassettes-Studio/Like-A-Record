@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="3_74yie"]
 [ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
-[ext_resource type="Resource" uid="uid://c64jceadto3ft" path="res://resources/upgrades/double_barrel.tres" id="4_v7f4j"]
+[ext_resource type="Resource" uid="uid://c64jceadto3ft" path="res://resources/upgrades/arpeggio.tres" id="4_v7f4j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
 normal = Vector2(0, 1)

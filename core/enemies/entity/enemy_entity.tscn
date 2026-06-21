@@ -39,3 +39,8 @@ metadata/_custom_type_script = "uid://bkhxf1lnuow3y"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=524853481]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=920109018]
+
+[node name="FreezeTimer" type="Timer" parent="." unique_id=945766233]
+one_shot = true
+
+[connection signal="timeout" from="FreezeTimer" to="." method="_on_freeze_timer_timeout"]
