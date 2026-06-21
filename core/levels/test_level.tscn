@@ -55,7 +55,7 @@ remote_path = NodePath("../../Camera2D")
 script = ExtResource("2_qq6f8")
 target = NodePath("../Player")
 bottom_down_corner = Vector2(1920, 1080)
-player_view_radius = 300.0
+player_view_radius = 600.0
 metadata/_custom_type_script = "uid://c0h1n5gqceb64"
 
 [node name="Timer" type="Timer" parent="." unique_id=1709639521]
@@ -84,7 +84,8 @@ limit_left = 0
 limit_top = 0
 limit_right = 3840
 limit_bottom = 2160
+position_smoothing_enabled = true
+position_smoothing_speed = 25.0
 
-[connection signal="new_enemy_spawned" from="Spawner" to="." method="_on_spawner_new_enemy_spawned"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="trigger_new_wave" from="WaveManager" to="." method="_on_wave_manager_trigger_new_wave"]
