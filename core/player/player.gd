@@ -21,6 +21,8 @@ var current_state: State = MovingState.new(self, Vector2.RIGHT)
 @onready var gun: Gun = $Gun
 @onready var ui: PlayerUi = $PlayerUi
 
+@export var character : Character
+
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)

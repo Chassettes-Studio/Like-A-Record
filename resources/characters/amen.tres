@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://wyu6dfljwpfe"]
+
+[ext_resource type="Script" uid="uid://d05ygn0p2c2g8" path="res://core/player/character/character.gd" id="1_4cmrr"]
+[ext_resource type="AudioStream" uid="uid://b76mykg5cydbl" path="res://assets/audios/music/amen_intro.ogg" id="1_b0lrt"]
+[ext_resource type="AudioStream" uid="uid://dw5oqmmqbcuyc" path="res://assets/audios/music/amen_loop.ogg" id="2_1ij4t"]
+[ext_resource type="Texture2D" uid="uid://cglo06j834ih7" path="res://assets/logo/Godot_icon.svg" id="4_csqqj"]
+
+[resource]
+script = ExtResource("1_4cmrr")
+name = "Amen"
+texture = ExtResource("4_csqqj")
+intro_song = ExtResource("1_b0lrt")
+loop_song = ExtResource("2_1ij4t")
+metadata/_custom_type_script = "uid://d05ygn0p2c2g8"
