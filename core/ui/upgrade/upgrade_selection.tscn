@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6dhfgtmf03hy" path="res://core/ui/upgrade/upgrade_selection.gd" id="1_pylfn"]
 [ext_resource type="PackedScene" uid="uid://crh55ejweuisx" path="res://core/ui/upgrade/upgardeCard.tscn" id="1_s0gyl"]
 [ext_resource type="Shader" uid="uid://k6fxvvwwppbr" path="res://shaders/aura.gdshader" id="3_jkc4t"]
+[ext_resource type="AudioStream" uid="uid://cym2030isdcg6" path="res://assets/audios/sound/insert_disc.ogg" id="4_lwde0"]
 
 [sub_resource type="Gradient" id="Gradient_jkc4t"]
 offsets = PackedFloat32Array(0.015151516, 0.1590909, 0.36363637, 0.46969697, 0.7121212, 1)
@@ -90,6 +91,9 @@ layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 1000)
 offset_transform_rotation = 0.10471976
+
+[node name="InsertDisc" type="AudioStreamPlayer" parent="." unique_id=877873396]
+stream = ExtResource("4_lwde0")
 
 [connection signal="free" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard" to="." method="_on_upgarde_card_free"]
 [connection signal="upgrade_chosen" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/UpgardeCard" to="." method="_on_upgarde_card_upgrade_chosen"]

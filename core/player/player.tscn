@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhbvlawoug1nm" path="res://core/player/gun/gun.tscn" id="4_krwir"]
 [ext_resource type="Script" uid="uid://cncwl3usn7wkx" path="res://chassettes_library/components/health_controller/health_controller.gd" id="5_xttum"]
 [ext_resource type="Script" uid="uid://bhkby2npav4qr" path="res://core/components/hitbox.gd" id="6_e7l0y"]
+[ext_resource type="AudioStream" uid="uid://cj2mehw48vnrk" path="res://assets/audios/sound/cassette_death.ogg" id="8_c8kf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icdtu"]
 
@@ -57,6 +58,9 @@ one_shot = true
 
 [node name="BlinkTimer" type="Timer" parent="." unique_id=1450462419]
 wait_time = 0.1
+
+[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1495589600]
+stream = ExtResource("8_c8kf1")
 
 [connection signal="died" from="SCHealthController" to="." method="_on_sc_health_controller_died"]
 [connection signal="hurt" from="Hitbox" to="." method="_on_hitbox_hurt"]

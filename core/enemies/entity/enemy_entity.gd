@@ -22,6 +22,7 @@ var health: int
 @onready var movement_controller: SCPhysicsController = $SCPhysicsController
 @onready var sprite: Sprite2D = $Sprite
 @onready var name_label: Label = $NameLabel
+@onready var hit: AudioStreamPlayer = $Hit
 
 
 func _ready() -> void:
@@ -43,7 +44,8 @@ func _physics_process(delta: float) -> void:
 
 
 func take_damage(value: int) -> void:
-	sprite.modulate = Color(4, 4, 4)
+	hit.play()
+	sprite.modulate = Color(4,4,4)
 	health -= value
 	if health <= 0:
 		die()
