@@ -24,6 +24,7 @@ func _start_music_loop() -> void:
 	audio_player.play()
 	
 func _connect_signals() -> void:
+	player.died.connect(_on_player_death)
 	wave_manager.trigger_new_wave.connect(_on_wave_manager_trigger_new_wave)
 	spawner.new_enemy_spawned.connect(_on_spawner_new_enemy_spawned)
 	
@@ -51,6 +52,8 @@ func _on_wave_manager_trigger_new_wave() -> void:
 	UpgradeManager.upgrade_chosen(new_upgrade)
 	wave_manager.next_wave()
 
+func _on_player_death() -> void:
+	audio_player.stop()
 
 func _on_spawner_new_enemy_spawned(enemy: EnemyEntity) -> void:
 	enemy.died.connect(wave_manager.enemy_killed)
