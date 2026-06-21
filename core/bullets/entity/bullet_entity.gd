@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var bullet_data: Bullet
 
 var bounces := 0
+var pierces := 0
 
 @onready var bullet_controller: BulletController = $BulletController
 @onready var area_collision: CollisionShape2D = $Area2D/AreaCollision
@@ -44,6 +45,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if enemy:
 		for effect: HitEffect in bullet_data.hit_effects:
 			effect.apply(self, enemy)
+	if pierces <= 0:
+		queue_free()
+	else:
+		pierces -= 1
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
