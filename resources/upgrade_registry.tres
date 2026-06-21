@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Registry" format=3 uid="uid://no8g6qampt0y"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_05ime"]
+
+[resource]
+script = ExtResource("1_05ime")
+_version = 2
+_scan_rulesets = Array[Dictionary]([{
+&"allowed_file_extensions": Array[String]([".tres"]),
+&"class_restrictions": Array[StringName]([&"\"res://core/upgrades/upgrade.gd\""]),
+&"recursive_scan": false,
+&"scan_directories": Array[String](["res://resources/upgrades"]),
+&"scan_regex_exclude": "",
+&"scan_regex_include": ""
+}])
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://0vtfxlh3b3hu": &"heavier_metal",
+&"uid://bd1qsm13kp3h8": &"stop_me_now",
+&"uid://bqoit3bxe8bh8": &"fat_dog",
+&"uid://bt3hl63hpbmqd": &"encore",
+&"uid://c64jceadto3ft": &"arpeggio",
+&"uid://ckr72jnxlvg0v": &"sparkle",
+&"uid://cu14pkbx8hal3": &"despacito",
+&"uid://dapkrmcx71ns0": &"shooting_stars",
+&"uid://g7tbvqfwtyu7": &"hbfs",
+&"uid://rrwnc3d2v4hm": &"cool_as_ice"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"arpeggio": &"uid://c64jceadto3ft",
+&"cool_as_ice": &"uid://rrwnc3d2v4hm",
+&"despacito": &"uid://cu14pkbx8hal3",
+&"encore": &"uid://bt3hl63hpbmqd",
+&"fat_dog": &"uid://bqoit3bxe8bh8",
+&"hbfs": &"uid://g7tbvqfwtyu7",
+&"heavier_metal": &"uid://0vtfxlh3b3hu",
+&"shooting_stars": &"uid://dapkrmcx71ns0",
+&"sparkle": &"uid://ckr72jnxlvg0v",
+&"stop_me_now": &"uid://bd1qsm13kp3h8"
+})

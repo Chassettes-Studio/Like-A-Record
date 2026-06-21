@@ -16,3 +16,7 @@ static func pick_upgrades(amount : int = 3) -> Array[Upgrade]:
 		ret.append(upgrade)
 	return ret
 	
+static func upgrade_chosen(upgrade: Upgrade) -> void:
+	if not upgrade.stackable:
+		upgrade_pool.erase(upgrade)
+	

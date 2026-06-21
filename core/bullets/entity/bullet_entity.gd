@@ -11,9 +11,11 @@ var bounces := 0
 @onready var sprite: Sprite2D = $Sprite
 @onready var area_2d: Area2D = $Area2D
 
-
 func _ready() -> void:
 	sprite.texture = bullet_data.texture
+	refresh_size()
+	
+func refresh_size() -> void:
 	sprite.scale = Vector2.ONE * 2 * (bullet_data.size/bullet_data.texture.get_width())
 	var shape := CircleShape2D.new()
 	shape.radius = bullet_data.size

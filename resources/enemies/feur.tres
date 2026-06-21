@@ -13,14 +13,10 @@ metadata/_custom_type_script = "uid://da2ccrtabdlsr"
 script = ExtResource("2_nesrm")
 metadata/_custom_type_script = "uid://vvfsmu4jxy5j"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r2pyx"]
-radius = 50.0
-
 [resource]
 script = ExtResource("1_m0vnv")
 name = "Dasher"
 texture = ExtResource("4_nesrm")
-shape = SubResource("CircleShape2D_r2pyx")
 max_health = 3
 attack = SubResource("Resource_w6s54")
 brain = SubResource("Resource_nesrm")
