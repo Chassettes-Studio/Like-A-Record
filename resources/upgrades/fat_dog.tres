@@ -11,14 +11,13 @@
 
 [sub_resource type="Resource" id="Resource_ipkt7"]
 script = ExtResource("2_ipkt7")
-added_size = 100.0
+added_size = 30.0
 metadata/_custom_type_script = "uid://cwjx6maocl7ic"
 
 [resource]
 script = ExtResource("6_redgp")
 name = "Fat Dog"
-description = "Makes the bullets bigger."
+description = "Makes the bullets bigger"
 sprite = ExtResource("8_ipkt7")
-stackable = false
 bullet_effects = Array[ExtResource("1_m82b1")]([SubResource("Resource_ipkt7")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://2hkl01a1mi16"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_qamn5"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="2_8j1ok"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="3_hmdum"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_ee8s1"]
+[ext_resource type="Script" uid="uid://2cw0tsaat8kx" path="res://core/upgrades/effect/gun_effect/added_radial_speed_effect.gd" id="4_hmdum"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_s7qoq"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_53fph"]
+[ext_resource type="Texture2D" uid="uid://8eqe1jusslh2" path="res://assets/logo/like_a_record.png" id="7_8j1ok"]
+
+[sub_resource type="Resource" id="Resource_hmdum"]
+script = ExtResource("4_hmdum")
+added_radial_speed = 2.0
+metadata/_custom_type_script = "uid://2cw0tsaat8kx"
+
+[resource]
+script = ExtResource("6_53fph")
+name = "You Spin Me 'round"
+description = "You spin faster"
+sprite = ExtResource("7_8j1ok")
+gun_effects = Array[ExtResource("3_hmdum")]([SubResource("Resource_hmdum")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"

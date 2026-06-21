@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_vpc4w"]
 [ext_resource type="Texture2D" uid="uid://kjnrctsmonew" path="res://assets/musicStuff/sol.png" id="2_7e2dr"]
 [ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
+[ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="3_74yie"]
 [ext_resource type="Script" uid="uid://0a4b642jtkl5" path="res://core/levels/level_orchestrator.gd" id="4_7e2dr"]
 [ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
 
@@ -19,9 +20,11 @@ normal = Vector2(-1, 0)
 
 [node name="TestLevel" type="Node2D" unique_id=205418669]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=954630112]
-position = Vector2(960, 540)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1634182377]
+offset_right = 3840.0
+offset_bottom = 2160.0
 texture = ExtResource("2_7e2dr")
+stretch_mode = 1
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=481633547]
 collision_layer = 8
@@ -31,41 +34,58 @@ collision_mask = 0
 shape = SubResource("WorldBoundaryShape2D_vpdy7")
 
 [node name="Down" type="CollisionShape2D" parent="Walls" unique_id=1278406850]
-position = Vector2(0, 1080)
+position = Vector2(0, 2160)
 shape = SubResource("WorldBoundaryShape2D_34cbc")
 
 [node name="Left" type="CollisionShape2D" parent="Walls" unique_id=1189280782]
 shape = SubResource("WorldBoundaryShape2D_vpc4w")
 
 [node name="Right" type="CollisionShape2D" parent="Walls" unique_id=413641735]
-position = Vector2(1920, 0)
+position = Vector2(3840, 0)
 shape = SubResource("WorldBoundaryShape2D_qq6f8")
 
 [node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_vpc4w")]
 position = Vector2(715, 353)
+character = ExtResource("3_74yie")
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Player" unique_id=1539347329]
+remote_path = NodePath("../../Camera2D")
 
 [node name="Spawner" type="Node2D" parent="." unique_id=104538081 node_paths=PackedStringArray("target")]
 script = ExtResource("2_qq6f8")
 target = NodePath("../Player")
 bottom_down_corner = Vector2(1920, 1080)
-player_view_radius = 300.0
+player_view_radius = 600.0
 metadata/_custom_type_script = "uid://c0h1n5gqceb64"
 
 [node name="Timer" type="Timer" parent="." unique_id=1709639521]
 autostart = true
 
-[node name="WaveManager" type="Node" parent="." unique_id=1932516513]
+[node name="WaveManager" type="Node" parent="." unique_id=1932516513 node_paths=PackedStringArray("spawner")]
 script = ExtResource("4_r2pyx")
+spawner = NodePath("../Spawner")
 total_enemy_count = 3
 metadata/_custom_type_script = "uid://cqodewu2t3855"
 
-[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("player", "spawner", "wave_manager")]
+[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("audio_player", "player", "wave_manager")]
 script = ExtResource("4_7e2dr")
+audio_player = NodePath("AudioStreamPlayer")
 player = NodePath("../Player")
-spawner = NodePath("../Spawner")
 wave_manager = NodePath("../WaveManager")
 metadata/_custom_type_script = "uid://0a4b642jtkl5"
 
-[connection signal="new_enemy_spawned" from="Spawner" to="." method="_on_spawner_new_enemy_spawned"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LevelOrchestrator" unique_id=1943433338]
+process_mode = 3
+playback_type = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=891048022]
+position = Vector2(715, 353)
+limit_left = 0
+limit_top = 0
+limit_right = 3840
+limit_bottom = 2160
+position_smoothing_enabled = true
+position_smoothing_speed = 25.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="trigger_new_wave" from="WaveManager" to="." method="_on_wave_manager_trigger_new_wave"]

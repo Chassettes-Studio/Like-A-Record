@@ -9,7 +9,14 @@ signal damaged
 
 @export var upgrades: Array[Upgrade] = []
 
+@export var character: Character
+
 var current_state: State = MovingState.new(self, Vector2.RIGHT)
+var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
+
+var dash_unlocked := false
+
+@onready var blink_timer: Timer = $BlinkTimer
 
 @onready var hitbox: Hitbox = $Hitbox
 
@@ -52,18 +59,23 @@ func _on_hitbox_hurt(_value: float) -> void:
 	hitbox.set_hittable(false)
 	invulnerability_timer.start()
 	ui.take_damage(health_controller.base_health, health_controller.get_health())
-	modulate = Color(7,4,4)
+	modulate = Color(7, 4, 4)
 	await get_tree().create_timer(.1).timeout
 	modulate = Color.WHITE
+	blink_timer.start()
 
 
 func _on_invulnerability_timer_timeout() -> void:
 	hitbox.set_hittable(true)
+	blink_timer.stop()
+	visible = true
 
 
 func _on_sc_health_controller_died() -> void:
 	died.emit()
-	queue_free()
+	var instance: DeathScreen = deathScreen.instantiate()
+	add_child(instance)
 
 
-	
+func _on_blink_timer_timeout() -> void:
+	visible = not visible

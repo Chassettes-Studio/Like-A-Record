@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d38ccxpdqkp7j"]
+
+[ext_resource type="Script" uid="uid://cwawsmobunuc4" path="res://core/ui/death/death_screen.gd" id="1_bt3vd"]
+[ext_resource type="Texture2D" uid="uid://dkms403buqwyu" path="res://assets/ui/perdu.png" id="2_coot1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_vifkf"]
+font_size = 48
+
+[node name="DeathScreen" type="CanvasLayer" unique_id=355205609]
+process_mode = 3
+script = ExtResource("1_bt3vd")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1714236902]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=692306353]
+layout_mode = 2
+texture = ExtResource("2_coot1")
+
+[node name="Title" type="Label" parent="." unique_id=97039330]
+offset_left = 540.0
+offset_top = 144.0
+offset_right = 1234.0
+offset_bottom = 319.0
+text = " Game Over"
+label_settings = SubResource("LabelSettings_gtu5s")
+
+[node name="Score" type="Label" parent="." unique_id=1275862752]
+offset_left = 551.0
+offset_top = 322.0
+offset_right = 1449.0
+offset_bottom = 616.0
+text = "You reach waves : 5
+With a score of : xxxxx"
+label_settings = SubResource("LabelSettings_vifkf")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Home" type="ColorRect" parent="." unique_id=794531377]
+offset_left = 754.0
+offset_top = 710.0
+offset_right = 994.0
+offset_bottom = 891.0
+
+[node name="Restart" type="ColorRect" parent="." unique_id=1672922841]
+process_mode = 3
+offset_left = 1002.0
+offset_top = 710.0
+offset_right = 1245.0
+offset_bottom = 891.0
+
+[connection signal="gui_input" from="Home" to="." method="_on_home_gui_input"]
+[connection signal="mouse_entered" from="Home" to="." method="_on_home_mouse_entered"]
+[connection signal="mouse_exited" from="Home" to="." method="_on_home_mouse_exited"]
+[connection signal="gui_input" from="Restart" to="." method="_on_restart_gui_input"]
+[connection signal="mouse_entered" from="Restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="mouse_exited" from="Restart" to="." method="_on_restart_mouse_exited"]

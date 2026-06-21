@@ -12,7 +12,7 @@ var pierces := 0
 @onready var sprite: Sprite2D = $Sprite
 @onready var area_2d: Area2D = $Area2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	sprite.rotation = bullet_controller.direction.angle() - deg_to_rad(90.0)
 
 func _ready() -> void:

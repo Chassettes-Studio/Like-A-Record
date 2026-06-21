@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://secf36jumim0" path="res://core/levels/upgrade_playground.gd" id="1_kthok"]
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_x4nve"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="2_oq6wo"]
-[ext_resource type="Resource" uid="uid://dsncrpu7hwjt7" path="res://resources/upgrades/sustain.tres" id="3_e703i"]
+[ext_resource type="Resource" uid="uid://bflq07wbpkpdw" path="res://resources/upgrades/rush.tres" id="3_e703i"]
 [ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="3_ebf7h"]
 [ext_resource type="Resource" uid="uid://c8siir1sy8tn4" path="res://resources/enemies/laser_disc.tres" id="6_e703i"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
+[ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="6_s57tb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gs88k"]
 normal = Vector2(0, 1)
@@ -43,6 +44,7 @@ shape = SubResource("WorldBoundaryShape2D_53dat")
 
 [node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_x4nve")]
 position = Vector2(765, 373)
+character = ExtResource("6_s57tb")
 
 [node name="EnemyEntity" parent="." unique_id=255422468 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
 position = Vector2(1617, 787)
