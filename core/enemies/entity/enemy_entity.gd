@@ -45,11 +45,16 @@ func take_damage(value: int) -> void:
 	sprite.modulate = Color(4,4,4)
 	health -= value
 	if health <= 0:
+		die()
+	await get_tree().create_timer(.1).timeout
+	sprite.modulate = Color.WHITE if freeze_timer.is_stopped() else FREEZE_COLOR
+	
+func die() -> void:
+		for effect in enemy_data.death_effects:
+			effect.apply(self)
 		Score.add_score(enemy_data.score)
 		died.emit()
 		queue_free()
-	await get_tree().create_timer(.1).timeout
-	sprite.modulate = Color.WHITE if freeze_timer.is_stopped() else FREEZE_COLOR
 
 func freeze(duration : float) -> void:
 	if freeze_timer.is_stopped():
