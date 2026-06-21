@@ -5,9 +5,10 @@ extends Resource
 @export var texture: Texture2D
 @export var min_wave: int = 1
 @export var weight: float = 1
-@export var score: float = 100
+@export var score: int = 100
 
 @export var size: float = 100
 @export var max_health : int = 1
 @export var attack: EnemyAttack
 @export var brain: EnemyBrain
+@export var death_effects: Array[EnemyDeath]

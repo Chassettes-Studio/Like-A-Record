@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="7_ho8ib"]
 [ext_resource type="Script" uid="uid://5epl0x7uacmk" path="res://core/enemies/enemy_brain/basic_brain.gd" id="8_4tboo"]
 [ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="10_713ca"]
+[ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="10_k6gel"]
+[ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="11_inyy8"]
+[ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="12_3kfen"]
 
 [sub_resource type="Resource" id="Resource_r64xa"]
 script = ExtResource("2_wx1g8")
@@ -40,6 +43,11 @@ chase_stop_distance = 400.0
 chase_start_distance = 600.0
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
+[sub_resource type="Resource" id="Resource_rp8se"]
+script = ExtResource("12_3kfen")
+scene = ExtResource("11_inyy8")
+metadata/_custom_type_script = "uid://cfihy37c1wi2w"
+
 [resource]
 script = ExtResource("1_1r5q3")
 name = "Mohg"
@@ -48,4 +56,5 @@ size = 150.0
 max_health = 3
 attack = SubResource("Resource_0r1fm")
 brain = SubResource("Resource_mclac")
+death_effects = Array[ExtResource("10_k6gel")]([SubResource("Resource_rp8se")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

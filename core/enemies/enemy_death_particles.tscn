@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dugw5eyua1ut1"]
+
+[ext_resource type="Texture2D" uid="uid://docxbd4n54kiw" path="res://assets/musicStuff/notes/croche_croche.png" id="1_rp8se"]
+
+[sub_resource type="Gradient" id="Gradient_rp8se"]
+offsets = PackedFloat32Array(0, 0.8181818, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rp8se"]
+gradient = SubResource("Gradient_rp8se")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rp8se"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_max = 404.09
+gravity = Vector3(0, 0, 0)
+scale_min = 0.04
+scale_max = 0.19999999
+color_ramp = SubResource("GradientTexture1D_rp8se")
+
+[node name="EnemyDeathParticles" type="GPUParticles2D" unique_id=671608729]
+modulate = Color(10.5787325, 0, 0, 1)
+emitting = false
+texture = ExtResource("1_rp8se")
+one_shot = true
+explosiveness = 0.9
+process_material = SubResource("ParticleProcessMaterial_rp8se")
