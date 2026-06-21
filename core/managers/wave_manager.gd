@@ -41,7 +41,6 @@ func try_spawn() -> void:
 	var enemy := get_random_enemy()
 	spawner.spawn_enemy(enemy).died.connect(_on_enemy_death)
 	left_to_spawn -= 1
-	print("Spawn enemy, left ",left_to_spawn)
 
 func _on_enemy_death() -> void:
 	

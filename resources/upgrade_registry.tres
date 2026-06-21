@@ -15,7 +15,9 @@ _scan_rulesets = Array[Dictionary]([{
 }])
 _uids_to_string_ids = Dictionary[StringName, StringName]({
 &"uid://0vtfxlh3b3hu": &"heavier_metal",
+&"uid://2hkl01a1mi16": &"merry_go_round",
 &"uid://bd1qsm13kp3h8": &"stop_me_now",
+&"uid://bflq07wbpkpdw": &"rush",
 &"uid://bqoit3bxe8bh8": &"fat_dog",
 &"uid://bt3hl63hpbmqd": &"encore",
 &"uid://c64jceadto3ft": &"arpeggio",
@@ -34,6 +36,8 @@ _string_ids_to_uids = Dictionary[StringName, StringName]({
 &"fat_dog": &"uid://bqoit3bxe8bh8",
 &"hbfs": &"uid://g7tbvqfwtyu7",
 &"heavier_metal": &"uid://0vtfxlh3b3hu",
+&"merry_go_round": &"uid://2hkl01a1mi16",
+&"rush": &"uid://bflq07wbpkpdw",
 &"shooting_stars": &"uid://dapkrmcx71ns0",
 &"sparkle": &"uid://ckr72jnxlvg0v",
 &"stop_me_now": &"uid://bd1qsm13kp3h8",
