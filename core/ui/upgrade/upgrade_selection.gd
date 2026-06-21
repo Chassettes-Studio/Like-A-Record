@@ -9,7 +9,7 @@ signal upgrade_chosen(upgrade: Upgrade)
 
 @onready var bg: ColorRect = $ColorRect
 @onready var title: Label = $MarginContainer/VBoxContainer/Label
-
+@onready var insert_disc: AudioStreamPlayer = $InsertDisc
 
 func _ready() -> void:
 	spawn()
@@ -32,7 +32,6 @@ func init(upgrade1: Upgrade, upgrade2: Upgrade, upgrade3: Upgrade) -> void:
 	card3.init(upgrade3)
 	AudioServer.set_bus_effect_enabled(1,0,true)
 
-
 func _on_upgarde_card_free() -> void:
 	var tween: Tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
@@ -48,4 +47,5 @@ func _on_upgarde_card_free() -> void:
 
 
 func _on_upgarde_card_upgrade_chosen(upgrade: Upgrade) -> void:
+	insert_disc.play()
 	upgrade_chosen.emit(upgrade)

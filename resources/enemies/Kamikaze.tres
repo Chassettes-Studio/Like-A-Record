@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://b2g2obfinxd2o"]
+
+[ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="1_s2bfu"]
+[ext_resource type="Script" uid="uid://ryycmljdgqkv" path="res://core/enemies/enemy_attack/kamikaze_attack.gd" id="1_tcryr"]
+[ext_resource type="Script" uid="uid://c6m6m6ojjvoa6" path="res://core/enemies/enemy_brain/kamikaze_brain.gd" id="2_q1v2b"]
+[ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="2_rw5xl"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="5_1k40r"]
+
+[sub_resource type="Resource" id="Resource_s57tb"]
+script = ExtResource("1_tcryr")
+explosion_area_radius = 100.0
+metadata/_custom_type_script = "uid://ryycmljdgqkv"
+
+[sub_resource type="Resource" id="Resource_1k40r"]
+script = ExtResource("2_q1v2b")
+attack = SubResource("Resource_s57tb")
+metadata/_custom_type_script = "uid://c6m6m6ojjvoa6"
+
+[resource]
+script = ExtResource("2_rw5xl")
+name = "Kamikaze"
+texture = ExtResource("5_1k40r")
+min_wave = 10
+size = 50.0
+max_health = 6
+brain = SubResource("Resource_1k40r")
+metadata/_custom_type_script = "uid://koby8pounmkx"

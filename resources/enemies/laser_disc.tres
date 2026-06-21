@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://c8siir1sy8tn4"]
+
+[ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="1_q3n81"]
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_xctrn"]
+[ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="2_73ogs"]
+[ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="2_qqpub"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_ppgr7"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_rfxn6"]
+[ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="6_ahwxf"]
+[ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="6_xctrn"]
+[ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="7_yoejk"]
+[ext_resource type="Script" uid="uid://b8xvwoto3hixl" path="res://core/enemies/enemy_brain/laser_disc_brain.gd" id="8_a5h10"]
+[ext_resource type="Texture2D" uid="uid://bv4mu84joutad" path="res://assets/musicStuff/lazer_disc.png" id="11_vjqvv"]
+
+[sub_resource type="Resource" id="Resource_mwj0u"]
+script = ExtResource("2_73ogs")
+speed = 5000.0
+metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
+
+[sub_resource type="Resource" id="Resource_kiknh"]
+script = ExtResource("6_ahwxf")
+texture = ExtResource("6_xctrn")
+color = Color(0.8, 0.12941177, 0.2, 1)
+bullet_effects = Array[ExtResource("1_xctrn")]([SubResource("Resource_mwj0u")])
+metadata/_custom_type_script = "uid://bkh04gcfmrktg"
+
+[sub_resource type="Resource" id="Resource_4of4c"]
+script = ExtResource("7_yoejk")
+bullet = SubResource("Resource_kiknh")
+metadata/_custom_type_script = "uid://hqlj76mb0xbg"
+
+[sub_resource type="Resource" id="Resource_0mi3h"]
+script = ExtResource("8_a5h10")
+attack = SubResource("Resource_4of4c")
+metadata/_custom_type_script = "uid://b8xvwoto3hixl"
+
+[resource]
+script = ExtResource("2_qqpub")
+name = "LD"
+texture = ExtResource("11_vjqvv")
+min_wave = 5
+size = 150.0
+max_health = 10
+brain = SubResource("Resource_0mi3h")
+metadata/_custom_type_script = "uid://koby8pounmkx"

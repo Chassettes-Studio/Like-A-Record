@@ -8,6 +8,7 @@ extends Node2D
 @export var shooting_cooldown: float = 0.5
 @export_range(0, 360, 0.1, "radians_as_degrees") var spread_angle: float = 0
 @export var bullet: Bullet = preload("res://resources/bullets/default_bullet.tres").duplicate()
+@onready var shootAudio: AudioStreamPlayer = $Shoot
 
 @export var hit_effects: Array[HitEffect] = []
 @export var bullet_effects: Array[BulletEffect] = []
@@ -30,6 +31,7 @@ func _physics_process(delta: float) -> void:
 
 func shoot(normal: Vector2) -> void:
 	if not is_on_cooldown:
+		shootAudio.play()
 		shooting_cooldown_timer.start(shooting_cooldown)
 		is_on_cooldown = true
 		for _i in projectile_count:
