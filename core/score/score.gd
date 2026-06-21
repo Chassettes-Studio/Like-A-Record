@@ -1,6 +1,7 @@
 extends Node
 
 var score: int = 0
+var wave: int = 1
 
 signal score_changed
 
@@ -13,3 +14,9 @@ func add_score(value: int) -> void:
 
 func get_score() -> int:
 	return score
+
+func set_wave(val: int) -> void:
+	wave = val
+
+func get_wave() -> int:
+	return wave

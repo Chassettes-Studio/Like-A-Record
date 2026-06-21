@@ -3,6 +3,7 @@ extends Node
 
 @export var spawn_interval : float = 1
 
+@export var audio_player: AudioStreamPlayer
 @export var player: Player
 @export var spawner: Spawner
 @export var wave_manager: WaveManager
@@ -14,6 +15,13 @@ const upgrade_scene : PackedScene = preload("res://core/ui/upgrade/upgrade_selec
 func _ready() -> void:
 	_create_timer()
 	_connect_signals()
+	audio_player.stream = player.character.intro_song
+	audio_player.play()
+	audio_player.finished.connect(_start_music_loop)
+	
+func _start_music_loop() -> void:
+	audio_player.stream = player.character.loop_song
+	audio_player.play()
 	
 func _connect_signals() -> void:
 	wave_manager.trigger_new_wave.connect(_on_wave_manager_trigger_new_wave)
