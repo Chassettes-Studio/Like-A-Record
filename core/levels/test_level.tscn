@@ -19,9 +19,11 @@ normal = Vector2(-1, 0)
 
 [node name="TestLevel" type="Node2D" unique_id=205418669]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=954630112]
-position = Vector2(960, 540)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1634182377]
+offset_right = 3840.0
+offset_bottom = 2160.0
 texture = ExtResource("2_7e2dr")
+stretch_mode = 1
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=481633547]
 collision_layer = 8
@@ -31,18 +33,21 @@ collision_mask = 0
 shape = SubResource("WorldBoundaryShape2D_vpdy7")
 
 [node name="Down" type="CollisionShape2D" parent="Walls" unique_id=1278406850]
-position = Vector2(0, 1080)
+position = Vector2(0, 2160)
 shape = SubResource("WorldBoundaryShape2D_34cbc")
 
 [node name="Left" type="CollisionShape2D" parent="Walls" unique_id=1189280782]
 shape = SubResource("WorldBoundaryShape2D_vpc4w")
 
 [node name="Right" type="CollisionShape2D" parent="Walls" unique_id=413641735]
-position = Vector2(1920, 0)
+position = Vector2(3840, 0)
 shape = SubResource("WorldBoundaryShape2D_qq6f8")
 
 [node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_vpc4w")]
-position = Vector2(715, 353)
+position = Vector2(872, 539)
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Player" unique_id=1539347329]
+remote_path = NodePath("../../Camera2D")
 
 [node name="Spawner" type="Node2D" parent="." unique_id=104538081 node_paths=PackedStringArray("target")]
 script = ExtResource("2_qq6f8")
@@ -65,6 +70,12 @@ player = NodePath("../Player")
 spawner = NodePath("../Spawner")
 wave_manager = NodePath("../WaveManager")
 metadata/_custom_type_script = "uid://0a4b642jtkl5"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=891048022]
+limit_left = 0
+limit_top = 0
+limit_right = 3840
+limit_bottom = 2160
 
 [connection signal="new_enemy_spawned" from="Spawner" to="." method="_on_spawner_new_enemy_spawned"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
