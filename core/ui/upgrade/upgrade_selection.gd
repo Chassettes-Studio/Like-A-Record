@@ -9,7 +9,7 @@ signal upgrade_chosen(upgrade: Upgrade)
 
 @onready var bg: ColorRect = $ColorRect
 @onready var title: Label = $MarginContainer/VBoxContainer/Label
-
+@onready var insert_disc: AudioStreamPlayer = $InsertDisc
 
 func _ready() -> void:
 	spawn()
@@ -47,4 +47,5 @@ func _on_upgarde_card_free() -> void:
 
 
 func _on_upgarde_card_upgrade_chosen(upgrade: Upgrade) -> void:
+	insert_disc.play()
 	upgrade_chosen.emit(upgrade)

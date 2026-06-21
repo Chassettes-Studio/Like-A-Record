@@ -13,21 +13,21 @@ signal damaged
 
 var current_state: State = MovingState.new(self, Vector2.RIGHT)
 var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
-
 var dash_unlocked := false
 
 @onready var blink_timer: Timer = $BlinkTimer
-
+ 
 @onready var hitbox: Hitbox = $Hitbox
 
 @onready var health_controller: SCHealthController = $SCHealthController
 @onready var invulnerability_timer: Timer = $InvulnerabilityTimer
+ 
 
 @onready var sc_physics_controller: SCPhysicsController = $SCPhysicsController
 @onready var dash_cooldown: Timer = $DashCooldown
 @onready var gun: Gun = $Gun
 @onready var ui: PlayerUi = $PlayerUi
-
+@onready var hit: AudioStreamPlayer = $Hit
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
@@ -54,6 +54,7 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 
 
 func _on_hitbox_hurt(_value: float) -> void:
+	hit.play()
 	health_controller.take_damage(1)
 	damaged.emit()
 	hitbox.set_hittable(false)
