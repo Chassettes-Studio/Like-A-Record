@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dr0jek4ldjaps"]
+
+[ext_resource type="Texture2D" uid="uid://8eqe1jusslh2" path="res://assets/logo/like_a_record.png" id="1_7e7tf"]
+[ext_resource type="Script" uid="uid://dmorc2nkdhuai" path="res://core/ui/main/canvas.gd" id="1_h3314"]
+
+[node name="Canvas" type="Control" unique_id=1375448912]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h3314")
+
+[node name="Play" type="Button" parent="." unique_id=1666076370]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 579.0
+offset_right = 1270.0
+offset_bottom = 670.0
+text = "Play"
+
+[node name="Credits" type="Button" parent="." unique_id=478091026]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 764.0
+offset_right = 1205.0
+offset_bottom = 852.0
+text = "Credits
+"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1376793739]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 19.0
+offset_right = 1225.5842
+offset_bottom = 517.0
+texture = ExtResource("1_7e7tf")
+expand_mode = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

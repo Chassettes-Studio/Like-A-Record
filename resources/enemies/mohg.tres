@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://0n41shqk2454" path="res://core/enemies/enemy_attack/shoot_attack.gd" id="7_3kfen"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="7_ho8ib"]
 [ext_resource type="Script" uid="uid://5epl0x7uacmk" path="res://core/enemies/enemy_brain/basic_brain.gd" id="8_4tboo"]
-[ext_resource type="Texture2D" uid="uid://cdck38dj3bksu" path="res://assets/musicStuff/vinyle.png" id="11_ho8ib"]
 [ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="10_k6gel"]
+[ext_resource type="Texture2D" uid="uid://cdck38dj3bksu" path="res://assets/musicStuff/vinyle.png" id="11_ho8ib"]
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="11_inyy8"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="12_3kfen"]
 
