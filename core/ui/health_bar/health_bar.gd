@@ -18,6 +18,7 @@ func take_hit(max_health: int, current_health: int) -> void:
 	var n: Vector2 = Vector2(new_size, health_bar.size.y)
 
 	var tween_health: Tween = create_tween()
+	tween_health.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween_health.tween_property(health_bar, "size", n, 0.2)
 
 	await get_tree().create_timer(0.5).timeout
