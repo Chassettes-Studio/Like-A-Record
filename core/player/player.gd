@@ -11,6 +11,8 @@ signal damaged
 
 var current_state: State = MovingState.new(self, Vector2.RIGHT)
 
+@onready var blink_timer: Timer = $BlinkTimer
+
 @onready var hitbox: Hitbox = $Hitbox
 
 @onready var health_controller: SCHealthController = $SCHealthController
@@ -55,10 +57,13 @@ func _on_hitbox_hurt(_value: float) -> void:
 	modulate = Color(7,4,4)
 	await get_tree().create_timer(.1).timeout
 	modulate = Color.WHITE
+	blink_timer.start()
 
 
 func _on_invulnerability_timer_timeout() -> void:
 	hitbox.set_hittable(true)
+	blink_timer.stop()
+	visible = true
 
 
 func _on_sc_health_controller_died() -> void:
@@ -66,4 +71,5 @@ func _on_sc_health_controller_died() -> void:
 	queue_free()
 
 
-	
+func _on_blink_timer_timeout() -> void:
+	visible = not visible
