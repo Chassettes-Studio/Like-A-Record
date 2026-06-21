@@ -4,8 +4,8 @@
 
 [node name="HealthBar" type="MarginContainer" unique_id=950605255]
 anchors_preset = -1
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 26.0
+offset_bottom = 26.0
 size_flags_horizontal = 0
 script = ExtResource("1_3lhka")
 
@@ -18,16 +18,16 @@ size_flags_vertical = 0
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_bottom = 40.0
+offset_bottom = 26.0
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0.7176471, 0, 1)
+color = Color(0.92941177, 0.58431375, 0.19215687, 1)
 
 [node name="Health" type="ColorRect" parent="Control" unique_id=23344807]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_bottom = 40.0
+offset_bottom = 26.0
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(1, 0, 0, 1)
+color = Color(0.8, 0.12941177, 0.2, 1)

@@ -7,10 +7,13 @@
 [ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="3_wx1g8"]
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_uwafi"]
 [ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="5_k6gel"]
-[ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="6_inyy8"]
 [ext_resource type="Script" uid="uid://0n41shqk2454" path="res://core/enemies/enemy_attack/shoot_attack.gd" id="7_3kfen"]
+[ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="7_ho8ib"]
 [ext_resource type="Script" uid="uid://5epl0x7uacmk" path="res://core/enemies/enemy_brain/basic_brain.gd" id="8_4tboo"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="10_713ca"]
+[ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="10_k6gel"]
+[ext_resource type="Texture2D" uid="uid://cdck38dj3bksu" path="res://assets/musicStuff/vinyle.png" id="11_ho8ib"]
+[ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="11_inyy8"]
+[ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="12_3kfen"]
 
 [sub_resource type="Resource" id="Resource_r64xa"]
 script = ExtResource("2_wx1g8")
@@ -23,7 +26,8 @@ metadata/_custom_type_script = "uid://8q128ehc7nxs"
 
 [sub_resource type="Resource" id="Resource_perr0"]
 script = ExtResource("5_k6gel")
-texture = ExtResource("6_inyy8")
+texture = ExtResource("7_ho8ib")
+color = Color(0.8, 0.12941177, 0.2, 1)
 collision_effects = Array[ExtResource("2_ho8ib")]([SubResource("Resource_klyic")])
 bullet_effects = Array[ExtResource("1_713ca")]([SubResource("Resource_r64xa")])
 metadata/_custom_type_script = "uid://bkh04gcfmrktg"
@@ -39,12 +43,18 @@ chase_stop_distance = 400.0
 chase_start_distance = 600.0
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
+[sub_resource type="Resource" id="Resource_rp8se"]
+script = ExtResource("12_3kfen")
+scene = ExtResource("11_inyy8")
+metadata/_custom_type_script = "uid://cfihy37c1wi2w"
+
 [resource]
 script = ExtResource("1_1r5q3")
 name = "Mohg"
-texture = ExtResource("10_713ca")
+texture = ExtResource("11_ho8ib")
 size = 150.0
 max_health = 3
 attack = SubResource("Resource_0r1fm")
 brain = SubResource("Resource_mclac")
+death_effects = Array[ExtResource("10_k6gel")]([SubResource("Resource_rp8se")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

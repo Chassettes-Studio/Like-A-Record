@@ -14,10 +14,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Juniper"
+config/name="Like A Record"
 run/main_scene="uid://qdp5365sk0g5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://assets/placeholder/icon.svg"
+config/icon="uid://8eqe1jusslh2"
+
+[autoload]
+
+Score="*uid://cq2malf2gsodx"
 
 [debug]
 
@@ -92,6 +96,6 @@ shoot={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_filter=2
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

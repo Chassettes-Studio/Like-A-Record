@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c6x66yrr7hqp8"]
+
+[ext_resource type="Texture2D" uid="uid://ccimiiwghjys3" path="res://assets/musicStuff/pochette.png" id="1_4uyl3"]
+[ext_resource type="Script" uid="uid://d3rdjmvy3ooio" path="res://core/ui/upgrade/upgrade_mini.gd" id="1_rxlu5"]
+
+[node name="UpgradeMini" type="Control" unique_id=456995852]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rxlu5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=345197485]
+custom_maximum_size = Vector2(96, 96)
+layout_mode = 0
+offset_left = -96.0
+offset_top = -96.0
+offset_transform_enabled = true
+offset_transform_rotation = 0.17453292
+
+[node name="Case" type="TextureRect" parent="MarginContainer" unique_id=1917205297]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("1_4uyl3")
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Case" unique_id=1546945374]
+custom_minimum_size = Vector2(75, 75)
+custom_maximum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 86.0
+offset_bottom = 86.0

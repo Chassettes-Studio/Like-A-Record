@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="2_g3qxm"]
 [ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="4_w67xi"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="5_8xga2"]
-[ext_resource type="Script" uid="uid://cffvw0wq51i30" path="res://core/enemies/entity/enemy_entity.gd" id="7_dx4tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtu5s"]
 size = Vector2(126, 735)
@@ -33,10 +32,6 @@ position = Vector2(206, 223)
 [node name="EnemyEntity" parent="." unique_id=255422468 instance=ExtResource("4_w67xi")]
 position = Vector2(1413, 913)
 enemy_data = ExtResource("5_8xga2")
-
-[node name="EnemyEntity2" type="CharacterBody2D" parent="." unique_id=787389929]
-script = ExtResource("7_dx4tj")
-metadata/_custom_type_script = "uid://cffvw0wq51i30"
 
 [node name="Control" type="Control" parent="." unique_id=262527543]
 layout_mode = 3

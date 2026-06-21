@@ -10,5 +10,5 @@ func _on_enemy_entity_died() -> void:
 	add_child(instance)
 
 
-func _on_player_damaged() -> void:
-	get_tree().call_deferred("reload_current_scene")
+#func _on_player_damaged() -> void:
+	#get_tree().call_deferred("reload_current_scene")

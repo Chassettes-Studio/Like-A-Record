@@ -20,8 +20,8 @@ extends Node2D
 var is_on_cooldown: bool = false
 
 
-func _ready() -> void:
-	main_offset.position.x = orbit_radius
+#func _ready() -> void:
+	#main_offset.position.x = orbit_radius
 
 
 func _physics_process(delta: float) -> void:

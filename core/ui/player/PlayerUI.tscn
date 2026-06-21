@@ -2,36 +2,61 @@
 
 [ext_resource type="Script" uid="uid://clyhv077b3mhn" path="res://core/ui/player/player_ui.gd" id="1_pn5ve"]
 [ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="1_tv5wv"]
+[ext_resource type="Texture2D" uid="uid://b6giimtwrglmv" path="res://assets/ui/bar.png" id="2_3qqhg"]
 [ext_resource type="PackedScene" uid="uid://dvke7witwpeqm" path="res://core/ui/health_bar/health_bar.tscn" id="3_pn5ve"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
+font_size = 32
 
 [node name="PlayerUi" type="CanvasLayer" unique_id=227467206]
 script = ExtResource("1_pn5ve")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=813239391]
-custom_minimum_size = Vector2(0, 148)
-custom_maximum_size = Vector2(-1, 148)
-offset_right = 652.0
+[node name="Bg" type="TextureRect" parent="." unique_id=2058990250]
+offset_right = 688.0
 offset_bottom = 148.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+texture = ExtResource("2_3qqhg")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=779326652]
-layout_mode = 2
-theme_override_constants/separation = 20
+[node name="Score" type="Label" parent="." unique_id=1392928785]
+offset_left = 166.0
+offset_top = 59.0
+offset_right = 257.0
+offset_bottom = 152.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_gtu5s")
+horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=705970456]
-layout_mode = 2
+[node name="Cd" type="TextureRect" parent="." unique_id=705970456]
+offset_left = 24.0
+offset_top = 6.0
+offset_right = 152.0
+offset_bottom = 134.0
+offset_transform_enabled = true
+offset_transform_rotation = 5.1399946
 texture = ExtResource("1_tv5wv")
 expand_mode = 2
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=12718060]
-layout_mode = 2
-
-[node name="HealthBar" parent="MarginContainer/HBoxContainer/Control" unique_id=950605255 instance=ExtResource("3_pn5ve")]
-layout_mode = 0
-anchors_preset = 0
-offset_right = 500.0
-offset_bottom = 20.0
+[node name="HealthBar" parent="." unique_id=950605255 instance=ExtResource("3_pn5ve")]
+offset_left = 215.0
+offset_top = 15.0
+offset_right = 551.0
+offset_bottom = 41.0
 size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1273114067]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=821414927]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 85
+alignment = 2

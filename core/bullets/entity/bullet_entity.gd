@@ -11,9 +11,16 @@ var bounces := 0
 @onready var sprite: Sprite2D = $Sprite
 @onready var area_2d: Area2D = $Area2D
 
+func _process(delta: float) -> void:
+	sprite.rotation = bullet_controller.direction.angle() - deg_to_rad(90.0)
 
 func _ready() -> void:
 	sprite.texture = bullet_data.texture
+	sprite.scale = Vector2.ONE * 2 * (bullet_data.size / bullet_data.texture.get_width())
+	sprite.modulate = bullet_data.color
+	refresh_size()
+	
+func refresh_size() -> void:
 	sprite.scale = Vector2.ONE * 2 * (bullet_data.size/bullet_data.texture.get_width())
 	var shape := CircleShape2D.new()
 	shape.radius = bullet_data.size
@@ -36,8 +43,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	var enemy := body as EnemyEntity
 	if enemy:
 		for effect: HitEffect in bullet_data.hit_effects:
-			effect.apply(self,enemy)
-			
+			effect.apply(self, enemy)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -45,4 +51,3 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if hb:
 		hb.damage(1)
 		queue_free()
-	

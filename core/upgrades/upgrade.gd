@@ -2,9 +2,10 @@ class_name Upgrade
 extends Resource
 
 @export var name: String
-@export var description: String
+@export_multiline() var description: String
 @export var sprite: Texture2D
 
+@export var stackable: bool = true
 @export var bullet_effects: Array[BulletEffect]
 @export var gun_effects: Array[GunEffect]
 @export var collision_effects: Array[CollisionEffect]
