@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 signal died
 
+var dead := false
+
 @export var enemy_data: Enemy
 
 @export var target: Node2D
@@ -50,11 +52,13 @@ func take_damage(value: int) -> void:
 	sprite.modulate = Color.WHITE if freeze_timer.is_stopped() else FREEZE_COLOR
 	
 func die() -> void:
-		for effect in enemy_data.death_effects:
-			effect.apply(self)
-		Score.add_score(enemy_data.score)
-		died.emit()
-		queue_free()
+	if dead : return
+	dead = true
+	for effect in enemy_data.death_effects:
+		effect.apply(self)
+	Score.add_score(enemy_data.score)
+	died.emit()
+	queue_free()
 
 func freeze(duration : float) -> void:
 	if freeze_timer.is_stopped():

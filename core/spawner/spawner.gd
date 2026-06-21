@@ -1,8 +1,6 @@
 class_name Spawner
 extends Node2D
 
-signal new_enemy_spawned(enemy: Enemy)
-
 const SPAWN_MAX_TRY_COUNT: int = 100
 const enemy_scene: PackedScene = preload("res://core/enemies/entity/enemy_entity.tscn")
 
@@ -14,7 +12,7 @@ const enemy_scene: PackedScene = preload("res://core/enemies/entity/enemy_entity
 var spawn_try_count: int = 0
 
 
-func spawn_enemy(resource: Enemy) -> void:
+func spawn_enemy(resource: Enemy) -> EnemyEntity:
 
 	if not is_instance_valid(target): return
 
@@ -33,8 +31,8 @@ func spawn_enemy(resource: Enemy) -> void:
 			break
 		spawn_try_count += 1
 	var enemy_entity: EnemyEntity = enemy_scene.instantiate()
-	new_enemy_spawned.emit(enemy_entity)
 	enemy_entity.enemy_data = resource
 	enemy_entity.target = target
 	get_tree().current_scene.add_child(enemy_entity)
 	enemy_entity.global_position = spawn_position
+	return enemy_entity

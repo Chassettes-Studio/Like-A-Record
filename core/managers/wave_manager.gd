@@ -3,6 +3,8 @@ extends Node
 
 signal trigger_new_wave
 
+@export var spawner: Spawner
+
 @export var total_enemy_count: int = 10
 
 var enemies: Array[Enemy] = []
@@ -19,11 +21,6 @@ func _ready() -> void:
 		enemies.append(load("res://resources/enemies/" + resource))
 	create_enemy_pool()
 
-func enemy_killed() -> void:
-	killcount += 1
-	if killcount >= total_enemy_count:
-		trigger_new_wave.emit()
-
 
 func create_enemy_pool() -> void:
 	current_enemy_pool.clear()
@@ -34,10 +31,23 @@ func next_wave() -> void:
 	current_wave += 1
 	Score.set_wave(current_wave)
 	create_enemy_pool()
-	killcount -= total_enemy_count
+	killcount = 0
 	total_enemy_count += current_wave
 	left_to_spawn = total_enemy_count
+	
+func try_spawn() -> void:
+	if left_to_spawn <= 0:
+		return
+	var enemy := get_random_enemy()
+	spawner.spawn_enemy(enemy).died.connect(_on_enemy_death)
+	left_to_spawn -= 1
+	print("Spawn enemy, left ",left_to_spawn)
 
+func _on_enemy_death() -> void:
+	
+	killcount += 1
+	if killcount >= total_enemy_count:
+		trigger_new_wave.emit()
 
 func get_random_enemy() -> Enemy:
 	var total_weight: float = current_enemy_pool.reduce(func(acc: float, e: Enemy) -> float: return acc + e.weight, 0)
