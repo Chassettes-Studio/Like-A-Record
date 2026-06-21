@@ -19,7 +19,6 @@ func _on_wave_manager_trigger_new_wave() -> void:
 	var upgrades := UpgradeManager.pick_upgrades()
 	add_child(upgrade_selection)
 	upgrade_selection.init(upgrades[0],upgrades[1],upgrades[2])
-	
 	var new_upgrade : Upgrade = await upgrade_selection.upgrade_chosen
 	player.apply_upgrade(new_upgrade)
 	wave_manager.next_wave()
