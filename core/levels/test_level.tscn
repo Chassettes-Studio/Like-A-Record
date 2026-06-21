@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cevhrtrxqc8ca"]
 
-[ext_resource type="Script" uid="uid://ca2mbasvwfa5h" path="res://core/levels/test_level.gd" id="1_8188n"]
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_vpc4w"]
 [ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
+[ext_resource type="Script" uid="uid://0a4b642jtkl5" path="res://core/levels/level_orchestrator.gd" id="4_7e2dr"]
 [ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
@@ -17,7 +17,6 @@ normal = Vector2(1, 0)
 normal = Vector2(-1, 0)
 
 [node name="TestLevel" type="Node2D" unique_id=205418669]
-script = ExtResource("1_8188n")
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=481633547]
 collision_layer = 8
@@ -54,6 +53,13 @@ autostart = true
 script = ExtResource("4_r2pyx")
 total_enemy_count = 3
 metadata/_custom_type_script = "uid://cqodewu2t3855"
+
+[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("player", "spawner", "wave_manager")]
+script = ExtResource("4_7e2dr")
+player = NodePath("../Player")
+spawner = NodePath("../Spawner")
+wave_manager = NodePath("../WaveManager")
+metadata/_custom_type_script = "uid://0a4b642jtkl5"
 
 [connection signal="new_enemy_spawned" from="Spawner" to="." method="_on_spawner_new_enemy_spawned"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
