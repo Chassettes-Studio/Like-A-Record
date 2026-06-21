@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://0n41shqk2454" path="res://core/enemies/enemy_attack/shoot_attack.gd" id="7_3kfen"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="7_ho8ib"]
 [ext_resource type="Script" uid="uid://5epl0x7uacmk" path="res://core/enemies/enemy_brain/basic_brain.gd" id="8_4tboo"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="10_713ca"]
+[ext_resource type="Texture2D" uid="uid://cdck38dj3bksu" path="res://assets/musicStuff/vinyle.png" id="11_ho8ib"]
 
 [sub_resource type="Resource" id="Resource_r64xa"]
 script = ExtResource("2_wx1g8")
@@ -43,7 +43,7 @@ metadata/_custom_type_script = "uid://5epl0x7uacmk"
 [resource]
 script = ExtResource("1_1r5q3")
 name = "Mohg"
-texture = ExtResource("10_713ca")
+texture = ExtResource("11_ho8ib")
 size = 150.0
 max_health = 3
 attack = SubResource("Resource_0r1fm")
