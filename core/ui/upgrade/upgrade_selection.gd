@@ -30,6 +30,7 @@ func init(upgrade1: Upgrade, upgrade2: Upgrade, upgrade3: Upgrade) -> void:
 	card1.init(upgrade1)
 	card2.init(upgrade2)
 	card3.init(upgrade3)
+	AudioServer.set_bus_effect_enabled(1,0,true)
 
 
 func _on_upgarde_card_free() -> void:
@@ -42,6 +43,7 @@ func _on_upgarde_card_free() -> void:
 	tween.tween_property(bg.material, "shader_parameter/spread", 0.01, 1)
 	await get_tree().create_timer(1).timeout
 	get_tree().paused = false
+	AudioServer.set_bus_effect_enabled(1,0,false)
 	queue_free()
 
 

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_vpc4w"]
 [ext_resource type="Texture2D" uid="uid://kjnrctsmonew" path="res://assets/musicStuff/sol.png" id="2_7e2dr"]
 [ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
+[ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="3_74yie"]
 [ext_resource type="Script" uid="uid://0a4b642jtkl5" path="res://core/levels/level_orchestrator.gd" id="4_7e2dr"]
 [ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
 
@@ -44,7 +45,8 @@ position = Vector2(3840, 0)
 shape = SubResource("WorldBoundaryShape2D_qq6f8")
 
 [node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_vpc4w")]
-position = Vector2(872, 539)
+position = Vector2(715, 353)
+character = ExtResource("3_74yie")
 
 [node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Player" unique_id=1539347329]
 remote_path = NodePath("../../Camera2D")
@@ -64,14 +66,20 @@ script = ExtResource("4_r2pyx")
 total_enemy_count = 3
 metadata/_custom_type_script = "uid://cqodewu2t3855"
 
-[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("player", "spawner", "wave_manager")]
+[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("audio_player", "player", "spawner", "wave_manager")]
 script = ExtResource("4_7e2dr")
+audio_player = NodePath("AudioStreamPlayer")
 player = NodePath("../Player")
 spawner = NodePath("../Spawner")
 wave_manager = NodePath("../WaveManager")
 metadata/_custom_type_script = "uid://0a4b642jtkl5"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LevelOrchestrator" unique_id=1943433338]
+process_mode = 3
+playback_type = 1
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=891048022]
+position = Vector2(715, 353)
 limit_left = 0
 limit_top = 0
 limit_right = 3840

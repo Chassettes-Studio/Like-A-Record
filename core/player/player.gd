@@ -24,6 +24,8 @@ var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
 @onready var gun: Gun = $Gun
 @onready var ui: PlayerUi = $PlayerUi
 
+@export var character : Character
+
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
