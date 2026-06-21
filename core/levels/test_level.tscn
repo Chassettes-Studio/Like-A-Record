@@ -70,6 +70,9 @@ wave_manager = NodePath("../WaveManager")
 metadata/_custom_type_script = "uid://0a4b642jtkl5"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LevelOrchestrator" unique_id=1943433338]
+process_mode = 3
+bus = &"Music"
+playback_type = 1
 
 [connection signal="new_enemy_spawned" from="Spawner" to="." method="_on_spawner_new_enemy_spawned"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
