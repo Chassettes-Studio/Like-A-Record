@@ -32,6 +32,7 @@ func create_enemy_pool() -> void:
 
 func next_wave() -> void:
 	current_wave += 1
+	Score.set_wave(current_wave)
 	create_enemy_pool()
 	killcount -= total_enemy_count
 	total_enemy_count += current_wave

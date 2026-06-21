@@ -8,6 +8,10 @@ extends Node2D
 
 const upgrade_scene : PackedScene = preload("res://core/ui/upgrade/upgrade_selection.tscn")
 
+func _ready() -> void:
+	Score.score = 0
+	Score.wave = 1
+
 func _on_timer_timeout() -> void:
 	if wave_manager.left_to_spawn > 0:
 		spawner.spawn_enemy(wave_manager.get_random_enemy())
