@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://csgkeg7n020cl"]
+
+[ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="1_1hsmn"]
+[ext_resource type="Script" uid="uid://vvfsmu4jxy5j" path="res://core/enemies/enemy_brain/rush_brain.gd" id="1_h8w2c"]
+[ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="2_ftyy6"]
+[ext_resource type="Texture2D" uid="uid://dm35mfbjddfxi" path="res://assets/musicStuff/usb_key.png" id="4_fcalx"]
+
+[sub_resource type="Resource" id="Resource_ftyy6"]
+script = ExtResource("1_h8w2c")
+metadata/_custom_type_script = "uid://vvfsmu4jxy5j"
+
+[resource]
+script = ExtResource("2_ftyy6")
+name = "Usb Key"
+texture = ExtResource("4_fcalx")
+weight = 5.0
+size = 80.0
+max_health = 2
+brain = SubResource("Resource_ftyy6")
+metadata/_custom_type_script = "uid://koby8pounmkx"

@@ -76,6 +76,7 @@ metadata/_custom_type_script = "uid://0a4b642jtkl5"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LevelOrchestrator" unique_id=1943433338]
 process_mode = 3
+bus = &"Music"
 playback_type = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=891048022]
@@ -88,4 +89,3 @@ position_smoothing_enabled = true
 position_smoothing_speed = 25.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="trigger_new_wave" from="WaveManager" to="." method="_on_wave_manager_trigger_new_wave"]

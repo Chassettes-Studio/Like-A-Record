@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bt6sittttokya"]
+
+[ext_resource type="Script" uid="uid://w28gakr3j2dj" path="res://core/lasers/entity/laser_entity.gd" id="1_q4wog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41t28"]
+
+[node name="LaserEntity" type="Node2D" unique_id=1537710245]
+script = ExtResource("1_q4wog")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=205888534]
+shape = SubResource("RectangleShape2D_41t28")

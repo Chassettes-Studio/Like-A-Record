@@ -8,6 +8,7 @@ enum BrainState {
 
 @export var chase_stop_distance: float
 @export var chase_start_distance: float
+@export var attack: EnemyContinuousAttack
 
 var state: BrainState = BrainState.CHASE
 
@@ -31,4 +32,4 @@ func process(entity: EnemyEntity, delta: float) -> void:
 			entity.movement_controller.direction = entity.global_position.direction_to(entity.target.global_position)
 		BrainState.SHOOT:
 			entity.movement_controller.direction = Vector2.ZERO
-			entity.attack.attack(delta, entity)
+			attack.attack(delta, entity)

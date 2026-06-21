@@ -1,5 +1,5 @@
 class_name NoAttack
-extends EnemyAttack
+extends EnemyDiscreteAttack
 
-func attack(_delta: float, _enemy: EnemyEntity) -> void:
+func attack(_enemy: EnemyEntity) -> void:
 	return

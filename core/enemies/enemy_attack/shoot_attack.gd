@@ -1,5 +1,5 @@
 class_name ShootAttack
-extends EnemyAttack
+extends EnemyContinuousAttack
 
 @export var bullet : Bullet
 

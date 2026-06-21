@@ -3,11 +3,16 @@ extends CharacterBody2D
 
 signal died
 
+const FREEZE_COLOR := Color.BLUE
 var dead := false
 
 @export var enemy_data: Enemy
 
 @export var target: Node2D
+
+var brain: EnemyBrain
+
+var health: int
 
 @onready var damage_shape: CollisionShape2D = $DamageArea/CollisionShape2D
 @onready var body_shape: CollisionShape2D = $CollisionShape2D
@@ -18,33 +23,27 @@ var dead := false
 @onready var sprite: Sprite2D = $Sprite
 @onready var name_label: Label = $NameLabel
 
-const FREEZE_COLOR := Color.BLUE
-
-var attack : EnemyAttack
-var brain : EnemyBrain
-
-
-var health : int
 
 func _ready() -> void:
 	sprite.texture = enemy_data.texture
 	name_label.text = enemy_data.name
-	sprite.scale = Vector2.ONE * 2 * (enemy_data.size/enemy_data.texture.get_width())
+	sprite.scale = Vector2.ONE * 2 * (enemy_data.size / enemy_data.texture.get_width())
 	var shape := CircleShape2D.new()
 	shape.radius = enemy_data.size
 	damage_shape.shape = shape
 	body_shape.shape = shape
 	health = enemy_data.max_health
-	attack = enemy_data.attack.duplicate()
 	brain = enemy_data.brain.duplicate()
 
+
 func _physics_process(delta: float) -> void:
-	if not is_instance_valid(target) : return
-	if not freeze_timer.is_stopped() : return
+	if not is_instance_valid(target): return
+	if not freeze_timer.is_stopped(): return
 	brain.process(self, delta)
 
+
 func take_damage(value: int) -> void:
-	sprite.modulate = Color(4,4,4)
+	sprite.modulate = Color(4, 4, 4)
 	health -= value
 	if health <= 0:
 		die()
@@ -60,7 +59,8 @@ func die() -> void:
 	died.emit()
 	queue_free()
 
-func freeze(duration : float) -> void:
+
+func freeze(duration: float) -> void:
 	if freeze_timer.is_stopped():
 		damage_area.set_hittable(false)
 		freeze_timer.start(duration)

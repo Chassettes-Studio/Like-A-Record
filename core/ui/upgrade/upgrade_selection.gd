@@ -32,7 +32,6 @@ func init(upgrade1: Upgrade, upgrade2: Upgrade, upgrade3: Upgrade) -> void:
 	card3.init(upgrade3)
 	AudioServer.set_bus_effect_enabled(1,0,true)
 
-
 func _on_upgarde_card_free() -> void:
 	var tween: Tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
