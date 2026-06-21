@@ -58,5 +58,5 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=821414927]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_constants/separation = 50
+theme_override_constants/separation = 85
 alignment = 2
