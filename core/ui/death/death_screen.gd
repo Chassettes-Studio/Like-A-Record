@@ -10,7 +10,7 @@ func _ready() -> void:
 	home.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	restart.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	get_tree().paused = true
-	score.text = "You reach waves : " + str(Score.get_wave()) + "\nWith a score of : " + str(Score.get_score())
+	score.text = "You survived until wave : " + str(Score.get_wave()) + "\nWith a score of : " + str(Score.get_score())
 	await get_tree().create_timer(1).timeout
 	var tween: Tween = get_tree().create_tween()
 	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)

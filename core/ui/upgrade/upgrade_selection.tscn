@@ -58,7 +58,7 @@ theme_override_constants/separation = 100
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=99552913]
 z_index = 2
 layout_mode = 2
-text = "Upgrade Time"
+text = "Choose your next album !"
 label_settings = SubResource("LabelSettings_gtu5s")
 horizontal_alignment = 1
 
