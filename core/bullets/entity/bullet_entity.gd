@@ -11,7 +11,6 @@ var bounces := 0
 @onready var sprite: Sprite2D = $Sprite
 @onready var area_2d: Area2D = $Area2D
 
-
 func _process(delta: float) -> void:
 	sprite.rotation = bullet_controller.direction.angle() - deg_to_rad(90.0)
 
@@ -19,6 +18,10 @@ func _ready() -> void:
 	sprite.texture = bullet_data.texture
 	sprite.scale = Vector2.ONE * 2 * (bullet_data.size / bullet_data.texture.get_width())
 	sprite.modulate = bullet_data.color
+	refresh_size()
+	
+func refresh_size() -> void:
+	sprite.scale = Vector2.ONE * 2 * (bullet_data.size/bullet_data.texture.get_width())
 	var shape := CircleShape2D.new()
 	shape.radius = bullet_data.size
 	area_collision.shape = shape

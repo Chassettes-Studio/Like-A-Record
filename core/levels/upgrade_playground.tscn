@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://6jfmyqgd15gg"]
+
+[ext_resource type="Script" uid="uid://secf36jumim0" path="res://core/levels/upgrade_playground.gd" id="1_kthok"]
+[ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_x4nve"]
+[ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="3_ebf7h"]
+[ext_resource type="Resource" uid="uid://dnd0lioo26sm4" path="res://resources/enemies/feur.tres" id="4_igtde"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gs88k"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x4nve"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kthok"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_53dat"]
+normal = Vector2(-1, 0)
+
+[node name="UpgradePlayground" type="Node2D" unique_id=1045174004]
+script = ExtResource("1_kthok")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=398832955]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Up" type="CollisionShape2D" parent="Walls" unique_id=1137903926]
+shape = SubResource("WorldBoundaryShape2D_gs88k")
+
+[node name="Down" type="CollisionShape2D" parent="Walls" unique_id=188304952]
+position = Vector2(0, 1080)
+shape = SubResource("WorldBoundaryShape2D_x4nve")
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=1739028097]
+shape = SubResource("WorldBoundaryShape2D_kthok")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=1445073747]
+position = Vector2(1920, 0)
+shape = SubResource("WorldBoundaryShape2D_53dat")
+
+[node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_x4nve")]
+position = Vector2(765, 373)
+
+[node name="EnemyEntity" parent="." unique_id=255422468 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
+position = Vector2(1617, 787)
+enemy_data = ExtResource("4_igtde")
+target = NodePath("../Player")
+
+[node name="EnemyEntity2" parent="." unique_id=1490940008 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
+position = Vector2(1612, 125)
+enemy_data = ExtResource("4_igtde")
+target = NodePath("../Player")
+
+[node name="EnemyEntity3" parent="." unique_id=324606535 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
+position = Vector2(1352, 345)
+enemy_data = ExtResource("4_igtde")
+target = NodePath("../Player")
+
+[node name="EnemyEntity4" parent="." unique_id=595351844 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
+position = Vector2(1677, 394)
+enemy_data = ExtResource("4_igtde")
+target = NodePath("../Player")
+
+[node name="EnemyEntity5" parent="." unique_id=1867893838 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
+position = Vector2(1252, 114)
+enemy_data = ExtResource("4_igtde")
+target = NodePath("../Player")
+
+[node name="EnemyEntity6" parent="." unique_id=975856993 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
+position = Vector2(1532, 585)
+enemy_data = ExtResource("4_igtde")
+target = NodePath("../Player")
+
+[node name="EnemyEntity7" parent="." unique_id=1036590176 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
+position = Vector2(1318, 690)
+enemy_data = ExtResource("4_igtde")
+target = NodePath("../Player")

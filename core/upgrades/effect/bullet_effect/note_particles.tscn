@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cdhlp32mc7yso"]
+
+[ext_resource type="Texture2D" uid="uid://m6sawt7x5cb0" path="res://assets/musicStuff/notes/noire.png" id="1_0n0v0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0qsbb"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_max = 61.23
+gravity = Vector3(0, 0, 0)
+scale_min = 0.02
+scale_max = 0.099999994
+hue_variation_min = -1.0
+hue_variation_max = 0.99999994
+
+[node name="NoteParticles" type="GPUParticles2D" unique_id=1757967634]
+texture = ExtResource("1_0n0v0")
+process_material = SubResource("ParticleProcessMaterial_0qsbb")
