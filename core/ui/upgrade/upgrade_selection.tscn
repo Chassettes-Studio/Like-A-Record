@@ -31,6 +31,8 @@ shader_parameter/seed = 1.0
 font = ExtResource("3_abip5")
 font_size = 128
 font_color = Color(0.8, 0.12941177, 0.2, 1)
+outline_size = 32
+outline_color = Color(0.92941177, 0.58431375, 0.19215687, 1)
 
 [node name="UpgradeSelection" type="CanvasLayer" unique_id=1452786776]
 process_mode = 3

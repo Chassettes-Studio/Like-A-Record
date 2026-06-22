@@ -9,12 +9,12 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	Score.reset()
 	lost.play()
 	home.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	restart.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	get_tree().paused = true
 	score.text = "You survived until wave : " + str(Score.get_wave()) + "\nWith a score of : " + str(Score.get_score())
+	Score.reset()
 	await get_tree().create_timer(1).timeout
 	var tween: Tween = get_tree().create_tween()
 	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
