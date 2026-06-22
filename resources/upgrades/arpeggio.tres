@@ -12,12 +12,12 @@
 
 [sub_resource type="Resource" id="Resource_s5bj2"]
 script = ExtResource("4_jkpwt")
-multiplied_projectile_count = 2
+multiplied_projectile_count = 3
 metadata/_custom_type_script = "uid://bh1y6r2pakjh"
 
 [sub_resource type="Resource" id="Resource_qwhjy"]
 script = ExtResource("5_qwhjy")
-added_spread_angle = 0.17453292519943295
+added_spread_angle = 0.5235987755982988
 metadata/_custom_type_script = "uid://d2lfp08q4m4fm"
 
 [resource]
@@ -25,5 +25,6 @@ script = ExtResource("1_omsmg")
 name = "Arpeggio"
 description = "Shoot several bullets at a time"
 sprite = ExtResource("9_jda1l")
+stackable = false
 gun_effects = Array[ExtResource("3_qwhjy")]([SubResource("Resource_s5bj2"), SubResource("Resource_qwhjy")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

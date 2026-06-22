@@ -11,7 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_ipkt7"]
 script = ExtResource("2_ipkt7")
-added_size = 30.0
+added_size = 15.0
 metadata/_custom_type_script = "uid://cwjx6maocl7ic"
 
 [resource]
