@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://c8siir1sy8tn4" path="res://resources/enemies/laser_disc.tres" id="6_e703i"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
 [ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="6_s57tb"]
+[ext_resource type="PackedScene" uid="uid://bl5un8gqbcywc" path="res://core/pickups/pickup_entity.tscn" id="9_s57tb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gs88k"]
 normal = Vector2(0, 1)
@@ -82,3 +83,6 @@ enemy_data = ExtResource("6_oq6wo")
 target = NodePath("../Player")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1774771549]
+
+[node name="PickupEntity" parent="." unique_id=1435589461 instance=ExtResource("9_s57tb")]
+position = Vector2(265, 747)
