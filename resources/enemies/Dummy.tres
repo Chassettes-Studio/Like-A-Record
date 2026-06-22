@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="1_uhh66"]
 [ext_resource type="Script" uid="uid://dw2cv271cg2nd" path="res://core/enemies/enemy_brain/idle_brain.gd" id="2_brwim"]
+[ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="2_kni41"]
 [ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="3_brwim"]
 [ext_resource type="Texture2D" uid="uid://ndtekr7g2585" path="res://assets/logo/godotLogo.png" id="4_kni41"]
 

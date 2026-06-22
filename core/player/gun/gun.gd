@@ -7,7 +7,7 @@ extends Node2D
 @export var burst: float = 0
 @export var shooting_cooldown: float = 0.5
 @export_range(0, 360, 0.1, "radians_as_degrees") var spread_angle: float = 0
-@export var bullet: Bullet = preload("res://resources/bullets/default_bullet.tres").duplicate()
+@export var bullet: Bullet = preload("res://resources/bullets/default_bullet.tres").duplicate(true)
 @onready var shootAudio: AudioStreamPlayer = $Shoot
 
 @export var hit_effects: Array[HitEffect] = []
@@ -17,8 +17,6 @@ extends Node2D
 @onready var main_offset: Marker2D = $MainOffset
 @onready var bullet_interval: Timer = $BulletInterval
 @onready var shooting_cooldown_timer: Timer = $ShootingCooldownTimer
-
-var is_on_cooldown: bool = false
 
 
 #func _ready() -> void:
@@ -30,10 +28,9 @@ func _physics_process(delta: float) -> void:
 
 
 func shoot(normal: Vector2) -> void:
-	if not is_on_cooldown:
+	if shooting_cooldown_timer.is_stopped():
 		shootAudio.play()
 		shooting_cooldown_timer.start(shooting_cooldown)
-		is_on_cooldown = true
 		for _i in projectile_count:
 			if burst / projectile_count > 0.05:
 				bullet_interval.start(burst / projectile_count)
@@ -52,7 +49,3 @@ func update_bullet(new_bullet: Bullet) -> void:
 	self.bullet.bullet_effects.append(self.bullet_effects)
 	self.bullet.collision_effects.append(self.collision_effects)
 	self.bullet.hit_effects.append(self.hit_effects)
-
-
-func _on_shooting_cooldown_timer_timeout() -> void:
-	is_on_cooldown = false

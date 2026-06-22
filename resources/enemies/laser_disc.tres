@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="7_yoejk"]
 [ext_resource type="Script" uid="uid://b8xvwoto3hixl" path="res://core/enemies/enemy_brain/laser_disc_brain.gd" id="8_a5h10"]
 [ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="8_fw5ur"]
+[ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="10_xctrn"]
 [ext_resource type="Texture2D" uid="uid://bv4mu84joutad" path="res://assets/musicStuff/lazer_disc.png" id="11_vjqvv"]
 
 [sub_resource type="Resource" id="Resource_mwj0u"]

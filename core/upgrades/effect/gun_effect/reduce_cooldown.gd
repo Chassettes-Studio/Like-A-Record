@@ -5,4 +5,4 @@ extends GunEffect
 
 
 func apply(gun: Gun) -> void:
-	gun.shooting_cooldown *= (1 - reduction)
+	gun.shooting_cooldown *= (1 - reduction/100)

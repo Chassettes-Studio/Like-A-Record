@@ -26,4 +26,4 @@ func _on_wave_manager_trigger_new_wave() -> void:
 
 
 func _on_spawner_new_enemy_spawned(enemy: EnemyEntity) -> void:
-	enemy.died.connect(wave_manager.enemy_killed)
+	enemy.died.connect(wave_manager._on_enemy_death)
