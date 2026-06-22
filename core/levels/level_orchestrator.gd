@@ -12,6 +12,7 @@ var spawn_timer: Timer
 const upgrade_scene : PackedScene = preload("res://core/ui/upgrade/upgrade_selection.tscn")
 
 func _ready() -> void:
+	Score.reset()
 	_create_timer()
 	_connect_signals()
 	audio_player.stream = player.character.intro_song

@@ -78,3 +78,10 @@ func freeze(duration: float) -> void:
 func _on_freeze_timer_timeout() -> void:
 	damage_area.set_hittable(true)
 	sprite.modulate = Color.WHITE
+
+
+func _on_damage_area_body_entered(body: Node2D) -> void:
+	var player := body as Player
+	if not player: return
+	for effect in enemy_data.contact_effects:
+		effect.apply(self, player)
