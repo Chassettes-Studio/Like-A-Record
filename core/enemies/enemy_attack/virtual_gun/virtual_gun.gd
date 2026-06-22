@@ -17,6 +17,7 @@ func shoot(normal: Vector2, entity: EnemyEntity, bullet: Bullet) -> void:
 			if burst / projectile_count > 0.05:
 				await entity.get_tree().create_timer(burst / projectile_count).timeout
 			var angle: float = randf_range(-spread_angle / 2, spread_angle / 2)
+			if not is_instance_valid(entity): return
 			create_bullet(normal.rotated(angle), entity, bullet)
 
 
