@@ -23,7 +23,7 @@ func change_state(entity : EnemyEntity) -> void:
 				state = BrainState.CHASE
 
 
-func process(entity: EnemyEntity, delta: float) -> void:
+func process(entity: EnemyEntity, _delta: float) -> void:
 
 	change_state(entity)
 

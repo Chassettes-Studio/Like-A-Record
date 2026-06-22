@@ -50,7 +50,7 @@ func change_state(entity: EnemyEntity) -> void:
 func end_state() -> void:
 	state_ended = true
 
-func process(entity: EnemyEntity, delta: float) -> void:
+func process(entity: EnemyEntity, _delta: float) -> void:
 	if state_ended:
 		state_ended = false
 		change_state(entity)
