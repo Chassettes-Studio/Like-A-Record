@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bl5un8gqbcywc"]
+
+[ext_resource type="Script" uid="uid://cc7rxxe46dw7l" path="res://core/pickups/pickup_entity.gd" id="1_gi5tm"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="2_ank6c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpdy7"]
+radius = 255.00197
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4ddl"]
+radius = 18.027756
+
+[node name="PickupEntity" type="Node2D" unique_id=1435589461]
+script = ExtResource("1_gi5tm")
+
+[node name="FollowArea" type="Area2D" parent="." unique_id=231893741]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea" unique_id=1610556408]
+shape = SubResource("CircleShape2D_vpdy7")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=1824244642]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=550718758]
+shape = SubResource("CircleShape2D_i4ddl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1219499380]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ank6c")
+expand_mode = 1
+
+[connection signal="body_entered" from="FollowArea" to="." method="_on_follow_area_body_entered"]
+[connection signal="body_exited" from="FollowArea" to="." method="_on_follow_area_body_exited"]
+[connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]
