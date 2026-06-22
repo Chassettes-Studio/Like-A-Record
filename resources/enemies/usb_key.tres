@@ -6,22 +6,32 @@
 [ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="2_h8w2c"]
 [ext_resource type="Script" uid="uid://bua3vfe0wajfe" path="res://core/enemies/enemy_contact/die_on_contact.gd" id="3_y3u45"]
 [ext_resource type="Texture2D" uid="uid://dm35mfbjddfxi" path="res://assets/musicStuff/usb_key.png" id="4_fcalx"]
+[ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="5_mva10"]
+[ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="6_p35pn"]
 
 [sub_resource type="Resource" id="Resource_ftyy6"]
 script = ExtResource("1_h8w2c")
+speed = 500.0
+accel = 1000.0
 metadata/_custom_type_script = "uid://vvfsmu4jxy5j"
 
 [sub_resource type="Resource" id="Resource_h1bf3"]
 script = ExtResource("3_y3u45")
 metadata/_custom_type_script = "uid://bua3vfe0wajfe"
 
+[sub_resource type="Resource" id="Resource_rp8se"]
+script = ExtResource("6_p35pn")
+scene = ExtResource("5_mva10")
+metadata/_custom_type_script = "uid://cfihy37c1wi2w"
+
 [resource]
 script = ExtResource("2_ftyy6")
 name = "Usb Key"
 texture = ExtResource("4_fcalx")
 weight = 5.0
-size = 80.0
+size = 40.0
 max_health = 2
 brain = SubResource("Resource_ftyy6")
+death_effects = Array[ExtResource("1_1hsmn")]([SubResource("Resource_rp8se")])
 contact_effects = Array[ExtResource("2_h8w2c")]([SubResource("Resource_h1bf3")])
 metadata/_custom_type_script = "uid://koby8pounmkx"
