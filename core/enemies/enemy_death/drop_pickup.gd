@@ -20,6 +20,6 @@ func apply(entity: EnemyEntity) -> void:
 	if not pickup: return
 	var pe : PickupEntity = pickup_scene.instantiate()
 	pe.pickup = pickup
-	entity.get_tree().current_scene.add_child(pe)
+	entity.get_tree().current_scene.add_child.call_deferred(pe)
 	pe.global_position = entity.global_position
 	
