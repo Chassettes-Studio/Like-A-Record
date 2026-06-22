@@ -21,7 +21,7 @@ scale_max = 0.19999999
 color_ramp = SubResource("GradientTexture1D_rp8se")
 
 [node name="EnemyDeathParticles" type="GPUParticles2D" unique_id=671608729]
-modulate = Color(10.5787325, 0, 0, 1)
+modulate = Color(8.645095, 0.0011336437, 0.00019715543, 1)
 emitting = false
 texture = ExtResource("1_rp8se")
 one_shot = true
