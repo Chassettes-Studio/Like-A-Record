@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6dhfgtmf03hy" path="res://core/ui/upgrade/upgrade_selection.gd" id="1_pylfn"]
 [ext_resource type="PackedScene" uid="uid://crh55ejweuisx" path="res://core/ui/upgrade/upgardeCard.tscn" id="1_s0gyl"]
+[ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="3_abip5"]
 [ext_resource type="Shader" uid="uid://k6fxvvwwppbr" path="res://shaders/aura.gdshader" id="3_jkc4t"]
 [ext_resource type="AudioStream" uid="uid://cym2030isdcg6" path="res://assets/audios/sound/insert_disc.ogg" id="4_lwde0"]
 
@@ -27,7 +28,9 @@ shader_parameter/hdr = false
 shader_parameter/seed = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
+font = ExtResource("3_abip5")
 font_size = 128
+font_color = Color(0.8, 0.12941177, 0.2, 1)
 
 [node name="UpgradeSelection" type="CanvasLayer" unique_id=1452786776]
 process_mode = 3
