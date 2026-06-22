@@ -7,6 +7,7 @@ signal score_changed
 
 func reset() -> void:
 	score = 0
+	wave = 1
 
 func add_score(value: int) -> void:
 	score += value

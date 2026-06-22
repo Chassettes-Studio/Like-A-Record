@@ -9,6 +9,7 @@ extends CanvasLayer
 
 
 func _ready() -> void:
+	Score.reset()
 	lost.play()
 	home.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	restart.modulate = Color(1.0, 1.0, 1.0, 0.0)
