@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dm35mfbjddfxi" path="res://assets/musicStuff/usb_key.png" id="4_fcalx"]
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="5_mva10"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="6_p35pn"]
+[ext_resource type="Script" uid="uid://cgihhu70woabs" path="res://core/pickups/pickup.gd" id="7_espfy"]
+[ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="8_4qmuw"]
+[ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="8_mgysq"]
 
 [sub_resource type="Resource" id="Resource_ftyy6"]
 script = ExtResource("1_h8w2c")
@@ -24,6 +27,13 @@ script = ExtResource("6_p35pn")
 scene = ExtResource("5_mva10")
 metadata/_custom_type_script = "uid://cfihy37c1wi2w"
 
+[sub_resource type="Resource" id="Resource_brwim"]
+script = ExtResource("8_mgysq")
+drops = Dictionary[ExtResource("7_espfy"), float]({
+ExtResource("8_4qmuw"): 0.5
+})
+metadata/_custom_type_script = "uid://7r1qdl7fajj0"
+
 [resource]
 script = ExtResource("2_ftyy6")
 name = "Usb Key"
@@ -32,6 +42,6 @@ weight = 5.0
 size = 40.0
 max_health = 2
 brain = SubResource("Resource_ftyy6")
-death_effects = Array[ExtResource("1_1hsmn")]([SubResource("Resource_rp8se")])
+death_effects = Array[ExtResource("1_1hsmn")]([SubResource("Resource_rp8se"), SubResource("Resource_brwim")])
 contact_effects = Array[ExtResource("2_h8w2c")]([SubResource("Resource_h1bf3")])
 metadata/_custom_type_script = "uid://koby8pounmkx"
