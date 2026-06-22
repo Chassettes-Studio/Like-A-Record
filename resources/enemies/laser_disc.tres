@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="8_fw5ur"]
 [ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="10_xctrn"]
 [ext_resource type="Texture2D" uid="uid://bv4mu84joutad" path="res://assets/musicStuff/lazer_disc.png" id="11_vjqvv"]
+[ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="12_ppgr7"]
+[ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="13_xfomo"]
 
 [sub_resource type="Resource" id="Resource_mwj0u"]
 script = ExtResource("2_73ogs")
@@ -41,6 +43,11 @@ script = ExtResource("8_a5h10")
 attack = SubResource("Resource_4of4c")
 metadata/_custom_type_script = "uid://b8xvwoto3hixl"
 
+[sub_resource type="Resource" id="Resource_rp8se"]
+script = ExtResource("13_xfomo")
+scene = ExtResource("12_ppgr7")
+metadata/_custom_type_script = "uid://cfihy37c1wi2w"
+
 [resource]
 script = ExtResource("2_qqpub")
 name = "LD"
@@ -49,4 +56,5 @@ min_wave = 5
 size = 150.0
 max_health = 10
 brain = SubResource("Resource_0mi3h")
+death_effects = Array[ExtResource("1_q3n81")]([SubResource("Resource_rp8se")])
 metadata/_custom_type_script = "uid://koby8pounmkx"
