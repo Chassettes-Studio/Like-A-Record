@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://secf36jumim0" path="res://core/levels/upgrade_playground.gd" id="1_kthok"]
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_x4nve"]
-[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="2_oq6wo"]
 [ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="3_ebf7h"]
-[ext_resource type="Resource" uid="uid://rrwnc3d2v4hm" path="res://resources/upgrades/cool_as_ice.tres" id="3_qg01g"]
 [ext_resource type="Resource" uid="uid://c8siir1sy8tn4" path="res://resources/enemies/laser_disc.tres" id="6_e703i"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
 [ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="6_s57tb"]
@@ -24,7 +22,6 @@ normal = Vector2(-1, 0)
 
 [node name="UpgradePlayground" type="Node2D" unique_id=1045174004]
 script = ExtResource("1_kthok")
-upgrades = Array[ExtResource("2_oq6wo")]([ExtResource("3_qg01g")])
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=398832955]
 collision_layer = 8
