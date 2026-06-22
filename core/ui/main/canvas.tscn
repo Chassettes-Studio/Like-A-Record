@@ -1,42 +1,40 @@
 [gd_scene format=3 uid="uid://dr0jek4ldjaps"]
 
-[ext_resource type="Texture2D" uid="uid://8eqe1jusslh2" path="res://assets/logo/like_a_record.png" id="1_7e7tf"]
 [ext_resource type="Script" uid="uid://dmorc2nkdhuai" path="res://core/ui/main/canvas.gd" id="1_h3314"]
+[ext_resource type="Texture2D" uid="uid://uiok8cohg4r3" path="res://assets/ui/shop.png" id="2_h3314"]
+[ext_resource type="AudioStream" uid="uid://do1bssr5p2ddv" path="res://assets/audios/sound/enter.mp3" id="3_dvetv"]
+[ext_resource type="AudioStream" uid="uid://x6gqpt0u2bjn" path="res://assets/audios/music/main.ogg" id="4_2cbxx"]
+[ext_resource type="AudioStream" uid="uid://cx1xdlhxokecd" path="res://assets/audios/sound/steps_stairs.ogg" id="5_yoa7e"]
 
-[node name="Canvas" type="Control" unique_id=1375448912]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Canvas" type="Node2D" unique_id=1642986486]
 script = ExtResource("1_h3314")
 
-[node name="Play" type="Button" parent="." unique_id=1666076370]
-layout_mode = 0
-offset_left = 626.0
-offset_top = 579.0
-offset_right = 1270.0
-offset_bottom = 670.0
-text = "Play"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=884258623]
+texture = ExtResource("2_h3314")
+centered = false
 
-[node name="Credits" type="Button" parent="." unique_id=478091026]
-layout_mode = 0
-offset_left = 707.0
-offset_top = 764.0
-offset_right = 1205.0
-offset_bottom = 852.0
-text = "Credits
-"
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=644852173]
+polygon = PackedVector2Array(1489, 810, 1489, 297, 1454, 307, 1402, 316, 1352, 321, 1316, 321, 1272, 317, 1242, 312, 1214, 305, 1214, 738, 1261, 810)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1376793739]
-layout_mode = 0
-offset_left = 698.0
-offset_top = 19.0
-offset_right = 1225.5842
-offset_bottom = 517.0
-texture = ExtResource("1_7e7tf")
-expand_mode = 1
+[node name="Area2D" type="Area2D" parent="." unique_id=1056730199]
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1339231115]
+polygon = PackedVector2Array(1489, 810, 1489, 297, 1454, 307, 1402, 316, 1352, 321, 1316, 321, 1272, 317, 1242, 312, 1214, 305, 1214, 738, 1261, 810)
+
+[node name="Enter" type="AudioStreamPlayer" parent="." unique_id=1778003897]
+stream = ExtResource("3_dvetv")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1307769560]
+stream = ExtResource("4_2cbxx")
+
+[node name="Step" type="AudioStreamPlayer" parent="." unique_id=363093929]
+stream = ExtResource("5_yoa7e")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1489770333]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
