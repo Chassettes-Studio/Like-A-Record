@@ -63,6 +63,7 @@ wait_time = 0.1
 stream = ExtResource("8_c8kf1")
 
 [connection signal="died" from="SCHealthController" to="." method="_on_sc_health_controller_died"]
+[connection signal="healed" from="SCHealthController" to="." method="_on_sc_health_controller_healed"]
 [connection signal="hurt" from="Hitbox" to="." method="_on_hitbox_hurt"]
 [connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_invulnerability_timer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]
