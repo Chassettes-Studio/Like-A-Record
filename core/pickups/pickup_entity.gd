@@ -11,6 +11,11 @@ var target: Player
 
 @onready var texture_rect: TextureRect = $TextureRect
 
+@export var pickup: Pickup
+
+func _ready() -> void:
+	texture_rect.texture = pickup.texture
+
 
 func _physics_process(delta: float) -> void:
 	_update_velocity(delta)
@@ -37,4 +42,8 @@ func _on_follow_area_body_exited(body: Node2D) -> void:
 		target = null
 
 func _on_pickup_area_body_entered(body: Node2D) -> void:
-	queue_free()
+	var player := body as Player
+	if player:
+		for effect in pickup.effects:
+			effect.apply(player)
+		queue_free()

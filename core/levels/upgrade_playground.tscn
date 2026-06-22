@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
 [ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="6_s57tb"]
 [ext_resource type="PackedScene" uid="uid://bl5un8gqbcywc" path="res://core/pickups/pickup_entity.tscn" id="9_s57tb"]
+[ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="10_rpty4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gs88k"]
 normal = Vector2(0, 1)
@@ -86,3 +87,4 @@ target = NodePath("../Player")
 
 [node name="PickupEntity" parent="." unique_id=1435589461 instance=ExtResource("9_s57tb")]
 position = Vector2(265, 747)
+pickup = ExtResource("10_rpty4")
