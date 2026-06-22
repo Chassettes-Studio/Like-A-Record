@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://clyhv077b3mhn" path="res://core/ui/player/player_ui.gd" id="1_pn5ve"]
 [ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="1_tv5wv"]
 [ext_resource type="Texture2D" uid="uid://b6giimtwrglmv" path="res://assets/ui/bar.png" id="2_3qqhg"]
+[ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="3_ourgq"]
 [ext_resource type="PackedScene" uid="uid://dvke7witwpeqm" path="res://core/ui/health_bar/health_bar.tscn" id="3_pn5ve"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
+font = ExtResource("3_ourgq")
 font_size = 32
+font_color = Color(0.20392157, 0.40784314, 0.36078432, 1)
 
 [node name="PlayerUi" type="CanvasLayer" unique_id=227467206]
 process_mode = 3
@@ -19,11 +22,10 @@ texture = ExtResource("2_3qqhg")
 
 [node name="Score" type="Label" parent="." unique_id=1392928785]
 offset_left = 166.0
-offset_top = 59.0
+offset_top = 70.0
 offset_right = 257.0
-offset_bottom = 152.0
-text = "0
-"
+offset_bottom = 163.0
+text = "0"
 label_settings = SubResource("LabelSettings_gtu5s")
 horizontal_alignment = 1
 
