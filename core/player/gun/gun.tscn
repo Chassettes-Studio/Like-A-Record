@@ -24,4 +24,3 @@ one_shot = true
 stream = ExtResource("3_iengv")
 
 [connection signal="timeout" from="BulletInterval" to="." method="_on_bullet_interval_timeout"]
-[connection signal="timeout" from="ShootingCooldownTimer" to="." method="_on_shooting_cooldown_timer_timeout"]

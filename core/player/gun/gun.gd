@@ -18,8 +18,6 @@ extends Node2D
 @onready var bullet_interval: Timer = $BulletInterval
 @onready var shooting_cooldown_timer: Timer = $ShootingCooldownTimer
 
-var is_on_cooldown: bool = false
-
 
 #func _ready() -> void:
 	#main_offset.position.x = orbit_radius
@@ -30,10 +28,9 @@ func _physics_process(delta: float) -> void:
 
 
 func shoot(normal: Vector2) -> void:
-	if not is_on_cooldown:
+	if shooting_cooldown_timer.is_stopped():
 		shootAudio.play()
 		shooting_cooldown_timer.start(shooting_cooldown)
-		is_on_cooldown = true
 		for _i in projectile_count:
 			if burst / projectile_count > 0.05:
 				bullet_interval.start(burst / projectile_count)
@@ -52,7 +49,3 @@ func update_bullet(new_bullet: Bullet) -> void:
 	self.bullet.bullet_effects.append(self.bullet_effects)
 	self.bullet.collision_effects.append(self.collision_effects)
 	self.bullet.hit_effects.append(self.hit_effects)
-
-
-func _on_shooting_cooldown_timer_timeout() -> void:
-	is_on_cooldown = false
