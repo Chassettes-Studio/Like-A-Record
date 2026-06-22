@@ -3,11 +3,17 @@
 [ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="1_1hsmn"]
 [ext_resource type="Script" uid="uid://vvfsmu4jxy5j" path="res://core/enemies/enemy_brain/rush_brain.gd" id="1_h8w2c"]
 [ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="2_ftyy6"]
+[ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="2_h8w2c"]
+[ext_resource type="Script" uid="uid://bua3vfe0wajfe" path="res://core/enemies/enemy_contact/die_on_contact.gd" id="3_y3u45"]
 [ext_resource type="Texture2D" uid="uid://dm35mfbjddfxi" path="res://assets/musicStuff/usb_key.png" id="4_fcalx"]
 
 [sub_resource type="Resource" id="Resource_ftyy6"]
 script = ExtResource("1_h8w2c")
 metadata/_custom_type_script = "uid://vvfsmu4jxy5j"
+
+[sub_resource type="Resource" id="Resource_h1bf3"]
+script = ExtResource("3_y3u45")
+metadata/_custom_type_script = "uid://bua3vfe0wajfe"
 
 [resource]
 script = ExtResource("2_ftyy6")
@@ -17,4 +23,5 @@ weight = 5.0
 size = 80.0
 max_health = 2
 brain = SubResource("Resource_ftyy6")
+contact_effects = Array[ExtResource("2_h8w2c")]([SubResource("Resource_h1bf3")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

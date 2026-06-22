@@ -48,4 +48,5 @@ one_shot = true
 [node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1363799150]
 stream = ExtResource("5_h1bf3")
 
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
 [connection signal="timeout" from="FreezeTimer" to="." method="_on_freeze_timer_timeout"]
