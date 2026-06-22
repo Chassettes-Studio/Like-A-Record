@@ -6,28 +6,23 @@ extends Resource
 @export var shooting_cooldown: float = 0.5
 @export_range(0, 360, 0.1, "radians_as_degrees") var spread_angle: float = 0
 
-var _entity: EnemyEntity
-var _bullet: Bullet
 var is_on_cooldown: bool = false
 
-func _init(entity: EnemyEntity, bullet: Bullet) -> void:
-	_entity = entity
-	_bullet = bullet
 
-func shoot(normal: Vector2) -> void:
+func shoot(normal: Vector2, entity: EnemyEntity, bullet: Bullet) -> void:
 	if not is_on_cooldown:
-		_entity.get_tree().create_timer(shooting_cooldown).timeout.connect(_on_shooting_cooldown_timer_timeout)
+		entity.get_tree().create_timer(shooting_cooldown).timeout.connect(_on_shooting_cooldown_timer_timeout)
 		is_on_cooldown = true
 		for _i in projectile_count:
 			if burst / projectile_count > 0.05:
-				await _entity.get_tree().create_timer(burst / projectile_count).timeout
+				await entity.get_tree().create_timer(burst / projectile_count).timeout
 			var angle: float = randf_range(-spread_angle / 2, spread_angle / 2)
-			create_bullet(normal.rotated(angle))
+			create_bullet(normal.rotated(angle), entity, bullet)
 
 
-func create_bullet(normal: Vector2) -> void:
-	var bullet_entity: BulletEntity = Bullet.create(_entity.get_tree().current_scene, _bullet, true)
-	bullet_entity.global_position = _entity.global_position
+func create_bullet(normal: Vector2, entity: EnemyEntity, bullet: Bullet) -> void:
+	var bullet_entity: BulletEntity = Bullet.create(entity.get_tree().current_scene, bullet, true)
+	bullet_entity.global_position = entity.global_position
 	bullet_entity.bullet_controller.direction = normal
 
 

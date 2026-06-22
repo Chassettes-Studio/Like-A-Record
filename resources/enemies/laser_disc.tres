@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="6_xctrn"]
 [ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="7_yoejk"]
 [ext_resource type="Script" uid="uid://b8xvwoto3hixl" path="res://core/enemies/enemy_brain/laser_disc_brain.gd" id="8_a5h10"]
+[ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="8_fw5ur"]
 [ext_resource type="Texture2D" uid="uid://bv4mu84joutad" path="res://assets/musicStuff/lazer_disc.png" id="11_vjqvv"]
 
 [sub_resource type="Resource" id="Resource_mwj0u"]
@@ -24,9 +25,14 @@ color = Color(0.8, 0.12941177, 0.2, 1)
 bullet_effects = Array[ExtResource("1_xctrn")]([SubResource("Resource_mwj0u")])
 metadata/_custom_type_script = "uid://bkh04gcfmrktg"
 
+[sub_resource type="Resource" id="Resource_e703i"]
+script = ExtResource("8_fw5ur")
+metadata/_custom_type_script = "uid://b22neqpd27r5d"
+
 [sub_resource type="Resource" id="Resource_4of4c"]
 script = ExtResource("7_yoejk")
 bullet = SubResource("Resource_kiknh")
+v_gun = SubResource("Resource_e703i")
 metadata/_custom_type_script = "uid://hqlj76mb0xbg"
 
 [sub_resource type="Resource" id="Resource_0mi3h"]
