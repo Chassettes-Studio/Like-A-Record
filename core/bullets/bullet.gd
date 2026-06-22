@@ -9,6 +9,7 @@ const entity_scene: PackedScene = preload("res://core/bullets/entity/bullet_enti
 
 @export var collision_effects: Array[CollisionEffect]
 @export var bullet_effects: Array[BulletEffect]
+@export var bullet_process_effect: Array[BulletProcessEffect]
 @export var hit_effects: Array[HitEffect]
 
 

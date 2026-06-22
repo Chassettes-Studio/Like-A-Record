@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_xctrn"]
 [ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="2_73ogs"]
 [ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="2_qqpub"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="3_73ogs"]
 [ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_ppgr7"]
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_rfxn6"]
 [ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="6_ahwxf"]
