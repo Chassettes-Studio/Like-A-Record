@@ -36,6 +36,7 @@ metadata/_custom_type_script = "uid://10yphvuogl8w"
 [node name="DamageArea" type="Area2D" parent="." unique_id=1015617212]
 collision_layer = 0
 script = ExtResource("4_r64xa")
+damage = 1.0
 metadata/_custom_type_script = "uid://bkhxf1lnuow3y"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=524853481]
