@@ -15,6 +15,8 @@ var current_state: State = MovingState.new(self, Vector2.RIGHT)
 var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
 var dash_unlocked := false
 
+var energy : int = 0
+
 @onready var blink_timer: Timer = $BlinkTimer
  
 @onready var hitbox: Hitbox = $Hitbox
@@ -38,6 +40,10 @@ func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
 	if Input.is_action_just_pressed("shoot"):
 		gun.shoot(Vector2.RIGHT.rotated(gun.rotation))
+	if Input.is_action_just_pressed("use_ability"):
+		if energy >= 3:
+			energy -= 3
+			character.ability.use(self)
 		
 		
 func _on_gun_shot() -> void:
