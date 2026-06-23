@@ -36,6 +36,8 @@ func _ready() -> void:
 	health = enemy_data.max_health
 	brain = enemy_data.brain.duplicate()
 	brain.ready()
+	for effect in enemy_data.spawn_effects:
+		effect.apply(self)
 
 
 func _physics_process(delta: float) -> void:

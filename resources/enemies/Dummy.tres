@@ -5,10 +5,18 @@
 [ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="2_kni41"]
 [ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="3_brwim"]
 [ext_resource type="Texture2D" uid="uid://ndtekr7g2585" path="res://assets/logo/godotLogo.png" id="4_kni41"]
+[ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="5_0mfbx"]
+[ext_resource type="PackedScene" uid="uid://0uwkle2aq8ts" path="res://core/enemies/enemy_shield.tscn" id="6_0rk2f"]
+[ext_resource type="Script" uid="uid://ng70nn0gtekp" path="res://core/enemies/enemy_spawn_effect/append_scene.gd" id="7_c48yo"]
 
 [sub_resource type="Resource" id="Resource_5k7ar"]
 script = ExtResource("2_brwim")
 metadata/_custom_type_script = "uid://dw2cv271cg2nd"
+
+[sub_resource type="Resource" id="Resource_ruhwk"]
+script = ExtResource("7_c48yo")
+scene = ExtResource("6_0rk2f")
+metadata/_custom_type_script = "uid://ng70nn0gtekp"
 
 [resource]
 script = ExtResource("1_uhh66")
@@ -18,4 +26,5 @@ min_wave = 100
 weight = 999.0
 mass = 0.1
 brain = SubResource("Resource_5k7ar")
+spawn_effects = Array[ExtResource("5_0mfbx")]([SubResource("Resource_ruhwk")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

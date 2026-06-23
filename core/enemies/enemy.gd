@@ -11,5 +11,6 @@ extends Resource
 @export var size: float = 100
 @export var max_health : int = 1
 @export var brain: EnemyBrain
+@export var spawn_effects: Array[EnemySpawnEffect]
 @export var death_effects: Array[EnemyDeath]
 @export var contact_effects: Array[EnemyContact]
