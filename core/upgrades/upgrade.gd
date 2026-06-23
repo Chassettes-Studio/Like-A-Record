@@ -12,3 +12,4 @@ extends Resource
 @export var collision_effects: Array[CollisionEffect]
 @export var hit_effects : Array[HitEffect]
 @export var player_effects: Array[PlayerEffect]
+@export var player_shoot_effects: Array[PlayerShootEffect]

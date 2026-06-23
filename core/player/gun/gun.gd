@@ -1,6 +1,8 @@
 class_name Gun
 extends Node2D
 
+signal shot
+
 @export var orbit_radius: float = 100
 @export var radial_speed: float = 2
 @export var projectile_count: int = 1
@@ -37,6 +39,7 @@ func shoot(normal: Vector2) -> void:
 				await bullet_interval.timeout
 			var angle: float = randf_range(-spread_angle / 2, spread_angle / 2)
 			create_bullet(normal.rotated(angle))
+			shot.emit()
 
 func create_bullet(normal: Vector2) -> void:
 	var entity: BulletEntity = Bullet.create(get_tree().current_scene, bullet)

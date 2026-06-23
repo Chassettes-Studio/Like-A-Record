@@ -29,11 +29,20 @@ var dash_unlocked := false
 @onready var ui: PlayerUi = $PlayerUi
 @onready var hit: AudioStreamPlayer = $Hit
 
+var player_shoot_effects: Array[PlayerShootEffect] = []
+
+func _ready() -> void:
+	gun.shot.connect(_on_gun_shot)
+
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
 	if Input.is_action_just_pressed("ui_accept"):
 		gun.shoot(Vector2.RIGHT.rotated(gun.rotation))
-
+		
+		
+func _on_gun_shot() -> void:
+	for effect in player_shoot_effects:
+		effect.apply(self)
 
 func update_current_state(state: State) -> void:
 	self.current_state.on_exit()
@@ -43,6 +52,7 @@ func update_current_state(state: State) -> void:
 
 func apply_upgrade(upgrade: Upgrade) -> void:
 	upgrades.push_front(upgrade)
+	player_shoot_effects.append_array(upgrade.player_shoot_effects)
 	for p_effect in upgrade.player_effects:
 		p_effect.apply(self)
 	for g_effect in upgrade.gun_effects:
