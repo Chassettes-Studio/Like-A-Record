@@ -20,6 +20,7 @@ _uids_to_string_ids = Dictionary[StringName, StringName]({
 &"uid://c8siir1sy8tn4": &"laser_disc",
 &"uid://cb7blx8quhmft": &"Dummy",
 &"uid://csgkeg7n020cl": &"usb_key",
+&"uid://dy4co0v8trtyj": &"test_pbe",
 &"uid://f2bbbxgsf3j4": &"margit"
 })
 _string_ids_to_uids = Dictionary[StringName, StringName]({
@@ -29,5 +30,6 @@ _string_ids_to_uids = Dictionary[StringName, StringName]({
 &"margit": &"uid://f2bbbxgsf3j4",
 &"mohg": &"uid://bxrjrepwrtuoc",
 &"placidusax": &"uid://b60mc6gnehd30",
+&"test_pbe": &"uid://dy4co0v8trtyj",
 &"usb_key": &"uid://csgkeg7n020cl"
 })

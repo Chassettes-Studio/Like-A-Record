@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="2_yicja"]
 [ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="3_ebf7h"]
 [ext_resource type="Resource" uid="uid://ccemb7m05f38i" path="res://resources/upgrades/pogo.tres" id="3_ruhwk"]
-[ext_resource type="Resource" uid="uid://c8siir1sy8tn4" path="res://resources/enemies/laser_disc.tres" id="6_e703i"]
+[ext_resource type="Resource" uid="uid://dy4co0v8trtyj" path="res://resources/enemies/test_pbe.tres" id="5_qg01g"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
 [ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="6_s57tb"]
 [ext_resource type="Resource" uid="uid://csgkeg7n020cl" path="res://resources/enemies/usb_key.tres" id="9_ruhwk"]
@@ -54,7 +54,7 @@ character = ExtResource("6_s57tb")
 
 [node name="EnemyEntity" parent="." unique_id=255422468 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
 position = Vector2(1617, 787)
-enemy_data = ExtResource("6_e703i")
+enemy_data = ExtResource("5_qg01g")
 target = NodePath("../Player")
 
 [node name="EnemyEntity2" parent="." unique_id=1490940008 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]

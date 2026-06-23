@@ -9,12 +9,14 @@ const entity_scene: PackedScene = preload("res://core/bullets/entity/bullet_enti
 
 @export var collision_effects: Array[CollisionEffect]
 @export var bullet_effects: Array[BulletEffect]
+@export var bullet_process_effect: Array[BulletProcessEffect]
 @export var hit_effects: Array[HitEffect]
 
 
 static func create(parent: Node, bullet: Bullet, is_enemy_bullet: bool = false) -> BulletEntity:
 	var entity: BulletEntity = entity_scene.instantiate() as BulletEntity
-	entity.bullet_data = bullet.duplicate()
+	entity.bullet_data = bullet.duplicate(true)
+	entity.bullet_data.bullet_process_effect = entity.bullet_data.bullet_process_effect.duplicate_deep()
 	parent.add_child(entity)
 	for effect: BulletEffect in bullet.bullet_effects:
 		effect.apply(entity)

@@ -14,6 +14,8 @@ var pierces := 0
 
 func _process(_delta: float) -> void:
 	sprite.rotation = bullet_controller.direction.angle() - deg_to_rad(90.0)
+	for effect in bullet_data.bullet_process_effect:
+		effect.process(self, _delta)
 
 func _ready() -> void:
 	sprite.texture = bullet_data.texture
