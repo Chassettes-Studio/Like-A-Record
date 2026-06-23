@@ -1,0 +1,101 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://dy4co0v8trtyj"]
+
+[ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="1_20fwa"]
+[ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="1_ib23r"]
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_tqcrk"]
+[ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="2_poa72"]
+[ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="2_r47ol"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_w5puf"]
+[ext_resource type="Script" uid="uid://5epl0x7uacmk" path="res://core/enemies/enemy_brain/basic_brain.gd" id="3_c88xi"]
+[ext_resource type="Script" uid="uid://ptyywxag50g5" path="res://core/upgrades/effect/bullet_process_effect/rotation.gd" id="3_oyvly"]
+[ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="3_x2122"]
+[ext_resource type="Script" uid="uid://c0dp2hf5xqfjd" path="res://core/upgrades/effect/bullet_process_effect/alternate_rotation.gd" id="4_8ipp4"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="5_jtvuv"]
+[ext_resource type="Script" uid="uid://ciktfpw8m8ixf" path="res://core/upgrades/effect/bullet_process_effect/variying_size.gd" id="5_w5puf"]
+[ext_resource type="Script" uid="uid://ddv4ohhj7fgxs" path="res://core/upgrades/effect/bullet_process_effect/alternate_color.gd" id="6_8ipp4"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="6_yv50f"]
+[ext_resource type="Script" uid="uid://bk30cphwhtrjo" path="res://core/upgrades/effect/bullet_process_effect/distance_limit.gd" id="7_jtvuv"]
+[ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="7_mk3gw"]
+[ext_resource type="Texture2D" uid="uid://7wafqqrnxp6w" path="res://assets/musicStuff/vinyle2.png" id="7_msdsj"]
+[ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="7_oyvly"]
+[ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="8_0k755"]
+
+[sub_resource type="Resource" id="Resource_rpty4"]
+script = ExtResource("3_oyvly")
+angle = 1.5707963267948966
+metadata/_custom_type_script = "uid://ptyywxag50g5"
+
+[sub_resource type="Resource" id="Resource_ruhwk"]
+script = ExtResource("3_oyvly")
+angle = -1.5707963267948966
+metadata/_custom_type_script = "uid://ptyywxag50g5"
+
+[sub_resource type="Resource" id="Resource_qg01g"]
+script = ExtResource("3_oyvly")
+angle = -1.5707963267948966
+metadata/_custom_type_script = "uid://ptyywxag50g5"
+
+[sub_resource type="Resource" id="Resource_tqcrk"]
+script = ExtResource("3_oyvly")
+angle = 1.5707963267948966
+metadata/_custom_type_script = "uid://ptyywxag50g5"
+
+[sub_resource type="Resource" id="Resource_s57tb"]
+resource_local_to_scene = true
+script = ExtResource("4_8ipp4")
+transition_delay = 0.5
+rotations = Array[ExtResource("3_oyvly")]([SubResource("Resource_rpty4"), SubResource("Resource_ruhwk"), SubResource("Resource_qg01g"), SubResource("Resource_tqcrk")])
+metadata/_custom_type_script = "uid://c0dp2hf5xqfjd"
+
+[sub_resource type="Resource" id="Resource_w5puf"]
+script = ExtResource("5_w5puf")
+min_relative_scale = 0.5
+delay = 0.1
+metadata/_custom_type_script = "uid://ciktfpw8m8ixf"
+
+[sub_resource type="Resource" id="Resource_jtvuv"]
+script = ExtResource("6_8ipp4")
+colors = Array[Color]([Color(0.9098039, 0.078431375, 0.08627451, 1), Color(1, 0.64705884, 0, 1), Color(0.98039216, 0.92156863, 0.21176471, 1), Color(0.4745098, 0.7647059, 0.078431375, 1), Color(0.28235295, 0.49019608, 0.90588236, 1), Color(0.29411766, 0.21176471, 0.6156863, 1), Color(0.4392157, 0.21176471, 0.6156863, 1)])
+metadata/_custom_type_script = "uid://ddv4ohhj7fgxs"
+
+[sub_resource type="Resource" id="Resource_mk3gw"]
+script = ExtResource("7_jtvuv")
+metadata/_custom_type_script = "uid://bk30cphwhtrjo"
+
+[sub_resource type="Resource" id="Resource_8ipp4"]
+script = ExtResource("7_oyvly")
+metadata/_custom_type_script = "uid://8q128ehc7nxs"
+
+[sub_resource type="Resource" id="Resource_oyvly"]
+resource_local_to_scene = true
+script = ExtResource("7_mk3gw")
+texture = ExtResource("8_0k755")
+size = 20.0
+color = Color(0.6745098, 0, 0.43137255, 1)
+collision_effects = Array[ExtResource("5_jtvuv")]([SubResource("Resource_8ipp4")])
+bullet_process_effect = Array[ExtResource("2_w5puf")]([SubResource("Resource_s57tb"), SubResource("Resource_w5puf"), SubResource("Resource_jtvuv"), SubResource("Resource_mk3gw")])
+metadata/_custom_type_script = "uid://bkh04gcfmrktg"
+
+[sub_resource type="Resource" id="Resource_h8i7w"]
+script = ExtResource("2_poa72")
+metadata/_custom_type_script = "uid://b22neqpd27r5d"
+
+[sub_resource type="Resource" id="Resource_pn740"]
+script = ExtResource("1_20fwa")
+bullet = SubResource("Resource_oyvly")
+v_gun = SubResource("Resource_h8i7w")
+metadata/_custom_type_script = "uid://hqlj76mb0xbg"
+
+[sub_resource type="Resource" id="Resource_eb1l2"]
+script = ExtResource("3_c88xi")
+chase_stop_distance = 500.0
+chase_start_distance = 1000.0
+attack = SubResource("Resource_pn740")
+metadata/_custom_type_script = "uid://5epl0x7uacmk"
+
+[resource]
+script = ExtResource("3_x2122")
+name = "Pbe"
+texture = ExtResource("7_msdsj")
+brain = SubResource("Resource_eb1l2")
+metadata/_custom_type_script = "uid://koby8pounmkx"
