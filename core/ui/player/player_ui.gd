@@ -6,6 +6,7 @@ extends CanvasLayer
 
 @onready var upgrade_container: HBoxContainer = $MarginContainer/HBoxContainer
 @onready var score_label: Label = $Score
+@onready var wave_label: Label = $Wave
 
 var upgrade_mini: PackedScene = preload("res://core/ui/upgrade/UpgradeMini.tscn")
 
@@ -26,6 +27,7 @@ func take_damage(max_health: int, current_health: int) -> void:
 	health_bar.take_hit(max_health, current_health)
 
 func update_upgrade(upgrades: Array[Upgrade]) -> void:
+	wave_label.text = "Wave " + str(Score.wave + 1)
 	for child in upgrade_container.get_children():
 		upgrade_container.remove_child(child)
 	for up in upgrades:
