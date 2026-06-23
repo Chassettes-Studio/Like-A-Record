@@ -5,6 +5,17 @@
 [ext_resource type="AudioStream" uid="uid://do1bssr5p2ddv" path="res://assets/audios/sound/enter.mp3" id="3_dvetv"]
 [ext_resource type="AudioStream" uid="uid://x6gqpt0u2bjn" path="res://assets/audios/music/main.ogg" id="4_2cbxx"]
 [ext_resource type="AudioStream" uid="uid://cx1xdlhxokecd" path="res://assets/audios/sound/steps_stairs.ogg" id="5_yoa7e"]
+[ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="6_vi4pi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vi4pi"]
+font = ExtResource("6_vi4pi")
+font_size = 20
+font_color = Color(0.20392157, 0.40784314, 0.36078432, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yoa7e"]
+font = ExtResource("6_vi4pi")
+font_size = 30
+font_color = Color(0.8, 0.12941177, 0.2, 1)
 
 [node name="Canvas" type="Node2D" unique_id=1642986486]
 script = ExtResource("1_h3314")
@@ -29,6 +40,26 @@ stream = ExtResource("4_2cbxx")
 
 [node name="Step" type="AudioStreamPlayer" parent="." unique_id=363093929]
 stream = ExtResource("5_yoa7e")
+
+[node name="Score" type="Label" parent="." unique_id=1109622013]
+offset_left = 595.0
+offset_top = 503.0
+offset_right = 668.0
+offset_bottom = 553.0
+text = "0"
+label_settings = SubResource("LabelSettings_vi4pi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hs" type="Label" parent="." unique_id=390049824]
+offset_left = 504.0
+offset_top = 564.0
+offset_right = 660.0
+offset_bottom = 614.0
+text = "High Score"
+label_settings = SubResource("LabelSettings_yoa7e")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1489770333]
 offset_right = 1920.0

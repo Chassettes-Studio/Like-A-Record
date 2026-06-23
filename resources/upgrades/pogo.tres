@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_2pnmg"]
 [ext_resource type="Script" uid="uid://dih1bhofpmvce" path="res://core/upgrades/effect/hit_effect/apply_knockback.gd" id="5_k8gay"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_xv66r"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="8_1ewqf"]
+[ext_resource type="Texture2D" uid="uid://dofmjjgqgaoxa" path="res://assets/pogo.png" id="8_k8gay"]
 
 [sub_resource type="Resource" id="Resource_30xad"]
 script = ExtResource("5_k8gay")
@@ -18,6 +18,6 @@ metadata/_custom_type_script = "uid://dih1bhofpmvce"
 script = ExtResource("6_xv66r")
 name = "POGO!!!"
 description = "Knocks enemies away"
-sprite = ExtResource("8_1ewqf")
+sprite = ExtResource("8_k8gay")
 hit_effects = Array[ExtResource("4_1ewqf")]([SubResource("Resource_30xad")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

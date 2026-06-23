@@ -7,9 +7,11 @@ var mouse_in: bool = false
 @onready var music: AudioStreamPlayer = $Music
 @onready var color_rect: ColorRect = $ColorRect
 @onready var step: AudioStreamPlayer = $Step
+@onready var score: Label = $Score
 
 
 func _ready() -> void:
+	score.text = str(Score.hs)
 	stairs.color = Color(1.0, 1.0, 1.0, 0.0)
 	enter.play()
 	await get_tree().create_timer(0.5).timeout
