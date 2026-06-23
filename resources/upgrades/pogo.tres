@@ -20,6 +20,5 @@ script = ExtResource("6_xv66r")
 name = "POGO!!!"
 description = "Knocks enemies away"
 sprite = ExtResource("8_1ewqf")
-weight = 99.0
 hit_effects = Array[ExtResource("4_1ewqf")]([SubResource("Resource_30xad")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"
