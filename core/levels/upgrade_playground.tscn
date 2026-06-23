@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://ccemb7m05f38i" path="res://resources/upgrades/pogo.tres" id="3_ruhwk"]
 [ext_resource type="Resource" uid="uid://dy4co0v8trtyj" path="res://resources/enemies/test_pbe.tres" id="5_qg01g"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
-[ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="6_s57tb"]
 [ext_resource type="Resource" uid="uid://csgkeg7n020cl" path="res://resources/enemies/usb_key.tres" id="9_ruhwk"]
 [ext_resource type="PackedScene" uid="uid://bl5un8gqbcywc" path="res://core/pickups/pickup_entity.tscn" id="9_s57tb"]
 [ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="10_rpty4"]
@@ -47,10 +46,6 @@ shape = SubResource("WorldBoundaryShape2D_53dat")
 
 [node name="Player" parent="." unique_id=1476355945 instance=ExtResource("1_x4nve")]
 position = Vector2(765, 373)
-DASH_SPEED = null
-DASH_ACCELERATION = null
-upgrades = null
-character = ExtResource("6_s57tb")
 
 [node name="EnemyEntity" parent="." unique_id=255422468 node_paths=PackedStringArray("target") instance=ExtResource("3_ebf7h")]
 position = Vector2(1617, 787)
