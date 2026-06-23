@@ -5,4 +5,3 @@ extends AbilityEffect
 
 func use(player: Player) -> void:
 	player.health_controller.heal(amount)
-	
