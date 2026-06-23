@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/metal_layer_2.ogg-dd447d455d6895694762291ecbe
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/hip_layer_1.ogg-2e4c358f7f0bb191b253ed3165bae
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

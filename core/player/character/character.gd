@@ -5,4 +5,4 @@ extends Resource
 @export var texture : Texture
 
 @export var intro_song : AudioStream
-@export var loop_song : AudioStream
+@export var layers : AudioStreamSynchronized

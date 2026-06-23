@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://d05ygn0p2c2g8" path="res://core/player/character/character.gd" id="1_4cmrr"]
 [ext_resource type="AudioStream" uid="uid://b76mykg5cydbl" path="res://assets/audios/music/amen_intro.ogg" id="1_b0lrt"]
-[ext_resource type="AudioStream" uid="uid://dw5oqmmqbcuyc" path="res://assets/audios/music/amen_loop.ogg" id="2_1ij4t"]
+[ext_resource type="AudioStream" uid="uid://dmx5hxuvcupca" path="res://assets/audios/music/amen_layer_1.ogg" id="2_csqqj"]
+[ext_resource type="AudioStream" uid="uid://dqv64iyx25s56" path="res://assets/audios/music/amen_layer_2.ogg" id="3_wh2x1"]
 [ext_resource type="Texture2D" uid="uid://cglo06j834ih7" path="res://assets/logo/Godot_icon.svg" id="4_csqqj"]
+[ext_resource type="AudioStream" uid="uid://bvg8bmsbdsu07" path="res://assets/audios/music/amen_layer_3.ogg" id="4_ladr1"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_yvlkw"]
+stream_count = 3
+stream_0/stream = ExtResource("2_csqqj")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_wh2x1")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("4_ladr1")
+stream_2/volume = 0.0
 
 [resource]
 script = ExtResource("1_4cmrr")
 name = "Amen"
 texture = ExtResource("4_csqqj")
 intro_song = ExtResource("1_b0lrt")
-loop_song = ExtResource("2_1ij4t")
+layers = SubResource("AudioStreamSynchronized_yvlkw")
 metadata/_custom_type_script = "uid://d05ygn0p2c2g8"

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/amen_intro.ogg-38e26ea8d2e0361abe958fc2ededc7
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

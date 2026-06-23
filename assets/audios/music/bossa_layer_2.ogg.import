@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/bossa_layer_2.ogg-f8c13122864450fc5f7da6a7551
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
