@@ -4,6 +4,7 @@ extends Resource
 const entity_scene: PackedScene = preload("res://core/bullets/entity/bullet_entity.tscn")
 
 @export var texture: Texture2D
+@export var damage: int = 1
 @export var size: float = 100
 @export var color: Color
 

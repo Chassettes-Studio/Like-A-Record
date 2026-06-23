@@ -53,9 +53,9 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 	ui.update_upgrade(upgrades)
 
 
-func _on_hitbox_hurt(_value: float) -> void:
+func _on_hitbox_hurt(value: float) -> void:
 	hit.play()
-	health_controller.take_damage(1)
+	health_controller.take_damage(value)
 	damaged.emit()
 	hitbox.set_hittable(false)
 	invulnerability_timer.start()
