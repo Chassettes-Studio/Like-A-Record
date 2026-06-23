@@ -31,7 +31,7 @@ var dash_unlocked := false
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("shoot"):
 		gun.shoot(Vector2.RIGHT.rotated(gun.rotation))
 
 
