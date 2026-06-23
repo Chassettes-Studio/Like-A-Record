@@ -64,10 +64,11 @@ func jump(force: float = jump_force, bypass_floor_check: bool = false) -> void:
 
 
 ## Applies knockback to [member target], forcing its velocity to [param force]
-## for [param duration] seconds. Calling this method again will overwrite previous knockback effects.
+## for [param duration] seconds. Calling this method again will add to the 
+## force and keep the longest duration
 func apply_knockback(force: Vector2, duration: float) -> void:
-	_knockback_vector = force
-	_knockback_time_left = duration
+	_knockback_vector += force
+	_knockback_time_left = max(_knockback_time_left, duration)
 
 
 ## Immediately clears any ongoing knockback

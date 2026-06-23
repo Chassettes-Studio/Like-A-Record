@@ -2,12 +2,35 @@
 
 [ext_resource type="Script" uid="uid://secf36jumim0" path="res://core/levels/upgrade_playground.gd" id="1_kthok"]
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_x4nve"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="2_yicja"]
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="3_2k11x"]
 [ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="3_ebf7h"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="4_3j65w"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="5_5ks3y"]
+[ext_resource type="Script" uid="uid://b5m0y2y02bu4e" path="res://core/upgrades/effect/gun_effect/added_projectile_count_effect.gd" id="6_2k11x"]
 [ext_resource type="Resource" uid="uid://c8siir1sy8tn4" path="res://resources/enemies/laser_disc.tres" id="6_e703i"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
 [ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="6_s57tb"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="6_x73fx"]
+[ext_resource type="Script" uid="uid://dih1bhofpmvce" path="res://core/upgrades/effect/hit_effect/apply_knockback.gd" id="7_vcfre"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="8_q8lxd"]
 [ext_resource type="PackedScene" uid="uid://bl5un8gqbcywc" path="res://core/pickups/pickup_entity.tscn" id="9_s57tb"]
 [ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="10_rpty4"]
+
+[sub_resource type="Resource" id="Resource_yicja"]
+script = ExtResource("6_2k11x")
+added_projectile_count = 3
+metadata/_custom_type_script = "uid://b5m0y2y02bu4e"
+
+[sub_resource type="Resource" id="Resource_s57tb"]
+script = ExtResource("7_vcfre")
+metadata/_custom_type_script = "uid://dih1bhofpmvce"
+
+[sub_resource type="Resource" id="Resource_qg01g"]
+script = ExtResource("2_yicja")
+gun_effects = Array[ExtResource("5_5ks3y")]([SubResource("Resource_yicja")])
+hit_effects = Array[ExtResource("6_x73fx")]([SubResource("Resource_s57tb")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gs88k"]
 normal = Vector2(0, 1)
@@ -22,6 +45,7 @@ normal = Vector2(-1, 0)
 
 [node name="UpgradePlayground" type="Node2D" unique_id=1045174004]
 script = ExtResource("1_kthok")
+upgrades = Array[ExtResource("2_yicja")]([SubResource("Resource_qg01g")])
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=398832955]
 collision_layer = 8
