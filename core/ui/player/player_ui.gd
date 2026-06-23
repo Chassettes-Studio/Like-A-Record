@@ -18,10 +18,11 @@ func _process(_delta: float) -> void:
 
 func _on_score_changed() -> void:
 	var c: int = int(score_label.text)
-	var n: int = (Score.get_score() - c) / 5. as int
-	for i in n + 1:
-		score_label.text = str(c + 5*i)
-		await get_tree().create_timer(0.025).timeout
+	var n: int = (Score.get_score() - c) / 7. as int
+	for i in n :
+		score_label.text = str(c + 7*i)
+		await get_tree().create_timer(0.035).timeout
+	score_label.text = str(Score.get_score())
 
 func take_damage(max_health: int, current_health: int) -> void:
 	health_bar.take_hit(max_health, current_health)
