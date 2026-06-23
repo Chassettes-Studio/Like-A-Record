@@ -6,6 +6,11 @@
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="3_ourgq"]
 [ext_resource type="PackedScene" uid="uid://dvke7witwpeqm" path="res://core/ui/health_bar/health_bar.tscn" id="3_pn5ve"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ourgq"]
+font = ExtResource("3_ourgq")
+font_size = 32
+font_color = Color(0.12156863, 0.2509804, 0.30980393, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
 font = ExtResource("3_ourgq")
 font_size = 32
@@ -21,11 +26,21 @@ offset_bottom = 148.0
 texture = ExtResource("2_3qqhg")
 
 [node name="Score" type="Label" parent="." unique_id=1392928785]
-offset_left = 166.0
-offset_top = 70.0
-offset_right = 257.0
-offset_bottom = 163.0
-text = "0"
+offset_left = 149.0
+offset_top = 55.0
+offset_right = 281.0
+offset_bottom = 148.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_ourgq")
+horizontal_alignment = 1
+
+[node name="Wave" type="Label" parent="." unique_id=1124797976]
+offset_left = 156.0
+offset_top = 84.0
+offset_right = 274.0
+offset_bottom = 177.0
+text = "Wave 1"
 label_settings = SubResource("LabelSettings_gtu5s")
 horizontal_alignment = 1
 

@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://cgihhu70woabs" path="res://core/pickups/pickup.gd" id="7_espfy"]
 [ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="8_4qmuw"]
 [ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="8_mgysq"]
+[ext_resource type="Resource" uid="uid://ccxmwuctolloq" path="res://resources/pickups/energy.tres" id="9_t6qsn"]
+[ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="11_4qmuw"]
 
 [sub_resource type="Resource" id="Resource_ftyy6"]
 script = ExtResource("1_h8w2c")
@@ -30,7 +32,8 @@ metadata/_custom_type_script = "uid://cfihy37c1wi2w"
 [sub_resource type="Resource" id="Resource_brwim"]
 script = ExtResource("8_mgysq")
 drops = Dictionary[ExtResource("7_espfy"), float]({
-ExtResource("8_4qmuw"): 0.5
+ExtResource("8_4qmuw"): 0.1,
+ExtResource("9_t6qsn"): 0.4
 })
 metadata/_custom_type_script = "uid://7r1qdl7fajj0"
 

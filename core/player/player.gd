@@ -15,6 +15,8 @@ var current_state: State = MovingState.new(self, Vector2.RIGHT)
 var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
 var dash_unlocked := false
 
+var energy : int = 0
+
 @onready var blink_timer: Timer = $BlinkTimer
  
 @onready var hitbox: Hitbox = $Hitbox
@@ -29,11 +31,24 @@ var dash_unlocked := false
 @onready var ui: PlayerUi = $PlayerUi
 @onready var hit: AudioStreamPlayer = $Hit
 
+var player_shoot_effects: Array[PlayerShootEffect] = []
+
+func _ready() -> void:
+	gun.shot.connect(_on_gun_shot)
+
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("shoot"):
 		gun.shoot(Vector2.RIGHT.rotated(gun.rotation))
-
+	if Input.is_action_just_pressed("use_ability"):
+		if energy >= 3:
+			energy -= 3
+			character.ability.use(self)
+		
+		
+func _on_gun_shot() -> void:
+	for effect in player_shoot_effects:
+		effect.apply(self)
 
 func update_current_state(state: State) -> void:
 	self.current_state.on_exit()
@@ -43,6 +58,7 @@ func update_current_state(state: State) -> void:
 
 func apply_upgrade(upgrade: Upgrade) -> void:
 	upgrades.push_front(upgrade)
+	player_shoot_effects.append_array(upgrade.player_shoot_effects)
 	for p_effect in upgrade.player_effects:
 		p_effect.apply(self)
 	for g_effect in upgrade.gun_effects:
@@ -53,9 +69,9 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 	ui.update_upgrade(upgrades)
 
 
-func _on_hitbox_hurt(_value: float) -> void:
+func _on_hitbox_hurt(value: float) -> void:
 	hit.play()
-	health_controller.take_damage(1)
+	health_controller.take_damage(value)
 	damaged.emit()
 	hitbox.set_hittable(false)
 	invulnerability_timer.start()

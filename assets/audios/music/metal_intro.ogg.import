@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/metal_intro.ogg-390ff9dc1b79352b11f4b06d23d6d
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

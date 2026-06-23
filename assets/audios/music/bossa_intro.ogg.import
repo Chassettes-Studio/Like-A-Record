@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/bossa_intro.ogg-d41099d9d0ba86da26a801ee210b9
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

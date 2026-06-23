@@ -1,11 +1,14 @@
 extends Node
 
 var score: int = 0
+var hs: int = 0
 var wave: int = 1
 
 signal score_changed
 
 func reset() -> void:
+	if score > hs:
+		hs = score
 	score = 0
 	wave = 1
 

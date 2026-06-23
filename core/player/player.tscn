@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://coy6w3o4dhacc" path="res://core/player/player.gd" id="1_qjudb"]
 [ext_resource type="PackedScene" uid="uid://cvwnb8nu4eaml" path="res://core/ui/player/PlayerUI.tscn" id="2_krwir"]
+[ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="2_w63ho"]
 [ext_resource type="Script" uid="uid://10yphvuogl8w" path="res://chassettes_library/components/movement_controller/physics_controller/physics_controller.gd" id="3_e7l0y"]
 [ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="3_krwir"]
 [ext_resource type="PackedScene" uid="uid://dhbvlawoug1nm" path="res://core/player/gun/gun.tscn" id="4_krwir"]
@@ -15,8 +16,10 @@
 radius = 64.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1476355945]
+z_index = 10
 collision_mask = 8
 script = ExtResource("1_qjudb")
+character = ExtResource("2_w63ho")
 
 [node name="PlayerUi" parent="." unique_id=227467206 instance=ExtResource("2_krwir")]
 

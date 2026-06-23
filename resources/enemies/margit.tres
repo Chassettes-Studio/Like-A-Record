@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_kt0h0"]
 [ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="2_ad5wb"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="3_0q7da"]
 [ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_r8d5u"]
 [ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="4_0q7da"]
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_eote3"]
@@ -16,6 +17,7 @@
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="13_88p3y"]
 [ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="14_8peu6"]
 [ext_resource type="Texture2D" uid="uid://cdck38dj3bksu" path="res://assets/musicStuff/vinyle.png" id="15_kt4tm"]
+[ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="17_eote3"]
 
 [sub_resource type="Resource" id="Resource_713ca"]
 script = ExtResource("2_ad5wb")
@@ -50,6 +52,8 @@ script = ExtResource("9_lj5vk")
 chase_stop_distance = 400.0
 chase_start_distance = 600.0
 attack = SubResource("Resource_y8vsw")
+speed = 300.0
+accel = 750.0
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
 [sub_resource type="Resource" id="Resource_rp8se"]
@@ -63,6 +67,7 @@ name = "Vinyl"
 texture = ExtResource("15_kt4tm")
 min_wave = 3
 weight = 3.0
+mass = 2.0
 max_health = 4
 brain = SubResource("Resource_k6gel")
 death_effects = Array[ExtResource("11_2qye7")]([SubResource("Resource_rp8se")])

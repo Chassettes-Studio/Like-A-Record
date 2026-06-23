@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_1cgt7"]
 [ext_resource type="Script" uid="uid://b6vusje6nrle3" path="res://core/upgrades/effect/hit_effect/deal_damage.gd" id="5_tl1vh"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_mu0pj"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_0hcg7"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="7_ngolm"]
 [ext_resource type="Texture2D" uid="uid://dyygqfahwa61y" path="res://assets/heavier_metal.png" id="8_d3ghu"]
 
@@ -16,7 +17,7 @@ metadata/_custom_type_script = "uid://b6vusje6nrle3"
 [resource]
 script = ExtResource("7_ngolm")
 name = "Heavier Metal"
-description = "Bullets deal  more damage"
+description = "Bullets deal  more damage but knock you back"
 sprite = ExtResource("8_d3ghu")
 hit_effects = Array[ExtResource("4_1cgt7")]([SubResource("Resource_yqld2")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

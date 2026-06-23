@@ -15,12 +15,13 @@ func _ready() -> void:
 	Score.reset()
 	_create_timer()
 	_connect_signals()
-	audio_player.stream = player.character.intro_song
-	audio_player.play()
-	audio_player.finished.connect(_start_music_loop)
+	_start_music_loop()
 	
 func _start_music_loop() -> void:
-	audio_player.stream = player.character.loop_song
+	player.character.layers.set_sync_stream_volume(0,0)
+	player.character.layers.set_sync_stream_volume(1,-100)
+	player.character.layers.set_sync_stream_volume(2,-100)
+	audio_player.stream = player.character.layers
 	audio_player.play()
 	
 func _connect_signals() -> void:
@@ -47,7 +48,17 @@ func _on_wave_manager_trigger_new_wave() -> void:
 	player.apply_upgrade(new_upgrade)
 	player.health_controller.heal(1)
 	UpgradeManager.upgrade_chosen(new_upgrade)
+	spawn_timer.wait_time *= 0.9
 	wave_manager.next_wave()
+	
+	#Handle layers
+	match wave_manager.current_wave:
+		2:
+			player.character.layers.set_sync_stream_volume(1,0)
+		3:
+			player.character.layers.set_sync_stream_volume(2,0)
+			
+			
 
 func _on_player_death() -> void:
 	audio_player.stop()

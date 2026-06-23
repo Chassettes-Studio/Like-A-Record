@@ -17,6 +17,8 @@ metadata/_custom_type_script = "uid://ryycmljdgqkv"
 [sub_resource type="Resource" id="Resource_1k40r"]
 script = ExtResource("2_q1v2b")
 attack = SubResource("Resource_s57tb")
+speed = 600.0
+accel = 1500.0
 metadata/_custom_type_script = "uid://c6m6m6ojjvoa6"
 
 [sub_resource type="Resource" id="Resource_rp8se"]
@@ -29,6 +31,7 @@ script = ExtResource("2_rw5xl")
 name = "Kamikaze"
 texture = ExtResource("5_1k40r")
 min_wave = 10
+mass = 1.5
 size = 50.0
 max_health = 6
 brain = SubResource("Resource_1k40r")

@@ -61,6 +61,8 @@ script = ExtResource("8_4tboo")
 chase_stop_distance = 600.0
 chase_start_distance = 1000.0
 attack = SubResource("Resource_yoa7e")
+speed = 300.0
+accel = 750.0
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
 [sub_resource type="Resource" id="Resource_rp8se"]
@@ -74,6 +76,7 @@ name = "Vinyl"
 texture = ExtResource("16_vcejy")
 min_wave = 4
 weight = 3.0
+mass = 2.0
 max_health = 4
 brain = SubResource("Resource_k6gel")
 death_effects = Array[ExtResource("10_k6gel")]([SubResource("Resource_rp8se")])

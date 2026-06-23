@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func create_enemy_pool() -> void:
 	current_enemy_pool.clear()
-	current_enemy_pool = enemies.filter(func(e: Enemy) -> bool: return e.min_wave <= current_wave)
+	current_enemy_pool = enemies.filter(func(e: Enemy) -> bool: return e.min_wave <= current_wave && e.max_wave >= current_wave)
 
 
 func next_wave() -> void:
