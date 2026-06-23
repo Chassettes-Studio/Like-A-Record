@@ -47,6 +47,7 @@ func _on_wave_manager_trigger_new_wave() -> void:
 	player.apply_upgrade(new_upgrade)
 	player.health_controller.heal(1)
 	UpgradeManager.upgrade_chosen(new_upgrade)
+	spawn_timer.wait_time *= 0.9
 	wave_manager.next_wave()
 
 func _on_player_death() -> void:
