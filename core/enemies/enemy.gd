@@ -4,6 +4,7 @@ extends Resource
 @export var name: String
 @export var texture: Texture2D
 @export var min_wave: int = 1
+@export var max_wave: int = 9999
 @export var weight: float = 1
 @export var score: int = 100
 
