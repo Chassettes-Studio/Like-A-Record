@@ -7,7 +7,7 @@ extends Resource
 @export var max_wave: int = 9999
 @export var weight: float = 1
 @export var score: int = 100
-
+@export var mass: float = 1
 @export var size: float = 100
 @export var max_health : int = 1
 @export var brain: EnemyBrain

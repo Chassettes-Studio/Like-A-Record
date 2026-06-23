@@ -29,6 +29,7 @@ script = ExtResource("2_rw5xl")
 name = "Kamikaze"
 texture = ExtResource("5_1k40r")
 min_wave = 10
+mass = 1.5
 size = 50.0
 max_health = 6
 brain = SubResource("Resource_1k40r")

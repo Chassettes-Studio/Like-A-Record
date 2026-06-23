@@ -16,5 +16,6 @@ name = "Dummy"
 texture = ExtResource("4_kni41")
 min_wave = 100
 weight = 999.0
+mass = 0.1
 brain = SubResource("Resource_5k7ar")
 metadata/_custom_type_script = "uid://koby8pounmkx"

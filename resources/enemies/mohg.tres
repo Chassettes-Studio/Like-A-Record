@@ -66,6 +66,7 @@ name = "Vinyl"
 texture = ExtResource("16_vcejy")
 min_wave = 4
 weight = 3.0
+mass = 2.0
 max_health = 4
 brain = SubResource("Resource_k6gel")
 death_effects = Array[ExtResource("10_k6gel")]([SubResource("Resource_rp8se")])

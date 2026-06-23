@@ -6,4 +6,4 @@ extends HitEffect
 
 func apply(bullet: BulletEntity, enemy: EnemyEntity) -> void:
 	var direction := bullet.global_position.direction_to(enemy.global_position)
-	enemy.movement_controller.apply_knockback(force * direction, duration)
+	enemy.movement_controller.apply_knockback((force/enemy.enemy_data.mass) * direction, duration)
