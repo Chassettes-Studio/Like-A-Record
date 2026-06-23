@@ -21,10 +21,6 @@ signal shot
 @onready var shooting_cooldown_timer: Timer = $ShootingCooldownTimer
 
 
-#func _ready() -> void:
-	#main_offset.position.x = orbit_radius
-
-
 func _physics_process(delta: float) -> void:
 	self.rotate(radial_speed * delta)
 

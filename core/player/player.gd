@@ -36,7 +36,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("shoot"):
 		gun.shoot(Vector2.RIGHT.rotated(gun.rotation))
 		
 		
@@ -63,9 +63,9 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 	ui.update_upgrade(upgrades)
 
 
-func _on_hitbox_hurt(_value: float) -> void:
+func _on_hitbox_hurt(value: float) -> void:
 	hit.play()
-	health_controller.take_damage(1)
+	health_controller.take_damage(value)
 	damaged.emit()
 	hitbox.set_hittable(false)
 	invulnerability_timer.start()

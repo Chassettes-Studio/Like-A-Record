@@ -53,6 +53,8 @@ script = ExtResource("10_7l4x8")
 chase_stop_distance = 500.0
 chase_start_distance = 1200.0
 attack = SubResource("Resource_yoa7e")
+speed = 300.0
+accel = 750.0
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
 [sub_resource type="Resource" id="Resource_rp8se"]

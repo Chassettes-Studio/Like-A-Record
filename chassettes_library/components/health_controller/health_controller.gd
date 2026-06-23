@@ -43,7 +43,8 @@ func take_damage(amount: int) -> void:
 ## heal [amount] health and emit fully_healed if it fully heals
 func heal(amount: int) -> void:
 	_health += amount
-	healed.emit()
 	if _health > base_health:
 		_health = base_health
 		fully_healed.emit()
+	else:
+		healed.emit()

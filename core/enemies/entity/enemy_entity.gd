@@ -35,6 +35,7 @@ func _ready() -> void:
 	body_shape.shape = shape
 	health = enemy_data.max_health
 	brain = enemy_data.brain.duplicate()
+	brain.ready()
 
 
 func _physics_process(delta: float) -> void:

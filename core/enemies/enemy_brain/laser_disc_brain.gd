@@ -19,7 +19,6 @@ var state_ended: bool = false
 var beam: Line2D = Line2D.new()
 var marker: Marker2D = Marker2D.new()
 
-
 func change_state(entity: EnemyEntity) -> void:
 	match current_state:
 		BrainState.START:
