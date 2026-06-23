@@ -4,8 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://uiok8cohg4r3" path="res://assets/ui/shop.png" id="2_h3314"]
 [ext_resource type="AudioStream" uid="uid://do1bssr5p2ddv" path="res://assets/audios/sound/enter.mp3" id="3_dvetv"]
 [ext_resource type="AudioStream" uid="uid://x6gqpt0u2bjn" path="res://assets/audios/music/main.ogg" id="4_2cbxx"]
+[ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="4_3liyh"]
+[ext_resource type="Resource" uid="uid://4e2p51408b0s" path="res://resources/characters/bossa.tres" id="5_01t0k"]
 [ext_resource type="AudioStream" uid="uid://cx1xdlhxokecd" path="res://assets/audios/sound/steps_stairs.ogg" id="5_yoa7e"]
+[ext_resource type="Resource" uid="uid://dedj3dcnye346" path="res://resources/characters/hiphop.tres" id="6_h3tqq"]
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="6_vi4pi"]
+[ext_resource type="Resource" uid="uid://brp5kehtmay3j" path="res://resources/characters/metal.tres" id="7_jdfle"]
+[ext_resource type="PackedScene" uid="uid://ctcvm7dmnuxnl" path="res://core/ui/main/cd_button.tscn" id="7_y8vsw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vi4pi"]
 font = ExtResource("6_vi4pi")
@@ -27,10 +32,34 @@ centered = false
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=644852173]
 polygon = PackedVector2Array(1489, 810, 1489, 297, 1454, 307, 1402, 316, 1352, 321, 1316, 321, 1272, 317, 1242, 312, 1214, 305, 1214, 738, 1261, 810)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1056730199]
+[node name="Area2D" type="Area2D" parent="Polygon2D" unique_id=1056730199]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1339231115]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/Area2D" unique_id=1339231115]
 polygon = PackedVector2Array(1489, 810, 1489, 297, 1454, 307, 1402, 316, 1352, 321, 1316, 321, 1272, 317, 1242, 312, 1214, 305, 1214, 738, 1261, 810)
+
+[node name="Cd1" parent="." unique_id=850072635 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
+position = Vector2(413.5, 307.5)
+character = ExtResource("4_3liyh")
+n = 1
+hub_music = NodePath("../Music")
+
+[node name="Cd2" parent="." unique_id=1262477902 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
+position = Vector2(587.5, 307.5)
+character = ExtResource("5_01t0k")
+n = 2
+hub_music = NodePath("../Music")
+
+[node name="Cd3" parent="." unique_id=399217651 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
+position = Vector2(759, 307.5)
+character = ExtResource("6_h3tqq")
+n = 3
+hub_music = NodePath("../Music")
+
+[node name="Cd4" parent="." unique_id=1971285291 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
+position = Vector2(933.5, 307.5)
+character = ExtResource("7_jdfle")
+n = 4
+hub_music = NodePath("../Music")
 
 [node name="Enter" type="AudioStreamPlayer" parent="." unique_id=1778003897]
 stream = ExtResource("3_dvetv")
@@ -67,5 +96,9 @@ offset_bottom = 1080.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Polygon2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Polygon2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="cd_selected" from="Cd1" to="." method="_on_cd_selected"]
+[connection signal="cd_selected" from="Cd2" to="." method="_on_cd_selected"]
+[connection signal="cd_selected" from="Cd3" to="." method="_on_cd_selected"]
+[connection signal="cd_selected" from="Cd4" to="." method="_on_cd_selected"]

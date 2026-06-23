@@ -18,12 +18,11 @@ var dash_unlocked := false
 var energy : int = 0
 
 @onready var blink_timer: Timer = $BlinkTimer
- 
+
 @onready var hitbox: Hitbox = $Hitbox
 
 @onready var health_controller: SCHealthController = $SCHealthController
 @onready var invulnerability_timer: Timer = $InvulnerabilityTimer
- 
 
 @onready var sc_physics_controller: SCPhysicsController = $SCPhysicsController
 @onready var dash_cooldown: Timer = $DashCooldown
@@ -32,9 +31,12 @@ var energy : int = 0
 @onready var hit: AudioStreamPlayer = $Hit
 
 var player_shoot_effects: Array[PlayerShootEffect] = []
+static var static_character: Character
 
 func _ready() -> void:
 	gun.shot.connect(_on_gun_shot)
+	if static_character != null:
+		character = static_character
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
@@ -71,7 +73,7 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 
 func _on_hitbox_hurt(value: float) -> void:
 	hit.play()
-	health_controller.take_damage(value)
+	health_controller.take_damage(int(value))
 	damaged.emit()
 	hitbox.set_hittable(false)
 	invulnerability_timer.start()
