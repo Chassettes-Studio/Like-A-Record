@@ -6,5 +6,4 @@ extends Resource
 
 @export var ability : Ability
 
-@export var intro_song : AudioStream
 @export var layers : AudioStreamSynchronized
