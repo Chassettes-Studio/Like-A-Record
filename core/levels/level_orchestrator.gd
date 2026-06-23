@@ -18,9 +18,9 @@ func _ready() -> void:
 	_start_music_loop()
 	
 func _start_music_loop() -> void:
+	for i in player.character.layers.stream_count:
+		player.character.layers.set_sync_stream_volume(i,-100)
 	player.character.layers.set_sync_stream_volume(0,0)
-	player.character.layers.set_sync_stream_volume(1,-100)
-	player.character.layers.set_sync_stream_volume(2,-100)
 	audio_player.stream = player.character.layers
 	audio_player.play()
 	
@@ -57,6 +57,10 @@ func _on_wave_manager_trigger_new_wave() -> void:
 			player.character.layers.set_sync_stream_volume(1,0)
 		3:
 			player.character.layers.set_sync_stream_volume(2,0)
+		4:
+			if player.character.layers.stream_count >= 4:
+				player.character.layers.set_sync_stream_volume(3,0)
+				print("bip")
 			
 			
 
