@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="3_74yie"]
 [ext_resource type="Script" uid="uid://0a4b642jtkl5" path="res://core/levels/level_orchestrator.gd" id="4_7e2dr"]
 [ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
+[ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="7_v7f4j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
 normal = Vector2(0, 1)
@@ -19,7 +20,9 @@ normal = Vector2(1, 0)
 normal = Vector2(-1, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
+font = ExtResource("7_v7f4j")
 font_size = 48
+font_color = Color(0.9019608, 0.40784314, 0.16862746, 1)
 
 [node name="TestLevel" type="Node2D" unique_id=205418669]
 
@@ -96,8 +99,8 @@ offset_left = 1574.0
 offset_top = 883.0
 offset_right = 2266.0
 offset_bottom = 1080.0
-text = "[WASD] or [ARROWS] to Move
-[Space] or [Left Click] to Shoot"
+text = "[WASD ] or [ARROWS ] to Move
+[Space ] or [Left Click ] to Shoot"
 label_settings = SubResource("LabelSettings_gtu5s")
 horizontal_alignment = 1
 

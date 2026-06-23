@@ -9,14 +9,14 @@
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_uwafi"]
 [ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="5_k6gel"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="7_ho8ib"]
+[ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="8_3kfen"]
 [ext_resource type="Script" uid="uid://5epl0x7uacmk" path="res://core/enemies/enemy_brain/basic_brain.gd" id="8_4tboo"]
-[ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="9_3kfen"]
-[ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="10_4tboo"]
+[ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="9_4tboo"]
+[ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="10_inyy8"]
 [ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="10_k6gel"]
-[ext_resource type="Texture2D" uid="uid://cdck38dj3bksu" path="res://assets/musicStuff/vinyle.png" id="11_ho8ib"]
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="11_inyy8"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="12_3kfen"]
-[ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="12_af2p1"]
+[ext_resource type="Texture2D" uid="uid://bo1l3btyomwx2" path="res://assets/musicStuff/vinyle3.png" id="16_vcejy"]
 
 [sub_resource type="Resource" id="Resource_m8t8s"]
 script = ExtResource("2_wx1g8")
@@ -37,22 +37,24 @@ bullet_effects = Array[ExtResource("1_713ca")]([SubResource("Resource_m8t8s")])
 hit_effects = Array[ExtResource("4_uwafi")]([null])
 metadata/_custom_type_script = "uid://bkh04gcfmrktg"
 
-[sub_resource type="Resource" id="Resource_rfafl"]
-script = ExtResource("10_4tboo")
-shooting_cooldown = 1.0
+[sub_resource type="Resource" id="Resource_vi4pi"]
+script = ExtResource("9_4tboo")
+projectile_count = 3
+shooting_cooldown = 2.0
+spread_angle = 0.7853981633974483
 metadata/_custom_type_script = "uid://b22neqpd27r5d"
 
-[sub_resource type="Resource" id="Resource_qkpvf"]
-script = ExtResource("9_3kfen")
-bullet = SubResource("Resource_vcejy")
-v_gun = SubResource("Resource_rfafl")
+[sub_resource type="Resource" id="Resource_yoa7e"]
+script = ExtResource("8_3kfen")
+bullet = SubResource("Resource_mgiig")
+v_gun = SubResource("Resource_vi4pi")
 metadata/_custom_type_script = "uid://hqlj76mb0xbg"
 
 [sub_resource type="Resource" id="Resource_k6gel"]
 script = ExtResource("8_4tboo")
-chase_stop_distance = 400.0
-chase_start_distance = 600.0
-attack = SubResource("Resource_qkpvf")
+chase_stop_distance = 600.0
+chase_start_distance = 1000.0
+attack = SubResource("Resource_yoa7e")
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
 [sub_resource type="Resource" id="Resource_rp8se"]
@@ -63,10 +65,9 @@ metadata/_custom_type_script = "uid://cfihy37c1wi2w"
 [resource]
 script = ExtResource("1_1r5q3")
 name = "Vinyl"
-texture = ExtResource("11_ho8ib")
-min_wave = 3
+texture = ExtResource("16_vcejy")
+min_wave = 4
 weight = 3.0
-size = 120.0
 max_health = 4
 brain = SubResource("Resource_k6gel")
 death_effects = Array[ExtResource("10_k6gel")]([SubResource("Resource_rp8se")])

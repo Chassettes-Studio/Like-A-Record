@@ -16,7 +16,7 @@ func process(entity: EnemyEntity, _delta: float) -> void:
 	if has_exploded:
 		attack.attack(entity)
 	if is_explosion_triggered:
-		entity.sprite.modulate = Color.RED
+		entity.sprite.modulate = Color(0.8, 0.129, 0.2, 1.0)
 	entity.movement_controller.direction = entity.global_position.direction_to(entity.target.global_position)
 
 

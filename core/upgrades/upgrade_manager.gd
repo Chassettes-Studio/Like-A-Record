@@ -4,8 +4,10 @@ static var upgrade_pool: Array[Upgrade]
 
 static func _static_init() -> void:
 	const path : String = "res://resources/upgrades/"
-	for upgrade: String in ResourceLoader.list_directory(path):
-		upgrade_pool.append(load(path+upgrade))
+	for name: String in ResourceLoader.list_directory(path):
+		var upgrade : Upgrade = load(path+name)
+		if not upgrade.enabled: continue
+		upgrade_pool.append(upgrade)
 
 static func pick_upgrades(amount : int = 3) -> Array[Upgrade]:
 	var temp_pool : Array[Upgrade] = upgrade_pool.duplicate()

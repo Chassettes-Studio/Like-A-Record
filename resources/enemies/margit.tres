@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://f2bbbxgsf3j4"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_kt0h0"]
+[ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="2_ad5wb"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_r8d5u"]
+[ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="4_0q7da"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_eote3"]
+[ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="6_bxlu6"]
+[ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="7_lw32v"]
+[ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="8_ad5wb"]
+[ext_resource type="Script" uid="uid://5epl0x7uacmk" path="res://core/enemies/enemy_brain/basic_brain.gd" id="9_lj5vk"]
+[ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="9_r8d5u"]
+[ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="10_v27k1"]
+[ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="11_2qye7"]
+[ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="12_djgj0"]
+[ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="13_88p3y"]
+[ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="14_8peu6"]
+[ext_resource type="Texture2D" uid="uid://cdck38dj3bksu" path="res://assets/musicStuff/vinyle.png" id="15_kt4tm"]
+
+[sub_resource type="Resource" id="Resource_713ca"]
+script = ExtResource("2_ad5wb")
+speed = 200.0
+metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
+
+[sub_resource type="Resource" id="Resource_61xrs"]
+script = ExtResource("4_0q7da")
+metadata/_custom_type_script = "uid://8q128ehc7nxs"
+
+[sub_resource type="Resource" id="Resource_mgiig"]
+script = ExtResource("6_bxlu6")
+texture = ExtResource("7_lw32v")
+size = 50.0
+color = Color(0.8, 0.12941177, 0.2, 1)
+collision_effects = Array[ExtResource("3_r8d5u")]([SubResource("Resource_61xrs")])
+bullet_effects = Array[ExtResource("1_kt0h0")]([SubResource("Resource_713ca")])
+metadata/_custom_type_script = "uid://bkh04gcfmrktg"
+
+[sub_resource type="Resource" id="Resource_3liyh"]
+script = ExtResource("9_r8d5u")
+metadata/_custom_type_script = "uid://b22neqpd27r5d"
+
+[sub_resource type="Resource" id="Resource_y8vsw"]
+script = ExtResource("8_ad5wb")
+bullet = SubResource("Resource_mgiig")
+v_gun = SubResource("Resource_3liyh")
+metadata/_custom_type_script = "uid://hqlj76mb0xbg"
+
+[sub_resource type="Resource" id="Resource_k6gel"]
+script = ExtResource("9_lj5vk")
+chase_stop_distance = 400.0
+chase_start_distance = 600.0
+attack = SubResource("Resource_y8vsw")
+metadata/_custom_type_script = "uid://5epl0x7uacmk"
+
+[sub_resource type="Resource" id="Resource_rp8se"]
+script = ExtResource("13_88p3y")
+scene = ExtResource("12_djgj0")
+metadata/_custom_type_script = "uid://cfihy37c1wi2w"
+
+[resource]
+script = ExtResource("14_8peu6")
+name = "Vinyl"
+texture = ExtResource("15_kt4tm")
+min_wave = 3
+weight = 3.0
+max_health = 4
+brain = SubResource("Resource_k6gel")
+death_effects = Array[ExtResource("11_2qye7")]([SubResource("Resource_rp8se")])
+metadata/_custom_type_script = "uid://koby8pounmkx"

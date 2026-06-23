@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://secf36jumim0" path="res://core/levels/upgrade_playground.gd" id="1_kthok"]
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_x4nve"]
-[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="2_oq6wo"]
 [ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="3_ebf7h"]
-[ext_resource type="Resource" uid="uid://rrwnc3d2v4hm" path="res://resources/upgrades/cool_as_ice.tres" id="3_qg01g"]
 [ext_resource type="Resource" uid="uid://c8siir1sy8tn4" path="res://resources/enemies/laser_disc.tres" id="6_e703i"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
 [ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="6_s57tb"]
+[ext_resource type="PackedScene" uid="uid://bl5un8gqbcywc" path="res://core/pickups/pickup_entity.tscn" id="9_s57tb"]
+[ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="10_rpty4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gs88k"]
 normal = Vector2(0, 1)
@@ -22,7 +22,6 @@ normal = Vector2(-1, 0)
 
 [node name="UpgradePlayground" type="Node2D" unique_id=1045174004]
 script = ExtResource("1_kthok")
-upgrades = Array[ExtResource("2_oq6wo")]([ExtResource("3_qg01g")])
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=398832955]
 collision_layer = 8
@@ -82,3 +81,7 @@ enemy_data = ExtResource("6_oq6wo")
 target = NodePath("../Player")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1774771549]
+
+[node name="PickupEntity" parent="." unique_id=1435589461 instance=ExtResource("9_s57tb")]
+position = Vector2(265, 747)
+pickup = ExtResource("10_rpty4")
