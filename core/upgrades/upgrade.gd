@@ -4,7 +4,7 @@ extends Resource
 @export var name: String
 @export_multiline() var description: String
 @export var sprite: Texture2D
-
+@export var weight: float = 1
 @export var stackable: bool = true
 @export var enabled: bool = true
 @export var bullet_effects: Array[BulletEffect]
