@@ -83,5 +83,17 @@ target = NodePath("../Player")
 [node name="Line2D" type="Line2D" parent="." unique_id=1774771549]
 
 [node name="PickupEntity" parent="." unique_id=1435589461 instance=ExtResource("9_s57tb")]
-position = Vector2(265, 747)
+position = Vector2(120, 438)
+pickup = ExtResource("10_rpty4")
+
+[node name="PickupEntity2" parent="." unique_id=1871693976 instance=ExtResource("9_s57tb")]
+position = Vector2(1310, 1032)
+pickup = ExtResource("10_rpty4")
+
+[node name="PickupEntity3" parent="." unique_id=230007009 instance=ExtResource("9_s57tb")]
+position = Vector2(130, 992)
+pickup = ExtResource("10_rpty4")
+
+[node name="PickupEntity4" parent="." unique_id=657576146 instance=ExtResource("9_s57tb")]
+position = Vector2(764, 934)
 pickup = ExtResource("10_rpty4")
