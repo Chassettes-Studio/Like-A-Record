@@ -49,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		if energy >= 3:
 			energy -= 3
 			character.ability.use(self)
+			ui.set_energy(energy)
 		
 		
 func _on_gun_shot() -> void:

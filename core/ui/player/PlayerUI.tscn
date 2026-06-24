@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b6giimtwrglmv" path="res://assets/ui/bar.png" id="2_3qqhg"]
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="3_ourgq"]
 [ext_resource type="PackedScene" uid="uid://dvke7witwpeqm" path="res://core/ui/health_bar/health_bar.tscn" id="3_pn5ve"]
+[ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="6_khuno"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ourgq"]
 font = ExtResource("3_ourgq")
@@ -78,3 +79,25 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 85
 alignment = 2
+
+[node name="Energy" type="HBoxContainer" parent="." unique_id=1970138254]
+offset_left = 343.0
+offset_top = 55.0
+offset_right = 528.0
+offset_bottom = 110.0
+theme_override_constants/separation = 10
+
+[node name="TextureRect1" type="TextureRect" parent="Energy" unique_id=178113672]
+layout_mode = 2
+texture = ExtResource("6_khuno")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Energy" unique_id=262414562]
+layout_mode = 2
+texture = ExtResource("6_khuno")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Energy" unique_id=394773493]
+layout_mode = 2
+texture = ExtResource("6_khuno")
+expand_mode = 2

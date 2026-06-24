@@ -5,3 +5,4 @@ extends PickupEffect
 
 func apply(player: Player) -> void:
 	player.energy = min(3, player.energy + energy)
+	player.ui.set_energy(player.energy)

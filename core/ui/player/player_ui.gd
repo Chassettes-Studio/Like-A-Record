@@ -8,6 +8,10 @@ extends CanvasLayer
 @onready var score_label: Label = $Score
 @onready var wave_label: Label = $Wave
 
+@onready var energy_1: TextureRect = $Energy/TextureRect1
+@onready var energy_2: TextureRect = $Energy/TextureRect2
+@onready var energy_3: TextureRect = $Energy/TextureRect3
+
 var upgrade_mini: PackedScene = preload("res://core/ui/upgrade/UpgradeMini.tscn")
 
 func _ready() -> void:
@@ -35,6 +39,20 @@ func update_upgrade(upgrades: Array[Upgrade]) -> void:
 		var instance: UpgradeMini = upgrade_mini.instantiate()
 		upgrade_container.add_child(instance)
 		instance.init(up)
-
+ 
 func set_texture(texture: Texture2D) -> void:
 	cd_sprite.texture = texture
+
+func set_energy(amount: int) -> void:
+	energy_1.modulate = Color("ffffffff")
+	energy_2.modulate = Color("ffffffff")
+	energy_3.modulate = Color("ffffffff")
+	if amount == 1: 
+		energy_1.modulate = Color("34685cff")
+	if amount == 2: 
+		energy_1.modulate = Color("34685cff")
+		energy_2.modulate = Color("34685cff")
+	if amount == 3: 
+		energy_1.modulate = Color("34685cff")
+		energy_2.modulate = Color("34685cff")
+		energy_3.modulate = Color("34685cff")
