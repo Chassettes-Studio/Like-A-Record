@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://6k5yux1ei363" path="res://assets/audios/music/hip_layer_1.ogg" id="3_7rdxc"]
 [ext_resource type="AudioStream" uid="uid://ccka5yaloi542" path="res://assets/audios/music/hip_layer_2.ogg" id="4_ltwjv"]
 [ext_resource type="AudioStream" uid="uid://db7mnvtdaepf7" path="res://assets/audios/music/hip_layer_3.ogg" id="5_5iibg"]
-[ext_resource type="Texture2D" uid="uid://dqewclb2q8sws" path="res://assets/gros_fien.png" id="7_2pptl"]
+[ext_resource type="Texture2D" uid="uid://cicvyu1kkyxd4" path="res://assets/musicStuff/cd2.png" id="7_2pptl"]
 
 [sub_resource type="Resource" id="Resource_rhvgn"]
 script = ExtResource("2_pegkl")
@@ -24,6 +24,7 @@ stream_2/volume = 0.0
 [resource]
 script = ExtResource("1_jmjl4")
 name = "Hip Hop"
+desc = "TODO"
 texture = ExtResource("7_2pptl")
 ability = SubResource("Resource_rhvgn")
 layers = SubResource("AudioStreamSynchronized_twoby")

@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bv4mu84joutad" path="res://assets/musicStuff/lazer_disc.png" id="11_vjqvv"]
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="12_ppgr7"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="13_xfomo"]
+[ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="16_rfxn6"]
 
 [sub_resource type="Resource" id="Resource_mwj0u"]
 script = ExtResource("2_73ogs")

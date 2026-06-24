@@ -7,7 +7,8 @@
 [ext_resource type="Script" uid="uid://cpyejpvuuyms8" path="res://core/abilities/ability.gd" id="3_pqrup"]
 [ext_resource type="AudioStream" uid="uid://dqv64iyx25s56" path="res://assets/audios/music/amen_layer_2.ogg" id="3_wh2x1"]
 [ext_resource type="AudioStream" uid="uid://bvg8bmsbdsu07" path="res://assets/audios/music/amen_layer_3.ogg" id="4_ladr1"]
-[ext_resource type="Texture2D" uid="uid://ddog6mcusmhta" path="res://assets/sustain.png" id="8_ladr1"]
+[ext_resource type="AudioStream" uid="uid://wfqg7sgkre88" path="res://assets/audios/music/amen_layer_4.ogg" id="7_pqrup"]
+[ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="8_ladr1"]
 
 [sub_resource type="Resource" id="Resource_ruhwk"]
 script = ExtResource("2_ladr1")
@@ -19,17 +20,20 @@ effects = Array[ExtResource("1_wh2x1")]([SubResource("Resource_ruhwk")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_yvlkw"]
-stream_count = 3
+stream_count = 4
 stream_0/stream = ExtResource("2_csqqj")
 stream_0/volume = 0.0
 stream_1/stream = ExtResource("3_wh2x1")
 stream_1/volume = 0.0
 stream_2/stream = ExtResource("4_ladr1")
 stream_2/volume = 0.0
+stream_3/stream = ExtResource("7_pqrup")
+stream_3/volume = 0.0
 
 [resource]
 script = ExtResource("1_4cmrr")
 name = "Amen"
+desc = "TODO"
 texture = ExtResource("8_ladr1")
 ability = SubResource("Resource_rpty4")
 layers = SubResource("AudioStreamSynchronized_yvlkw")

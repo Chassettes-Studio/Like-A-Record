@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_s7qoq"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_53fph"]
 [ext_resource type="Texture2D" uid="uid://8eqe1jusslh2" path="res://assets/logo/like_a_record.png" id="7_8j1ok"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="10_kmgsa"]
 
 [sub_resource type="Resource" id="Resource_hmdum"]
 script = ExtResource("4_hmdum")
