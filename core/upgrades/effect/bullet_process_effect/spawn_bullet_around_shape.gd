@@ -24,6 +24,6 @@ func process(entity: BulletEntity, delta: float) -> void:
 func create_bullets(entity: BulletEntity) -> void:
 	var direction: Vector2 = Vector2.RIGHT
 	for i in projectile_count:
-		var bullet_entity: BulletEntity = bullet.create(entity, bullet, true)
+		var bullet_entity: BulletEntity = Bullet.create(entity, bullet, true)
 		bullet_entity.bullet_controller.direction = direction
 		direction = direction.rotated(TAU/projectile_count)
