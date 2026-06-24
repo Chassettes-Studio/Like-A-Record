@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://wyu6dfljwpfe"]
 
 [ext_resource type="Script" uid="uid://d05ygn0p2c2g8" path="res://core/player/character/character.gd" id="1_4cmrr"]
-[ext_resource type="Script" uid="uid://cobyq8anuksq5" path="res://core/abilities/ability_effect.gd" id="1_wh2x1"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="1_a065e"]
 [ext_resource type="AudioStream" uid="uid://dmx5hxuvcupca" path="res://assets/audios/music/amen_layer_1.ogg" id="2_csqqj"]
 [ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="2_fcxys"]
 [ext_resource type="Script" uid="uid://cpyejpvuuyms8" path="res://core/abilities/ability.gd" id="3_pqrup"]
@@ -82,7 +82,7 @@ metadata/_custom_type_script = "uid://dkpmem7ixkavt"
 
 [sub_resource type="Resource" id="Resource_rpty4"]
 script = ExtResource("3_pqrup")
-effects = Array[ExtResource("1_wh2x1")]([SubResource("Resource_c8kf1")])
+effects = Array[ExtResource("1_a065e")]([SubResource("Resource_c8kf1")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_yvlkw"]

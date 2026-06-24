@@ -1,9 +1,9 @@
 class_name AbilityBlank
-extends AbilityEffect
+extends PlayerEffect
 
 @export var shape : Shape2D
 
-func use(player: Player) -> void:
+func apply(player: Player) -> void:
 	
 	var query := PhysicsShapeQueryParameters2D.new()
 	query.transform = player.global_transform

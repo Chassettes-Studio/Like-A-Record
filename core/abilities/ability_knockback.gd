@@ -1,11 +1,11 @@
 class_name AbilityKnockback
-extends AbilityEffect
+extends PlayerEffect
 
 @export var shape : Shape2D
 @export var force : float = 100
 @export var duration : float = 0.2
 
-func use(player: Player) -> void:
+func apply(player: Player) -> void:
 	
 	var query := PhysicsShapeQueryParameters2D.new()
 	query.transform = player.global_transform

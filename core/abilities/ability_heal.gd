@@ -1,7 +1,7 @@
 class_name HealAbility
-extends AbilityEffect
+extends PlayerEffect
 
 @export var amount : int = 2
 
-func use(player: Player) -> void:
+func apply(player: Player) -> void:
 	player.health_controller.heal(amount)

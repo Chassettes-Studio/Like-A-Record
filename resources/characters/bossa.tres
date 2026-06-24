@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://4e2p51408b0s"]
 
 [ext_resource type="Script" uid="uid://d05ygn0p2c2g8" path="res://core/player/character/character.gd" id="1_1cp8i"]
-[ext_resource type="Script" uid="uid://cobyq8anuksq5" path="res://core/abilities/ability_effect.gd" id="1_id362"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="1_nvhsj"]
 [ext_resource type="Script" uid="uid://cs1iqbquh57mk" path="res://core/abilities/ability_heal.gd" id="2_lr66y"]
 [ext_resource type="Script" uid="uid://cpyejpvuuyms8" path="res://core/abilities/ability.gd" id="2_nvhsj"]
 [ext_resource type="AudioStream" uid="uid://fruutrpi2qct" path="res://assets/audios/music/bossa_layer_1.ogg" id="3_lr66y"]
@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://cs1iqbquh57mk"
 
 [sub_resource type="Resource" id="Resource_rhvgn"]
 script = ExtResource("2_nvhsj")
-effects = Array[ExtResource("1_id362")]([SubResource("Resource_c8kf1")])
+effects = Array[ExtResource("1_nvhsj")]([SubResource("Resource_c8kf1")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_twoby"]
