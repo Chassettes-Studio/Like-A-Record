@@ -8,8 +8,8 @@ var speed_rand: float
 var accel_rand: float
 
 func ready() -> void:
-	speed_rand = randf_range(speed * 0.9, speed * 1.1)
-	accel_rand = randf_range(accel * 0.9, accel * 1.1)
+	speed_rand = randf_range(speed * 0.8, speed * 1.2)
+	accel_rand = randf_range(accel * 0.8, accel * 1.2)
 
 func process(entity: EnemyEntity, _delta: float) -> void:
 	entity.movement_controller.direction = entity.global_position.direction_to(entity.target.global_position)

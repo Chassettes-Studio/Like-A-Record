@@ -146,7 +146,7 @@ offset_bottom = 192.0
 text = "Credits"
 label_settings = SubResource("LabelSettings_khoil")
 
-[node name="Desc" type="Label" parent="CreditPopup" unique_id=1439864885]
+[node name="s" type="Label" parent="CreditPopup" unique_id=1439864885]
 custom_minimum_size = Vector2(1228, 1000)
 custom_maximum_size = Vector2(1228, 1000)
 layout_mode = 0
@@ -162,7 +162,7 @@ RizBleu: Developer and UI
 Tabouret: Developer
 Suno: Developer
 
-No Ai was used for this game"
+No AI was used for this game"
 label_settings = SubResource("LabelSettings_vg6gv")
 autowrap_mode = 3
 
