@@ -10,6 +10,7 @@ extends Resource
 @export var locks : int = 0
 var remaining_locks : int
 @export var bullet_effects: Array[BulletEffect]
+@export var bullet_process_effects: Array[BulletProcessEffect]
 @export var gun_effects: Array[GunEffect]
 @export var collision_effects: Array[CollisionEffect]
 @export var hit_effects : Array[HitEffect]

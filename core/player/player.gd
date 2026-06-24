@@ -4,6 +4,8 @@ extends CharacterBody2D
 signal died
 signal damaged
 
+static var static_character: Character
+
 @export var DASH_SPEED: float = 5_000
 @export var DASH_ACCELERATION: float = 50_000
 
@@ -15,7 +17,9 @@ var current_state: State = MovingState.new(self, Vector2.RIGHT)
 var deathScreen: PackedScene = preload("res://core/ui/death/DeathScreen.tscn")
 var dash_unlocked := false
 
-var energy : int = 0
+var energy: int = 0
+
+var player_shoot_effects: Array[PlayerShootEffect] = []
 
 @onready var blink_timer: Timer = $BlinkTimer
 @onready var player_sprite: Sprite2D = $PlayerSprite
@@ -31,8 +35,6 @@ var energy : int = 0
 @onready var ui: PlayerUi = $PlayerUi
 @onready var hit: AudioStreamPlayer = $Hit
 
-var player_shoot_effects: Array[PlayerShootEffect] = []
-static var static_character: Character
 
 func _ready() -> void:
 	gun.shot.connect(_on_gun_shot)
@@ -40,6 +42,7 @@ func _ready() -> void:
 		character = static_character
 	player_sprite.texture = character.texture
 	ui.set_texture(character.texture)
+
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
@@ -50,11 +53,7 @@ func _physics_process(delta: float) -> void:
 			energy -= 3
 			character.ability.use(self)
 			ui.set_energy(energy)
-		
-		
-func _on_gun_shot() -> void:
-	for effect in player_shoot_effects:
-		effect.apply(self)
+
 
 func update_current_state(state: State) -> void:
 	self.current_state.on_exit()
@@ -72,7 +71,13 @@ func apply_upgrade(upgrade: Upgrade) -> void:
 	gun.bullet.bullet_effects.append_array(upgrade.bullet_effects)
 	gun.bullet.collision_effects.append_array(upgrade.collision_effects)
 	gun.bullet.hit_effects.append_array(upgrade.hit_effects)
+	gun.bullet.bullet_process_effect.append_array(upgrade.bullet_process_effects)
 	ui.update_upgrade(upgrades)
+
+
+func _on_gun_shot() -> void:
+	for effect in player_shoot_effects:
+		effect.apply(self)
 
 
 func _on_hitbox_hurt(value: float) -> void:
