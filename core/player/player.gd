@@ -6,7 +6,7 @@ signal damaged
 
 static var static_character: Character
 
-@export var DASH_SPEED: float = 5_000
+@export var DASH_SPEED: float = 2_000
 @export var DASH_ACCELERATION: float = 50_000
 
 @export var upgrades: Array[Upgrade] = []
@@ -35,6 +35,7 @@ var player_shoot_effects: Array[PlayerShootEffect] = []
 @onready var ui: PlayerUi = $PlayerUi
 @onready var hit: AudioStreamPlayer = $Hit
 
+var dash_duration := .2
 
 func _ready() -> void:
 	gun.shot.connect(_on_gun_shot)

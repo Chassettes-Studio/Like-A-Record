@@ -5,10 +5,10 @@ var dash_direction: Vector2
 var dash_duration: Timer
 
 
-func _init(new_target: Player, direction: Vector2) -> void:
+func _init(new_target: Player, direction: Vector2, duration: float) -> void:
 	self.target = new_target
 	self.dash_direction = direction
-	target.get_tree().create_timer(0.2).timeout.connect(_on_duration_end)
+	target.get_tree().create_timer(duration).timeout.connect(_on_duration_end)
 
 
 func on_enter() -> void:

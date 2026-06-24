@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bhqqv01v1r2p3"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_2s0v8"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_ekjqy"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_4vfv1"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="4_0oq8u"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_cqi80"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_lx7ws"]
+[ext_resource type="Script" uid="uid://1kt00lo8wagq" path="res://core/upgrades/effect/player_effect/improve_dash.gd" id="7_4vfv1"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_nvv2x"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_bjbns"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="9_ekjqy"]
+
+[sub_resource type="Resource" id="Resource_ekjqy"]
+script = ExtResource("7_4vfv1")
+cd_reduction = 19.0
+metadata/_custom_type_script = "uid://1kt00lo8wagq"
+
+[resource]
+script = ExtResource("8_bjbns")
+name = "Crescendo"
+description = "You can dash more often"
+sprite = ExtResource("9_ekjqy")
+weight = 1.5
+enabled = false
+locks = 1
+player_effects = Array[ExtResource("6_lx7ws")]([SubResource("Resource_ekjqy")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"

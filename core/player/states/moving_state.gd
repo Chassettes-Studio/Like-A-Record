@@ -25,5 +25,6 @@ func physics_process(_delta: float) -> void:
 		target.dash_cooldown.start()
 		target.update_current_state(DashingState.new(
 			target,
-			last_direction
+			last_direction,
+			target.dash_duration
 		))

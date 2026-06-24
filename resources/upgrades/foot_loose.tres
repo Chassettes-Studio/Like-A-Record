@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://b5ldytfxwdtpy"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_gjprr"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_0gyu8"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_e7677"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="4_5i6tn"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_kd8gl"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_hlk3v"]
+[ext_resource type="Script" uid="uid://1kt00lo8wagq" path="res://core/upgrades/effect/player_effect/improve_dash.gd" id="7_dcikf"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="8_1mk36"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="9_lqkmm"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="10_2wxt6"]
+
+[sub_resource type="Resource" id="Resource_gjprr"]
+script = ExtResource("7_dcikf")
+extra_speed = 1000.0
+metadata/_custom_type_script = "uid://1kt00lo8wagq"
+
+[resource]
+script = ExtResource("9_lqkmm")
+name = "Foot loose"
+description = "You dash faster"
+sprite = ExtResource("10_2wxt6")
+weight = 1.5
+enabled = false
+locks = 1
+player_effects = Array[ExtResource("6_hlk3v")]([SubResource("Resource_gjprr")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"
