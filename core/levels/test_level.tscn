@@ -93,12 +93,13 @@ position_smoothing_enabled = true
 position_smoothing_speed = 25.0
 
 [node name="Label" type="Label" parent="." unique_id=1701808435]
-offset_left = 1574.0
-offset_top = 883.0
-offset_right = 2266.0
+offset_left = 1314.0
+offset_top = 811.0
+offset_right = 2524.0
 offset_bottom = 1080.0
 text = "[WASD ] or [ARROWS ] to Move
-[Space ] or [Left Click ] to Shoot"
+[Space ] or [Left Click ] to Shoot
+[E ] tu use Ability when the Gauge is Full"
 label_settings = SubResource("LabelSettings_gtu5s")
 horizontal_alignment = 1
 
