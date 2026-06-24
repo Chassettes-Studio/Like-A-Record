@@ -20,6 +20,9 @@ metadata/_custom_type_script = "uid://ddv4ohhj7fgxs"
 [resource]
 script = ExtResource("7_3a0t0")
 name = "Gay Bar"
+description = "Makes your bullets all shiny.
+They don't hit harder but they certainly slay."
 sprite = ExtResource("10_yg7vy")
+stackable = false
 bullet_process_effects = Array[ExtResource("2_3rsdo")]([SubResource("Resource_rpty4")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

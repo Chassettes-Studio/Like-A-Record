@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_pnm1p"]
 [ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="2_0ays3"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_m35qc"]
 [ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="3_nbbiq"]
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_865qp"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_m35qc"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_ld76p"]
 [ext_resource type="Script" uid="uid://c5cb44d164041" path="res://core/upgrades/effect/player_effect/faster_movement.gd" id="6_nbbiq"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="8_ld76p"]
 [ext_resource type="Texture2D" uid="uid://dhgqciffp5itg" path="res://assets/faster.png" id="8_nbbiq"]
 
 [sub_resource type="Resource" id="Resource_74yie"]

@@ -6,8 +6,10 @@
 [ext_resource type="Script" uid="uid://bnrvnvfa7l240" path="res://core/upgrades/effect/bullet_effect/attack_scene.gd" id="3_h72te"]
 [ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="3_us5t1"]
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_s2q5f"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="4_wxl0k"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_h72te"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_wxl0k"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="9_gcsq0"]
 [ext_resource type="Texture2D" uid="uid://baheprpgx1pi3" path="res://assets/sparkle.png" id="9_s2q5f"]
 
 [sub_resource type="Resource" id="Resource_us5t1"]
@@ -19,7 +21,7 @@ metadata/_custom_type_script = "uid://bnrvnvfa7l240"
 script = ExtResource("6_wxl0k")
 name = "Sparkle"
 description = "The bullets emits particles.
-Useless but pretty"
+Useless but pretty."
 sprite = ExtResource("9_s2q5f")
 stackable = false
 bullet_effects = Array[ExtResource("1_ytvll")]([SubResource("Resource_us5t1")])
