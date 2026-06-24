@@ -192,7 +192,10 @@ offset_bottom = 268.245
 texture = ExtResource("14_vg6gv")
 expand_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1489770333]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1532215546]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1489770333]
+z_index = 999
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
