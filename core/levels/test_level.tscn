@@ -19,11 +19,6 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qq6f8"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
-font = ExtResource("7_v7f4j")
-font_size = 48
-font_color = Color(0.9019608, 0.40784314, 0.16862746, 1)
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v7f4j"]
 normal = Vector2(0, 1)
 
@@ -104,15 +99,20 @@ limit_bottom = 2160
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0
 
-[node name="Label" type="Label" parent="." unique_id=1701808435]
+[node name="Label" type="RichTextLabel" parent="." unique_id=856641187]
 offset_left = 1314.0
 offset_top = 811.0
 offset_right = 2524.0
 offset_bottom = 1080.0
-text = "[WASD ] or [ARROWS ] to Move
+theme_override_colors/default_color = Color(0.9019608, 0.40784314, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("7_v7f4j")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave]
+[WASD ] or [ARROWS ] to Move
 [Space ] or [Left Click ] to Shoot
-[E ] tu use Ability when the Gauge is Full"
-label_settings = SubResource("LabelSettings_gtu5s")
+[E ] tu use Ability when the Gauge is Full
+[/wave]"
 horizontal_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1592601359]
