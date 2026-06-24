@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://0un6sh46u1am"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_uygd0"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_l51pe"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_80ybb"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="4_7iqmy"]
+[ext_resource type="PackedScene" uid="uid://vq2mmi14212d" path="res://core/player/spawnables/laser.tscn" id="5_7iqmy"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_b12d1"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_aublm"]
+[ext_resource type="Script" uid="uid://48i0jlydksg8" path="res://core/upgrades/effect/gun_effect/gun_add_child.gd" id="6_b12d1"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_peg7w"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_fdvxw"]
+[ext_resource type="Texture2D" uid="uid://dnf27afwvhihq" path="res://assets/musicStuff/major_lazer.png" id="11_7iqmy"]
+
+[sub_resource type="Resource" id="Resource_neper"]
+script = ExtResource("6_b12d1")
+scene = ExtResource("5_7iqmy")
+metadata/_custom_type_script = "uid://48i0jlydksg8"
+
+[resource]
+script = ExtResource("8_fdvxw")
+name = "Major Lazer"
+description = "Adds a laser sight to help with aiming"
+sprite = ExtResource("11_7iqmy")
+stackable = false
+gun_effects = Array[ExtResource("4_7iqmy")]([SubResource("Resource_neper")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"
