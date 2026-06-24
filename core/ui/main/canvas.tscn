@@ -66,6 +66,7 @@ stream = ExtResource("3_dvetv")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1307769560]
 stream = ExtResource("4_2cbxx")
+volume_db = -2.0
 
 [node name="Step" type="AudioStreamPlayer" parent="." unique_id=363093929]
 stream = ExtResource("5_yoa7e")
