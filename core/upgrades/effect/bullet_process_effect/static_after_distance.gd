@@ -17,6 +17,7 @@ func process(entity: BulletEntity, delta: float) -> void:
 	if not init:
 		init = true
 		initial_position = entity.global_position
+		process_effect_on_idle = process_effect_on_idle.duplicate(true)
 	if not is_idle and initial_position.distance_to(entity.global_position) > distance:
 		initial_position = entity.global_position
 		entity.bullet_controller.set_physics_process(false)

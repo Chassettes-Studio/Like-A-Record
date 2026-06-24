@@ -8,10 +8,14 @@ extends BulletProcessEffect
 
 var elapsed_time: float = 0
 var is_idle: bool = false
+var init: bool = false
 
 
 func process(entity: BulletEntity, delta: float) -> void:
 	elapsed_time += delta
+	if not init:
+		init = true
+		process_effect_on_idle = process_effect_on_idle.duplicate(true)
 	if not is_idle and elapsed_time > delay:
 		elapsed_time -= delay
 		entity.bullet_controller.set_physics_process(false)

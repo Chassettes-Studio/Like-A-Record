@@ -14,11 +14,12 @@
 [ext_resource type="Script" uid="uid://ciktfpw8m8ixf" path="res://core/upgrades/effect/bullet_process_effect/variying_size.gd" id="5_w5puf"]
 [ext_resource type="Script" uid="uid://ddv4ohhj7fgxs" path="res://core/upgrades/effect/bullet_process_effect/alternate_color.gd" id="6_8ipp4"]
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="6_yv50f"]
+[ext_resource type="Script" uid="uid://dwjtvuc5ihc21" path="res://core/upgrades/effect/bullet_process_effect/spawn_bullet_around_shape.gd" id="7_0k755"]
 [ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="7_mk3gw"]
 [ext_resource type="Texture2D" uid="uid://7wafqqrnxp6w" path="res://assets/musicStuff/vinyle2.png" id="7_msdsj"]
 [ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="7_oyvly"]
-[ext_resource type="Script" uid="uid://dk1po1h34jhlk" path="res://core/upgrades/effect/bullet_process_effect/static_after_distance.gd" id="7_yv50f"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="8_0k755"]
+[ext_resource type="Script" uid="uid://bcc2ddw1nb0j2" path="res://core/upgrades/effect/bullet_process_effect/static_after_time.gd" id="8_dnih8"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="19_yv50f"]
 
 [sub_resource type="Resource" id="Resource_rpty4"]
@@ -59,10 +60,36 @@ script = ExtResource("6_8ipp4")
 colors = Array[Color]([Color(0.9098039, 0.078431375, 0.08627451, 1), Color(1, 0.64705884, 0, 1), Color(0.98039216, 0.92156863, 0.21176471, 1), Color(0.4745098, 0.7647059, 0.078431375, 1), Color(0.28235295, 0.49019608, 0.90588236, 1), Color(0.29411766, 0.21176471, 0.6156863, 1), Color(0.4392157, 0.21176471, 0.6156863, 1)])
 metadata/_custom_type_script = "uid://ddv4ohhj7fgxs"
 
-[sub_resource type="Resource" id="Resource_e703i"]
-script = ExtResource("7_yv50f")
-distance = 200.0
-metadata/_custom_type_script = "uid://dk1po1h34jhlk"
+[sub_resource type="Resource" id="Resource_0k755"]
+script = ExtResource("6_8ipp4")
+colors = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1)])
+metadata/_custom_type_script = "uid://ddv4ohhj7fgxs"
+
+[sub_resource type="Resource" id="Resource_mk3gw"]
+script = ExtResource("7_oyvly")
+metadata/_custom_type_script = "uid://8q128ehc7nxs"
+
+[sub_resource type="Resource" id="Resource_dnih8"]
+script = ExtResource("7_mk3gw")
+texture = ExtResource("8_0k755")
+size = 10.0
+collision_effects = Array[ExtResource("5_jtvuv")]([SubResource("Resource_mk3gw")])
+bullet_process_effect = Array[ExtResource("2_w5puf")]([SubResource("Resource_0k755")])
+metadata/_custom_type_script = "uid://bkh04gcfmrktg"
+
+[sub_resource type="Resource" id="Resource_dpofx"]
+script = ExtResource("7_0k755")
+bullet = SubResource("Resource_dnih8")
+projectile_count = 30
+burst_cooldown = 0.5
+metadata/_custom_type_script = "uid://dwjtvuc5ihc21"
+
+[sub_resource type="Resource" id="Resource_2u2a7"]
+script = ExtResource("8_dnih8")
+idle_duration = 10.0
+loop = false
+process_effect_on_idle = SubResource("Resource_dpofx")
+metadata/_custom_type_script = "uid://bcc2ddw1nb0j2"
 
 [sub_resource type="Resource" id="Resource_8ipp4"]
 script = ExtResource("7_oyvly")
@@ -75,11 +102,12 @@ texture = ExtResource("8_0k755")
 size = 20.0
 color = Color(0.6745098, 0, 0.43137255, 1)
 collision_effects = Array[ExtResource("5_jtvuv")]([SubResource("Resource_8ipp4")])
-bullet_process_effect = Array[ExtResource("2_w5puf")]([SubResource("Resource_s57tb"), SubResource("Resource_w5puf"), SubResource("Resource_jtvuv"), SubResource("Resource_e703i")])
+bullet_process_effect = Array[ExtResource("2_w5puf")]([SubResource("Resource_s57tb"), SubResource("Resource_w5puf"), SubResource("Resource_jtvuv"), SubResource("Resource_2u2a7")])
 metadata/_custom_type_script = "uid://bkh04gcfmrktg"
 
 [sub_resource type="Resource" id="Resource_h8i7w"]
 script = ExtResource("2_poa72")
+shooting_cooldown = 30.0
 metadata/_custom_type_script = "uid://b22neqpd27r5d"
 
 [sub_resource type="Resource" id="Resource_pn740"]
