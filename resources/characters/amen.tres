@@ -3,20 +3,86 @@
 [ext_resource type="Script" uid="uid://d05ygn0p2c2g8" path="res://core/player/character/character.gd" id="1_4cmrr"]
 [ext_resource type="Script" uid="uid://cobyq8anuksq5" path="res://core/abilities/ability_effect.gd" id="1_wh2x1"]
 [ext_resource type="AudioStream" uid="uid://dmx5hxuvcupca" path="res://assets/audios/music/amen_layer_1.ogg" id="2_csqqj"]
-[ext_resource type="Script" uid="uid://cs1iqbquh57mk" path="res://core/abilities/ability_heal.gd" id="2_ladr1"]
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="2_fcxys"]
 [ext_resource type="Script" uid="uid://cpyejpvuuyms8" path="res://core/abilities/ability.gd" id="3_pqrup"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="3_qts3x"]
+[ext_resource type="Script" uid="uid://cp4ij1nln6rty" path="res://core/upgrades/effect/bullet_effect/add_bounce.gd" id="3_vo0jq"]
 [ext_resource type="AudioStream" uid="uid://dqv64iyx25s56" path="res://assets/audios/music/amen_layer_2.ogg" id="3_wh2x1"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="4_5pp20"]
 [ext_resource type="AudioStream" uid="uid://bvg8bmsbdsu07" path="res://assets/audios/music/amen_layer_3.ogg" id="4_ladr1"]
+[ext_resource type="Script" uid="uid://cc326afirrbiv" path="res://core/upgrades/effect/bullet_effect/add_pierce.gd" id="4_wti13"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_jhxsf"]
+[ext_resource type="Script" uid="uid://bw18f5bbkldul" path="res://core/upgrades/effect/collision_effect/speedup_on_collision.gd" id="5_qts3x"]
+[ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="5_wti13"]
+[ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="6_vo0jq"]
+[ext_resource type="Script" uid="uid://ciktfpw8m8ixf" path="res://core/upgrades/effect/bullet_process_effect/variying_size.gd" id="7_3a0le"]
 [ext_resource type="AudioStream" uid="uid://wfqg7sgkre88" path="res://assets/audios/music/amen_layer_4.ogg" id="7_pqrup"]
+[ext_resource type="Script" uid="uid://ddv4ohhj7fgxs" path="res://core/upgrades/effect/bullet_process_effect/alternate_color.gd" id="8_a065e"]
+[ext_resource type="Script" uid="uid://dkpmem7ixkavt" path="res://core/abilities/ability_shoot.gd" id="8_cr7wp"]
 [ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="8_ladr1"]
+[ext_resource type="Script" uid="uid://b6vusje6nrle3" path="res://core/upgrades/effect/hit_effect/deal_damage.gd" id="9_cr7wp"]
+[ext_resource type="Script" uid="uid://dih1bhofpmvce" path="res://core/upgrades/effect/hit_effect/apply_knockback.gd" id="11_cr7wp"]
+[ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="14_3a0le"]
 
-[sub_resource type="Resource" id="Resource_ruhwk"]
-script = ExtResource("2_ladr1")
-metadata/_custom_type_script = "uid://cs1iqbquh57mk"
+[sub_resource type="Resource" id="Resource_5pp20"]
+script = ExtResource("3_vo0jq")
+bounces = 10
+metadata/_custom_type_script = "uid://cp4ij1nln6rty"
+
+[sub_resource type="Resource" id="Resource_jhxsf"]
+script = ExtResource("4_wti13")
+pierces = 99
+metadata/_custom_type_script = "uid://cc326afirrbiv"
+
+[sub_resource type="Resource" id="Resource_3a0le"]
+script = ExtResource("5_wti13")
+speed = 600.0
+metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
+
+[sub_resource type="Resource" id="Resource_a065e"]
+script = ExtResource("7_3a0le")
+delay = 0.2
+metadata/_custom_type_script = "uid://ciktfpw8m8ixf"
+
+[sub_resource type="Resource" id="Resource_1qm2l"]
+script = ExtResource("8_a065e")
+colors = Array[Color]([Color(0.8, 0, 0, 1), Color(0, 0.9411765, 0, 1), Color(0, 0, 0.95686275, 1)])
+transition_delay = 0.3
+metadata/_custom_type_script = "uid://ddv4ohhj7fgxs"
+
+[sub_resource type="Resource" id="Resource_fcxys"]
+script = ExtResource("5_qts3x")
+amount = 300.0
+metadata/_custom_type_script = "uid://bw18f5bbkldul"
+
+[sub_resource type="Resource" id="Resource_vo0jq"]
+script = ExtResource("9_cr7wp")
+damage = 3
+metadata/_custom_type_script = "uid://b6vusje6nrle3"
+
+[sub_resource type="Resource" id="Resource_lsk3w"]
+script = ExtResource("11_cr7wp")
+force = 1000.0
+metadata/_custom_type_script = "uid://dih1bhofpmvce"
+
+[sub_resource type="Resource" id="Resource_w63ho"]
+script = ExtResource("6_vo0jq")
+texture = ExtResource("14_3a0le")
+damage = 0
+collision_effects = Array[ExtResource("4_5pp20")]([SubResource("Resource_fcxys")])
+bullet_effects = Array[ExtResource("2_fcxys")]([SubResource("Resource_5pp20"), SubResource("Resource_jhxsf"), SubResource("Resource_3a0le")])
+bullet_process_effect = Array[ExtResource("3_qts3x")]([SubResource("Resource_a065e"), SubResource("Resource_1qm2l")])
+hit_effects = Array[ExtResource("5_jhxsf")]([SubResource("Resource_vo0jq"), SubResource("Resource_lsk3w")])
+metadata/_custom_type_script = "uid://bkh04gcfmrktg"
+
+[sub_resource type="Resource" id="Resource_c8kf1"]
+script = ExtResource("8_cr7wp")
+bullet = SubResource("Resource_w63ho")
+metadata/_custom_type_script = "uid://dkpmem7ixkavt"
 
 [sub_resource type="Resource" id="Resource_rpty4"]
 script = ExtResource("3_pqrup")
-effects = Array[ExtResource("1_wh2x1")]([SubResource("Resource_ruhwk")])
+effects = Array[ExtResource("1_wh2x1")]([SubResource("Resource_c8kf1")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_yvlkw"]
