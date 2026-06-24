@@ -6,11 +6,15 @@
 [ext_resource type="AudioStream" uid="uid://x6gqpt0u2bjn" path="res://assets/audios/music/main.ogg" id="4_2cbxx"]
 [ext_resource type="Resource" uid="uid://wyu6dfljwpfe" path="res://resources/characters/amen.tres" id="4_3liyh"]
 [ext_resource type="Resource" uid="uid://4e2p51408b0s" path="res://resources/characters/bossa.tres" id="5_01t0k"]
+[ext_resource type="Texture2D" uid="uid://cbmixnmx2ppv0" path="res://assets/ui/cd_vert.png" id="5_3j1vj"]
 [ext_resource type="AudioStream" uid="uid://cx1xdlhxokecd" path="res://assets/audios/sound/steps_stairs.ogg" id="5_yoa7e"]
 [ext_resource type="Resource" uid="uid://dedj3dcnye346" path="res://resources/characters/hiphop.tres" id="6_h3tqq"]
+[ext_resource type="Texture2D" uid="uid://bhbdv80ten5u0" path="res://assets/ui/cd_jaune.png" id="6_rrrit"]
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="6_vi4pi"]
 [ext_resource type="Resource" uid="uid://brp5kehtmay3j" path="res://resources/characters/metal.tres" id="7_jdfle"]
 [ext_resource type="PackedScene" uid="uid://ctcvm7dmnuxnl" path="res://core/ui/main/cd_button.tscn" id="7_y8vsw"]
+[ext_resource type="Texture2D" uid="uid://ctwghap1ik0fx" path="res://assets/ui/cd_orange.png" id="8_3j1vj"]
+[ext_resource type="Texture2D" uid="uid://v8ibbkceyiyx" path="res://assets/ui/cd_rouge.png" id="10_8cxc7"]
 [ext_resource type="Texture2D" uid="uid://03f6wwqe44tp" path="res://assets/ui/popup.png" id="12_jdfle"]
 [ext_resource type="Texture2D" uid="uid://bs0nb1bsf3w08" path="res://assets/ui/no_clankers.png" id="13_khoil"]
 [ext_resource type="Texture2D" uid="uid://dte68fsjwd52k" path="res://assets/logo/chassettes.png" id="14_vg6gv"]
@@ -53,24 +57,28 @@ polygon = PackedVector2Array(1489, 810, 1489, 297, 1454, 307, 1402, 316, 1352, 3
 [node name="Cd1" parent="." unique_id=850072635 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
 position = Vector2(619.00006, 218)
 character = ExtResource("4_3liyh")
+icon = ExtResource("5_3j1vj")
 n = 1
 hub_music = NodePath("../Music")
 
 [node name="Cd2" parent="." unique_id=1262477902 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
 position = Vector2(719, 217)
 character = ExtResource("6_h3tqq")
+icon = ExtResource("6_rrrit")
 n = 2
 hub_music = NodePath("../Music")
 
 [node name="Cd3" parent="." unique_id=399217651 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
 position = Vector2(821, 217)
 character = ExtResource("5_01t0k")
+icon = ExtResource("8_3j1vj")
 n = 3
 hub_music = NodePath("../Music")
 
 [node name="Cd4" parent="." unique_id=1971285291 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
 position = Vector2(919, 217)
 character = ExtResource("7_jdfle")
+icon = ExtResource("10_8cxc7")
 n = 4
 hub_music = NodePath("../Music")
 
