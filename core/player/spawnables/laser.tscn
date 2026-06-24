@@ -8,9 +8,9 @@ rotation = -0.23561946
 script = ExtResource("1_bum5e")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1962038679]
-points = PackedVector2Array(0, 0, 2000, 0)
+points = PackedVector2Array(20, 0, 2000, 0)
 default_color = Color(1, 0.023529412, 0.007843138, 1)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=868992139]
 target_position = Vector2(2000, 0)
-collision_mask = 10
+collision_mask = 26

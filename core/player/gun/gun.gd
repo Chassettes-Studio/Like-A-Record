@@ -4,7 +4,7 @@ extends Node2D
 signal shot
 
 @export var orbit_radius: float = 100
-@export var radial_speed: float = 2
+@export var radial_speed: float = 1.5
 @export var projectile_count: int = 1
 @export var burst: float = 0
 @export var shooting_cooldown: float = 0.5
