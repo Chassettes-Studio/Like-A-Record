@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://1kt00lo8wagq" path="res://core/upgrades/effect/player_effect/improve_dash.gd" id="7_4vfv1"]
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_nvv2x"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_bjbns"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="9_ekjqy"]
+[ext_resource type="Texture2D" uid="uid://bue6jqjk4vmqn" path="res://assets/crescendo.png" id="10_4vfv1"]
 
 [sub_resource type="Resource" id="Resource_ekjqy"]
 script = ExtResource("7_4vfv1")
@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://1kt00lo8wagq"
 script = ExtResource("8_bjbns")
 name = "Crescendo"
 description = "You can dash more often"
-sprite = ExtResource("9_ekjqy")
+sprite = ExtResource("10_4vfv1")
 weight = 1.5
 enabled = false
 locks = 1
