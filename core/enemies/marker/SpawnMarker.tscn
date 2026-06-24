@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cptqsbj71qnxr"]
 
-[ext_resource type="Texture2D" uid="uid://bs0nb1bsf3w08" path="res://assets/ui/no_clankers.png" id="1_fhb18"]
 [ext_resource type="Script" uid="uid://uqegvvkj4r4e" path="res://core/enemies/marker/spawn_marker.gd" id="1_oyle3"]
+[ext_resource type="Texture2D" uid="uid://cb7rabsjl0vkq" path="res://assets/viseur.png" id="2_oyle3"]
 
 [node name="SpawnMarker" type="Node2D" unique_id=170195742]
 script = ExtResource("1_oyle3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=453829304]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_fhb18")
+texture = ExtResource("2_oyle3")
