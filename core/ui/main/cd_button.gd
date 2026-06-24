@@ -5,6 +5,9 @@ extends Node2D
 @export var n: int
 @export var hub_music: AudioStreamPlayer
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@onready var title: Label = $CanvasLayer/NinePatchRect/Title
+@onready var desc: Label = $CanvasLayer/NinePatchRect/Desc
+@onready var popup: NinePatchRect = $CanvasLayer/NinePatchRect
 
 var mouse_in: bool = false
 var is_selected: bool = false
@@ -14,7 +17,9 @@ var is_selected: bool = false
 signal cd_selected
 
 func _ready() -> void:
-	sprite.modulate = Color(18.892, 18.892, 18.892, 0.0)
+	sprite.modulate = Color(18.892, 18.892, 18.892, 	0.0)
+	title.text = character.name
+	desc.text = character.desc
 	audio.stream = character.layers
 	audio.play()
 	audio.volume_db = -100
@@ -39,7 +44,7 @@ func _on_area_2d_mouse_entered() -> void:
 	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(audio, "volume_db", 0.0, 1.0)
 	tween.tween_property(hub_music, "volume_db", -100.0, 1.0)
-	
+	tween.tween_property(popup, "offset_transform_position", Vector2(0.0, 0.0), 0.5)
 
 func _on_area_2d_mouse_exited() -> void:
 	mouse_in = false
@@ -50,7 +55,8 @@ func _on_area_2d_mouse_exited() -> void:
 	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(audio, "volume_db", -100.0, 1.0)
 	tween.tween_property(hub_music, "volume_db", 0.0, 1.0)
-	
+	tween.tween_property(popup, "offset_transform_position", Vector2(0.0, 550.0), 0.5)
+
 func unselect(val: int) -> void:
 	if n != val:
 		is_selected = false

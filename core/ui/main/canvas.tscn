@@ -38,25 +38,25 @@ polygon = PackedVector2Array(1489, 810, 1489, 297, 1454, 307, 1402, 316, 1352, 3
 polygon = PackedVector2Array(1489, 810, 1489, 297, 1454, 307, 1402, 316, 1352, 321, 1316, 321, 1272, 317, 1242, 312, 1214, 305, 1214, 738, 1261, 810)
 
 [node name="Cd1" parent="." unique_id=850072635 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
-position = Vector2(413.5, 307.5)
+position = Vector2(619.00006, 218)
 character = ExtResource("4_3liyh")
 n = 1
 hub_music = NodePath("../Music")
 
 [node name="Cd2" parent="." unique_id=1262477902 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
-position = Vector2(587.5, 307.5)
-character = ExtResource("5_01t0k")
+position = Vector2(719, 217)
+character = ExtResource("6_h3tqq")
 n = 2
 hub_music = NodePath("../Music")
 
 [node name="Cd3" parent="." unique_id=399217651 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
-position = Vector2(759, 307.5)
-character = ExtResource("6_h3tqq")
+position = Vector2(821, 217)
+character = ExtResource("5_01t0k")
 n = 3
 hub_music = NodePath("../Music")
 
 [node name="Cd4" parent="." unique_id=1971285291 node_paths=PackedStringArray("hub_music") instance=ExtResource("7_y8vsw")]
-position = Vector2(933.5, 307.5)
+position = Vector2(919, 217)
 character = ExtResource("7_jdfle")
 n = 4
 hub_music = NodePath("../Music")

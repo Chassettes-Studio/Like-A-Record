@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://fruutrpi2qct" path="res://assets/audios/music/bossa_layer_1.ogg" id="3_lr66y"]
 [ext_resource type="AudioStream" uid="uid://8ydnahulx8xu" path="res://assets/audios/music/bossa_layer_2.ogg" id="4_c1ikf"]
 [ext_resource type="AudioStream" uid="uid://bhjjemxosp2rs" path="res://assets/audios/music/bossa_layer_3.ogg" id="5_ei4xo"]
-[ext_resource type="Texture2D" uid="uid://dc85xu1smxo3q" path="res://assets/despacito.png" id="7_xttqm"]
+[ext_resource type="Texture2D" uid="uid://cwom5w6aecy3p" path="res://assets/musicStuff/cd3.png" id="7_id362"]
 
 [sub_resource type="Resource" id="Resource_rhvgn"]
 script = ExtResource("2_nvhsj")
@@ -24,7 +24,8 @@ stream_2/volume = 0.0
 [resource]
 script = ExtResource("1_1cp8i")
 name = "Bossa"
-texture = ExtResource("7_xttqm")
+desc = "TODO"
+texture = ExtResource("7_id362")
 ability = SubResource("Resource_rhvgn")
 layers = SubResource("AudioStreamSynchronized_twoby")
 metadata/_custom_type_script = "uid://d05ygn0p2c2g8"

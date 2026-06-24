@@ -18,6 +18,7 @@ var dash_unlocked := false
 var energy : int = 0
 
 @onready var blink_timer: Timer = $BlinkTimer
+@onready var player_sprite: Sprite2D = $PlayerSprite
 
 @onready var hitbox: Hitbox = $Hitbox
 
@@ -37,6 +38,8 @@ func _ready() -> void:
 	gun.shot.connect(_on_gun_shot)
 	if static_character != null:
 		character = static_character
+	player_sprite.texture = character.texture
+	ui.set_texture(character.texture)
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
