@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://daycmq746djm7"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_v2brw"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_r1556"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_huv2i"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="4_0qpbn"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_utvkl"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_p3eao"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_aiabv"]
+[ext_resource type="Script" uid="uid://die05mo8g06ww" path="res://core/upgrades/effect/player_effect/increase_max_hp.gd" id="7_huv2i"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_8jgfi"]
+[ext_resource type="Texture2D" uid="uid://bwu7idg7wpkco" path="res://assets/musicStuff/show_must_go_on.png" id="9_r1556"]
+
+[sub_resource type="Resource" id="Resource_r1556"]
+script = ExtResource("7_huv2i")
+metadata/_custom_type_script = "uid://die05mo8g06ww"
+
+[resource]
+script = ExtResource("8_8jgfi")
+name = "Show Must Go On"
+description = "Increases you max HP by 1"
+sprite = ExtResource("9_r1556")
+player_effects = Array[ExtResource("6_p3eao")]([SubResource("Resource_r1556")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"

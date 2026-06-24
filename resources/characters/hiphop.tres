@@ -34,7 +34,7 @@ stream_2/volume = 0.0
 [resource]
 script = ExtResource("1_jmjl4")
 name = "Hip Hop"
-desc = "Ability : Destroyes enemy bullets"
+desc = "Ability : Destroys enemy bullets"
 texture = ExtResource("7_2pptl")
 ability = SubResource("Resource_rhvgn")
 layers = SubResource("AudioStreamSynchronized_twoby")
