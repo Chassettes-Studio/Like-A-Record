@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dqv64iyx25s56" path="res://assets/audios/music/amen_layer_2.ogg" id="3_wh2x1"]
 [ext_resource type="AudioStream" uid="uid://bvg8bmsbdsu07" path="res://assets/audios/music/amen_layer_3.ogg" id="4_ladr1"]
 [ext_resource type="AudioStream" uid="uid://wfqg7sgkre88" path="res://assets/audios/music/amen_layer_4.ogg" id="7_pqrup"]
-[ext_resource type="Texture2D" uid="uid://ddog6mcusmhta" path="res://assets/sustain.png" id="8_ladr1"]
+[ext_resource type="Texture2D" uid="uid://jbvlo0hbcfux" path="res://assets/musicStuff/cd.png" id="8_ladr1"]
 
 [sub_resource type="Resource" id="Resource_ruhwk"]
 script = ExtResource("2_ladr1")
@@ -33,6 +33,7 @@ stream_3/volume = 0.0
 [resource]
 script = ExtResource("1_4cmrr")
 name = "Amen"
+desc = "TODO"
 texture = ExtResource("8_ladr1")
 ability = SubResource("Resource_rpty4")
 layers = SubResource("AudioStreamSynchronized_yvlkw")

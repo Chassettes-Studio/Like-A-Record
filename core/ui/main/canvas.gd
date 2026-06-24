@@ -9,8 +9,14 @@ var mouse_in: bool = false
 @onready var step: AudioStreamPlayer = $Step
 @onready var score: Label = $Score
 
+@onready var cd_1: CdButton = $Cd1
+@onready var cd_2: CdButton = $Cd2
+@onready var cd_3: CdButton = $Cd3
+@onready var cd_4: CdButton = $Cd4
+
 
 func _ready() -> void:
+	cd_1.select()
 	score.text = str(Score.hs)
 	stairs.color = Color(1.0, 1.0, 1.0, 0.0)
 	enter.play()
@@ -43,3 +49,10 @@ func goToScene() -> void:
 	
 	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_file("res://core/levels/test_level.tscn")
+
+
+func _on_cd_selected(n: int) -> void:
+	cd_1.unselect(n)
+	cd_2.unselect(n)
+	cd_3.unselect(n)
+	cd_4.unselect(n)

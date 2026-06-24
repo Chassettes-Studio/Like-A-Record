@@ -35,3 +35,6 @@ func update_upgrade(upgrades: Array[Upgrade]) -> void:
 		var instance: UpgradeMini = upgrade_mini.instantiate()
 		upgrade_container.add_child(instance)
 		instance.init(up)
+
+func set_texture(texture: Texture2D) -> void:
+	cd_sprite.texture = texture
