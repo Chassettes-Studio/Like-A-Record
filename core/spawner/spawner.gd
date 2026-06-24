@@ -2,6 +2,7 @@ class_name Spawner
 extends Node2D
 
 const enemy_scene: PackedScene = preload("res://core/enemies/entity/enemy_entity.tscn")
+const marker_scene: PackedScene = preload("res://core/enemies/marker/SpawnMarker.tscn")
 
 @export var target: Player
 @export var top_left_corner: Vector2
@@ -23,6 +24,11 @@ func spawn_enemy(resource: Enemy) -> EnemyEntity:
 	var enemy_entity: EnemyEntity = enemy_scene.instantiate()
 	enemy_entity.enemy_data = resource
 	enemy_entity.target = target
-	get_tree().current_scene.add_child(enemy_entity)
 	enemy_entity.global_position = spawn_position
+
+	var marker: Marker = marker_scene.instantiate()
+	marker.global_position = spawn_position
+	marker.enemy = enemy_entity
+
+	get_tree().current_scene.add_child(marker)
 	return enemy_entity
