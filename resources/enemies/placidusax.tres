@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_xumpt"]
 [ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="2_y0i7u"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="3_47juw"]
 [ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_hqsim"]
 [ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="4_47juw"]
 [ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="6_1f1u4"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="6_jo2bs"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="7_aqp3s"]
 [ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="8_p2ck1"]
 [ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="9_kfnk5"]
@@ -15,6 +17,7 @@
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="14_0ammm"]
 [ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="15_kgti2"]
 [ext_resource type="Texture2D" uid="uid://7wafqqrnxp6w" path="res://assets/musicStuff/vinyle2.png" id="16_xumpt"]
+[ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="17_1f1u4"]
 
 [sub_resource type="Resource" id="Resource_713ca"]
 script = ExtResource("2_y0i7u")

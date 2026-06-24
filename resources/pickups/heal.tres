@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cof1m0xc6rua7" path="res://core/pickups/effects/pickup_effect.gd" id="1_jeskx"]
 [ext_resource type="Script" uid="uid://cgihhu70woabs" path="res://core/pickups/pickup.gd" id="2_2v4gl"]
 [ext_resource type="Script" uid="uid://hp4x71ckhw58" path="res://core/pickups/effects/pickup_heal.gd" id="2_a8qca"]
-[ext_resource type="Texture2D" uid="uid://m6sawt7x5cb0" path="res://assets/musicStuff/notes/noire.png" id="3_2v4gl"]
+[ext_resource type="Texture2D" uid="uid://bg0p8vqopc8fu" path="res://assets/coeur.png" id="4_a8qca"]
 
 [sub_resource type="Resource" id="Resource_a8qca"]
 script = ExtResource("2_a8qca")
@@ -12,6 +12,6 @@ metadata/_custom_type_script = "uid://hp4x71ckhw58"
 [resource]
 script = ExtResource("2_2v4gl")
 name = "Heal"
-texture = ExtResource("3_2v4gl")
+texture = ExtResource("4_a8qca")
 effects = Array[ExtResource("1_jeskx")]([SubResource("Resource_a8qca")])
 metadata/_custom_type_script = "uid://cgihhu70woabs"

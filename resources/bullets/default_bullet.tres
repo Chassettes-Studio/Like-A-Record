@@ -21,7 +21,7 @@ metadata/_custom_type_script = "uid://b6vusje6nrle3"
 [resource]
 script = ExtResource("3_8jkf3")
 texture = ExtResource("7_kiknh")
-size = 60.0
+size = 40.0
 color = Color(0.59607846, 0.5411765, 0.12941177, 1)
 bullet_effects = Array[ExtResource("1_lewx2")]([SubResource("Resource_74yie")])
 hit_effects = Array[ExtResource("4_a74ow")]([SubResource("Resource_qg01g")])

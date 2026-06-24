@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="11_inyy8"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="12_3kfen"]
 [ext_resource type="Texture2D" uid="uid://bo1l3btyomwx2" path="res://assets/musicStuff/vinyle3.png" id="16_vcejy"]
+[ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="18_af2p1"]
 
 [sub_resource type="Resource" id="Resource_713ca"]
 script = ExtResource("2_wx1g8")
