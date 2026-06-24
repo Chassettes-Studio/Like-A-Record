@@ -31,7 +31,7 @@ stream_2/volume = 0.0
 [resource]
 script = ExtResource("1_1cp8i")
 name = "Bossa"
-desc = "TODO"
+desc = "Ability : Heals 3 HP"
 texture = ExtResource("7_id362")
 ability = SubResource("Resource_rhvgn")
 layers = SubResource("AudioStreamSynchronized_twoby")
