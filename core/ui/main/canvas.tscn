@@ -36,7 +36,7 @@ font_color = Color(0.12156863, 0.2509804, 0.30980393, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vg6gv"]
 font = ExtResource("6_vi4pi")
-font_size = 64
+font_size = 56
 font_color = Color(0.12156863, 0.2509804, 0.30980393, 1)
 
 [node name="Canvas" type="Node2D" unique_id=1642986486]
@@ -168,9 +168,10 @@ text = "Chassettes Studio
 Bouyackachra: Music and Sounds
 RizBleu: Developer and UI
 Tabouret: Developer
-Suno: Developer
+SunoWhere: Developer
 
-No AI was used for this game"
+No AI was involved in the making
+of this game's code, music or visuals"
 label_settings = SubResource("LabelSettings_vg6gv")
 autowrap_mode = 3
 
