@@ -8,6 +8,8 @@ var mouse_in: bool = false
 @onready var color_rect: ColorRect = $ColorRect
 @onready var step: AudioStreamPlayer = $Step
 @onready var score: Label = $Score
+@onready var credits: Polygon2D = $Credits
+@onready var credit_popup: NinePatchRect = $CreditPopup
 
 @onready var cd_1: CdButton = $Cd1
 @onready var cd_2: CdButton = $Cd2
@@ -19,18 +21,32 @@ func _ready() -> void:
 	cd_1.select()
 	score.text = str(Score.hs)
 	stairs.color = Color(1.0, 1.0, 1.0, 0.0)
+	credits.color = Color(1.0, 1.0, 1.0, 0.0)
 	enter.play()
 	await get_tree().create_timer(0.5).timeout
 	music.play()
 
-func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://core/levels/test_level.tscn")
 
 func _input(event: InputEvent) -> void:
 	if mouse_in && event is InputEventMouseButton:
 		var mouse_event: InputEventMouseButton = event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT && mouse_event.pressed:
 			goToScene()
+
+
+func goToScene() -> void:
+	step.play()
+	var tween: Tween = get_tree().create_tween()
+	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(color_rect, "color", Color(), 0.5)
+
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file("res://core/levels/test_level.tscn")
+
+
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://core/levels/test_level.tscn")
+
 
 func _on_area_2d_mouse_entered() -> void:
 	mouse_in = true
@@ -41,18 +57,24 @@ func _on_area_2d_mouse_exited() -> void:
 	mouse_in = false
 	stairs.color = Color(1.0, 1.0, 1.0, 0.0)
 
-func goToScene() -> void:
-	step.play()
-	var tween: Tween = get_tree().create_tween()
-	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tween.tween_property(color_rect, "color", Color(), 0.5)
-	
-	await get_tree().create_timer(1.5).timeout
-	get_tree().change_scene_to_file("res://core/levels/test_level.tscn")
-
 
 func _on_cd_selected(n: int) -> void:
 	cd_1.unselect(n)
 	cd_2.unselect(n)
 	cd_3.unselect(n)
 	cd_4.unselect(n)
+
+
+func _on_credits_area_2d_mouse_entered() -> void:
+	credits.color = Color(1.0, 1.0, 1.0, 0.65)
+	var tween: Tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(credit_popup, "offset_transform_position", Vector2(0.0, -450.0), 0.5)
+
+func _on_credits_area_2d_mouse_exited() -> void:
+	credits.color = Color(1.0, 1.0, 1.0, 0.0)
+	var tween: Tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(credit_popup, "offset_transform_position", Vector2(0.0, 550.0), 0.5)
