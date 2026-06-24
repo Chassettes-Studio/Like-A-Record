@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_ki4qp"]
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="6_l8j57"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="7_3a0t0"]
+[ext_resource type="Texture2D" uid="uid://v2mwdmiprge4" path="res://assets/gay_bar.png" id="10_yg7vy"]
 
 [sub_resource type="Resource" id="Resource_rpty4"]
 script = ExtResource("3_yg7vy")
@@ -19,5 +20,6 @@ metadata/_custom_type_script = "uid://ddv4ohhj7fgxs"
 [resource]
 script = ExtResource("7_3a0t0")
 name = "Gay Bar"
+sprite = ExtResource("10_yg7vy")
 bullet_process_effects = Array[ExtResource("2_3rsdo")]([SubResource("Resource_rpty4")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

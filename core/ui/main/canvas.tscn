@@ -11,6 +11,9 @@
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="6_vi4pi"]
 [ext_resource type="Resource" uid="uid://brp5kehtmay3j" path="res://resources/characters/metal.tres" id="7_jdfle"]
 [ext_resource type="PackedScene" uid="uid://ctcvm7dmnuxnl" path="res://core/ui/main/cd_button.tscn" id="7_y8vsw"]
+[ext_resource type="Texture2D" uid="uid://03f6wwqe44tp" path="res://assets/ui/popup.png" id="12_jdfle"]
+[ext_resource type="Texture2D" uid="uid://bs0nb1bsf3w08" path="res://assets/ui/no_clankers.png" id="13_khoil"]
+[ext_resource type="Texture2D" uid="uid://dte68fsjwd52k" path="res://assets/logo/chassettes.png" id="14_vg6gv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vi4pi"]
 font = ExtResource("6_vi4pi")
@@ -21,6 +24,16 @@ font_color = Color(0.20392157, 0.40784314, 0.36078432, 1)
 font = ExtResource("6_vi4pi")
 font_size = 30
 font_color = Color(0.8, 0.12941177, 0.2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_khoil"]
+font = ExtResource("6_vi4pi")
+font_size = 128
+font_color = Color(0.12156863, 0.2509804, 0.30980393, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vg6gv"]
+font = ExtResource("6_vi4pi")
+font_size = 64
+font_color = Color(0.12156863, 0.2509804, 0.30980393, 1)
 
 [node name="Canvas" type="Node2D" unique_id=1642986486]
 script = ExtResource("1_h3314")
@@ -91,6 +104,86 @@ label_settings = SubResource("LabelSettings_yoa7e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Credits" type="Polygon2D" parent="." unique_id=1399133445]
+position = Vector2(-14.254395, -3.8537903)
+scale = Vector2(1.0087719, 1.0078329)
+color = Color(1, 1, 1, 0.37254903)
+polygon = PackedVector2Array(1625, 135, 1739, 109, 1738, 492, 1625, 465)
+
+[node name="CreditsArea2D" type="Area2D" parent="Credits" unique_id=1343124263]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Credits/CreditsArea2D" unique_id=1339196541]
+polygon = PackedVector2Array(1740, 108, 1625, 136, 1627, 465, 1740, 492)
+
+[node name="CreditPopup" type="NinePatchRect" parent="." unique_id=598634276]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 288.00003
+offset_top = 560.755
+offset_right = 1632.0
+offset_bottom = 1402.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 548.54)
+texture = ExtResource("12_jdfle")
+region_rect = Rect2(0.41003418, -1.6663208, 639.1793, 621.6409)
+patch_margin_left = 476
+patch_margin_top = 171
+patch_margin_right = 477
+patch_margin_bottom = 151
+
+[node name="Title" type="Label" parent="CreditPopup" unique_id=261779202]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 63.0
+offset_right = 316.0
+offset_bottom = 192.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_khoil")
+
+[node name="Desc" type="Label" parent="CreditPopup" unique_id=1439864885]
+custom_minimum_size = Vector2(1228, 1000)
+custom_maximum_size = Vector2(1228, 1000)
+layout_mode = 0
+offset_left = 53.0
+offset_top = 188.0
+offset_right = 1281.0
+offset_bottom = 435.0
+text = "Chassettes Studio
+
+Éléa: Artist
+Bouyackachra: Music and Sounds
+RizBleu: Developer and UI
+Tabouret: Developer
+Suno: Developer
+
+No Ai was used for this game"
+label_settings = SubResource("LabelSettings_vg6gv")
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CreditPopup" unique_id=2017663479]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 571.245
+offset_right = 1277.0
+offset_bottom = 799.245
+texture = ExtResource("13_khoil")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CreditPopup" unique_id=308102505]
+layout_mode = 0
+offset_left = 1084.0
+offset_top = 53.244995
+offset_right = 1299.0
+offset_bottom = 268.245
+texture = ExtResource("14_vg6gv")
+expand_mode = 2
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1489770333]
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -103,3 +196,5 @@ color = Color(0, 0, 0, 0)
 [connection signal="cd_selected" from="Cd2" to="." method="_on_cd_selected"]
 [connection signal="cd_selected" from="Cd3" to="." method="_on_cd_selected"]
 [connection signal="cd_selected" from="Cd4" to="." method="_on_cd_selected"]
+[connection signal="mouse_entered" from="Credits/CreditsArea2D" to="." method="_on_credits_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Credits/CreditsArea2D" to="." method="_on_credits_area_2d_mouse_exited"]
