@@ -7,6 +7,8 @@ extends Resource
 @export var weight: float = 1
 @export var stackable: bool = true
 @export var enabled: bool = true
+@export var locks : int = 0
+var remaining_locks : int
 @export var bullet_effects: Array[BulletEffect]
 @export var gun_effects: Array[GunEffect]
 @export var collision_effects: Array[CollisionEffect]

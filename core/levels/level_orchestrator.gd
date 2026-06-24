@@ -12,6 +12,7 @@ var spawn_timer: Timer
 const upgrade_scene : PackedScene = preload("res://core/ui/upgrade/upgrade_selection.tscn")
 
 func _ready() -> void:
+	UpgradeManager.reset_upgrades()
 	Score.reset()
 	_create_timer()
 	_connect_signals()
