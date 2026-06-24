@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c0h1n5gqceb64" path="res://core/spawner/spawner.gd" id="2_qq6f8"]
 [ext_resource type="Script" uid="uid://0a4b642jtkl5" path="res://core/levels/level_orchestrator.gd" id="4_7e2dr"]
 [ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
+[ext_resource type="Texture2D" uid="uid://ckcca7jkh6h86" path="res://assets/ui/bord.png" id="7_kywb5"]
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="7_v7f4j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
@@ -22,6 +23,17 @@ normal = Vector2(-1, 0)
 font = ExtResource("7_v7f4j")
 font_size = 48
 font_color = Color(0.9019608, 0.40784314, 0.16862746, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v7f4j"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kywb5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivvb0"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8weuw"]
+normal = Vector2(-1, 0)
 
 [node name="TestLevel" type="Node2D" unique_id=205418669]
 
@@ -102,5 +114,30 @@ text = "[WASD ] or [ARROWS ] to Move
 [E ] tu use Ability when the Gauge is Full"
 label_settings = SubResource("LabelSettings_gtu5s")
 horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1592601359]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_kywb5")
+
+[node name="InnerWalls" type="StaticBody2D" parent="." unique_id=407940835]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Up" type="CollisionShape2D" parent="InnerWalls" unique_id=1930111526]
+position = Vector2(0, 78)
+shape = SubResource("WorldBoundaryShape2D_v7f4j")
+
+[node name="Down" type="CollisionShape2D" parent="InnerWalls" unique_id=1252115884]
+position = Vector2(0, 2096)
+shape = SubResource("WorldBoundaryShape2D_kywb5")
+
+[node name="Left" type="CollisionShape2D" parent="InnerWalls" unique_id=1653841937]
+position = Vector2(67, 0)
+shape = SubResource("WorldBoundaryShape2D_ivvb0")
+
+[node name="Right" type="CollisionShape2D" parent="InnerWalls" unique_id=990366131]
+position = Vector2(3781, 0)
+shape = SubResource("WorldBoundaryShape2D_8weuw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
