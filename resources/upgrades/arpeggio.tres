@@ -2,22 +2,24 @@
 
 [ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_mhku1"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="1_omsmg"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_elwhm"]
 [ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="2_jkpwt"]
 [ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="3_qwhjy"]
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_384td"]
-[ext_resource type="Script" uid="uid://bh1y6r2pakjh" path="res://core/upgrades/effect/gun_effect/multiplied_projectile_count.gd" id="4_jkpwt"]
+[ext_resource type="Script" uid="uid://jrkgeav8by8m" path="res://core/upgrades/effect/gun_effect/added_burst_effect.gd" id="5_34v7l"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_qme1d"]
 [ext_resource type="Script" uid="uid://d2lfp08q4m4fm" path="res://core/upgrades/effect/gun_effect/added_spread_angle_effect.gd" id="5_qwhjy"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="9_e723c"]
 [ext_resource type="Texture2D" uid="uid://bxbiige4ws6k2" path="res://assets/arpeggio.png" id="9_jda1l"]
 
-[sub_resource type="Resource" id="Resource_s5bj2"]
-script = ExtResource("4_jkpwt")
-multiplied_projectile_count = 3
-metadata/_custom_type_script = "uid://bh1y6r2pakjh"
+[sub_resource type="Resource" id="Resource_f6vup"]
+script = ExtResource("5_34v7l")
+added_burst = 1.0
+metadata/_custom_type_script = "uid://jrkgeav8by8m"
 
-[sub_resource type="Resource" id="Resource_qwhjy"]
+[sub_resource type="Resource" id="Resource_sp7d8"]
 script = ExtResource("5_qwhjy")
-added_spread_angle = 0.5235987755982988
+added_spread_angle = 0.17453292519943295
 metadata/_custom_type_script = "uid://d2lfp08q4m4fm"
 
 [resource]
@@ -26,5 +28,5 @@ name = "Arpeggio"
 description = "Shoot several bullets at a time"
 sprite = ExtResource("9_jda1l")
 stackable = false
-gun_effects = Array[ExtResource("3_qwhjy")]([SubResource("Resource_s5bj2"), SubResource("Resource_qwhjy")])
+gun_effects = Array[ExtResource("3_qwhjy")]([SubResource("Resource_f6vup"), SubResource("Resource_sp7d8")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

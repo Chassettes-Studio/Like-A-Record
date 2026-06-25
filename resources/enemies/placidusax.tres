@@ -16,8 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="13_kyr7i"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="14_0ammm"]
 [ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="15_kgti2"]
+[ext_resource type="Script" uid="uid://cgihhu70woabs" path="res://core/pickups/pickup.gd" id="16_aqp3s"]
 [ext_resource type="Texture2D" uid="uid://7wafqqrnxp6w" path="res://assets/musicStuff/vinyle2.png" id="16_xumpt"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="17_1f1u4"]
+[ext_resource type="Resource" uid="uid://ccxmwuctolloq" path="res://resources/pickups/energy.tres" id="17_p2ck1"]
+[ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="18_kfnk5"]
+[ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="19_7l4x8"]
 
 [sub_resource type="Resource" id="Resource_713ca"]
 script = ExtResource("2_y0i7u")
@@ -64,6 +68,14 @@ script = ExtResource("14_0ammm")
 scene = ExtResource("13_kyr7i")
 metadata/_custom_type_script = "uid://cfihy37c1wi2w"
 
+[sub_resource type="Resource" id="Resource_wif00"]
+script = ExtResource("19_7l4x8")
+drops = Dictionary[ExtResource("16_aqp3s"), float]({
+ExtResource("17_p2ck1"): 0.3,
+ExtResource("18_kfnk5"): 0.3
+})
+metadata/_custom_type_script = "uid://7r1qdl7fajj0"
+
 [resource]
 script = ExtResource("15_kgti2")
 name = "Vinyl"
@@ -74,5 +86,5 @@ mass = 2.0
 size = 120.0
 max_health = 4
 brain = SubResource("Resource_qkpvf")
-death_effects = Array[ExtResource("12_fg71b")]([SubResource("Resource_rp8se")])
+death_effects = Array[ExtResource("12_fg71b")]([SubResource("Resource_rp8se"), SubResource("Resource_wif00")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

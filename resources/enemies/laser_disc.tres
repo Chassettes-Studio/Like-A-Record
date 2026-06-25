@@ -16,7 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://bv4mu84joutad" path="res://assets/musicStuff/lazer_disc.png" id="11_vjqvv"]
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="12_ppgr7"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="13_xfomo"]
+[ext_resource type="Script" uid="uid://cgihhu70woabs" path="res://core/pickups/pickup.gd" id="15_a5h10"]
+[ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="16_d77w8"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="16_rfxn6"]
+[ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="17_kn6em"]
 
 [sub_resource type="Resource" id="Resource_mwj0u"]
 script = ExtResource("2_73ogs")
@@ -51,14 +54,26 @@ script = ExtResource("13_xfomo")
 scene = ExtResource("12_ppgr7")
 metadata/_custom_type_script = "uid://cfihy37c1wi2w"
 
+[sub_resource type="Resource" id="Resource_0q7da"]
+script = ExtResource("17_kn6em")
+drops = Dictionary[ExtResource("15_a5h10"), float]({
+ExtResource("16_d77w8"): 1.0
+})
+metadata/_custom_type_script = "uid://7r1qdl7fajj0"
+
+[sub_resource type="Resource" id="Resource_eote3"]
+script = ExtResource("17_kn6em")
+metadata/_custom_type_script = "uid://7r1qdl7fajj0"
+
 [resource]
 script = ExtResource("2_qqpub")
 name = "LD"
 texture = ExtResource("11_vjqvv")
 min_wave = 5
+weight = 0.6
 mass = 5.0
 size = 150.0
 max_health = 5
 brain = SubResource("Resource_0mi3h")
-death_effects = Array[ExtResource("1_q3n81")]([SubResource("Resource_rp8se")])
+death_effects = Array[ExtResource("1_q3n81")]([SubResource("Resource_rp8se"), SubResource("Resource_0q7da"), SubResource("Resource_eote3")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

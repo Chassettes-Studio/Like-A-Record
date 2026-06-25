@@ -33,7 +33,7 @@ metadata/_custom_type_script = "uid://cfihy37c1wi2w"
 script = ExtResource("8_mgysq")
 drops = Dictionary[ExtResource("7_espfy"), float]({
 ExtResource("8_4qmuw"): 0.1,
-ExtResource("9_t6qsn"): 0.9
+ExtResource("9_t6qsn"): 0.1
 })
 metadata/_custom_type_script = "uid://7r1qdl7fajj0"
 

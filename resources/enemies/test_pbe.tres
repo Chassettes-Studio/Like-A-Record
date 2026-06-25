@@ -19,8 +19,13 @@
 [ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="7_oyvly"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="8_0k755"]
 [ext_resource type="Script" uid="uid://bcc2ddw1nb0j2" path="res://core/upgrades/effect/bullet_process_effect/static_after_time.gd" id="8_dnih8"]
+[ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="19_t5j7i"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="19_yv50f"]
+[ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="20_ev5j5"]
 [ext_resource type="Texture2D" uid="uid://cglo06j834ih7" path="res://assets/logo/Godot_icon.svg" id="20_yv50f"]
+[ext_resource type="Script" uid="uid://cgihhu70woabs" path="res://core/pickups/pickup.gd" id="21_h3v1r"]
+[ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="22_rj8yb"]
+[ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="23_i1xur"]
 
 [sub_resource type="Resource" id="Resource_rpty4"]
 script = ExtResource("3_oyvly")
@@ -123,6 +128,22 @@ chase_start_distance = 1000.0
 attack = SubResource("Resource_pn740")
 metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
+[sub_resource type="Resource" id="Resource_rp8se"]
+script = ExtResource("20_ev5j5")
+scene = ExtResource("19_t5j7i")
+metadata/_custom_type_script = "uid://cfihy37c1wi2w"
+
+[sub_resource type="Resource" id="Resource_0q7da"]
+script = ExtResource("23_i1xur")
+drops = Dictionary[ExtResource("21_h3v1r"), float]({
+ExtResource("22_rj8yb"): 1.0
+})
+metadata/_custom_type_script = "uid://7r1qdl7fajj0"
+
+[sub_resource type="Resource" id="Resource_eote3"]
+script = ExtResource("23_i1xur")
+metadata/_custom_type_script = "uid://7r1qdl7fajj0"
+
 [resource]
 script = ExtResource("3_x2122")
 name = "Miniboss"
@@ -131,4 +152,5 @@ min_wave = 10
 weight = 0.5
 max_health = 5
 brain = SubResource("Resource_eb1l2")
+death_effects = Array[ExtResource("2_r47ol")]([SubResource("Resource_rp8se"), SubResource("Resource_0q7da"), SubResource("Resource_eote3")])
 metadata/_custom_type_script = "uid://koby8pounmkx"
