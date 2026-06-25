@@ -125,7 +125,7 @@ metadata/_custom_type_script = "uid://5epl0x7uacmk"
 
 [resource]
 script = ExtResource("3_x2122")
-name = "Pbe"
+name = "Miniboss"
 texture = ExtResource("20_yv50f")
 min_wave = 10
 brain = SubResource("Resource_eb1l2")
