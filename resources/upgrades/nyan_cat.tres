@@ -10,7 +10,9 @@
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_w1eha"]
 [ext_resource type="Texture2D" uid="uid://bkvd3lelyvygw" path="res://assets/cat_hears2.png" id="8_qnxnu"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_sv6ox"]
+[ext_resource type="Script" uid="uid://bktcq8b56654x" path="res://core/upgrades/effect/player_effect/unlock_upgrade.gd" id="9_n21ml"]
 [ext_resource type="Texture2D" uid="uid://bdwhc4op3v3d6" path="res://assets/nyan_cat.png" id="11_n21ml"]
+[ext_resource type="Resource" uid="uid://dsqpmlnr22ur3" path="res://resources/upgrades/fatal_bazooka.tres" id="11_w1eha"]
 
 [sub_resource type="Resource" id="Resource_05ime"]
 script = ExtResource("7_ndvvm")
@@ -18,11 +20,16 @@ texture = ExtResource("8_qnxnu")
 behind_player = true
 metadata/_custom_type_script = "uid://ci4w3kakmwasa"
 
+[sub_resource type="Resource" id="Resource_ruhwk"]
+script = ExtResource("9_n21ml")
+target_upgrades = Array[ExtResource("8_sv6ox")]([ExtResource("11_w1eha")])
+metadata/_custom_type_script = "uid://bktcq8b56654x"
+
 [resource]
 script = ExtResource("8_sv6ox")
 name = "Nyan Cat"
 description = "CHAAAAAAAAT"
 sprite = ExtResource("11_n21ml")
 stackable = false
-player_effects = Array[ExtResource("6_n21ml")]([SubResource("Resource_05ime")])
+player_effects = Array[ExtResource("6_n21ml")]([SubResource("Resource_05ime"), SubResource("Resource_ruhwk")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

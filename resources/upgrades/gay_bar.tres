@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_ki4qp"]
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="6_l8j57"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="7_3a0t0"]
+[ext_resource type="Script" uid="uid://bktcq8b56654x" path="res://core/upgrades/effect/player_effect/unlock_upgrade.gd" id="8_l8j57"]
+[ext_resource type="Resource" uid="uid://dsqpmlnr22ur3" path="res://resources/upgrades/fatal_bazooka.tres" id="10_3a0t0"]
 [ext_resource type="Texture2D" uid="uid://v2mwdmiprge4" path="res://assets/gay_bar.png" id="10_yg7vy"]
 
 [sub_resource type="Resource" id="Resource_rpty4"]
@@ -16,6 +18,11 @@ script = ExtResource("3_yg7vy")
 colors = Array[Color]([Color(0.9098039, 0.078431375, 0.08627451, 1), Color(1, 0.64705884, 0, 1), Color(0.98039216, 0.92156863, 0.21176471, 1), Color(0.4745098, 0.7647059, 0.078431375, 1), Color(0.28235295, 0.49019608, 0.90588236, 1), Color(0.29411766, 0.21176471, 0.6156863, 1), Color(0.4392157, 0.21176471, 0.6156863, 1)])
 transition_delay = 0.5
 metadata/_custom_type_script = "uid://ddv4ohhj7fgxs"
+
+[sub_resource type="Resource" id="Resource_sv6ox"]
+script = ExtResource("8_l8j57")
+target_upgrades = Array[ExtResource("7_3a0t0")]([ExtResource("10_3a0t0")])
+metadata/_custom_type_script = "uid://bktcq8b56654x"
 
 [resource]
 script = ExtResource("7_3a0t0")
@@ -25,4 +32,5 @@ They don't hit harder but they certainly slay."
 sprite = ExtResource("10_yg7vy")
 stackable = false
 bullet_process_effects = Array[ExtResource("2_3rsdo")]([SubResource("Resource_rpty4")])
+player_effects = Array[ExtResource("5_ki4qp")]([SubResource("Resource_sv6ox")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

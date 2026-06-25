@@ -11,11 +11,18 @@
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_wxl0k"]
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="9_gcsq0"]
 [ext_resource type="Texture2D" uid="uid://baheprpgx1pi3" path="res://assets/sparkle.png" id="9_s2q5f"]
+[ext_resource type="Script" uid="uid://bktcq8b56654x" path="res://core/upgrades/effect/player_effect/unlock_upgrade.gd" id="9_y6iis"]
+[ext_resource type="Resource" uid="uid://dsqpmlnr22ur3" path="res://resources/upgrades/fatal_bazooka.tres" id="11_nie0h"]
 
 [sub_resource type="Resource" id="Resource_us5t1"]
 script = ExtResource("3_h72te")
 scene = ExtResource("2_s2q5f")
 metadata/_custom_type_script = "uid://bnrvnvfa7l240"
+
+[sub_resource type="Resource" id="Resource_wp324"]
+script = ExtResource("9_y6iis")
+target_upgrades = Array[ExtResource("6_wxl0k")]([ExtResource("11_nie0h")])
+metadata/_custom_type_script = "uid://bktcq8b56654x"
 
 [resource]
 script = ExtResource("6_wxl0k")
@@ -25,4 +32,5 @@ Useless but pretty."
 sprite = ExtResource("9_s2q5f")
 stackable = false
 bullet_effects = Array[ExtResource("1_ytvll")]([SubResource("Resource_us5t1")])
+player_effects = Array[ExtResource("5_h72te")]([SubResource("Resource_wp324")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"
