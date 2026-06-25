@@ -6,6 +6,7 @@ extends BulletProcessEffect
 @export var cooldown: float = 2
 @export var max_burst_count: int = 2
 @export var burst_cooldown: float = 1
+@export var enemy: bool = true
 
 var elapsed_time: float = 0
 var burst_count: int = 0
@@ -24,6 +25,7 @@ func process(entity: BulletEntity, delta: float) -> void:
 func create_bullets(entity: BulletEntity) -> void:
 	var direction: Vector2 = Vector2.RIGHT
 	for i in projectile_count:
-		var bullet_entity: BulletEntity = Bullet.create(entity, bullet, true)
+		var bullet_entity: BulletEntity = Bullet.create(entity.get_tree().current_scene, bullet, enemy)
+		bullet_entity.global_position = entity.global_position
 		bullet_entity.bullet_controller.direction = direction
 		direction = direction.rotated(TAU/projectile_count)

@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://dsqpmlnr22ur3"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_60c27"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_fu02w"]
+[ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="3_ewqbv"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_lc3os"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="4_a7fwe"]
+[ext_resource type="Script" uid="uid://dwjtvuc5ihc21" path="res://core/upgrades/effect/bullet_process_effect/spawn_bullet_around_shape.gd" id="4_ylyqf"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_ylyqf"]
+[ext_resource type="Script" uid="uid://b6vusje6nrle3" path="res://core/upgrades/effect/hit_effect/deal_damage.gd" id="6_80ysv"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_sqmkg"]
+[ext_resource type="Script" uid="uid://bkh04gcfmrktg" path="res://core/bullets/bullet.gd" id="7_b1un7"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_ewqbv"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_80ysv"]
+[ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="8_jpn2f"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="9_fu02w"]
+[ext_resource type="Script" uid="uid://ddv4ohhj7fgxs" path="res://core/upgrades/effect/bullet_process_effect/alternate_color.gd" id="10_80ysv"]
+
+[sub_resource type="Resource" id="Resource_sekbu"]
+script = ExtResource("3_ewqbv")
+speed = 300.0
+metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
+
+[sub_resource type="Resource" id="Resource_ewqbv"]
+script = ExtResource("10_80ysv")
+colors = Array[Color]([Color(0.9098039, 0.078431375, 0.08627451, 1), Color(1, 0.64705884, 0, 1), Color(0.98039216, 0.92156863, 0.21176471, 1), Color(0.4745098, 0.7647059, 0.078431375, 1), Color(0.28235295, 0.49019608, 0.90588236, 1), Color(0.29411766, 0.21176471, 0.6156863, 1), Color(0.4392157, 0.21176471, 0.6156863, 1)])
+transition_delay = 0.2
+metadata/_custom_type_script = "uid://ddv4ohhj7fgxs"
+
+[sub_resource type="Resource" id="Resource_55su3"]
+script = ExtResource("6_80ysv")
+metadata/_custom_type_script = "uid://b6vusje6nrle3"
+
+[sub_resource type="Resource" id="Resource_eecv1"]
+script = ExtResource("7_b1un7")
+texture = ExtResource("8_jpn2f")
+size = 20.0
+color = Color(0.59607846, 0.5411765, 0.12941177, 1)
+bullet_effects = Array[ExtResource("1_60c27")]([SubResource("Resource_sekbu")])
+bullet_process_effect = Array[ExtResource("2_fu02w")]([SubResource("Resource_ewqbv")])
+hit_effects = Array[ExtResource("5_ylyqf")]([SubResource("Resource_55su3")])
+metadata/_custom_type_script = "uid://bkh04gcfmrktg"
+
+[sub_resource type="Resource" id="Resource_kl3hn"]
+script = ExtResource("4_ylyqf")
+bullet = SubResource("Resource_eecv1")
+projectile_count = 6
+cooldown = 0.2
+max_burst_count = 3
+burst_cooldown = 0.2
+enemy = false
+metadata/_custom_type_script = "uid://dwjtvuc5ihc21"
+
+[resource]
+script = ExtResource("8_80ysv")
+name = "Fatal Bazooka"
+description = "The reward for style.
+Completely overpowered."
+sprite = ExtResource("9_fu02w")
+weight = 99.0
+stackable = false
+enabled = false
+locks = 3
+bullet_process_effects = Array[ExtResource("2_fu02w")]([SubResource("Resource_kl3hn")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"
