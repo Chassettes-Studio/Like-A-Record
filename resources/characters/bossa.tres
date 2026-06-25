@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="1_nvhsj"]
 [ext_resource type="Script" uid="uid://cs1iqbquh57mk" path="res://core/abilities/ability_heal.gd" id="2_lr66y"]
 [ext_resource type="Script" uid="uid://cpyejpvuuyms8" path="res://core/abilities/ability.gd" id="2_nvhsj"]
+[ext_resource type="Script" uid="uid://4l7ayxbvj5cd" path="res://core/upgrades/effect/player_effect/player_drop_particles.gd" id="3_c1ikf"]
+[ext_resource type="PackedScene" uid="uid://bkvn0ynojp2p7" path="res://core/abilities/heal_particles.tscn" id="3_ei4xo"]
 [ext_resource type="AudioStream" uid="uid://fruutrpi2qct" path="res://assets/audios/music/bossa_layer_1.ogg" id="3_lr66y"]
 [ext_resource type="AudioStream" uid="uid://8ydnahulx8xu" path="res://assets/audios/music/bossa_layer_2.ogg" id="4_c1ikf"]
 [ext_resource type="AudioStream" uid="uid://bhjjemxosp2rs" path="res://assets/audios/music/bossa_layer_3.ogg" id="5_ei4xo"]
@@ -14,9 +16,14 @@ script = ExtResource("2_lr66y")
 amount = 3
 metadata/_custom_type_script = "uid://cs1iqbquh57mk"
 
+[sub_resource type="Resource" id="Resource_e3314"]
+script = ExtResource("3_c1ikf")
+scene = ExtResource("3_ei4xo")
+metadata/_custom_type_script = "uid://4l7ayxbvj5cd"
+
 [sub_resource type="Resource" id="Resource_rhvgn"]
 script = ExtResource("2_nvhsj")
-effects = Array[ExtResource("1_nvhsj")]([SubResource("Resource_c8kf1")])
+effects = Array[ExtResource("1_nvhsj")]([SubResource("Resource_c8kf1"), SubResource("Resource_e3314")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_twoby"]
