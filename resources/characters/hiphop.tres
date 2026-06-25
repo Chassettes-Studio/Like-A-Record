@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dh243qcn8iiss" path="res://core/abilities/ability_blank.gd" id="2_7rdxc"]
 [ext_resource type="Script" uid="uid://cpyejpvuuyms8" path="res://core/abilities/ability.gd" id="2_pegkl"]
 [ext_resource type="AudioStream" uid="uid://6k5yux1ei363" path="res://assets/audios/music/hip_layer_1.ogg" id="3_7rdxc"]
+[ext_resource type="PackedScene" uid="uid://wgbh31u4crfn" path="res://core/abilities/blank.tscn" id="3_ltwjv"]
+[ext_resource type="Script" uid="uid://4l7ayxbvj5cd" path="res://core/upgrades/effect/player_effect/player_drop_particles.gd" id="4_5iibg"]
 [ext_resource type="AudioStream" uid="uid://ccka5yaloi542" path="res://assets/audios/music/hip_layer_2.ogg" id="4_ltwjv"]
 [ext_resource type="AudioStream" uid="uid://db7mnvtdaepf7" path="res://assets/audios/music/hip_layer_3.ogg" id="5_5iibg"]
 [ext_resource type="Texture2D" uid="uid://cicvyu1kkyxd4" path="res://assets/musicStuff/cd2.png" id="7_2pptl"]
@@ -17,9 +19,14 @@ script = ExtResource("2_7rdxc")
 shape = SubResource("CircleShape2D_3dhsx")
 metadata/_custom_type_script = "uid://dh243qcn8iiss"
 
+[sub_resource type="Resource" id="Resource_iyc1i"]
+script = ExtResource("4_5iibg")
+scene = ExtResource("3_ltwjv")
+metadata/_custom_type_script = "uid://4l7ayxbvj5cd"
+
 [sub_resource type="Resource" id="Resource_rhvgn"]
 script = ExtResource("2_pegkl")
-effects = Array[ExtResource("1_pegkl")]([SubResource("Resource_lsk3w")])
+effects = Array[ExtResource("1_pegkl")]([SubResource("Resource_lsk3w"), SubResource("Resource_iyc1i")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_twoby"]
