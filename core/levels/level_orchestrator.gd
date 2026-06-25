@@ -55,6 +55,14 @@ func _on_wave_manager_trigger_new_wave() -> void:
 	upgrade_selection.init(upgrades[0],upgrades[1],upgrades[2])
 	var new_upgrade : Upgrade = await upgrade_selection.upgrade_chosen
 	player.apply_upgrade(new_upgrade)
+	
+	
+	var blank := AbilityBlank.new()
+	var shape := CircleShape2D.new()
+	shape.radius = 10000
+	blank.shape = shape 
+	blank.apply(player)
+	
 	player.health_controller.heal(1)
 	UpgradeManager.upgrade_chosen(new_upgrade)
 	spawn_timer.wait_time *= 0.9
