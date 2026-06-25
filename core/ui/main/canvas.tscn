@@ -39,6 +39,37 @@ font = ExtResource("6_vi4pi")
 font_size = 56
 font_color = Color(0.12156863, 0.2509804, 0.30980393, 1)
 
+[sub_resource type="Shader" id="Shader_3j1vj"]
+code = "shader_type canvas_item;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform float shake : hint_range(0.0, 1.0) = 0.0;
+uniform float aberation = 0.001;
+
+float rand(vec2 co) {
+    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
+void fragment() {
+    vec2 uv = SCREEN_UV;
+    
+    if (rand(vec2(TIME, 0.0)) < shake) {
+        uv.x += rand(vec2(TIME, uv.y)) * 0.01;
+    }
+
+    float r = texture(SCREEN_TEXTURE, uv + vec2(aberation, 0.0)).r;
+    float g = texture(SCREEN_TEXTURE, uv).g;
+    float b = texture(SCREEN_TEXTURE, uv - vec2(aberation, 0.0)).b;
+    
+    float scanline = sin(uv.y * 400.0) * 0.02;
+    COLOR = vec4(r - scanline, g - scanline, b - scanline, 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8cxc7"]
+shader = SubResource("Shader_3j1vj")
+shader_parameter/shake = 0.0
+shader_parameter/aberation = 0.001
+
 [node name="Canvas" type="Node2D" unique_id=1642986486]
 script = ExtResource("1_h3314")
 
@@ -201,6 +232,15 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=526016268]
+material = SubResource("ShaderMaterial_8cxc7")
+offset_left = -281.0
+offset_top = -287.0
+offset_right = 4248.0
+offset_bottom = 2462.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="Polygon2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Polygon2D/Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -5,9 +5,11 @@ extends Node
 
 @export var audio_player: AudioStreamPlayer
 @export var player: Player
+@export var shader: ColorRect
 @export var wave_manager: WaveManager
 
 var spawn_timer: Timer
+var shader_material: ShaderMaterial
 
 const upgrade_scene : PackedScene = preload("res://core/ui/upgrade/upgrade_selection.tscn")
 
@@ -17,6 +19,11 @@ func _ready() -> void:
 	_create_timer()
 	_connect_signals()
 	_start_music_loop()
+	
+	shader_material = shader.material as ShaderMaterial
+	shader_material.set_shader_parameter('shake', 0.0)
+	shader_material.set_shader_parameter('aberation', 0.001)
+	
 	
 func _start_music_loop() -> void:
 	for i in player.character.layers.stream_count:
@@ -28,6 +35,7 @@ func _start_music_loop() -> void:
 func _connect_signals() -> void:
 	player.died.connect(_on_player_death)
 	wave_manager.trigger_new_wave.connect(_on_wave_manager_trigger_new_wave)
+	player.damaged.connect(_on_player_damaged)
 	
 func _create_timer() -> void:
 	spawn_timer = Timer.new()
@@ -67,3 +75,11 @@ func _on_wave_manager_trigger_new_wave() -> void:
 
 func _on_player_death() -> void:
 	audio_player.stop()
+
+func _on_player_damaged() -> void:
+	shader_material.set_shader_parameter('shake', 0.5)
+	shader_material.set_shader_parameter('aberation', 0.005)
+	await get_tree().create_timer(0.2).timeout
+	shader_material.set_shader_parameter('shake', 0.0)
+	shader_material.set_shader_parameter('aberation', 0.001)
+	
