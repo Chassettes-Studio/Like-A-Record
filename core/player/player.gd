@@ -97,7 +97,7 @@ func _on_hitbox_hurt(value: float) -> void:
 func _on_invulnerability_timer_timeout() -> void:
 	hitbox.set_hittable(true)
 	blink_timer.stop()
-	visible = true
+	player_sprite.modulate.a = 1
 
 
 func _on_sc_health_controller_died() -> void:
@@ -107,7 +107,7 @@ func _on_sc_health_controller_died() -> void:
 
 
 func _on_blink_timer_timeout() -> void:
-	visible = not visible
+	player_sprite.modulate.a = 1 - player_sprite.modulate.a
 
 
 func _on_sc_health_controller_healed() -> void:
