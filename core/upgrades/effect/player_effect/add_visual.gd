@@ -5,10 +5,14 @@ extends PlayerEffect
 @export var texture: Texture2D
 @export var behind_player: bool = false
 @export var scale: Vector2 = Vector2.ONE
+@export var shader: Shader
 
 func apply(player: Player) -> void:
 	var sprite: Sprite2D = Sprite2D.new()
 	sprite.texture = texture.duplicate()
+	var material := ShaderMaterial.new()
+	material.shader = shader
+	sprite.material = material
 	player.player_sprite.add_child(sprite)
 	sprite.global_position = player.global_position
 	sprite.scale = scale
