@@ -68,6 +68,7 @@ texture = ExtResource("15_kt4tm")
 min_wave = 3
 weight = 3.0
 mass = 2.0
+size = 80.0
 max_health = 4
 brain = SubResource("Resource_k6gel")
 death_effects = Array[ExtResource("11_2qye7")]([SubResource("Resource_rp8se")])
