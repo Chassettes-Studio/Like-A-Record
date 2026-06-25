@@ -34,8 +34,10 @@ var player_shoot_effects: Array[PlayerShootEffect] = []
 @onready var gun: Gun = $Gun
 @onready var ui: PlayerUi = $PlayerUi
 @onready var hit: AudioStreamPlayer = $Hit
+@onready var dash_cd_sprite: Sprite2D = $dashCdSprite
 
 var dash_duration := .2
+var dash_cd_shader: ShaderMaterial
 
 func _ready() -> void:
 	gun.shot.connect(_on_gun_shot)
@@ -43,7 +45,7 @@ func _ready() -> void:
 		character = static_character
 	player_sprite.texture = character.texture
 	ui.set_texture(character.texture)
-
+	dash_cd_shader = dash_cd_sprite.material as ShaderMaterial
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)

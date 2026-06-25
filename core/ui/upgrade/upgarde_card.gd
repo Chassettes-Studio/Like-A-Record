@@ -45,7 +45,7 @@ func _on_margin_container_mouse_entered() -> void:
 	tween.tween_property(cd_sprite, "offset_transform_rotation", 0.6, 0.4)
 	tween.tween_property(popup, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.4)
 	tween.tween_property(popup_container, "offset_transform_scale", Vector2(1.0, 1.0), 0.4)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.4).timeout
 	can_select = true
 
 
