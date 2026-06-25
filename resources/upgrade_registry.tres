@@ -29,9 +29,11 @@ _uids_to_string_ids = Dictionary[StringName, StringName]({
 &"uid://cu14pkbx8hal3": &"despacito",
 &"uid://dapkrmcx71ns0": &"shooting_stars",
 &"uid://daycmq746djm7": &"show_must_go_on",
+&"uid://dc5enayigwsgw": &"rere",
 &"uid://drcomypudkcpg": &"nyan_cat",
 &"uid://dsncrpu7hwjt7": &"sustain",
 &"uid://g7tbvqfwtyu7": &"hbfs",
+&"uid://pwyhhr4lrnqj": &"pause",
 &"uid://rrwnc3d2v4hm": &"cool_as_ice",
 &"uid://sdh01cp0tikw": &"gay_bar"
 })
@@ -49,7 +51,9 @@ _string_ids_to_uids = Dictionary[StringName, StringName]({
 &"major_lazer": &"uid://0un6sh46u1am",
 &"merry_go_round": &"uid://2hkl01a1mi16",
 &"nyan_cat": &"uid://drcomypudkcpg",
+&"pause": &"uid://pwyhhr4lrnqj",
 &"pogo": &"uid://ccemb7m05f38i",
+&"rere": &"uid://dc5enayigwsgw",
 &"rush": &"uid://bflq07wbpkpdw",
 &"shooting_stars": &"uid://dapkrmcx71ns0",
 &"show_must_go_on": &"uid://daycmq746djm7",

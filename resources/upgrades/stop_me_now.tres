@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_kuwck"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_0yfr4"]
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_mke1y"]
-[ext_resource type="Texture2D" uid="uid://7iappr4fimb8" path="res://assets/pause.png" id="8_70cj2"]
+[ext_resource type="Texture2D" uid="uid://hympcxuctns7" path="res://assets/cold_as_ice.png" id="10_kuwck"]
 
 [sub_resource type="Resource" id="Resource_t84gh"]
 script = ExtResource("5_bmo1k")
@@ -19,6 +19,6 @@ metadata/_custom_type_script = "uid://m7qs5k4ayjbi"
 script = ExtResource("6_0yfr4")
 name = "Stop me now"
 description = "Bullets freeze enemies on impact"
-sprite = ExtResource("8_70cj2")
+sprite = ExtResource("10_kuwck")
 hit_effects = Array[ExtResource("4_mke1y")]([SubResource("Resource_t84gh")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

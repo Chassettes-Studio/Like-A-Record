@@ -20,9 +20,15 @@ signal shot
 @onready var bullet_interval: Timer = $BulletInterval
 @onready var shooting_cooldown_timer: Timer = $ShootingCooldownTimer
 
+var allow_rotation_control := false
+var allow_rotation_holding := false
+
 
 func _physics_process(delta: float) -> void:
-	self.rotate(radial_speed * delta)
+	if not allow_rotation_holding or not Input.is_action_pressed("invert_rotation"):
+		self.rotate(radial_speed * delta)
+	if allow_rotation_control and Input.is_action_just_pressed("invert_rotation"):
+		radial_speed *= -1
 
 
 func shoot(normal: Vector2) -> void:
