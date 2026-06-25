@@ -128,5 +128,7 @@ script = ExtResource("3_x2122")
 name = "Miniboss"
 texture = ExtResource("20_yv50f")
 min_wave = 10
+weight = 0.5
+max_health = 5
 brain = SubResource("Resource_eb1l2")
 metadata/_custom_type_script = "uid://koby8pounmkx"

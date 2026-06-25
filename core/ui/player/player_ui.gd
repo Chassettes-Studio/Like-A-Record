@@ -26,6 +26,7 @@ func _on_score_changed() -> void:
 	var n: int = (Score.get_score() - c) / 7. as int
 	for i in n :
 		score_label.text = str(c + 7*i)
+		if not get_tree():return
 		await get_tree().create_timer(0.035).timeout
 	score_label.text = str(Score.get_score())
 

@@ -24,6 +24,7 @@ func on_exit() -> void:
 	target.hitbox.set_hittable(true)
 
 func _set_dash_progress(value: float) -> void:
+	if not is_instance_valid(target):return
 	target.dash_cd_shader.set_shader_parameter("progress", value)
 
 func physics_process(delta: float) -> void:

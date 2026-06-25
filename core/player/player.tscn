@@ -69,6 +69,7 @@ target = NodePath("..")
 metadata/_custom_type_script = "uid://10yphvuogl8w"
 
 [node name="DashCooldown" type="Timer" parent="." unique_id=1617424701]
+wait_time = 5.0
 one_shot = true
 
 [node name="Gun" parent="." unique_id=1766471961 instance=ExtResource("4_krwir")]
