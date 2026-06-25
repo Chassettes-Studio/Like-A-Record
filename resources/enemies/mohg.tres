@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="10_k6gel"]
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="11_inyy8"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="12_3kfen"]
+[ext_resource type="Script" uid="uid://bua3vfe0wajfe" path="res://core/enemies/enemy_contact/die_on_contact.gd" id="14_qkpvf"]
 [ext_resource type="Texture2D" uid="uid://bo1l3btyomwx2" path="res://assets/musicStuff/vinyle3.png" id="16_vcejy"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="18_af2p1"]
 
@@ -47,7 +48,7 @@ metadata/_custom_type_script = "uid://bkh04gcfmrktg"
 [sub_resource type="Resource" id="Resource_vi4pi"]
 script = ExtResource("9_4tboo")
 projectile_count = 3
-shooting_cooldown = 2.0
+shooting_cooldown = 4.0
 spread_angle = 0.7853981633974483
 metadata/_custom_type_script = "uid://b22neqpd27r5d"
 
@@ -63,6 +64,10 @@ attack = SubResource("Resource_yoa7e")
 speed = 750.0
 accel = 500.0
 metadata/_custom_type_script = "uid://bcr637lstvvok"
+
+[sub_resource type="Resource" id="Resource_pkfod"]
+script = ExtResource("14_qkpvf")
+metadata/_custom_type_script = "uid://bua3vfe0wajfe"
 
 [sub_resource type="Resource" id="Resource_rp8se"]
 script = ExtResource("12_3kfen")
@@ -80,4 +85,5 @@ size = 60.0
 max_health = 4
 brain = SubResource("Resource_s45t2")
 death_effects = Array[ExtResource("10_k6gel")]([SubResource("Resource_rp8se")])
+contact_effects = Array[ExtResource("10_inyy8")]([SubResource("Resource_pkfod")])
 metadata/_custom_type_script = "uid://koby8pounmkx"

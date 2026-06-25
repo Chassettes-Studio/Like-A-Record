@@ -104,6 +104,7 @@ lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_c8kf1")
 
 [node name="dashCdSprite" type="Sprite2D" parent="." unique_id=757302441]
+visible = false
 material = SubResource("ShaderMaterial_y8yxs")
 position = Vector2(62, -62.000004)
 rotation = 4.712389
