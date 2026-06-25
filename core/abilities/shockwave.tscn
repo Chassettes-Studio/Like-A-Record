@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bbgpt17e1p31e"]
+
+[ext_resource type="Texture2D" uid="uid://py5bd5kwobqj" path="res://assets/musicStuff/eclair.png" id="1_bh1kv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wnest"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(50, 50, 1)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -88.19999
+angle_max = 271.80002
+spread = 180.0
+initial_velocity_min = 2000.0
+initial_velocity_max = 2000.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.099999994
+
+[node name="Shockwave" type="GPUParticles2D" unique_id=905101164]
+emitting = false
+amount = 32
+texture = ExtResource("1_bh1kv")
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_wnest")

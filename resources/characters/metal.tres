@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://d05ygn0p2c2g8" path="res://core/player/character/character.gd" id="1_cud4y"]
 [ext_resource type="Script" uid="uid://cpyejpvuuyms8" path="res://core/abilities/ability.gd" id="2_4jcaa"]
 [ext_resource type="Script" uid="uid://dnlkffnbtuypv" path="res://core/abilities/ability_knockback.gd" id="2_k0b85"]
+[ext_resource type="PackedScene" uid="uid://bbgpt17e1p31e" path="res://core/abilities/shockwave.tscn" id="3_5gis0"]
 [ext_resource type="AudioStream" uid="uid://b0bn4ftflxtjh" path="res://assets/audios/music/metal_layer_1.ogg" id="3_k0b85"]
+[ext_resource type="Script" uid="uid://4l7ayxbvj5cd" path="res://core/upgrades/effect/player_effect/player_drop_particles.gd" id="4_3p8vr"]
 [ext_resource type="AudioStream" uid="uid://dkreg0xrlo6of" path="res://assets/audios/music/metal_layer_2.ogg" id="4_5gis0"]
 [ext_resource type="AudioStream" uid="uid://cn7kxhrbf5665" path="res://assets/audios/music/metal_layer_3.ogg" id="5_3p8vr"]
 [ext_resource type="Texture2D" uid="uid://cbgoix2ikj4pg" path="res://assets/musicStuff/cd4.png" id="7_fygy0"]
@@ -18,9 +20,14 @@ shape = SubResource("CircleShape2D_w63ho")
 force = 2000.0
 metadata/_custom_type_script = "uid://dnlkffnbtuypv"
 
+[sub_resource type="Resource" id="Resource_bh1kv"]
+script = ExtResource("4_3p8vr")
+scene = ExtResource("3_5gis0")
+metadata/_custom_type_script = "uid://4l7ayxbvj5cd"
+
 [sub_resource type="Resource" id="Resource_chld0"]
 script = ExtResource("2_4jcaa")
-effects = Array[ExtResource("1_4jcaa")]([SubResource("Resource_c8kf1")])
+effects = Array[ExtResource("1_4jcaa")]([SubResource("Resource_c8kf1"), SubResource("Resource_bh1kv")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_kx82e"]
