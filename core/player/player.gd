@@ -114,3 +114,7 @@ func _on_blink_timer_timeout() -> void:
 
 func _on_sc_health_controller_healed() -> void:
 	ui.take_damage(health_controller.base_health, health_controller.get_health())
+
+
+func _on_dash_cooldown_timeout() -> void:
+	dash_cd_sprite.visible = false
