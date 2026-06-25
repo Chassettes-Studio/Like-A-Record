@@ -34,8 +34,10 @@ var player_shoot_effects: Array[PlayerShootEffect] = []
 @onready var gun: Gun = $Gun
 @onready var ui: PlayerUi = $PlayerUi
 @onready var hit: AudioStreamPlayer = $Hit
+@onready var dash_cd_sprite: Sprite2D = $dashCdSprite
 
 var dash_duration := .2
+var dash_cd_shader: ShaderMaterial
 
 func _ready() -> void:
 	gun.shot.connect(_on_gun_shot)
@@ -43,7 +45,7 @@ func _ready() -> void:
 		character = static_character
 	player_sprite.texture = character.texture
 	ui.set_texture(character.texture)
-
+	dash_cd_shader = dash_cd_sprite.material as ShaderMaterial
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_process(delta)
@@ -97,7 +99,7 @@ func _on_hitbox_hurt(value: float) -> void:
 func _on_invulnerability_timer_timeout() -> void:
 	hitbox.set_hittable(true)
 	blink_timer.stop()
-	visible = true
+	player_sprite.modulate.a = 1
 
 
 func _on_sc_health_controller_died() -> void:
@@ -107,8 +109,12 @@ func _on_sc_health_controller_died() -> void:
 
 
 func _on_blink_timer_timeout() -> void:
-	visible = not visible
+	player_sprite.modulate.a = 1 - player_sprite.modulate.a
 
 
 func _on_sc_health_controller_healed() -> void:
 	ui.take_damage(health_controller.base_health, health_controller.get_health())
+
+
+func _on_dash_cooldown_timeout() -> void:
+	dash_cd_sprite.visible = false

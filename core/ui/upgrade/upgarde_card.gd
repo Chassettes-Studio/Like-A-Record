@@ -5,6 +5,7 @@ signal upgrade_chosen(upgrade: Upgrade)
 signal free
 
 var current_upgrade: Upgrade
+var can_select: bool = false
 var done: bool = false
 
 @onready var cd_sprite: TextureRect = $MarginContainer/CD
@@ -44,10 +45,13 @@ func _on_margin_container_mouse_entered() -> void:
 	tween.tween_property(cd_sprite, "offset_transform_rotation", 0.6, 0.4)
 	tween.tween_property(popup, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.4)
 	tween.tween_property(popup_container, "offset_transform_scale", Vector2(1.0, 1.0), 0.4)
+	await get_tree().create_timer(0.4).timeout
+	can_select = true
 
 
 func _on_margin_container_mouse_exited() -> void:
 	if done: return
+	can_select = false
 	z_index = 0
 	var tween: Tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
@@ -63,6 +67,8 @@ func _on_margin_container_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var mouse_event: InputEventMouseButton = event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT && mouse_event.pressed:
-			done = true
-			upgrade_selected()
-			upgrade_chosen.emit(current_upgrade)
+			if can_select:
+				can_select = false
+				done = true
+				upgrade_selected()
+				upgrade_chosen.emit(current_upgrade)

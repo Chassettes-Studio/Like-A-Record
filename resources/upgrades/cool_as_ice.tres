@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_0e3lp"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="6_7fqrk"]
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_swusg"]
-[ext_resource type="Texture2D" uid="uid://hympcxuctns7" path="res://assets/cold_as_ice.png" id="8_wiv7r"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="10_f0u3w"]
 
 [sub_resource type="Resource" id="Resource_74yie"]
 script = ExtResource("4_wiv7r")
@@ -17,8 +17,8 @@ metadata/_custom_type_script = "uid://btd1anu84386t"
 
 [resource]
 script = ExtResource("6_7fqrk")
-name = "Cool as Ice"
+name = "And they don't stop coming"
 description = "Decreases the shooting cooldown"
-sprite = ExtResource("8_wiv7r")
+sprite = ExtResource("10_f0u3w")
 gun_effects = Array[ExtResource("3_swusg")]([SubResource("Resource_74yie")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

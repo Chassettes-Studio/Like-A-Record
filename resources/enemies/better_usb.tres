@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://bsd6xtuhs6jc4"]
+
+[ext_resource type="Script" uid="uid://vvfsmu4jxy5j" path="res://core/enemies/enemy_brain/rush_brain.gd" id="1_rcekk"]
+[ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="2_t8p6q"]
+[ext_resource type="Script" uid="uid://bua3vfe0wajfe" path="res://core/enemies/enemy_contact/die_on_contact.gd" id="3_0vep6"]
+[ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="4_bvq0i"]
+[ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="5_jgn4q"]
+[ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="6_oq0mn"]
+[ext_resource type="Script" uid="uid://cgihhu70woabs" path="res://core/pickups/pickup.gd" id="7_tp6wo"]
+[ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="8_yv3rl"]
+[ext_resource type="Resource" uid="uid://ccxmwuctolloq" path="res://resources/pickups/energy.tres" id="9_kq4wd"]
+[ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="10_ksdcr"]
+[ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="11_6aot7"]
+[ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="12_vmuag"]
+[ext_resource type="Texture2D" uid="uid://dm35mfbjddfxi" path="res://assets/musicStuff/usb_key.png" id="13_mr4ue"]
+
+[sub_resource type="Resource" id="Resource_ftyy6"]
+script = ExtResource("1_rcekk")
+speed = 2000.0
+accel = 500.0
+metadata/_custom_type_script = "uid://vvfsmu4jxy5j"
+
+[sub_resource type="Resource" id="Resource_h1bf3"]
+script = ExtResource("3_0vep6")
+metadata/_custom_type_script = "uid://bua3vfe0wajfe"
+
+[sub_resource type="Resource" id="Resource_rp8se"]
+script = ExtResource("6_oq0mn")
+scene = ExtResource("5_jgn4q")
+metadata/_custom_type_script = "uid://cfihy37c1wi2w"
+
+[sub_resource type="Resource" id="Resource_brwim"]
+script = ExtResource("10_ksdcr")
+drops = Dictionary[ExtResource("7_tp6wo"), float]({
+ExtResource("8_yv3rl"): 0.1,
+ExtResource("9_kq4wd"): 0.9
+})
+metadata/_custom_type_script = "uid://7r1qdl7fajj0"
+
+[resource]
+script = ExtResource("11_6aot7")
+name = "BetterUsb"
+texture = ExtResource("13_mr4ue")
+min_wave = 8
+weight = 5.0
+size = 40.0
+max_health = 2
+brain = SubResource("Resource_ftyy6")
+death_effects = Array[ExtResource("4_bvq0i")]([SubResource("Resource_rp8se"), SubResource("Resource_brwim")])
+contact_effects = Array[ExtResource("2_t8p6q")]([SubResource("Resource_h1bf3")])
+metadata/_custom_type_script = "uid://koby8pounmkx"
