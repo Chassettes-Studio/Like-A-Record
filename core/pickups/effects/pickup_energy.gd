@@ -1,5 +1,5 @@
 class_name PickupEnergy
-extends PickupEffect
+extends PlayerEffect
 
 @export var energy : int = 1
 

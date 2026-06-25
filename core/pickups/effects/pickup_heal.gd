@@ -1,5 +1,5 @@
 class_name PickupHeal
-extends PickupEffect
+extends PlayerEffect
 
 @export var health : int = 1
 
