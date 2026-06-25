@@ -34,7 +34,7 @@ stream_2/volume = 0.0
 
 [resource]
 script = ExtResource("1_cud4y")
-name = "Metal"
+name = "Heavy Sandal"
 desc = "Ability : Pushes enemies away"
 texture = ExtResource("7_fygy0")
 ability = SubResource("Resource_chld0")
