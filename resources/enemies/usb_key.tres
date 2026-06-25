@@ -41,6 +41,7 @@ metadata/_custom_type_script = "uid://7r1qdl7fajj0"
 script = ExtResource("2_ftyy6")
 name = "Usb Key"
 texture = ExtResource("4_fcalx")
+max_wave = 5
 weight = 4.0
 score = 50
 size = 40.0

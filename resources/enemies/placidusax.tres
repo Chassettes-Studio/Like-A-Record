@@ -81,7 +81,6 @@ script = ExtResource("15_kgti2")
 name = "Vinyl"
 texture = ExtResource("16_xumpt")
 min_wave = 6
-weight = 3.0
 score = 350
 mass = 2.0
 size = 120.0

@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="10_ksdcr"]
 [ext_resource type="Script" uid="uid://koby8pounmkx" path="res://core/enemies/enemy.gd" id="11_6aot7"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="12_vmuag"]
-[ext_resource type="Texture2D" uid="uid://dm35mfbjddfxi" path="res://assets/musicStuff/usb_key.png" id="13_mr4ue"]
+[ext_resource type="Texture2D" uid="uid://bpk0l2q5e0tnf" path="res://assets/musicStuff/usb_rouge.png" id="13_rcekk"]
 
 [sub_resource type="Resource" id="Resource_ftyy6"]
 script = ExtResource("1_rcekk")
@@ -40,10 +40,10 @@ metadata/_custom_type_script = "uid://7r1qdl7fajj0"
 [resource]
 script = ExtResource("11_6aot7")
 name = "BetterUsb"
-texture = ExtResource("13_mr4ue")
-min_wave = 8
-weight = 5.0
-size = 40.0
+texture = ExtResource("13_rcekk")
+min_wave = 5
+weight = 3.0
+size = 55.0
 max_health = 2
 brain = SubResource("Resource_ftyy6")
 death_effects = Array[ExtResource("4_bvq0i")]([SubResource("Resource_rp8se"), SubResource("Resource_brwim")])
