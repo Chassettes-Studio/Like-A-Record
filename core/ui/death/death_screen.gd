@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var restart: ColorRect = $Restart
 @onready var lost: AudioStreamPlayer = $Lost
 @onready var click: AudioStreamPlayer = $Click
+@onready var type_writter: AudioStreamPlayer = $TypeWritter
 
 
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	score.text = "You survived until wave : " + str(Score.get_wave()) + "\nWith a score of : " + str(Score.get_score())
 	Score.reset()
 	await get_tree().create_timer(1).timeout
+	type_writter.play()
 	var tween: Tween = get_tree().create_tween()
 	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(score, "visible_ratio", 1.0, 2.0)

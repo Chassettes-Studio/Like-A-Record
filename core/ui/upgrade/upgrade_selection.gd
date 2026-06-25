@@ -14,7 +14,10 @@ signal upgrade_chosen(upgrade: Upgrade)
 func _ready() -> void:
 	spawn()
 	get_tree().paused = true
-
+	await get_tree().create_timer(1.0).timeout
+	card1.can_select = true
+	card2.can_select = true
+	card3.can_select = true
 
 func spawn() -> void:
 	var tween: Tween = get_tree().create_tween()

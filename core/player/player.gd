@@ -37,6 +37,7 @@ var player_shoot_effects: Array[PlayerShootEffect] = []
 @onready var ui: PlayerUi = $PlayerUi
 @onready var hit: AudioStreamPlayer = $Hit
 @onready var dash_cd_sprite: Sprite2D = $dashCdSprite
+@onready var heal: AudioStreamPlayer = $heal
 
 var dash_duration := .2
 var dash_cd_shader: ShaderMaterial
@@ -118,6 +119,7 @@ func _on_blink_timer_timeout() -> void:
 
 
 func _on_sc_health_controller_healed() -> void:
+	heal.play()
 	ui.take_damage(health_controller.base_health, health_controller.get_health())
 
 

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ndtekr7g2585" path="res://assets/logo/godotLogo.png" id="4_bpvp7"]
 [ext_resource type="Texture2D" uid="uid://03f6wwqe44tp" path="res://assets/ui/popup.png" id="5_bpvp7"]
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="6_7t5df"]
+[ext_resource type="AudioStream" uid="uid://cmttus0fhs2yj" path="res://assets/audios/sound/cd_out.ogg" id="7_6b46o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vifkf"]
 font = ExtResource("6_7t5df")
@@ -97,6 +98,9 @@ layout_mode = 2
 text = "C4EST GODOT SAUF QU4IL EST DANS UNE CHAUSSETTE C4EST FOU !!!"
 label_settings = SubResource("LabelSettings_jvv46")
 autowrap_mode = 3
+
+[node name="cdOut" type="AudioStreamPlayer" parent="." unique_id=2128974187]
+stream = ExtResource("7_6b46o")
 
 [connection signal="gui_input" from="MarginContainer" to="." method="_on_margin_container_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer" to="." method="_on_margin_container_mouse_entered"]

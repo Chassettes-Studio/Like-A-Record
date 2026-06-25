@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://4l7ayxbvj5cd" path="res://core/upgrades/effect/player_effect/player_drop_particles.gd" id="4_5iibg"]
 [ext_resource type="AudioStream" uid="uid://ccka5yaloi542" path="res://assets/audios/music/hip_layer_2.ogg" id="4_ltwjv"]
 [ext_resource type="AudioStream" uid="uid://db7mnvtdaepf7" path="res://assets/audios/music/hip_layer_3.ogg" id="5_5iibg"]
+[ext_resource type="Script" uid="uid://cbg35j26a24rh" path="res://core/upgrades/effect/player_effect/playSound.gd" id="5_h5tnj"]
+[ext_resource type="AudioStream" uid="uid://dw0gp66abi1ba" path="res://assets/audios/sound/win.ogg" id="6_elkd5"]
 [ext_resource type="Texture2D" uid="uid://cicvyu1kkyxd4" path="res://assets/musicStuff/cd2.png" id="7_2pptl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3dhsx"]
@@ -24,9 +26,14 @@ script = ExtResource("4_5iibg")
 scene = ExtResource("3_ltwjv")
 metadata/_custom_type_script = "uid://4l7ayxbvj5cd"
 
+[sub_resource type="Resource" id="Resource_kpani"]
+script = ExtResource("5_h5tnj")
+stream = ExtResource("6_elkd5")
+metadata/_custom_type_script = "uid://cbg35j26a24rh"
+
 [sub_resource type="Resource" id="Resource_rhvgn"]
 script = ExtResource("2_pegkl")
-effects = Array[ExtResource("1_pegkl")]([SubResource("Resource_lsk3w"), SubResource("Resource_iyc1i")])
+effects = Array[ExtResource("1_pegkl")]([SubResource("Resource_lsk3w"), SubResource("Resource_iyc1i"), SubResource("Resource_kpani")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_twoby"]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkms403buqwyu" path="res://assets/ui/perdu.png" id="2_coot1"]
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="3_1t28w"]
 [ext_resource type="AudioStream" uid="uid://d0y2loxcnf1j6" path="res://assets/audios/sound/lost.ogg" id="3_coot1"]
+[ext_resource type="AudioStream" uid="uid://bnla6ecs20eol" path="res://assets/audios/sound/typeWritter.ogg" id="5_tu6xy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gtu5s"]
 font = ExtResource("3_1t28w")
@@ -83,6 +84,9 @@ stream = ExtResource("3_coot1")
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=1796525076]
 stream = SubResource("AudioStreamOggVorbis_coot1")
+
+[node name="TypeWritter" type="AudioStreamPlayer" parent="." unique_id=41765356]
+stream = ExtResource("5_tu6xy")
 
 [connection signal="gui_input" from="Home" to="." method="_on_home_gui_input"]
 [connection signal="mouse_entered" from="Home" to="." method="_on_home_mouse_entered"]

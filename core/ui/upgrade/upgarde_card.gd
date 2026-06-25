@@ -16,6 +16,7 @@ var done: bool = false
 @onready var popup_container: Control = $MarginContainer/Popup/MarginContainer
 @onready var title: Label = $MarginContainer/Popup/MarginContainer/MarginContainer/VBoxContainer/Title
 @onready var description: Label = $MarginContainer/Popup/MarginContainer/MarginContainer/VBoxContainer/Description
+@onready var cd_out: AudioStreamPlayer = $cdOut
 
 
 func init(upgrade: Upgrade) -> void:
@@ -36,22 +37,19 @@ func upgrade_selected() -> void:
 
 func _on_margin_container_mouse_entered() -> void:
 	if done: return
+	cd_out.play()
 	z_index = 1
 	var tween: Tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(container, "offset_transform_scale", Vector2(1.2, 1.2), 0.4)
 	tween.tween_property(cd_sprite, "offset_transform_position_ratio", Vector2(0.0, -0.5), 0.4)
-	tween.tween_property(cd_sprite, "offset_transform_rotation", 0.6, 0.4)
+	tween.tween_property(cd_sprite, "offset_transform_rotation", 0.6, 0.4) 
 	tween.tween_property(popup, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.4)
 	tween.tween_property(popup_container, "offset_transform_scale", Vector2(1.0, 1.0), 0.4)
-	await get_tree().create_timer(0.4).timeout
-	can_select = true
-
 
 func _on_margin_container_mouse_exited() -> void:
 	if done: return
-	can_select = false
 	z_index = 0
 	var tween: Tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)

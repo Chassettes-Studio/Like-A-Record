@@ -24,6 +24,7 @@ var health: int
 @onready var name_label: Label = $NameLabel
 @onready var hit: AudioStreamPlayer = $Hit
 
+var deathSound: PackedScene = preload("res://core/enemies/entity/DeathSound.tscn")
 
 func _ready() -> void:
 	sprite.texture = enemy_data.texture
@@ -62,6 +63,7 @@ func die() -> void:
 		effect.apply(self)
 	Score.add_score(enemy_data.score)
 	died.emit()
+	self.add_sibling(deathSound.instantiate())
 	queue_free()
 
 

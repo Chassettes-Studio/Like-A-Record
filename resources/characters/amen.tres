@@ -23,6 +23,8 @@
 [ext_resource type="Script" uid="uid://b6vusje6nrle3" path="res://core/upgrades/effect/hit_effect/deal_damage.gd" id="9_cr7wp"]
 [ext_resource type="Script" uid="uid://dih1bhofpmvce" path="res://core/upgrades/effect/hit_effect/apply_knockback.gd" id="11_cr7wp"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="14_3a0le"]
+[ext_resource type="Script" uid="uid://cbg35j26a24rh" path="res://core/upgrades/effect/player_effect/playSound.gd" id="17_un61p"]
+[ext_resource type="AudioStream" uid="uid://djniq4a7rpqrf" path="res://assets/audios/sound/punch.ogg" id="18_lqqvo"]
 
 [sub_resource type="Resource" id="Resource_5pp20"]
 script = ExtResource("3_vo0jq")
@@ -80,9 +82,14 @@ script = ExtResource("8_cr7wp")
 bullet = SubResource("Resource_w63ho")
 metadata/_custom_type_script = "uid://dkpmem7ixkavt"
 
+[sub_resource type="Resource" id="Resource_l764q"]
+script = ExtResource("17_un61p")
+stream = ExtResource("18_lqqvo")
+metadata/_custom_type_script = "uid://cbg35j26a24rh"
+
 [sub_resource type="Resource" id="Resource_rpty4"]
 script = ExtResource("3_pqrup")
-effects = Array[ExtResource("1_a065e")]([SubResource("Resource_c8kf1")])
+effects = Array[ExtResource("1_a065e")]([SubResource("Resource_c8kf1"), SubResource("Resource_l764q")])
 metadata/_custom_type_script = "uid://cpyejpvuuyms8"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_yvlkw"]
