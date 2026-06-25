@@ -13,7 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_r2pyx"]
 script = ExtResource("2_i5lxg")
-speed = 120.0
+speed = 160.0
 metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
 
 [resource]

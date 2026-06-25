@@ -30,6 +30,7 @@ name = "Gay Bar"
 description = "Makes your bullets all shiny.
 They don't hit harder but they certainly slay."
 sprite = ExtResource("10_yg7vy")
+weight = 2.0
 stackable = false
 bullet_process_effects = Array[ExtResource("2_3rsdo")]([SubResource("Resource_rpty4")])
 player_effects = Array[ExtResource("5_ki4qp")]([SubResource("Resource_sv6ox")])

@@ -13,6 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_t84gh"]
 script = ExtResource("5_bmo1k")
+duration = 2
 metadata/_custom_type_script = "uid://m7qs5k4ayjbi"
 
 [resource]

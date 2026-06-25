@@ -22,10 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="19_t5j7i"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="19_yv50f"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="20_ev5j5"]
-[ext_resource type="Texture2D" uid="uid://cglo06j834ih7" path="res://assets/logo/Godot_icon.svg" id="20_yv50f"]
 [ext_resource type="Script" uid="uid://cgihhu70woabs" path="res://core/pickups/pickup.gd" id="21_h3v1r"]
 [ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="22_rj8yb"]
 [ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="23_i1xur"]
+[ext_resource type="Texture2D" uid="uid://1wlx1oj4jiah" path="res://assets/musicStuff/disquette.png" id="26_t5j7i"]
 
 [sub_resource type="Resource" id="Resource_rpty4"]
 script = ExtResource("3_oyvly")
@@ -147,7 +147,7 @@ metadata/_custom_type_script = "uid://7r1qdl7fajj0"
 [resource]
 script = ExtResource("3_x2122")
 name = "Miniboss"
-texture = ExtResource("20_yv50f")
+texture = ExtResource("26_t5j7i")
 min_wave = 10
 weight = 0.5
 max_health = 5

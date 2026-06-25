@@ -25,8 +25,7 @@ metadata/_custom_type_script = "uid://d2lfp08q4m4fm"
 [resource]
 script = ExtResource("1_omsmg")
 name = "Arpeggio"
-description = "Shoot several bullets at a time"
+description = "Shoot several bullets at a time."
 sprite = ExtResource("9_jda1l")
-stackable = false
 gun_effects = Array[ExtResource("3_qwhjy")]([SubResource("Resource_f6vup"), SubResource("Resource_sp7d8")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

@@ -30,6 +30,7 @@ name = "Sparkle"
 description = "The bullets emits particles.
 Useless but pretty."
 sprite = ExtResource("9_s2q5f")
+weight = 2.0
 stackable = false
 bullet_effects = Array[ExtResource("1_ytvll")]([SubResource("Resource_us5t1")])
 player_effects = Array[ExtResource("5_h72te")]([SubResource("Resource_wp324")])

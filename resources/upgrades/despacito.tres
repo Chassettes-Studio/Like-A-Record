@@ -21,5 +21,6 @@ script = ExtResource("6_uo3rm")
 name = "Despacito"
 description = "Makes bullets slower"
 sprite = ExtResource("8_dc0fo")
+weight = 0.7
 bullet_effects = Array[ExtResource("1_fek5r")]([SubResource("Resource_dc0fo")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

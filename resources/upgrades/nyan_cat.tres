@@ -32,6 +32,7 @@ script = ExtResource("8_sv6ox")
 name = "Nyan Cat"
 description = "CHAAAAAAAAT"
 sprite = ExtResource("11_n21ml")
+weight = 2.0
 stackable = false
 player_effects = Array[ExtResource("6_n21ml")]([SubResource("Resource_05ime"), SubResource("Resource_ruhwk")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"
