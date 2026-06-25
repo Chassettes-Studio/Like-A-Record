@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cqodewu2t3855" path="res://core/managers/wave_manager.gd" id="4_r2pyx"]
 [ext_resource type="Texture2D" uid="uid://ckcca7jkh6h86" path="res://assets/ui/bord.png" id="7_kywb5"]
 [ext_resource type="FontFile" uid="uid://kscven327y7h" path="res://assets/fonts/TypeLightSans.ttf" id="7_v7f4j"]
+[ext_resource type="Shader" uid="uid://vlgtdt70yp18" path="res://shaders/vhs.gdshader" id="8_kywb5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vpdy7"]
 normal = Vector2(0, 1)
@@ -29,6 +30,11 @@ normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8weuw"]
 normal = Vector2(-1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y8yxs"]
+shader = ExtResource("8_kywb5")
+shader_parameter/shake = 0.0
+shader_parameter/aberation = 0.001
 
 [node name="TestLevel" type="Node2D" unique_id=205418669]
 
@@ -78,10 +84,11 @@ spawner = NodePath("../Spawner")
 total_enemy_count = 3
 metadata/_custom_type_script = "uid://cqodewu2t3855"
 
-[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("audio_player", "player", "wave_manager")]
+[node name="LevelOrchestrator" type="Node" parent="." unique_id=1482469453 node_paths=PackedStringArray("audio_player", "player", "shader", "wave_manager")]
 script = ExtResource("4_7e2dr")
 audio_player = NodePath("AudioStreamPlayer")
 player = NodePath("../Player")
+shader = NodePath("../CanvasLayer/ColorRect")
 wave_manager = NodePath("../WaveManager")
 metadata/_custom_type_script = "uid://0a4b642jtkl5"
 
@@ -139,5 +146,16 @@ shape = SubResource("WorldBoundaryShape2D_ivvb0")
 [node name="Right" type="CollisionShape2D" parent="InnerWalls" unique_id=990366131]
 position = Vector2(3781, 0)
 shape = SubResource("WorldBoundaryShape2D_8weuw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=974924853]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1496774610]
+material = SubResource("ShaderMaterial_y8yxs")
+offset_left = -281.0
+offset_top = -287.0
+offset_right = 4248.0
+offset_bottom = 2462.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
