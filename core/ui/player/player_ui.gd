@@ -16,6 +16,7 @@ var upgrade_mini: PackedScene = preload("res://core/ui/upgrade/UpgradeMini.tscn"
 
 func _ready() -> void:
 	Score.score_changed.connect(_on_score_changed)
+	set_energy(0)
 
 func _process(_delta: float) -> void:
 	cd_sprite.offset_transform_rotation += 0.05
@@ -44,9 +45,9 @@ func set_texture(texture: Texture2D) -> void:
 	cd_sprite.texture = texture
 
 func set_energy(amount: int) -> void:
-	energy_1.modulate = Color("ffffffff")
-	energy_2.modulate = Color("ffffffff")
-	energy_3.modulate = Color("ffffffff")
+	energy_1.modulate = Color("ffffff80")
+	energy_2.modulate = Color("ffffff80")
+	energy_3.modulate = Color("ffffff80")
 	if amount == 1: 
 		energy_1.modulate = Color("34685cff")
 	if amount == 2: 

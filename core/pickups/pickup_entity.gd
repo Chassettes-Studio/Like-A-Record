@@ -13,7 +13,7 @@ var target: Player
 
 func _ready() -> void:
 	texture_rect.texture = pickup.texture
-
+	modulate = pickup.modulate
 
 func _physics_process(delta: float) -> void:
 	_update_velocity(delta)
