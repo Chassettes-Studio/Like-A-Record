@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://oyspvwlfy8y0" path="res://assets/dash.png" id="8_sy6iu"]
 [ext_resource type="Resource" uid="uid://bhqqv01v1r2p3" path="res://resources/upgrades/crescendo.tres" id="10_g0gpw"]
 [ext_resource type="Resource" uid="uid://b5ldytfxwdtpy" path="res://resources/upgrades/foot_loose.tres" id="11_uxlo6"]
+[ext_resource type="Script" uid="uid://cbg35j26a24rh" path="res://core/upgrades/effect/player_effect/playSound.gd" id="12_uxlo6"]
+[ext_resource type="AudioStream" uid="uid://b2881f8v522db" path="res://assets/audios/sound/feather.ogg" id="13_rj65b"]
 
 [sub_resource type="Resource" id="Resource_e703i"]
 script = ExtResource("6_sy6iu")
@@ -23,11 +25,16 @@ script = ExtResource("8_jcvak")
 target_upgrades = Array[ExtResource("6_oxgpr")]([ExtResource("10_g0gpw"), ExtResource("11_uxlo6")])
 metadata/_custom_type_script = "uid://bktcq8b56654x"
 
+[sub_resource type="Resource" id="Resource_xsd0i"]
+script = ExtResource("12_uxlo6")
+stream = ExtResource("13_rj65b")
+metadata/_custom_type_script = "uid://cbg35j26a24rh"
+
 [resource]
 script = ExtResource("6_oxgpr")
 name = "Rush"
 description = "Use [LeftShift] to dodge bullets"
 sprite = ExtResource("8_sy6iu")
 stackable = false
-player_effects = Array[ExtResource("5_mpmgu")]([SubResource("Resource_e703i"), SubResource("Resource_3j1vj")])
+player_effects = Array[ExtResource("5_mpmgu")]([SubResource("Resource_e703i"), SubResource("Resource_3j1vj"), SubResource("Resource_xsd0i")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"
