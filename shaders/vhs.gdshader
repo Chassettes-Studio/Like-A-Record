@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform float shake : hint_range(0.0, 1.0) = 0.0;
-uniform float aberation = 0.001;
+uniform float aberation = 0.0015;
 
 float rand(vec2 co) {
     return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
@@ -19,6 +19,6 @@ void fragment() {
     float g = texture(SCREEN_TEXTURE, uv).g;
     float b = texture(SCREEN_TEXTURE, uv - vec2(aberation, 0.0)).b;
     
-    float scanline = sin(uv.y * 400.0) * 0.02;
+    float scanline = sin(uv.y * 400.0) * 0.01;
     COLOR = vec4(r - scanline, g - scanline, b - scanline, 1.0);
 }
