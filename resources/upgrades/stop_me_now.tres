@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://m7qs5k4ayjbi"
 [resource]
 script = ExtResource("6_0yfr4")
 name = "Stop me now"
-description = "Bullets freeze enemies on impact"
+description = "Bullets freeze enemies on impact."
 sprite = ExtResource("10_kuwck")
 hit_effects = Array[ExtResource("4_mke1y")]([SubResource("Resource_t84gh")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

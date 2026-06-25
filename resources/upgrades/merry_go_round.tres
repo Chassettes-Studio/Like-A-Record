@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://2cw0tsaat8kx"
 [resource]
 script = ExtResource("6_53fph")
 name = "You Spin Me 'round"
-description = "You spin faster"
+description = "You spin faster."
 sprite = ExtResource("7_8j1ok")
 gun_effects = Array[ExtResource("3_hmdum")]([SubResource("Resource_hmdum")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

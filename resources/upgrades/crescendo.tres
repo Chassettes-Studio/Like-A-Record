@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://1kt00lo8wagq"
 [resource]
 script = ExtResource("8_bjbns")
 name = "Crescendo"
-description = "You can dash more often"
+description = "You can dash more often."
 sprite = ExtResource("10_4vfv1")
 weight = 1.5
 enabled = false

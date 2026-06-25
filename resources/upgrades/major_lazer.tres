@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://48i0jlydksg8"
 [resource]
 script = ExtResource("8_fdvxw")
 name = "Major Lazer"
-description = "Adds a laser sight to help with aiming"
+description = "Adds a laser sight to help with aiming."
 sprite = ExtResource("11_7iqmy")
 stackable = false
 gun_effects = Array[ExtResource("4_7iqmy")]([SubResource("Resource_neper")])

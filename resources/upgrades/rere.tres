@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://dr5e1hntqom7x"
 [resource]
 script = ExtResource("8_5l7n8")
 name = "Re:Re:"
-description = "Press [RightClick] or [K] to spin in the opposite direction"
+description = "Press [RightClick] or [K] to spin in the opposite direction."
 sprite = ExtResource("9_v7jue")
 stackable = false
 gun_effects = Array[ExtResource("4_34xkp")]([SubResource("Resource_v7jue")])

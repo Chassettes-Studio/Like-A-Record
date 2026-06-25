@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://2cw0tsaat8kx"
 [resource]
 script = ExtResource("8_llf55")
 name = "Gonna be alright"
-description = "You spin slower"
+description = "You spin slower."
 sprite = ExtResource("9_u2ko2")
 weight = 0.5
 gun_effects = Array[ExtResource("4_xh47g")]([SubResource("Resource_f0u3w")])

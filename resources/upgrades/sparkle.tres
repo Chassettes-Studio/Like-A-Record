@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://bktcq8b56654x"
 [resource]
 script = ExtResource("6_wxl0k")
 name = "Sparkle"
-description = "The bullets emits particles.
+description = "Your bullets emits particles.
 Useless but pretty."
 sprite = ExtResource("9_s2q5f")
 weight = 2.0

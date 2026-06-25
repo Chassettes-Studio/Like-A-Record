@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://btd1anu84386t"
 [resource]
 script = ExtResource("6_7fqrk")
 name = "And they don't stop coming"
-description = "Decreases the shooting cooldown"
+description = "You can shoot more often."
 sprite = ExtResource("10_f0u3w")
 gun_effects = Array[ExtResource("3_swusg")]([SubResource("Resource_74yie")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

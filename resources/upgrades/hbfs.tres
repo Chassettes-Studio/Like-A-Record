@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://c5cb44d164041"
 [resource]
 script = ExtResource("6_ld76p")
 name = "Harder Better Faster Stronger"
-description = "You move faster"
+description = "You move faster."
 sprite = ExtResource("8_nbbiq")
 player_effects = Array[ExtResource("5_m35qc")]([SubResource("Resource_74yie")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

@@ -33,7 +33,7 @@ metadata/_custom_type_script = "uid://cbg35j26a24rh"
 [resource]
 script = ExtResource("6_oxgpr")
 name = "Rush"
-description = "Use [LeftShift] to dodge bullets"
+description = "Use [LeftShift] to dodge bullets."
 sprite = ExtResource("8_sy6iu")
 weight = 2.0
 stackable = false

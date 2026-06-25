@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://c2ql5cascdrh8"
 [resource]
 script = ExtResource("8_5lg2o")
 name = "Pause"
-description = "Hold [RightClick] or [K] to stop spinning"
+description = "Hold [RightClick] or [K] to stop spinning."
 sprite = ExtResource("9_f88ho")
 stackable = false
 gun_effects = Array[ExtResource("4_pc7r1")]([SubResource("Resource_f88ho")])

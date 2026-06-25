@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://die05mo8g06ww"
 [resource]
 script = ExtResource("8_8jgfi")
 name = "Show Must Go On"
-description = "Increases you max HP by 1"
+description = "Increases you max HP by 1."
 sprite = ExtResource("9_r1556")
 player_effects = Array[ExtResource("6_p3eao")]([SubResource("Resource_r1556")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

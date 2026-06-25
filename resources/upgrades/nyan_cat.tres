@@ -30,7 +30,8 @@ metadata/_custom_type_script = "uid://bktcq8b56654x"
 [resource]
 script = ExtResource("8_sv6ox")
 name = "Nyan Cat"
-description = "CHAAAAAAAAT"
+description = "You get cat ears.
+They don't protect you, but they look cute."
 sprite = ExtResource("11_n21ml")
 weight = 2.0
 stackable = false

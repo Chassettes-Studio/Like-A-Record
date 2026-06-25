@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
 [resource]
 script = ExtResource("7_y5imh")
 name = "Shooting Star"
-description = "Makes the bullets faster"
+description = "Makes the bullets faster."
 sprite = ExtResource("8_yrtag")
 bullet_effects = Array[ExtResource("1_yrtag")]([SubResource("Resource_r2pyx")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

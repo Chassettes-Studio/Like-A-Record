@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://b6vusje6nrle3"
 [resource]
 script = ExtResource("7_ngolm")
 name = "Heavier Metal"
-description = "Bullets deal more damage"
+description = "Bullets deal more damage."
 sprite = ExtResource("8_d3ghu")
 hit_effects = Array[ExtResource("4_1cgt7")]([SubResource("Resource_yqld2")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"

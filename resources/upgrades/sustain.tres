@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://cc326afirrbiv"
 [resource]
 script = ExtResource("6_voa6g")
 name = "Sustain"
-description = "Bullets can hit 1 extra enemy"
+description = "Bullets can hit 1 extra enemy."
 sprite = ExtResource("8_lhr6v")
 bullet_effects = Array[ExtResource("1_7jakw")]([SubResource("Resource_lhr6v")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"
