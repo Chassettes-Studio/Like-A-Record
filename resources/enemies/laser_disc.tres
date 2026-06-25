@@ -71,6 +71,7 @@ name = "LD"
 texture = ExtResource("11_vjqvv")
 min_wave = 5
 weight = 0.6
+score = 500
 mass = 5.0
 size = 150.0
 max_health = 5

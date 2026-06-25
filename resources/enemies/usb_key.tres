@@ -42,6 +42,7 @@ script = ExtResource("2_ftyy6")
 name = "Usb Key"
 texture = ExtResource("4_fcalx")
 weight = 4.0
+score = 50
 size = 40.0
 max_health = 2
 brain = SubResource("Resource_ftyy6")
