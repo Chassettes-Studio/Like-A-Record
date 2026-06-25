@@ -64,12 +64,11 @@ func _on_wave_manager_trigger_new_wave() -> void:
 	match wave_manager.current_wave:
 		2:
 			player.character.layers.set_sync_stream_volume(1,0)
-		3:
+		5:
 			player.character.layers.set_sync_stream_volume(2,0)
-		4:
+		10:
 			if player.character.layers.stream_count >= 4:
 				player.character.layers.set_sync_stream_volume(3,0)
-				print("bip")
 			
 			
 
