@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://cr6ntmxyb340i"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_iv3sv"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_u2ko2"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_gl7yr"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="4_xh47g"]
+[ext_resource type="Script" uid="uid://2cw0tsaat8kx" path="res://core/upgrades/effect/gun_effect/added_radial_speed_effect.gd" id="5_gl7yr"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_q7cp1"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_4kbor"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_t1u5h"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_llf55"]
+[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="9_u2ko2"]
+
+[sub_resource type="Resource" id="Resource_f0u3w"]
+script = ExtResource("5_gl7yr")
+added_radial_speed = -0.3
+metadata/_custom_type_script = "uid://2cw0tsaat8kx"
+
+[resource]
+script = ExtResource("8_llf55")
+name = "Gonna be alright"
+description = "You spin slower"
+sprite = ExtResource("9_u2ko2")
+gun_effects = Array[ExtResource("4_xh47g")]([SubResource("Resource_f0u3w")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"

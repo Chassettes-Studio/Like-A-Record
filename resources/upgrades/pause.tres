@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://pwyhhr4lrnqj"]
+
+[ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_1006s"]
+[ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_f88ho"]
+[ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="3_e0ggs"]
+[ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="4_pc7r1"]
+[ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="5_51qut"]
+[ext_resource type="Script" uid="uid://c2ql5cascdrh8" path="res://core/upgrades/effect/gun_effect/allow_rotation_holding.gd" id="5_e0ggs"]
+[ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="6_76nnc"]
+[ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_tgqnm"]
+[ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_5lg2o"]
+[ext_resource type="Texture2D" uid="uid://7iappr4fimb8" path="res://assets/pause.png" id="9_f88ho"]
+
+[sub_resource type="Resource" id="Resource_f88ho"]
+script = ExtResource("5_e0ggs")
+metadata/_custom_type_script = "uid://c2ql5cascdrh8"
+
+[resource]
+script = ExtResource("8_5lg2o")
+name = "Pause"
+description = "Hold [RightClick] or [K] to stop spinning"
+sprite = ExtResource("9_f88ho")
+stackable = false
+gun_effects = Array[ExtResource("4_pc7r1")]([SubResource("Resource_f88ho")])
+metadata/_custom_type_script = "uid://bt7bn310ih8ix"
