@@ -19,6 +19,8 @@ var dash_unlocked := false
 
 var energy: int = 0
 
+var invulnerable: bool = false
+
 var player_shoot_effects: Array[PlayerShootEffect] = []
 
 @onready var blink_timer: Timer = $BlinkTimer
@@ -84,6 +86,9 @@ func _on_gun_shot() -> void:
 
 
 func _on_hitbox_hurt(value: float) -> void:
+	if invulnerable:return
+	invulnerable = true
+	set_deferred("invulnerable", false)
 	hit.play()
 	health_controller.take_damage(int(value))
 	damaged.emit()
