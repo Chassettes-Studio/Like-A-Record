@@ -55,7 +55,8 @@ metadata/_custom_type_script = "uid://dwjtvuc5ihc21"
 script = ExtResource("8_80ysv")
 name = "Fatal Bazooka"
 description = "The reward for style.
-Completely overpowered."
+Completely overpowered.
+If you get this, send a message to the devs, and thanks for playing !"
 sprite = ExtResource("15_80ysv")
 weight = 99.0
 stackable = false
