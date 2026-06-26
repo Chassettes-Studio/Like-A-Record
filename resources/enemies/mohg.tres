@@ -51,7 +51,7 @@ metadata/_custom_type_script = "uid://bkh04gcfmrktg"
 [sub_resource type="Resource" id="Resource_vi4pi"]
 script = ExtResource("9_4tboo")
 projectile_count = 3
-shooting_cooldown = 4.0
+shooting_cooldown = 6.0
 spread_angle = 0.7853981633974483
 metadata/_custom_type_script = "uid://b22neqpd27r5d"
 

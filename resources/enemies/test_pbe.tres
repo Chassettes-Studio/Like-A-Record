@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://hqlj76mb0xbg" path="res://core/enemies/enemy_attack/single_shoot_attack.gd" id="1_20fwa"]
 [ext_resource type="Script" uid="uid://bkw5j0b8b7mtl" path="res://core/enemies/enemy_contact/enemy_contact.gd" id="1_ib23r"]
 [ext_resource type="Script" uid="uid://bq4ifl8uphoqv" path="res://core/upgrades/effect/bullet_effect/bullet_effect.gd" id="1_tqcrk"]
+[ext_resource type="Script" uid="uid://rv1ww1jtkgrw" path="res://core/upgrades/effect/bullet_effect/faster.gd" id="2_h3v1r"]
 [ext_resource type="Script" uid="uid://b22neqpd27r5d" path="res://core/enemies/enemy_attack/virtual_gun/virtual_gun.gd" id="2_poa72"]
 [ext_resource type="Script" uid="uid://babs6kimktemt" path="res://core/enemies/enemy_death/enemy_death.gd" id="2_r47ol"]
 [ext_resource type="Script" uid="uid://chvxpcjuhsdd7" path="res://core/upgrades/effect/bullet_process_effect/bullet_process_effect.gd" id="2_w5puf"]
@@ -19,6 +20,7 @@
 [ext_resource type="Script" uid="uid://8q128ehc7nxs" path="res://core/upgrades/effect/collision_effect/self_destruct.gd.gd" id="7_oyvly"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="8_0k755"]
 [ext_resource type="Script" uid="uid://bcc2ddw1nb0j2" path="res://core/upgrades/effect/bullet_process_effect/static_after_time.gd" id="8_dnih8"]
+[ext_resource type="Script" uid="uid://j5i0c8tjupb3" path="res://core/upgrades/effect/bullet_process_effect/depop_after_time.gd" id="14_ev5j5"]
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="19_t5j7i"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="19_yv50f"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="20_ev5j5"]
@@ -26,6 +28,11 @@
 [ext_resource type="Resource" uid="uid://ba43f5gc0vmti" path="res://resources/pickups/heal.tres" id="22_rj8yb"]
 [ext_resource type="Script" uid="uid://7r1qdl7fajj0" path="res://core/enemies/enemy_death/drop_pickup.gd" id="23_i1xur"]
 [ext_resource type="Texture2D" uid="uid://1wlx1oj4jiah" path="res://assets/musicStuff/disquette.png" id="26_t5j7i"]
+
+[sub_resource type="Resource" id="Resource_ev5j5"]
+script = ExtResource("2_h3v1r")
+speed = 200.0
+metadata/_custom_type_script = "uid://rv1ww1jtkgrw"
 
 [sub_resource type="Resource" id="Resource_rpty4"]
 script = ExtResource("3_oyvly")
@@ -85,16 +92,22 @@ metadata/_custom_type_script = "uid://bkh04gcfmrktg"
 [sub_resource type="Resource" id="Resource_dpofx"]
 script = ExtResource("7_0k755")
 bullet = SubResource("Resource_dnih8")
-projectile_count = 30
+projectile_count = 20
 burst_cooldown = 0.5
 metadata/_custom_type_script = "uid://dwjtvuc5ihc21"
 
 [sub_resource type="Resource" id="Resource_2u2a7"]
 script = ExtResource("8_dnih8")
+delay = 1.0
 idle_duration = 10.0
 loop = false
 process_effect_on_idle = SubResource("Resource_dpofx")
 metadata/_custom_type_script = "uid://bcc2ddw1nb0j2"
+
+[sub_resource type="Resource" id="Resource_lw32v"]
+script = ExtResource("14_ev5j5")
+duration = 3.5
+metadata/_custom_type_script = "uid://j5i0c8tjupb3"
 
 [sub_resource type="Resource" id="Resource_8ipp4"]
 script = ExtResource("7_oyvly")
@@ -107,12 +120,13 @@ texture = ExtResource("8_0k755")
 size = 50.0
 color = Color(0.6745098, 0, 0.43137255, 1)
 collision_effects = Array[ExtResource("5_jtvuv")]([SubResource("Resource_8ipp4")])
-bullet_process_effect = Array[ExtResource("2_w5puf")]([SubResource("Resource_s57tb"), SubResource("Resource_w5puf"), SubResource("Resource_jtvuv"), SubResource("Resource_2u2a7")])
+bullet_effects = Array[ExtResource("1_tqcrk")]([SubResource("Resource_ev5j5")])
+bullet_process_effect = Array[ExtResource("2_w5puf")]([SubResource("Resource_s57tb"), SubResource("Resource_w5puf"), SubResource("Resource_jtvuv"), SubResource("Resource_2u2a7"), SubResource("Resource_lw32v")])
 metadata/_custom_type_script = "uid://bkh04gcfmrktg"
 
 [sub_resource type="Resource" id="Resource_h8i7w"]
 script = ExtResource("2_poa72")
-shooting_cooldown = 30.0
+shooting_cooldown = 10.0
 metadata/_custom_type_script = "uid://b22neqpd27r5d"
 
 [sub_resource type="Resource" id="Resource_pn740"]
