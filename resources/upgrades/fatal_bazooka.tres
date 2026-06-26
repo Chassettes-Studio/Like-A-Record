@@ -13,8 +13,8 @@
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="7_ewqbv"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_80ysv"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="8_jpn2f"]
-[ext_resource type="Texture2D" uid="uid://cavxojfmmj2f6" path="res://assets/placeholder/icon.svg" id="9_fu02w"]
 [ext_resource type="Script" uid="uid://ddv4ohhj7fgxs" path="res://core/upgrades/effect/bullet_process_effect/alternate_color.gd" id="10_80ysv"]
+[ext_resource type="Texture2D" uid="uid://dte68fsjwd52k" path="res://assets/logo/chassettes.png" id="15_80ysv"]
 
 [sub_resource type="Resource" id="Resource_sekbu"]
 script = ExtResource("3_ewqbv")
@@ -56,7 +56,7 @@ script = ExtResource("8_80ysv")
 name = "Fatal Bazooka"
 description = "The reward for style.
 Completely overpowered."
-sprite = ExtResource("9_fu02w")
+sprite = ExtResource("15_80ysv")
 weight = 99.0
 stackable = false
 enabled = false
