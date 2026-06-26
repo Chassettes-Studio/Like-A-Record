@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ciwo1lhqejhs6" path="res://core/player/player.tscn" id="1_x4nve"]
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="2_yicja"]
 [ext_resource type="PackedScene" uid="uid://dpqugsygggxr8" path="res://core/enemies/entity/enemy_entity.tscn" id="3_ebf7h"]
-[ext_resource type="Resource" uid="uid://drcomypudkcpg" path="res://resources/upgrades/nyan_cat.tres" id="3_rpty4"]
+[ext_resource type="Resource" uid="uid://c64jceadto3ft" path="res://resources/upgrades/arpeggio.tres" id="3_rpty4"]
 [ext_resource type="Resource" uid="uid://dy4co0v8trtyj" path="res://resources/enemies/test_pbe.tres" id="5_qg01g"]
 [ext_resource type="Resource" uid="uid://cb7blx8quhmft" path="res://resources/enemies/Dummy.tres" id="6_oq6wo"]
 [ext_resource type="Resource" uid="uid://csgkeg7n020cl" path="res://resources/enemies/usb_key.tres" id="9_ruhwk"]

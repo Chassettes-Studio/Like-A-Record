@@ -6,26 +6,26 @@
 [ext_resource type="Script" uid="uid://b0xmda5j6cxvt" path="res://core/upgrades/effect/collision_effect/collision_effect.gd" id="2_jkpwt"]
 [ext_resource type="Script" uid="uid://uysvmtv58y12" path="res://core/upgrades/effect/gun_effect/gun_effect.gd" id="3_qwhjy"]
 [ext_resource type="Script" uid="uid://fq720ip78rus" path="res://core/upgrades/effect/hit_effect/hit_effect.gd" id="4_384td"]
-[ext_resource type="Script" uid="uid://jrkgeav8by8m" path="res://core/upgrades/effect/gun_effect/added_burst_effect.gd" id="5_34v7l"]
 [ext_resource type="Script" uid="uid://bilct4fwqimft" path="res://core/upgrades/effect/player_effect/player_effect.gd" id="5_qme1d"]
 [ext_resource type="Script" uid="uid://d2lfp08q4m4fm" path="res://core/upgrades/effect/gun_effect/added_spread_angle_effect.gd" id="5_qwhjy"]
+[ext_resource type="Script" uid="uid://b5m0y2y02bu4e" path="res://core/upgrades/effect/gun_effect/added_projectile_count_effect.gd" id="6_elwhm"]
 [ext_resource type="Script" uid="uid://cm0rlac2gaws0" path="res://core/upgrades/effect/player_shoot_effect/player_shoot_effect.gd" id="9_e723c"]
 [ext_resource type="Texture2D" uid="uid://bxbiige4ws6k2" path="res://assets/arpeggio.png" id="9_jda1l"]
-
-[sub_resource type="Resource" id="Resource_f6vup"]
-script = ExtResource("5_34v7l")
-added_burst = 1.0
-metadata/_custom_type_script = "uid://jrkgeav8by8m"
 
 [sub_resource type="Resource" id="Resource_sp7d8"]
 script = ExtResource("5_qwhjy")
 added_spread_angle = 0.17453292519943295
 metadata/_custom_type_script = "uid://d2lfp08q4m4fm"
 
+[sub_resource type="Resource" id="Resource_elwhm"]
+script = ExtResource("6_elwhm")
+added_projectile_count = 1
+metadata/_custom_type_script = "uid://b5m0y2y02bu4e"
+
 [resource]
 script = ExtResource("1_omsmg")
 name = "Arpeggio"
 description = "Shoot several bullets at a time."
 sprite = ExtResource("9_jda1l")
-gun_effects = Array[ExtResource("3_qwhjy")]([SubResource("Resource_f6vup"), SubResource("Resource_sp7d8")])
+gun_effects = Array[ExtResource("3_qwhjy")]([SubResource("Resource_sp7d8"), SubResource("Resource_elwhm")])
 metadata/_custom_type_script = "uid://bt7bn310ih8ix"
