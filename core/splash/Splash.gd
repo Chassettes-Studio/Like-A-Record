@@ -7,6 +7,7 @@ var animation_name: String = "Start"
 
 
 func _ready() -> void:
+	Engine.max_fps = 60
 	animation.play(animation_name)
 
 

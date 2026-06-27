@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://bt7bn310ih8ix" path="res://core/upgrades/upgrade.gd" id="8_80ysv"]
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="8_jpn2f"]
 [ext_resource type="Script" uid="uid://ddv4ohhj7fgxs" path="res://core/upgrades/effect/bullet_process_effect/alternate_color.gd" id="10_80ysv"]
-[ext_resource type="Texture2D" uid="uid://dte68fsjwd52k" path="res://assets/logo/chassettes.png" id="15_80ysv"]
+[ext_resource type="Texture2D" uid="uid://y2t8ucybkees" path="res://assets/fatal.png" id="15_80ysv"]
 
 [sub_resource type="Resource" id="Resource_sekbu"]
 script = ExtResource("3_ewqbv")

@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cdvc5j4237t5m" path="res://assets/musicStuff/mediator.png" id="8_0k755"]
 [ext_resource type="Script" uid="uid://bcc2ddw1nb0j2" path="res://core/upgrades/effect/bullet_process_effect/static_after_time.gd" id="8_dnih8"]
 [ext_resource type="Script" uid="uid://j5i0c8tjupb3" path="res://core/upgrades/effect/bullet_process_effect/depop_after_time.gd" id="14_ev5j5"]
+[ext_resource type="Texture2D" uid="uid://dhj2p3oqp7jw1" path="res://assets/disco.png" id="16_rj8yb"]
 [ext_resource type="PackedScene" uid="uid://dugw5eyua1ut1" path="res://core/enemies/enemy_death_particles.tscn" id="19_t5j7i"]
 [ext_resource type="Script" uid="uid://d12msaui24n5b" path="res://core/enemies/enemy_spawn_effect/enemy_spawn_effect.gd" id="19_yv50f"]
 [ext_resource type="Script" uid="uid://cfihy37c1wi2w" path="res://core/enemies/enemy_death/death_particles.gd" id="20_ev5j5"]
@@ -116,7 +117,7 @@ metadata/_custom_type_script = "uid://8q128ehc7nxs"
 [sub_resource type="Resource" id="Resource_oyvly"]
 resource_local_to_scene = true
 script = ExtResource("7_mk3gw")
-texture = ExtResource("8_0k755")
+texture = ExtResource("16_rj8yb")
 size = 50.0
 color = Color(0.6745098, 0, 0.43137255, 1)
 collision_effects = Array[ExtResource("5_jtvuv")]([SubResource("Resource_8ipp4")])
